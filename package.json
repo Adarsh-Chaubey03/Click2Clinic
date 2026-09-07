@@ -1,0 +1,21 @@
+{
+  "name": "click-to-clinic",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Healthcare management platform for patients, doctors, laboratories, pharmacies, and administrators.",
+  "workspaces": [
+    "backend",
+    "frontend",
+    "admin",
+    "mobile"
+  ],
+  "scripts": {
+    "dev:backend": "npm --prefix backend run server",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:admin": "npm --prefix admin run dev",
+    "dev:mobile": "npm --prefix mobile start"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
