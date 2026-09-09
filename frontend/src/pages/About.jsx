@@ -17,21 +17,21 @@ const About = () => {
           />
           <div className="flex flex-col justify-center gap-6 text-gray-600 text-base md:w-2/3">
             <p>
-              Welcome to <span className="font-bold text-blue-700">VaidyaTek</span>, your trusted partner in managing your
-              healthcare needs conveniently and efficiently. At <span className="font-bold text-blue-700">VaidyaTek</span>, we
+              Welcome to <span className="font-bold text-blue-700">Click2Clinic</span>, your trusted partner in managing your
+              healthcare needs conveniently and efficiently. At <span className="font-bold text-blue-700">Click2Clinic</span>, we
               understand the challenges individuals face when it comes to scheduling
               doctor appointments and managing their health records.
             </p>
             <p>
-              VaidyaTek is committed to excellence in healthcare technology. We
+              Click2Clinic is committed to excellence in healthcare technology. We
               continuously strive to enhance our platform, integrating the latest
               advancements to improve user experience and deliver superior service.
-              Whether booking your first appointment or managing ongoing care, VaidyaTek is here to support you every step of the way.
+              Whether booking your first appointment or managing ongoing care, Click2Clinic is here to support you every step of the way.
             </p>
             <div>
               <p className="text-lg font-bold text-blue-700 mb-1">Our Vision</p>
               <p>
-                Our vision at VaidyaTek is to create a seamless healthcare experience
+                Our vision at Click2Clinic is to create a seamless healthcare experience
                 for every user. We aim to bridge the gap between patients and
                 healthcare providers, making it easier for you to access the care you
                 need, when you need it.

@@ -17,7 +17,7 @@ const Privacy = () => {
           />
           <div className="flex flex-col justify-center gap-6 text-gray-600 text-base md:w-2/3">
             <p>
-              At <span className="font-bold text-blue-700">VaidyaTek</span>, we prioritize your privacy and security.
+              At <span className="font-bold text-blue-700">Click2Clinic</span>, we prioritize your privacy and security.
               This Privacy Policy outlines how we collect, use, and protect your personal data while ensuring transparency in our practices.
             </p>
             <div>

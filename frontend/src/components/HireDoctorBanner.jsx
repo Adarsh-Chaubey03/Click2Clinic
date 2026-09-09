@@ -37,7 +37,7 @@ const HireDoctorBanner = () => {
 
                 <h2 className="mb-4 text-2xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
                   Are You a Doctor?<br />
-                  <span className="text-violet-200">Join VaidyaTek Today</span>
+                  <span className="text-violet-200">Join Click2Clinic Today</span>
                 </h2>
 
                 <p className="mb-8 max-w-lg text-base text-violet-100 sm:text-lg">

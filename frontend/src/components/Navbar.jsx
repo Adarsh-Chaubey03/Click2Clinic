@@ -50,7 +50,7 @@ const Navbar = () => {
             >
               <img
                 src={assets.main_logo}
-                alt="VaidyaTek"
+                alt="Click2Clinic"
                 className="h-9 w-auto sm:h-12"
               />
             </motion.div>
