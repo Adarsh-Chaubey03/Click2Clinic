@@ -1,0 +1,1432 @@
+{
+  "fever": {
+    "hallmark": [
+      "influenza",
+      "malaria",
+      "dengue fever",
+      "meningitis",
+      "typhoid fever",
+      "chikungunya",
+      "measles",
+      "leptospirosis",
+      "infectious mononucleosis (ebv)",
+      "non-typhoidal salmonellosis",
+      "brucellosis",
+      "scarlet fever",
+      "infective endocarditis",
+      "japanese encephalitis",
+      "scrub typhus",
+      "yellow fever",
+      "plague",
+      "empyema"
+    ],
+    "very_common": [
+      "covid-19",
+      "pneumonia",
+      "tuberculosis",
+      "hiv/aids",
+      "hepatitis a",
+      "chickenpox (varicella)",
+      "mumps",
+      "rabies",
+      "shigellosis",
+      "lyme disease",
+      "rotavirus infection",
+      "diphtheria",
+      "poliomyelitis (polio)",
+      "zika virus disease"
+    ],
+    "uncommon": [
+      "common cold",
+      "amoebiasis",
+      "laryngitis",
+      "pleurisy"
+    ],
+    "common": [
+      "hepatitis b",
+      "hepatitis c",
+      "tetanus",
+      "syphilis",
+      "genital herpes (hsv)",
+      "pelvic inflammatory disease (pid)",
+      "viral gastroenteritis (norovirus)",
+      "respiratory syncytial virus (rsv) infection",
+      "toxoplasmosis",
+      "cytomegalovirus (cmv) infection",
+      "acute bronchitis",
+      "bronchiolitis",
+      "pharyngitis",
+      "aspiration pneumonia",
+      "hypersensitivity pneumonitis",
+      "pericarditis",
+      "myocarditis"
+    ]
+  },
+  "cough": {
+    "hallmark": [
+      "influenza",
+      "pneumonia",
+      "tuberculosis",
+      "measles",
+      "pertussis (whooping cough)",
+      "asthma",
+      "chronic obstructive pulmonary disease (copd)",
+      "acute bronchitis",
+      "bronchiolitis",
+      "interstitial lung disease",
+      "bronchiectasis",
+      "pulmonary fibrosis",
+      "aspiration pneumonia",
+      "occupational lung disease",
+      "hypersensitivity pneumonitis",
+      "silicosis",
+      "asbestosis"
+    ],
+    "very_common": [
+      "covid-19",
+      "common cold",
+      "respiratory syncytial virus (rsv) infection"
+    ],
+    "common": [
+      "hiv/aids",
+      "typhoid fever",
+      "plague",
+      "sinusitis",
+      "laryngitis",
+      "pleurisy",
+      "pulmonary embolism",
+      "pleural effusion",
+      "empyema",
+      "sarcoidosis",
+      "heart failure"
+    ],
+    "uncommon": [
+      "pericarditis"
+    ]
+  },
+  "headache": {
+    "very_common": [
+      "influenza",
+      "malaria",
+      "dengue fever",
+      "chikungunya",
+      "mumps",
+      "lyme disease",
+      "poliomyelitis (polio)",
+      "scrub typhus",
+      "yellow fever",
+      "plague",
+      "sinusitis"
+    ],
+    "common": [
+      "covid-19",
+      "common cold",
+      "pneumonia",
+      "hiv/aids",
+      "chickenpox (varicella)",
+      "rabies",
+      "brucellosis",
+      "syphilis",
+      "viral gastroenteritis (norovirus)",
+      "zika virus disease",
+      "toxoplasmosis",
+      "acute bronchitis",
+      "pharyngitis",
+      "obstructive sleep apnea"
+    ],
+    "hallmark": [
+      "meningitis",
+      "typhoid fever",
+      "leptospirosis",
+      "japanese encephalitis"
+    ],
+    "uncommon": [
+      "hypertension"
+    ]
+  },
+  "muscle pain": {
+    "very_common": [
+      "influenza",
+      "malaria",
+      "dengue fever",
+      "chikungunya",
+      "lyme disease",
+      "yellow fever"
+    ],
+    "common": [
+      "covid-19",
+      "hiv/aids",
+      "mumps",
+      "brucellosis",
+      "infective endocarditis",
+      "viral gastroenteritis (norovirus)",
+      "scrub typhus",
+      "zika virus disease",
+      "toxoplasmosis",
+      "cytomegalovirus (cmv) infection",
+      "acute bronchitis"
+    ],
+    "uncommon": [
+      "common cold",
+      "pulmonary fibrosis"
+    ],
+    "hallmark": [
+      "leptospirosis"
+    ]
+  },
+  "sore throat": {
+    "very_common": [
+      "influenza",
+      "common cold",
+      "laryngitis"
+    ],
+    "common": [
+      "covid-19",
+      "hiv/aids",
+      "poliomyelitis (polio)",
+      "cytomegalovirus (cmv) infection",
+      "acute bronchitis"
+    ],
+    "hallmark": [
+      "infectious mononucleosis (ebv)",
+      "scarlet fever",
+      "diphtheria",
+      "pharyngitis"
+    ],
+    "uncommon": [
+      "gonorrhea"
+    ]
+  },
+  "fatigue": {
+    "very_common": [
+      "influenza",
+      "covid-19",
+      "tuberculosis",
+      "malaria",
+      "dengue fever",
+      "hiv/aids",
+      "hepatitis b",
+      "typhoid fever",
+      "hepatitis a",
+      "chickenpox (varicella)",
+      "mumps",
+      "lyme disease",
+      "infective endocarditis",
+      "poliomyelitis (polio)",
+      "plague",
+      "cytomegalovirus (cmv) infection",
+      "interstitial lung disease",
+      "obstructive sleep apnea",
+      "pulmonary hypertension",
+      "pulmonary fibrosis"
+    ],
+    "common": [
+      "common cold",
+      "pneumonia",
+      "rabies",
+      "pertussis (whooping cough)",
+      "syphilis",
+      "toxoplasmosis",
+      "chronic obstructive pulmonary disease (copd)",
+      "acute bronchitis",
+      "empyema",
+      "sarcoidosis",
+      "aspiration pneumonia",
+      "hypersensitivity pneumonitis",
+      "silicosis",
+      "asbestosis",
+      "stable angina",
+      "acute myocardial infarction (heart attack)",
+      "atrial fibrillation",
+      "valvular heart disease",
+      "aortic regurgitation",
+      "pericarditis",
+      "myocarditis",
+      "congenital heart disease"
+    ],
+    "hallmark": [
+      "hepatitis c",
+      "infectious mononucleosis (ebv)",
+      "brucellosis",
+      "heart failure",
+      "bradycardia",
+      "cardiomyopathy",
+      "mitral regurgitation"
+    ],
+    "uncommon": [
+      "mitral valve prolapse"
+    ]
+  },
+  "runny nose": {
+    "common": [
+      "influenza",
+      "covid-19",
+      "pertussis (whooping cough)",
+      "acute bronchitis"
+    ],
+    "hallmark": [
+      "common cold",
+      "measles",
+      "bronchiolitis"
+    ],
+    "very_common": [
+      "respiratory syncytial virus (rsv) infection"
+    ]
+  },
+  "malaise": {
+    "very_common": [
+      "influenza"
+    ],
+    "common": [
+      "hepatitis b"
+    ]
+  },
+  "loss of appetite": {
+    "common": [
+      "influenza",
+      "covid-19",
+      "pneumonia",
+      "tuberculosis",
+      "hepatitis b",
+      "hepatitis c",
+      "chickenpox (varicella)",
+      "mumps",
+      "respiratory syncytial virus (rsv) infection",
+      "yellow fever"
+    ],
+    "very_common": [
+      "hepatitis a"
+    ]
+  },
+  "difficulty sleeping": {
+    "common": [
+      "influenza"
+    ]
+  },
+  "diarrhea": {
+    "uncommon": [
+      "influenza",
+      "covid-19"
+    ],
+    "common": [
+      "malaria",
+      "hiv/aids",
+      "typhoid fever",
+      "hepatitis a"
+    ],
+    "hallmark": [
+      "cholera",
+      "amoebiasis",
+      "giardiasis",
+      "shigellosis",
+      "non-typhoidal salmonellosis",
+      "viral gastroenteritis (norovirus)",
+      "rotavirus infection"
+    ]
+  },
+  "vomiting": {
+    "uncommon": [
+      "influenza"
+    ],
+    "common": [
+      "malaria",
+      "dengue fever",
+      "hepatitis b",
+      "hepatitis a",
+      "hepatitis c",
+      "non-typhoidal salmonellosis"
+    ],
+    "hallmark": [
+      "cholera",
+      "viral gastroenteritis (norovirus)",
+      "rotavirus infection"
+    ]
+  },
+  "chills": {
+    "very_common": [
+      "influenza",
+      "infective endocarditis"
+    ],
+    "common": [
+      "pneumonia",
+      "tuberculosis",
+      "leptospirosis",
+      "lyme disease"
+    ],
+    "hallmark": [
+      "malaria",
+      "plague"
+    ]
+  },
+  "pneumonia": {
+    "uncommon": [
+      "influenza"
+    ]
+  },
+  "sepsis": {
+    "rare": [
+      "influenza"
+    ]
+  },
+  "loss of taste or smell": {
+    "common": [
+      "covid-19"
+    ],
+    "uncommon": [
+      "common cold"
+    ]
+  },
+  "shortness of breath": {
+    "common": [
+      "covid-19",
+      "diphtheria",
+      "plague",
+      "bronchiolitis",
+      "pleurisy",
+      "bronchiectasis",
+      "sarcoidosis",
+      "cystic fibrosis",
+      "coronary artery disease",
+      "stable angina",
+      "atrial fibrillation",
+      "supraventricular tachycardia",
+      "bradycardia",
+      "pericarditis",
+      "ventricular septal defect (vsd)"
+    ],
+    "very_common": [
+      "pneumonia"
+    ],
+    "hallmark": [
+      "asthma",
+      "chronic obstructive pulmonary disease (copd)",
+      "pulmonary embolism",
+      "interstitial lung disease",
+      "pulmonary hypertension",
+      "pneumothorax",
+      "pleural effusion",
+      "empyema",
+      "pulmonary fibrosis",
+      "aspiration pneumonia",
+      "acute respiratory distress syndrome (ards)",
+      "occupational lung disease",
+      "hypersensitivity pneumonitis",
+      "silicosis",
+      "asbestosis",
+      "acute myocardial infarction (heart attack)",
+      "heart failure",
+      "cardiomyopathy",
+      "valvular heart disease",
+      "aortic stenosis",
+      "aortic regurgitation",
+      "mitral regurgitation",
+      "myocarditis",
+      "pulmonary edema",
+      "congenital heart disease",
+      "hypertrophic cardiomyopathy"
+    ],
+    "uncommon": [
+      "mitral valve prolapse"
+    ]
+  },
+  "nausea or vomiting": {
+    "uncommon": [
+      "covid-19",
+      "pneumonia"
+    ],
+    "very_common": [
+      "meningitis"
+    ],
+    "common": [
+      "poliomyelitis (polio)",
+      "yellow fever",
+      "acute myocardial infarction (heart attack)"
+    ]
+  },
+  "chest pain": {
+    "uncommon": [
+      "covid-19",
+      "silicosis",
+      "atrial fibrillation",
+      "bradycardia"
+    ],
+    "common": [
+      "pneumonia",
+      "tuberculosis",
+      "bronchiectasis",
+      "pulmonary hypertension",
+      "aspiration pneumonia",
+      "supraventricular tachycardia",
+      "cardiomyopathy",
+      "valvular heart disease",
+      "aortic regurgitation",
+      "hypertrophic cardiomyopathy"
+    ],
+    "hallmark": [
+      "pulmonary embolism",
+      "pneumothorax",
+      "empyema",
+      "coronary artery disease",
+      "stable angina",
+      "acute myocardial infarction (heart attack)",
+      "aortic stenosis",
+      "pericarditis",
+      "myocarditis"
+    ]
+  },
+  "skin rash": {
+    "uncommon": [
+      "covid-19"
+    ],
+    "common": [
+      "dengue fever",
+      "hiv/aids",
+      "chikungunya",
+      "scrub typhus",
+      "sarcoidosis"
+    ],
+    "hallmark": [
+      "chickenpox (varicella)",
+      "measles",
+      "scarlet fever",
+      "lyme disease",
+      "syphilis"
+    ],
+    "very_common": [
+      "zika virus disease"
+    ]
+  },
+  "sneezing": {
+    "very_common": [
+      "common cold"
+    ],
+    "common": [
+      "respiratory syncytial virus (rsv) infection"
+    ]
+  },
+  "hoarse voice": {
+    "common": [
+      "common cold",
+      "pharyngitis"
+    ],
+    "hallmark": [
+      "laryngitis"
+    ]
+  },
+  "facial pressure": {
+    "uncommon": [
+      "common cold"
+    ]
+  },
+  "rapid breathing": {
+    "common": [
+      "pneumonia"
+    ],
+    "uncommon": [
+      "meningitis"
+    ]
+  },
+  "sweating": {
+    "common": [
+      "pneumonia",
+      "tetanus",
+      "acute myocardial infarction (heart attack)",
+      "supraventricular tachycardia"
+    ],
+    "very_common": [
+      "malaria",
+      "brucellosis"
+    ],
+    "uncommon": [
+      "pulmonary embolism"
+    ]
+  },
+  "hemoptysis": {
+    "uncommon": [
+      "pneumonia",
+      "bronchiectasis"
+    ],
+    "common": [
+      "tuberculosis"
+    ]
+  },
+  "confusion": {
+    "uncommon": [
+      "pneumonia",
+      "aspiration pneumonia"
+    ],
+    "rare": [
+      "malaria"
+    ],
+    "common": [
+      "meningitis",
+      "rabies",
+      "japanese encephalitis",
+      "acute respiratory distress syndrome (ards)"
+    ]
+  },
+  "wheezing": {
+    "uncommon": [
+      "pneumonia"
+    ],
+    "common": [
+      "respiratory syncytial virus (rsv) infection",
+      "bronchiectasis",
+      "cystic fibrosis",
+      "occupational lung disease",
+      "asbestosis",
+      "pulmonary edema"
+    ],
+    "hallmark": [
+      "asthma",
+      "bronchiolitis"
+    ],
+    "very_common": [
+      "chronic obstructive pulmonary disease (copd)"
+    ]
+  },
+  "night sweats": {
+    "very_common": [
+      "tuberculosis"
+    ],
+    "common": [
+      "hiv/aids",
+      "infective endocarditis"
+    ]
+  },
+  "weight loss": {
+    "very_common": [
+      "tuberculosis"
+    ],
+    "common": [
+      "hiv/aids",
+      "brucellosis",
+      "infective endocarditis",
+      "interstitial lung disease",
+      "pulmonary fibrosis",
+      "cystic fibrosis"
+    ],
+    "uncommon": [
+      "chronic obstructive pulmonary disease (copd)",
+      "hypersensitivity pneumonitis",
+      "silicosis"
+    ]
+  },
+  "lymphadenopathy": {
+    "uncommon": [
+      "tuberculosis"
+    ],
+    "common": [
+      "dengue fever",
+      "hiv/aids",
+      "scarlet fever",
+      "syphilis",
+      "scrub typhus",
+      "toxoplasmosis",
+      "cytomegalovirus (cmv) infection",
+      "pharyngitis",
+      "sarcoidosis"
+    ],
+    "hallmark": [
+      "infectious mononucleosis (ebv)",
+      "plague"
+    ],
+    "very_common": [
+      "diphtheria"
+    ]
+  },
+  "nausea": {
+    "common": [
+      "malaria",
+      "typhoid fever",
+      "hepatitis c",
+      "giardiasis",
+      "non-typhoidal salmonellosis",
+      "stable angina"
+    ],
+    "very_common": [
+      "dengue fever",
+      "hepatitis b",
+      "hepatitis a",
+      "viral gastroenteritis (norovirus)"
+    ]
+  },
+  "abdominal pain": {
+    "common": [
+      "malaria",
+      "hepatitis b",
+      "hepatitis c",
+      "rotavirus infection"
+    ],
+    "uncommon": [
+      "dengue fever"
+    ],
+    "very_common": [
+      "typhoid fever",
+      "hepatitis a",
+      "shigellosis",
+      "viral gastroenteritis (norovirus)"
+    ],
+    "hallmark": [
+      "amoebiasis",
+      "giardiasis",
+      "non-typhoidal salmonellosis"
+    ]
+  },
+  "jaundice": {
+    "uncommon": [
+      "malaria",
+      "hepatitis c",
+      "leptospirosis",
+      "yellow fever"
+    ],
+    "hallmark": [
+      "hepatitis b",
+      "hepatitis a"
+    ]
+  },
+  "anemia": {
+    "common": [
+      "malaria"
+    ]
+  },
+  "seizures": {
+    "rare": [
+      "malaria"
+    ],
+    "uncommon": [
+      "meningitis"
+    ],
+    "common": [
+      "japanese encephalitis"
+    ]
+  },
+  "respiratory distress": {
+    "rare": [
+      "malaria"
+    ]
+  },
+  "retro-orbital pain": {
+    "very_common": [
+      "dengue fever"
+    ]
+  },
+  "persistent vomiting": {
+    "uncommon": [
+      "dengue fever"
+    ]
+  },
+  "mucosal bleeding": {
+    "uncommon": [
+      "dengue fever"
+    ]
+  },
+  "hemorrhagic signs": {
+    "rare": [
+      "dengue fever",
+      "yellow fever"
+    ]
+  },
+  "restlessness": {
+    "uncommon": [
+      "dengue fever"
+    ]
+  },
+  "recurrent infections": {
+    "common": [
+      "hiv/aids"
+    ]
+  },
+  "mouth ulcers": {
+    "common": [
+      "hiv/aids"
+    ]
+  },
+  "dark urine": {
+    "very_common": [
+      "hepatitis b",
+      "hepatitis a"
+    ],
+    "uncommon": [
+      "hepatitis c"
+    ]
+  },
+  "pale stool": {
+    "common": [
+      "hepatitis b",
+      "hepatitis a"
+    ],
+    "uncommon": [
+      "hepatitis c"
+    ]
+  },
+  "joint pain": {
+    "common": [
+      "hepatitis b",
+      "meningitis",
+      "hepatitis a",
+      "hepatitis c",
+      "brucellosis"
+    ],
+    "hallmark": [
+      "chikungunya"
+    ],
+    "uncommon": [
+      "lyme disease",
+      "sarcoidosis"
+    ],
+    "very_common": [
+      "zika virus disease"
+    ]
+  },
+  "pruritus": {
+    "uncommon": [
+      "hepatitis b"
+    ]
+  },
+  "neck stiffness": {
+    "hallmark": [
+      "meningitis"
+    ],
+    "uncommon": [
+      "poliomyelitis (polio)"
+    ],
+    "common": [
+      "japanese encephalitis"
+    ]
+  },
+  "sensitivity to light": {
+    "very_common": [
+      "meningitis"
+    ]
+  },
+  "petechial rash": {
+    "common": [
+      "meningitis"
+    ]
+  },
+  "drowsiness": {
+    "common": [
+      "meningitis"
+    ]
+  },
+  "cold extremities": {
+    "common": [
+      "meningitis",
+      "peripheral artery disease"
+    ]
+  },
+  "constipation": {
+    "common": [
+      "typhoid fever"
+    ]
+  },
+  "joint swelling": {
+    "common": [
+      "chikungunya"
+    ]
+  },
+  "conjunctivitis": {
+    "hallmark": [
+      "measles"
+    ],
+    "common": [
+      "zika virus disease"
+    ]
+  },
+  "oral lesions": {
+    "hallmark": [
+      "measles"
+    ]
+  },
+  "parotitis": {
+    "hallmark": [
+      "mumps"
+    ]
+  },
+  "paraesthesia": {
+    "hallmark": [
+      "rabies"
+    ]
+  },
+  "anxiety": {
+    "common": [
+      "rabies",
+      "pulmonary edema"
+    ]
+  },
+  "agitation": {
+    "common": [
+      "rabies"
+    ]
+  },
+  "hallucinations": {
+    "hallmark": [
+      "rabies"
+    ]
+  },
+  "hydrophobia": {
+    "hallmark": [
+      "rabies"
+    ]
+  },
+  "paralysis": {
+    "common": [
+      "rabies"
+    ],
+    "rare": [
+      "poliomyelitis (polio)"
+    ],
+    "uncommon": [
+      "japanese encephalitis"
+    ]
+  },
+  "conjunctival suffusion": {
+    "hallmark": [
+      "leptospirosis"
+    ]
+  },
+  "renal failure": {
+    "uncommon": [
+      "leptospirosis"
+    ]
+  },
+  "dehydration": {
+    "hallmark": [
+      "cholera"
+    ],
+    "common": [
+      "rotavirus infection"
+    ]
+  },
+  "muscle cramps": {
+    "common": [
+      "cholera"
+    ]
+  },
+  "bloody stools": {
+    "common": [
+      "amoebiasis",
+      "shigellosis"
+    ]
+  },
+  "flatulence": {
+    "very_common": [
+      "giardiasis"
+    ]
+  },
+  "foul-smelling stool": {
+    "very_common": [
+      "giardiasis"
+    ]
+  },
+  "lockjaw": {
+    "hallmark": [
+      "tetanus"
+    ]
+  },
+  "muscle spasms": {
+    "hallmark": [
+      "tetanus"
+    ]
+  },
+  "dysphagia": {
+    "very_common": [
+      "tetanus"
+    ],
+    "common": [
+      "diphtheria",
+      "candidiasis"
+    ]
+  },
+  "tachycardia": {
+    "common": [
+      "tetanus",
+      "pulmonary embolism",
+      "ventricular septal defect (vsd)"
+    ],
+    "uncommon": [
+      "pneumothorax"
+    ]
+  },
+  "stridor": {
+    "hallmark": [
+      "pertussis (whooping cough)"
+    ]
+  },
+  "post-tussive vomiting": {
+    "common": [
+      "pertussis (whooping cough)"
+    ]
+  },
+  "strawberry tongue": {
+    "hallmark": [
+      "scarlet fever"
+    ]
+  },
+  "facial palsy": {
+    "uncommon": [
+      "lyme disease"
+    ]
+  },
+  "genital ulcer": {
+    "hallmark": [
+      "syphilis",
+      "genital herpes (hsv)"
+    ]
+  },
+  "hair loss": {
+    "uncommon": [
+      "syphilis"
+    ]
+  },
+  "condylomata lata": {
+    "uncommon": [
+      "syphilis"
+    ]
+  },
+  "genital discharge": {
+    "hallmark": [
+      "gonorrhea",
+      "candidiasis"
+    ],
+    "common": [
+      "chlamydia infection"
+    ],
+    "very_common": [
+      "pelvic inflammatory disease (pid)"
+    ]
+  },
+  "dysuria": {
+    "hallmark": [
+      "gonorrhea"
+    ],
+    "common": [
+      "chlamydia infection",
+      "genital herpes (hsv)",
+      "pelvic inflammatory disease (pid)",
+      "candidiasis"
+    ]
+  },
+  "pelvic pain": {
+    "common": [
+      "gonorrhea"
+    ],
+    "hallmark": [
+      "pelvic inflammatory disease (pid)"
+    ]
+  },
+  "intermenstrual bleeding": {
+    "uncommon": [
+      "gonorrhea",
+      "chlamydia infection"
+    ],
+    "common": [
+      "pelvic inflammatory disease (pid)"
+    ]
+  },
+  "rectal pain": {
+    "uncommon": [
+      "gonorrhea"
+    ]
+  },
+  "dyspareunia": {
+    "uncommon": [
+      "chlamydia infection"
+    ],
+    "common": [
+      "pelvic inflammatory disease (pid)"
+    ]
+  },
+  "testicular pain": {
+    "uncommon": [
+      "chlamydia infection"
+    ]
+  },
+  "paresthesia": {
+    "very_common": [
+      "genital herpes (hsv)"
+    ]
+  },
+  "genital warts": {
+    "common": [
+      "human papillomavirus (hpv) infection"
+    ]
+  },
+  "skin warts": {
+    "common": [
+      "human papillomavirus (hpv) infection"
+    ]
+  },
+  "heart murmur": {
+    "hallmark": [
+      "infective endocarditis"
+    ]
+  },
+  "pharyngeal membrane": {
+    "hallmark": [
+      "diphtheria"
+    ]
+  },
+  "eschar": {
+    "hallmark": [
+      "scrub typhus"
+    ]
+  },
+  "oral thrush": {
+    "hallmark": [
+      "candidiasis"
+    ]
+  },
+  "oral pain": {
+    "common": [
+      "candidiasis"
+    ]
+  },
+  "genital pruritus": {
+    "hallmark": [
+      "candidiasis"
+    ]
+  },
+  "chest tightness": {
+    "hallmark": [
+      "asthma"
+    ],
+    "common": [
+      "chronic obstructive pulmonary disease (copd)",
+      "acute bronchitis",
+      "occupational lung disease"
+    ]
+  },
+  "nocturnal dyspnea": {
+    "common": [
+      "asthma"
+    ]
+  },
+  "sputum production": {
+    "hallmark": [
+      "chronic obstructive pulmonary disease (copd)",
+      "bronchiectasis",
+      "cystic fibrosis"
+    ],
+    "very_common": [
+      "acute bronchitis"
+    ],
+    "common": [
+      "pulmonary edema"
+    ]
+  },
+  "recurrent respiratory infections": {
+    "common": [
+      "chronic obstructive pulmonary disease (copd)"
+    ],
+    "hallmark": [
+      "cystic fibrosis"
+    ]
+  },
+  "peripheral edema": {
+    "uncommon": [
+      "chronic obstructive pulmonary disease (copd)",
+      "aortic regurgitation"
+    ],
+    "common": [
+      "pulmonary hypertension",
+      "cardiomyopathy",
+      "valvular heart disease",
+      "mitral regurgitation",
+      "myocarditis"
+    ],
+    "hallmark": [
+      "heart failure"
+    ]
+  },
+  "poor feeding": {
+    "common": [
+      "bronchiolitis",
+      "congenital heart disease",
+      "ventricular septal defect (vsd)"
+    ]
+  },
+  "facial pain": {
+    "hallmark": [
+      "sinusitis"
+    ]
+  },
+  "nasal congestion": {
+    "hallmark": [
+      "sinusitis"
+    ]
+  },
+  "nasal discharge": {
+    "hallmark": [
+      "sinusitis"
+    ]
+  },
+  "loss of smell": {
+    "common": [
+      "sinusitis"
+    ]
+  },
+  "postnasal drip": {
+    "common": [
+      "sinusitis"
+    ]
+  },
+  "dental pain": {
+    "uncommon": [
+      "sinusitis"
+    ]
+  },
+  "halitosis": {
+    "uncommon": [
+      "sinusitis"
+    ]
+  },
+  "odynophagia": {
+    "hallmark": [
+      "pharyngitis"
+    ]
+  },
+  "tonsillar inflammation": {
+    "very_common": [
+      "pharyngitis"
+    ]
+  },
+  "throat clearing": {
+    "common": [
+      "laryngitis"
+    ]
+  },
+  "throat irritation": {
+    "common": [
+      "laryngitis"
+    ]
+  },
+  "pleuritic chest pain": {
+    "hallmark": [
+      "pleurisy"
+    ],
+    "common": [
+      "pneumothorax",
+      "pleural effusion"
+    ]
+  },
+  "dizziness": {
+    "common": [
+      "pulmonary embolism",
+      "pulmonary hypertension",
+      "coronary artery disease",
+      "acute myocardial infarction (heart attack)",
+      "atrial fibrillation",
+      "supraventricular tachycardia",
+      "valvular heart disease",
+      "mitral valve prolapse",
+      "hypertrophic cardiomyopathy"
+    ],
+    "hallmark": [
+      "bradycardia",
+      "aortic stenosis"
+    ],
+    "uncommon": [
+      "cardiomyopathy"
+    ]
+  },
+  "leg swelling": {
+    "common": [
+      "pulmonary embolism"
+    ],
+    "hallmark": [
+      "deep vein thrombosis (dvt)"
+    ]
+  },
+  "digital clubbing": {
+    "uncommon": [
+      "interstitial lung disease",
+      "pulmonary fibrosis",
+      "asbestosis"
+    ]
+  },
+  "snoring": {
+    "hallmark": [
+      "obstructive sleep apnea"
+    ]
+  },
+  "apnea": {
+    "hallmark": [
+      "obstructive sleep apnea",
+      "cardiac arrest"
+    ]
+  },
+  "choking": {
+    "hallmark": [
+      "obstructive sleep apnea",
+      "pulmonary edema"
+    ]
+  },
+  "dry mouth": {
+    "common": [
+      "obstructive sleep apnea"
+    ]
+  },
+  "cyanosis": {
+    "uncommon": [
+      "pulmonary hypertension",
+      "ventricular septal defect (vsd)"
+    ],
+    "common": [
+      "acute respiratory distress syndrome (ards)"
+    ],
+    "hallmark": [
+      "congenital heart disease"
+    ]
+  },
+  "orthopnea": {
+    "uncommon": [
+      "pleural effusion"
+    ]
+  },
+  "eye pain": {
+    "uncommon": [
+      "sarcoidosis"
+    ]
+  },
+  "salty sweat": {
+    "common": [
+      "cystic fibrosis"
+    ]
+  },
+  "tachypnea": {
+    "hallmark": [
+      "acute respiratory distress syndrome (ards)"
+    ]
+  },
+  "hypotension": {
+    "common": [
+      "acute respiratory distress syndrome (ards)"
+    ]
+  },
+  "epistaxis": {
+    "uncommon": [
+      "hypertension"
+    ]
+  },
+  "palpitations": {
+    "uncommon": [
+      "hypertension"
+    ],
+    "common": [
+      "heart failure",
+      "cardiomyopathy",
+      "mitral valve prolapse",
+      "aortic stenosis",
+      "aortic regurgitation",
+      "mitral regurgitation",
+      "myocarditis",
+      "pulmonary edema",
+      "hypertrophic cardiomyopathy"
+    ],
+    "hallmark": [
+      "atrial fibrillation",
+      "supraventricular tachycardia"
+    ]
+  },
+  "visual disturbance": {
+    "uncommon": [
+      "hypertension"
+    ]
+  },
+  "tinnitus": {
+    "uncommon": [
+      "hypertension"
+    ]
+  },
+  "radiating pain": {
+    "common": [
+      "coronary artery disease",
+      "stable angina"
+    ],
+    "hallmark": [
+      "acute myocardial infarction (heart attack)"
+    ]
+  },
+  "ascites": {
+    "common": [
+      "heart failure",
+      "cardiomyopathy"
+    ]
+  },
+  "weight gain": {
+    "common": [
+      "heart failure"
+    ]
+  },
+  "syncope": {
+    "uncommon": [
+      "supraventricular tachycardia"
+    ],
+    "common": [
+      "bradycardia"
+    ]
+  },
+  "claudication": {
+    "hallmark": [
+      "peripheral artery disease"
+    ]
+  },
+  "muscle weakness": {
+    "common": [
+      "peripheral artery disease"
+    ]
+  },
+  "skin ulcer": {
+    "common": [
+      "peripheral artery disease"
+    ]
+  },
+  "skin discoloration": {
+    "common": [
+      "peripheral artery disease",
+      "deep vein thrombosis (dvt)"
+    ]
+  },
+  "alopecia": {
+    "common": [
+      "peripheral artery disease"
+    ]
+  },
+  "leg pain": {
+    "hallmark": [
+      "deep vein thrombosis (dvt)"
+    ]
+  },
+  "warm skin": {
+    "common": [
+      "deep vein thrombosis (dvt)"
+    ]
+  },
+  "asymptomatic": {
+    "hallmark": [
+      "patent foramen ovale (pfo)"
+    ]
+  },
+  "migraine": {
+    "uncommon": [
+      "patent foramen ovale (pfo)"
+    ]
+  },
+  "stroke": {
+    "rare": [
+      "patent foramen ovale (pfo)"
+    ]
+  },
+  "unconsciousness": {
+    "hallmark": [
+      "cardiac arrest"
+    ]
+  },
+  "absent pulse": {
+    "hallmark": [
+      "cardiac arrest"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "suggestions": [
+    "Reduce penalty for missing hallmark symptoms slightly to prevent early elimination.",
+    "Increase information gain of distinguishing symptoms for frequently confused pairs.",
+    "Delay stopping if top 2 candidates have < 10% probability difference.",
+    "Adjust thresholds to prioritize highly discriminative questions in late stages."
+  ],
+  "top_100_failure_reasons": [
+    {
+      "rank": 1,
+      "reason": "Confusion with overlapping disease",
+      "count": 345
+    },
+    {
+      "rank": 2,
+      "reason": "True disease eliminated prematurely",
+      "count": 23
+    },
+    {
+      "rank": 3,
+      "reason": "Insufficient information gain",
+      "count": 7
+    }
+  ]
+}

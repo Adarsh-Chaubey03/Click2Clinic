@@ -1,0 +1,5666 @@
+{
+  "specialty": "Infectious Diseases",
+  "diseases": [
+    {
+      "disease_name": "Influenza",
+      "icd10_code": "J09-J11",
+      "description": "An acute respiratory infection caused by influenza viruses, commonly known as the flu.",
+      "pathogen": "Influenza virus (types A and B)",
+      "transmission": [
+        "respiratory droplets",
+        "contact with contaminated surfaces"
+      ],
+      "incubation_period": "1-4 days (typically 2 days)",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu",
+            "MedlinePlus - Flu"
+          ],
+          "evidence_count": 4
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu",
+            "MedlinePlus - Flu"
+          ],
+          "evidence_count": 4
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "body aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rhinorrhea",
+          "normalized_symptom": "runny nose",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "malaise",
+          "normalized_symptom": "malaise",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "NHS - Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "difficulty sleeping",
+          "normalized_symptom": "difficulty sleeping",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Flu",
+            "MedlinePlus - Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Flu",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Signs and Symptoms of Flu",
+            "MedlinePlus - Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pneumonia",
+          "normalized_symptom": "pneumonia",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sepsis",
+          "normalized_symptom": "sepsis",
+          "frequency": "rare",
+          "organ_system": "systemic",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Influenza (seasonal) fact sheet",
+            "CDC - Signs and Symptoms of Flu"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "COVID-19",
+      "icd10_code": "U07.1",
+      "description": "An infectious disease caused by the SARS-CoV-2 virus, affecting primarily the respiratory system.",
+      "pathogen": "SARS-CoV-2",
+      "transmission": [
+        "respiratory droplets",
+        "aerosol",
+        "contact with contaminated surfaces"
+      ],
+      "incubation_period": "1-14 days (typically 5-6 days)",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of taste or smell",
+          "normalized_symptom": "loss of taste or smell",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "body aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "dyspnea",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rhinorrhea",
+          "normalized_symptom": "runny nose",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - COVID-19 symptoms",
+            "CDC - COVID-19 signs and symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea or vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "uncommon",
+          "organ_system": "cardiovascular",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - COVID-19 symptoms",
+            "WHO - COVID-19 fact sheet"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "uncommon",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - COVID-19 fact sheet",
+            "NHS - COVID-19 symptoms"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Common Cold",
+      "icd10_code": "J00",
+      "description": "A common viral infection of the nose and throat (upper respiratory tract).",
+      "pathogen": "Rhinoviruses (most common), coronaviruses, RSV, adenoviruses",
+      "transmission": [
+        "respiratory droplets",
+        "contact with contaminated surfaces"
+      ],
+      "incubation_period": "1-3 days",
+      "symptoms": [
+        {
+          "symptom_name": "blocked or runny nose",
+          "normalized_symptom": "runny nose",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold",
+            "CDC - Common cold"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sneezing",
+          "normalized_symptom": "sneezing",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold",
+            "CDC - Common cold"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold",
+            "CDC - Common cold"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early_to_mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold",
+            "CDC - Common cold"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "feeling tired and unwell",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "hoarse voice",
+          "normalized_symptom": "hoarse voice",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early_to_mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "high temperature",
+          "normalized_symptom": "fever",
+          "frequency": "uncommon",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "aching muscles",
+          "normalized_symptom": "muscle pain",
+          "frequency": "uncommon",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of taste and smell",
+          "normalized_symptom": "loss of taste or smell",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "MedlinePlus - Common Cold",
+            "CDC - Common cold"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pressure in ears and face",
+          "normalized_symptom": "facial pressure",
+          "frequency": "uncommon",
+          "organ_system": "ENT",
+          "onset_stage": "mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Common cold",
+            "MedlinePlus - Common Cold"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Pneumonia",
+      "icd10_code": "J12-J18",
+      "description": "An infection that inflames the air sacs in one or both lungs, which may fill with fluid or pus.",
+      "pathogen": "Streptococcus pneumoniae (most common bacterial), viruses, fungi",
+      "transmission": [
+        "respiratory droplets",
+        "aspiration"
+      ],
+      "incubation_period": "varies by pathogen (1-3 days for bacterial, 1-7 days for viral)",
+      "symptoms": [
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Pneumonia fact sheet",
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "WHO - Pneumonia fact sheet",
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "dyspnea",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Pneumonia fact sheet",
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rapid breathing",
+          "normalized_symptom": "rapid breathing",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Pneumonia fact sheet",
+            "NHS - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Pneumonia fact sheet",
+            "NHS - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sweating",
+          "normalized_symptom": "sweating",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea or vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "coughing up blood",
+          "normalized_symptom": "hemoptysis",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "mid_to_late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "confusion",
+          "normalized_symptom": "confusion",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "MedlinePlus - Pneumonia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "wheezing",
+          "normalized_symptom": "wheezing",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pneumonia",
+            "WHO - Pneumonia fact sheet"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Tuberculosis",
+      "icd10_code": "A15-A19",
+      "description": "A bacterial infection that primarily affects the lungs but can spread to other parts of the body.",
+      "pathogen": "Mycobacterium tuberculosis",
+      "transmission": [
+        "airborne droplet nuclei"
+      ],
+      "incubation_period": "2-12 weeks (can remain latent for years)",
+      "symptoms": [
+        {
+          "symptom_name": "persistent cough",
+          "normalized_symptom": "cough",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "coughing up blood",
+          "normalized_symptom": "hemoptysis",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid_to_late",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "night sweats",
+          "normalized_symptom": "night sweats",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "weight loss",
+          "normalized_symptom": "weight loss",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Tuberculosis fact sheet",
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - TB Signs and Symptoms",
+            "NHS - Tuberculosis (TB)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - TB Signs and Symptoms",
+            "WHO - Tuberculosis fact sheet"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "swollen lymph nodes",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "uncommon",
+          "organ_system": "lymphatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Tuberculosis (TB)",
+            "CDC - TB Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Malaria",
+      "icd10_code": "B50-B54",
+      "description": "A life-threatening disease caused by Plasmodium parasites transmitted through the bites of infected Anopheles mosquitoes.",
+      "pathogen": "Plasmodium parasites (P. falciparum, P. vivax, P. malariae, P. ovale, P. knowlesi)",
+      "transmission": [
+        "mosquito bite (Anopheles)"
+      ],
+      "incubation_period": "7-30 days (P. falciparum typically 9-14 days)",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "body aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sweating",
+          "normalized_symptom": "sweating",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - About Malaria",
+            "NHS - Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "anaemia",
+          "normalized_symptom": "anemia",
+          "frequency": "common",
+          "organ_system": "hematological",
+          "onset_stage": "complication",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "seizures",
+          "normalized_symptom": "seizures",
+          "frequency": "rare",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "confusion",
+          "normalized_symptom": "confusion",
+          "frequency": "rare",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "respiratory distress",
+          "normalized_symptom": "respiratory distress",
+          "frequency": "rare",
+          "organ_system": "respiratory",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Malaria fact sheet",
+            "CDC - About Malaria"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Dengue Fever",
+      "icd10_code": "A90-A91",
+      "description": "A mosquito-borne viral infection causing a severe flu-like illness, sometimes progressing to potentially lethal complications.",
+      "pathogen": "Dengue virus (DENV serotypes 1-4)",
+      "transmission": [
+        "mosquito bite (Aedes aegypti, Aedes albopictus)"
+      ],
+      "incubation_period": "4-10 days",
+      "symptoms": [
+        {
+          "symptom_name": "high fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "severe headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "pain behind the eyes",
+          "normalized_symptom": "retro-orbital pain",
+          "frequency": "very_common",
+          "organ_system": "ophthalmological",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle and joint pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "swollen glands",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early_to_mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "NHS - Dengue"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "severe abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "persistent vomiting",
+          "normalized_symptom": "persistent vomiting",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bleeding gums or nose",
+          "normalized_symptom": "mucosal bleeding",
+          "frequency": "uncommon",
+          "organ_system": "hematological",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "blood in vomit or stool",
+          "normalized_symptom": "hemorrhagic signs",
+          "frequency": "rare",
+          "organ_system": "hematological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "restlessness or irritability",
+          "normalized_symptom": "restlessness",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Dengue and severe dengue fact sheet",
+            "CDC - Dengue Signs and Symptoms"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "HIV/AIDS",
+      "icd10_code": "B20-B24",
+      "description": "A chronic infection caused by the human immunodeficiency virus that attacks the immune system, potentially leading to AIDS if untreated.",
+      "pathogen": "Human immunodeficiency virus (HIV-1 and HIV-2)",
+      "transmission": [
+        "sexual contact",
+        "blood-to-blood",
+        "mother-to-child (perinatal)",
+        "contaminated needles"
+      ],
+      "incubation_period": "2-4 weeks (acute phase); can remain asymptomatic for years",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "acute_infection",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "acute_infection",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "acute_infection",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "acute_infection",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "swollen lymph nodes",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "acute_infection",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle and joint pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "acute_infection",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "acute_infection",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "acute_infection",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "weight loss",
+          "normalized_symptom": "weight loss",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "advanced",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "night sweats",
+          "normalized_symptom": "night sweats",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "advanced",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "persistent cough",
+          "normalized_symptom": "cough",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "advanced",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "NHS - HIV and AIDS"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "recurrent infections",
+          "normalized_symptom": "recurrent infections",
+          "frequency": "common",
+          "organ_system": "immune",
+          "onset_stage": "advanced",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - HIV/AIDS fact sheet",
+            "CDC - About HIV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "mouth ulcers",
+          "normalized_symptom": "mouth ulcers",
+          "frequency": "common",
+          "organ_system": "oral",
+          "onset_stage": "acute_infection",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - HIV and AIDS",
+            "WHO - HIV/AIDS fact sheet"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Hepatitis B",
+      "icd10_code": "B16-B18",
+      "description": "A viral infection that attacks the liver and can cause both acute and chronic disease.",
+      "pathogen": "Hepatitis B virus (HBV)",
+      "transmission": [
+        "blood",
+        "sexual contact",
+        "mother-to-child (perinatal)",
+        "contaminated needles"
+      ],
+      "incubation_period": "30-180 days (average 75 days)",
+      "symptoms": [
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "hallmark",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "dark urine",
+          "normalized_symptom": "dark urine",
+          "frequency": "very_common",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "pale stool",
+          "normalized_symptom": "pale stool",
+          "frequency": "common",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Hepatitis B",
+            "CDC - Hepatitis B"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "CDC - Hepatitis B"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Hepatitis B",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "malaise",
+          "normalized_symptom": "malaise",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis B fact sheet",
+            "NHS - Hepatitis B"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "itchy skin",
+          "normalized_symptom": "pruritus",
+          "frequency": "uncommon",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "NHS - Hepatitis B",
+            "CDC - Hepatitis B"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Meningitis",
+      "icd10_code": "G00-G03",
+      "description": "Inflammation of the membranes (meninges) surrounding the brain and spinal cord, most commonly caused by bacterial or viral infection.",
+      "pathogen": "Neisseria meningitidis (bacterial), Streptococcus pneumoniae, Haemophilus influenzae, viruses",
+      "transmission": [
+        "respiratory droplets",
+        "close contact"
+      ],
+      "incubation_period": "2-10 days (bacterial); varies for viral",
+      "symptoms": [
+        {
+          "symptom_name": "severe headache",
+          "normalized_symptom": "headache",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "stiff neck",
+          "normalized_symptom": "neck stiffness",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea and vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "photophobia",
+          "normalized_symptom": "sensitivity to light",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "confusion",
+          "normalized_symptom": "confusion",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early_to_mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis",
+            "CDC - Meningitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rash (non-blanching)",
+          "normalized_symptom": "petechial rash",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "drowsiness",
+          "normalized_symptom": "drowsiness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "NHS - Meningitis",
+            "WHO - Meningococcal meningitis fact sheet"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "seizures",
+          "normalized_symptom": "seizures",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Meningococcal meningitis fact sheet",
+            "NHS - Meningitis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "cold hands and feet",
+          "normalized_symptom": "cold extremities",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "NHS - Meningitis",
+            "WHO - Meningococcal meningitis fact sheet"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Meningitis",
+            "WHO - Meningococcal meningitis fact sheet"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rapid breathing",
+          "normalized_symptom": "rapid breathing",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Meningitis",
+            "WHO - Meningococcal meningitis fact sheet"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Typhoid Fever",
+      "icd10_code": "A01.0",
+      "description": "A life-threatening systemic infection caused by the bacterium Salmonella Typhi.",
+      "pathogen": "Salmonella enterica serotype Typhi",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water"
+      ],
+      "incubation_period": "6-30 days",
+      "symptoms": [
+        {
+          "symptom_name": "sustained high fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "constipation",
+          "normalized_symptom": "constipation",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Typhoid fact sheet",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Typhoid Fever",
+            "NHS - Typhoid fever"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Hepatitis A",
+      "icd10_code": "B15",
+      "description": "A highly contagious liver infection caused by the hepatitis A virus.",
+      "pathogen": "Hepatitis A virus (HAV)",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water",
+        "close personal contact"
+      ],
+      "incubation_period": "14-28 days",
+      "symptoms": [
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "hallmark",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "dark urine",
+          "normalized_symptom": "dark urine",
+          "frequency": "very_common",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pale stool",
+          "normalized_symptom": "pale stool",
+          "frequency": "common",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis A fact sheet",
+            "CDC - Hepatitis A"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Hepatitis A",
+            "NHS - Hepatitis A"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Hepatitis C",
+      "icd10_code": "B17.1",
+      "description": "A liver disease caused by the hepatitis C virus, leading to acute and chronic infection.",
+      "pathogen": "Hepatitis C virus (HCV)",
+      "transmission": [
+        "blood-to-blood",
+        "contaminated needles"
+      ],
+      "incubation_period": "2-26 weeks",
+      "symptoms": [
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C",
+            "NHS - Hepatitis C"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "dark urine",
+          "normalized_symptom": "dark urine",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pale stool",
+          "normalized_symptom": "pale stool",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Hepatitis C fact sheet",
+            "CDC - Hepatitis C"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Chikungunya",
+      "icd10_code": "A92.0",
+      "description": "A mosquito-borne viral disease characterized by sudden onset of fever and severe joint pain.",
+      "pathogen": "Chikungunya virus (CHIKV)",
+      "transmission": [
+        "mosquito bite (Aedes aegypti, Aedes albopictus)"
+      ],
+      "incubation_period": "3-7 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "severe joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "hallmark",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "joint swelling",
+          "normalized_symptom": "joint swelling",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Chikungunya fact sheet",
+            "CDC - Chikungunya"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Chickenpox (Varicella)",
+      "icd10_code": "B01",
+      "description": "A highly contagious disease caused by the varicella-zoster virus (VZV), known for its characteristic blister-like rash.",
+      "pathogen": "Varicella-zoster virus (VZV)",
+      "transmission": [
+        "respiratory droplets",
+        "direct contact with rash"
+      ],
+      "incubation_period": "10-21 days",
+      "symptoms": [
+        {
+          "symptom_name": "itchy blister-like rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Chickenpox",
+            "NHS - Chickenpox",
+            "MedlinePlus - Chickenpox"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Chickenpox",
+            "NHS - Chickenpox",
+            "MedlinePlus - Chickenpox"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "tiredness",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Chickenpox",
+            "NHS - Chickenpox",
+            "MedlinePlus - Chickenpox"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Chickenpox",
+            "NHS - Chickenpox",
+            "MedlinePlus - Chickenpox"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Chickenpox",
+            "MedlinePlus - Chickenpox"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Measles",
+      "icd10_code": "B05",
+      "description": "A highly contagious viral disease that can lead to serious complications.",
+      "pathogen": "Measles virus",
+      "transmission": [
+        "airborne droplet nuclei",
+        "respiratory droplets"
+      ],
+      "incubation_period": "10-14 days",
+      "symptoms": [
+        {
+          "symptom_name": "high fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "runny nose",
+          "normalized_symptom": "runny nose",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "red watery eyes",
+          "normalized_symptom": "conjunctivitis",
+          "frequency": "hallmark",
+          "organ_system": "ophthalmological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "Koplik spots",
+          "normalized_symptom": "oral lesions",
+          "frequency": "hallmark",
+          "organ_system": "oral",
+          "onset_stage": "mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Measles fact sheet",
+            "CDC - Measles",
+            "NHS - Measles"
+          ],
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "disease_name": "Mumps",
+      "icd10_code": "B26",
+      "description": "A viral infection that primarily affects saliva-producing (salivary) glands that are situated near your ears.",
+      "pathogen": "Mumps virus",
+      "transmission": [
+        "respiratory droplets",
+        "saliva",
+        "fomites"
+      ],
+      "incubation_period": "16-18 days",
+      "symptoms": [
+        {
+          "symptom_name": "swollen salivary glands",
+          "normalized_symptom": "parotitis",
+          "frequency": "hallmark",
+          "organ_system": "ENT",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Mumps",
+            "NHS - Mumps",
+            "MedlinePlus - Mumps"
+          ],
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "disease_name": "Rabies",
+      "icd10_code": "A82",
+      "description": "A deadly viral disease that causes progressive and fatal inflammation of the brain and spinal cord.",
+      "pathogen": "Rabies virus (Lyssavirus)",
+      "transmission": [
+        "animal bite or scratch (saliva)"
+      ],
+      "incubation_period": "2-3 months",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "pain or tingling at bite site",
+          "normalized_symptom": "paraesthesia",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "weakness",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "anxiety",
+          "normalized_symptom": "anxiety",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "agitation or aggressive behavior",
+          "normalized_symptom": "agitation",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "hallucinations",
+          "normalized_symptom": "hallucinations",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "hydrophobia",
+          "normalized_symptom": "hydrophobia",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "confusion",
+          "normalized_symptom": "confusion",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid_to_late",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Rabies",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "paralysis",
+          "normalized_symptom": "paralysis",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Rabies fact sheet",
+            "NHS - Rabies"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Leptospirosis",
+      "icd10_code": "A27",
+      "description": "A bacterial disease that affects humans and animals, transmitted primarily through water contaminated with animal urine.",
+      "pathogen": "Leptospira species",
+      "transmission": [
+        "contact with contaminated water, soil, or animal urine"
+      ],
+      "incubation_period": "2-30 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "hallmark",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "red eyes",
+          "normalized_symptom": "conjunctival suffusion",
+          "frequency": "hallmark",
+          "organ_system": "ophthalmological",
+          "onset_stage": "early_to_mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "CDC - Leptospirosis",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "kidney failure",
+          "normalized_symptom": "renal failure",
+          "frequency": "uncommon",
+          "organ_system": "renal",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Leptospirosis fact sheet",
+            "MSD Manual - Leptospirosis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Infectious Mononucleosis (EBV)",
+      "icd10_code": "B27",
+      "description": "An infectious illness commonly caused by the Epstein-Barr virus (EBV), primarily spreading through saliva.",
+      "pathogen": "Epstein-Barr virus (EBV)",
+      "transmission": [
+        "saliva",
+        "close personal contact"
+      ],
+      "incubation_period": "4-6 weeks",
+      "symptoms": [
+        {
+          "symptom_name": "extreme fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Epstein-Barr Virus",
+            "NHS - Glandular fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "CDC - Epstein-Barr Virus",
+            "NHS - Glandular fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Epstein-Barr Virus",
+            "NHS - Glandular fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "swollen lymph nodes",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "hallmark",
+          "organ_system": "lymphatic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Epstein-Barr Virus",
+            "NHS - Glandular fever"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Cholera",
+      "icd10_code": "A00",
+      "description": "An acute diarrhoeal infection caused by ingestion of food or water contaminated with the bacterium Vibrio cholerae.",
+      "pathogen": "Vibrio cholerae",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water"
+      ],
+      "incubation_period": "12 hours to 5 days",
+      "symptoms": [
+        {
+          "symptom_name": "profuse watery diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Cholera fact sheet",
+            "CDC - Cholera",
+            "NHS - Cholera"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Cholera fact sheet",
+            "CDC - Cholera",
+            "NHS - Cholera"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "severe dehydration",
+          "normalized_symptom": "dehydration",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Cholera fact sheet",
+            "CDC - Cholera"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "leg cramps",
+          "normalized_symptom": "muscle cramps",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Cholera fact sheet",
+            "CDC - Cholera"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Amoebiasis",
+      "icd10_code": "A06",
+      "description": "A parasitic infection of the colon with the amoeba Entamoeba histolytica.",
+      "pathogen": "Entamoeba histolytica",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water"
+      ],
+      "incubation_period": "2-4 weeks",
+      "symptoms": [
+        {
+          "symptom_name": "loose feces",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Amebiasis",
+            "MSD Manual - Amebiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain or cramping",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Amebiasis",
+            "MSD Manual - Amebiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bloody stools",
+          "normalized_symptom": "bloody stools",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Amebiasis",
+            "MSD Manual - Amebiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "uncommon",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Amebiasis",
+            "MSD Manual - Amebiasis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Giardiasis",
+      "icd10_code": "A07.1",
+      "description": "A diarrheal disease caused by the microscopic parasite Giardia duodenalis.",
+      "pathogen": "Giardia duodenalis",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated water or food"
+      ],
+      "incubation_period": "1-3 weeks",
+      "symptoms": [
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Giardia",
+            "NHS - Giardiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal cramps or pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Giardia",
+            "NHS - Giardiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "gas or flatulence",
+          "normalized_symptom": "flatulence",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Giardia",
+            "NHS - Giardiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "foul-smelling stool",
+          "normalized_symptom": "foul-smelling stool",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Giardia",
+            "NHS - Giardiasis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Giardia",
+            "NHS - Giardiasis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Shigellosis",
+      "icd10_code": "A03",
+      "description": "An intestinal infection caused by a family of bacteria known as Shigella.",
+      "pathogen": "Shigella species",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water"
+      ],
+      "incubation_period": "1-2 days",
+      "symptoms": [
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Shigella",
+            "NHS - Dysentery"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bloody stools",
+          "normalized_symptom": "bloody stools",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Shigella",
+            "NHS - Dysentery"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Shigella",
+            "NHS - Dysentery"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain or cramps",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Shigella",
+            "NHS - Dysentery"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Non-typhoidal Salmonellosis",
+      "icd10_code": "A02",
+      "description": "A common bacterial disease that affects the intestinal tract, commonly caused by contaminated food.",
+      "pathogen": "Salmonella enterica (non-typhoidal serotypes)",
+      "transmission": [
+        "contaminated food or water",
+        "contact with infected animals"
+      ],
+      "incubation_period": "6 hours to 6 days",
+      "symptoms": [
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Salmonella",
+            "WHO - Non-typhoidal Salmonella"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Salmonella",
+            "WHO - Non-typhoidal Salmonella"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal cramps",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Salmonella",
+            "WHO - Non-typhoidal Salmonella"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Salmonella",
+            "WHO - Non-typhoidal Salmonella"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Salmonella",
+            "WHO - Non-typhoidal Salmonella"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Brucellosis",
+      "icd10_code": "A23",
+      "description": "A bacterial infection transmitted from animals to humans, primarily via unpasteurized dairy products.",
+      "pathogen": "Brucella species",
+      "transmission": [
+        "consumption of unpasteurized milk/cheese",
+        "inhalation",
+        "direct contact with infected animals"
+      ],
+      "incubation_period": "1-4 weeks",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "WHO - Brucellosis fact sheet",
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "weakness or fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Brucellosis fact sheet",
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sweats",
+          "normalized_symptom": "sweating",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "weight loss",
+          "normalized_symptom": "weight loss",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Brucellosis fact sheet",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Brucellosis",
+            "MSD Manual - Brucellosis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Tetanus",
+      "icd10_code": "A33-A35",
+      "description": "A serious illness caused by Clostridium tetani bacteria, leading to painful muscle contractions, particularly in the jaw and neck.",
+      "pathogen": "Clostridium tetani",
+      "transmission": [
+        "contamination of wounds with soil/feces containing spores"
+      ],
+      "incubation_period": "3-21 days (average 10 days)",
+      "symptoms": [
+        {
+          "symptom_name": "jaw cramping",
+          "normalized_symptom": "lockjaw",
+          "frequency": "hallmark",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus",
+            "NHS - Tetanus"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle spasms",
+          "normalized_symptom": "muscle spasms",
+          "frequency": "hallmark",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "mid",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus",
+            "NHS - Tetanus"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "difficulty swallowing",
+          "normalized_symptom": "dysphagia",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus",
+            "NHS - Tetanus"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sweating",
+          "normalized_symptom": "sweating",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus",
+            "NHS - Tetanus"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rapid heartbeat",
+          "normalized_symptom": "tachycardia",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Tetanus fact sheet",
+            "CDC - Tetanus",
+            "NHS - Tetanus"
+          ],
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "disease_name": "Pertussis (Whooping Cough)",
+      "icd10_code": "A37",
+      "description": "A highly contagious respiratory tract infection that is easily preventable by vaccine, known for its severe hacking cough.",
+      "pathogen": "Bordetella pertussis",
+      "transmission": [
+        "respiratory droplets"
+      ],
+      "incubation_period": "7-10 days",
+      "symptoms": [
+        {
+          "symptom_name": "paroxysmal cough",
+          "normalized_symptom": "cough",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Pertussis",
+            "NHS - Whooping cough"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "whooping sound",
+          "normalized_symptom": "stridor",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Pertussis",
+            "NHS - Whooping cough"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "runny nose",
+          "normalized_symptom": "runny nose",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Pertussis",
+            "NHS - Whooping cough"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "vomiting after coughing",
+          "normalized_symptom": "post-tussive vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Pertussis",
+            "NHS - Whooping cough"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "exhaustion",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Pertussis",
+            "NHS - Whooping cough"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Scarlet Fever",
+      "icd10_code": "A38",
+      "description": "A bacterial illness that develops in some people who have strep throat, featuring a bright red rash.",
+      "pathogen": "Group A Streptococcus (Streptococcus pyogenes)",
+      "transmission": [
+        "respiratory droplets",
+        "direct contact"
+      ],
+      "incubation_period": "2-5 days",
+      "symptoms": [
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "NHS - Scarlet fever",
+            "MSD Manual - Streptococcal Infections"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "NHS - Scarlet fever",
+            "MSD Manual - Streptococcal Infections"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sandpaper rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Scarlet fever",
+            "MSD Manual - Streptococcal Infections"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "strawberry tongue",
+          "normalized_symptom": "strawberry tongue",
+          "frequency": "hallmark",
+          "organ_system": "oral",
+          "onset_stage": "mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Scarlet fever",
+            "MSD Manual - Streptococcal Infections"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "swollen neck glands",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Scarlet fever",
+            "MSD Manual - Streptococcal Infections"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Lyme Disease",
+      "icd10_code": "A69.2",
+      "description": "A tick-borne illness caused by the bacterium Borrelia burgdorferi.",
+      "pathogen": "Borrelia burgdorferi",
+      "transmission": [
+        "tick bite (Ixodes species)"
+      ],
+      "incubation_period": "3-30 days",
+      "symptoms": [
+        {
+          "symptom_name": "erythema migrans (rash)",
+          "normalized_symptom": "skin rash",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "muscle and joint pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "NHS - Lyme disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "facial palsy",
+          "normalized_symptom": "facial palsy",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "arthritis",
+          "normalized_symptom": "joint pain",
+          "frequency": "uncommon",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Lyme Disease",
+            "MSD Manual - Lyme Disease"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Syphilis",
+      "icd10_code": "A50-A53",
+      "description": "A sexually transmitted infection caused by the bacterium Treponema pallidum, progressing through distinct stages if untreated.",
+      "pathogen": "Treponema pallidum",
+      "transmission": [
+        "sexual contact",
+        "mother-to-child (congenital)",
+        "blood transfusion (rare)"
+      ],
+      "incubation_period": "10-90 days (typically 21 days)",
+      "symptoms": [
+        {
+          "symptom_name": "painless sore (chancre)",
+          "normalized_symptom": "genital ulcer",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "primary",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "WHO - Syphilis fact sheet",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "skin rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "secondary",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "WHO - Syphilis fact sheet",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "swollen lymph nodes",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "secondary",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "secondary",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "secondary",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "secondary",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "patchy hair loss",
+          "normalized_symptom": "hair loss",
+          "frequency": "uncommon",
+          "organ_system": "dermatological",
+          "onset_stage": "secondary",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "warty growths (condylomata lata)",
+          "normalized_symptom": "condylomata lata",
+          "frequency": "uncommon",
+          "organ_system": "dermatological",
+          "onset_stage": "secondary",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Syphilis",
+            "NHS - Syphilis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Gonorrhea",
+      "icd10_code": "A54",
+      "description": "A sexually transmitted infection caused by Neisseria gonorrhoeae, affecting mucous membranes of the reproductive tract, mouth, throat, eyes, and rectum.",
+      "pathogen": "Neisseria gonorrhoeae",
+      "transmission": [
+        "sexual contact",
+        "mother-to-child during birth"
+      ],
+      "incubation_period": "1-14 days",
+      "symptoms": [
+        {
+          "symptom_name": "abnormal genital discharge",
+          "normalized_symptom": "genital discharge",
+          "frequency": "hallmark",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful or burning urination",
+          "normalized_symptom": "dysuria",
+          "frequency": "hallmark",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pelvic or abdominal pain (in women)",
+          "normalized_symptom": "pelvic pain",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bleeding between periods (in women)",
+          "normalized_symptom": "intermenstrual bleeding",
+          "frequency": "uncommon",
+          "organ_system": "genitourinary",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rectal discharge or pain",
+          "normalized_symptom": "rectal pain",
+          "frequency": "uncommon",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Gonorrhea",
+            "NHS - Gonorrhoea"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Chlamydia Infection",
+      "icd10_code": "A56",
+      "description": "A common sexually transmitted infection caused by Chlamydia trachomatis, often asymptomatic but can cause serious reproductive complications.",
+      "pathogen": "Chlamydia trachomatis",
+      "transmission": [
+        "sexual contact",
+        "mother-to-child during birth"
+      ],
+      "incubation_period": "7-21 days",
+      "symptoms": [
+        {
+          "symptom_name": "abnormal genital discharge",
+          "normalized_symptom": "genital discharge",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Chlamydia",
+            "NHS - Chlamydia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful urination",
+          "normalized_symptom": "dysuria",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Chlamydia",
+            "NHS - Chlamydia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pain during intercourse (in women)",
+          "normalized_symptom": "dyspareunia",
+          "frequency": "uncommon",
+          "organ_system": "genitourinary",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Chlamydia",
+            "NHS - Chlamydia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bleeding between periods or after sex (in women)",
+          "normalized_symptom": "intermenstrual bleeding",
+          "frequency": "uncommon",
+          "organ_system": "genitourinary",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Chlamydia",
+            "NHS - Chlamydia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "testicular pain (in men)",
+          "normalized_symptom": "testicular pain",
+          "frequency": "uncommon",
+          "organ_system": "genitourinary",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Chlamydia",
+            "NHS - Chlamydia"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Genital Herpes (HSV)",
+      "icd10_code": "A60",
+      "description": "A common sexually transmitted infection caused by herpes simplex virus, characterized by recurrent painful genital sores.",
+      "pathogen": "Herpes simplex virus (HSV-1 and HSV-2)",
+      "transmission": [
+        "sexual contact",
+        "skin-to-skin contact with sores"
+      ],
+      "incubation_period": "2-12 days",
+      "symptoms": [
+        {
+          "symptom_name": "painful blisters or sores on genitals",
+          "normalized_symptom": "genital ulcer",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Genital Herpes",
+            "NHS - Genital herpes"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "tingling or burning around genitals",
+          "normalized_symptom": "paresthesia",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Genital Herpes",
+            "NHS - Genital herpes"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful urination",
+          "normalized_symptom": "dysuria",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Genital Herpes",
+            "NHS - Genital herpes"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "flu-like symptoms",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Genital Herpes",
+            "NHS - Genital herpes"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Human Papillomavirus (HPV) Infection",
+      "icd10_code": "B97.7",
+      "description": "The most common sexually transmitted infection, with certain types causing genital warts and others associated with cancers.",
+      "pathogen": "Human papillomavirus (HPV)",
+      "transmission": [
+        "sexual contact",
+        "skin-to-skin contact"
+      ],
+      "incubation_period": "weeks to months",
+      "symptoms": [
+        {
+          "symptom_name": "genital warts",
+          "normalized_symptom": "genital warts",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - HPV",
+            "WHO - HPV fact sheet",
+            "NHS - HPV"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "common warts (hands/fingers)",
+          "normalized_symptom": "skin warts",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - HPV",
+            "NHS - HPV"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Pelvic Inflammatory Disease (PID)",
+      "icd10_code": "N73-N74",
+      "description": "An infection of the female upper genital tract, including the uterus, fallopian tubes, and ovaries, usually caused by sexually transmitted bacteria.",
+      "pathogen": "Chlamydia trachomatis, Neisseria gonorrhoeae (most common), mixed polymicrobial",
+      "transmission": [
+        "ascending infection from vagina/cervix"
+      ],
+      "incubation_period": "variable",
+      "symptoms": [
+        {
+          "symptom_name": "lower abdominal or pelvic pain",
+          "normalized_symptom": "pelvic pain",
+          "frequency": "hallmark",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abnormal vaginal discharge",
+          "normalized_symptom": "genital discharge",
+          "frequency": "very_common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "pain during sex",
+          "normalized_symptom": "dyspareunia",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful urination",
+          "normalized_symptom": "dysuria",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bleeding between periods or after sex",
+          "normalized_symptom": "intermenstrual bleeding",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - PID",
+            "NHS - PID"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Infective Endocarditis",
+      "icd10_code": "I33",
+      "description": "An infection of the inner lining of the heart chambers and valves (endocardium), usually caused by bacteria.",
+      "pathogen": "Staphylococcus aureus (most common), Streptococcus viridans, Enterococci",
+      "transmission": [
+        "hematogenous spread from bacteremia"
+      ],
+      "incubation_period": "variable (days to weeks)",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_high",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "new or changing heart murmur",
+          "normalized_symptom": "heart murmur",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "night sweats",
+          "normalized_symptom": "night sweats",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle and joint pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "weight loss",
+          "normalized_symptom": "weight loss",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MSD Manual - Infective Endocarditis",
+            "NHS - Endocarditis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Viral Gastroenteritis (Norovirus)",
+      "icd10_code": "A08.1",
+      "description": "A highly contagious illness caused by norovirus, the leading cause of vomiting and diarrhea from acute gastroenteritis.",
+      "pathogen": "Norovirus",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated food or water",
+        "person-to-person contact"
+      ],
+      "incubation_period": "12-48 hours",
+      "symptoms": [
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea",
+          "normalized_symptom": "nausea",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain or cramps",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "very_common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "body aches",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Norovirus",
+            "NHS - Norovirus"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Rotavirus Infection",
+      "icd10_code": "A08.0",
+      "description": "A highly contagious viral infection that is the most common cause of severe diarrhoeal disease among infants and young children worldwide.",
+      "pathogen": "Rotavirus",
+      "transmission": [
+        "fecal-oral route"
+      ],
+      "incubation_period": "about 2 days",
+      "symptoms": [
+        {
+          "symptom_name": "severe watery diarrhoea",
+          "normalized_symptom": "diarrhea",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Rotavirus",
+            "MedlinePlus - Rotavirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "vomiting",
+          "normalized_symptom": "vomiting",
+          "frequency": "hallmark",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Rotavirus",
+            "MedlinePlus - Rotavirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Rotavirus",
+            "MedlinePlus - Rotavirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "abdominal pain",
+          "normalized_symptom": "abdominal pain",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Rotavirus",
+            "MedlinePlus - Rotavirus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "dehydration",
+          "normalized_symptom": "dehydration",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Rotavirus",
+            "MedlinePlus - Rotavirus"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Respiratory Syncytial Virus (RSV) Infection",
+      "icd10_code": "J12.1",
+      "description": "A common respiratory virus that usually causes mild, cold-like symptoms but can be serious for infants and older adults.",
+      "pathogen": "Respiratory syncytial virus (RSV)",
+      "transmission": [
+        "respiratory droplets",
+        "direct contact with contaminated surfaces"
+      ],
+      "incubation_period": "4-6 days",
+      "symptoms": [
+        {
+          "symptom_name": "runny nose",
+          "normalized_symptom": "runny nose",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "cough",
+          "normalized_symptom": "cough",
+          "frequency": "very_common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sneezing",
+          "normalized_symptom": "sneezing",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "wheezing",
+          "normalized_symptom": "wheezing",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "decreased appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - RSV",
+            "NHS - Bronchiolitis (RSV)"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Diphtheria",
+      "icd10_code": "A36",
+      "description": "A serious bacterial infection affecting the mucous membranes of the throat and nose, producing a thick grey-white coating.",
+      "pathogen": "Corynebacterium diphtheriae",
+      "transmission": [
+        "respiratory droplets",
+        "direct contact with infected skin lesions"
+      ],
+      "incubation_period": "2-5 days",
+      "symptoms": [
+        {
+          "symptom_name": "thick grey-white membrane on throat",
+          "normalized_symptom": "pharyngeal membrane",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Diphtheria fact sheet",
+            "CDC - Diphtheria",
+            "NHS - Diphtheria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Diphtheria fact sheet",
+            "CDC - Diphtheria",
+            "NHS - Diphtheria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Diphtheria fact sheet",
+            "CDC - Diphtheria",
+            "NHS - Diphtheria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "swollen neck glands",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "very_common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Diphtheria fact sheet",
+            "CDC - Diphtheria",
+            "NHS - Diphtheria"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "difficulty breathing",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Diphtheria fact sheet",
+            "CDC - Diphtheria"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "difficulty swallowing",
+          "normalized_symptom": "dysphagia",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - Diphtheria",
+            "NHS - Diphtheria"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Poliomyelitis (Polio)",
+      "icd10_code": "A80",
+      "description": "A highly infectious viral disease that mainly affects young children and can cause irreversible paralysis.",
+      "pathogen": "Poliovirus (types 1, 2, 3)",
+      "transmission": [
+        "fecal-oral route",
+        "contaminated water"
+      ],
+      "incubation_period": "7-21 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio",
+            "NHS - Polio"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio",
+            "NHS - Polio"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio",
+            "NHS - Polio"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "nausea and vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Polio",
+            "NHS - Polio"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "neck stiffness",
+          "normalized_symptom": "neck stiffness",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "paralysis",
+          "normalized_symptom": "paralysis",
+          "frequency": "rare",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Poliomyelitis fact sheet",
+            "CDC - Polio",
+            "NHS - Polio"
+          ],
+          "evidence_count": 3
+        }
+      ]
+    },
+    {
+      "disease_name": "Japanese Encephalitis",
+      "icd10_code": "A83.0",
+      "description": "A mosquito-borne viral infection that is the leading cause of viral encephalitis in Asia.",
+      "pathogen": "Japanese encephalitis virus (JEV)",
+      "transmission": [
+        "mosquito bite (Culex species)"
+      ],
+      "incubation_period": "5-15 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis",
+            "NHS - Japanese encephalitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis",
+            "NHS - Japanese encephalitis"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "seizures",
+          "normalized_symptom": "seizures",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "neck stiffness",
+          "normalized_symptom": "neck stiffness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "disorientation or confusion",
+          "normalized_symptom": "confusion",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "mid",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "paralysis",
+          "normalized_symptom": "paralysis",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Japanese encephalitis fact sheet",
+            "CDC - Japanese encephalitis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Scrub Typhus",
+      "icd10_code": "A75.3",
+      "description": "A mite-borne infectious disease caused by Orientia tsutsugamushi, transmitted through the bite of infected larval mites (chiggers).",
+      "pathogen": "Orientia tsutsugamushi",
+      "transmission": [
+        "bite of infected larval mites (chiggers)"
+      ],
+      "incubation_period": "6-21 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "eschar (dark scab at bite site)",
+          "normalized_symptom": "eschar",
+          "frequency": "hallmark",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "mid",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "lymphadenopathy",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Scrub typhus",
+            "MSD Manual - Scrub Typhus"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Zika Virus Disease",
+      "icd10_code": "A92.5",
+      "description": "A mosquito-borne viral disease usually causing mild illness in adults but associated with serious birth defects when contracted during pregnancy.",
+      "pathogen": "Zika virus",
+      "transmission": [
+        "mosquito bite (Aedes)",
+        "sexual contact",
+        "mother-to-child"
+      ],
+      "incubation_period": "3-14 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika",
+            "NHS - Zika"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "rash",
+          "normalized_symptom": "skin rash",
+          "frequency": "very_common",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika",
+            "NHS - Zika"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika",
+            "NHS - Zika"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "conjunctivitis",
+          "normalized_symptom": "conjunctivitis",
+          "frequency": "common",
+          "organ_system": "ophthalmological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika",
+            "NHS - Zika"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Zika virus fact sheet",
+            "CDC - Zika"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Yellow Fever",
+      "icd10_code": "A95",
+      "description": "An acute viral hemorrhagic disease transmitted by infected mosquitoes, with a high case-fatality ratio in severe cases.",
+      "pathogen": "Yellow fever virus",
+      "transmission": [
+        "mosquito bite (Aedes, Haemagogus)"
+      ],
+      "incubation_period": "3-6 days",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "very_common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "nausea and vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "loss of appetite",
+          "normalized_symptom": "loss of appetite",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "jaundice",
+          "normalized_symptom": "jaundice",
+          "frequency": "uncommon",
+          "organ_system": "hepatic",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "bleeding (from mouth, nose, eyes, or stomach)",
+          "normalized_symptom": "hemorrhagic signs",
+          "frequency": "rare",
+          "organ_system": "hematological",
+          "onset_stage": "complication",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Yellow fever fact sheet",
+            "CDC - Yellow Fever"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Plague",
+      "icd10_code": "A20",
+      "description": "A life-threatening infectious disease caused by Yersinia pestis, transmitted through flea bites or contact with infected animals.",
+      "pathogen": "Yersinia pestis",
+      "transmission": [
+        "flea bites",
+        "direct contact with infected animals",
+        "respiratory droplets (pneumonic)"
+      ],
+      "incubation_period": "1-7 days",
+      "symptoms": [
+        {
+          "symptom_name": "sudden onset of fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "high",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "chills",
+          "normalized_symptom": "chills",
+          "frequency": "hallmark",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "very_common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful swollen lymph nodes (buboes)",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "hallmark",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "weakness",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "cough (pneumonic plague)",
+          "normalized_symptom": "cough",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "shortness of breath (pneumonic plague)",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "mid",
+          "severity": "life_threatening",
+          "evidence_sources": [
+            "WHO - Plague fact sheet",
+            "CDC - Plague"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Toxoplasmosis",
+      "icd10_code": "B58",
+      "description": "A parasitic disease caused by Toxoplasma gondii, usually asymptomatic in healthy individuals but dangerous for immunocompromised patients and during pregnancy.",
+      "pathogen": "Toxoplasma gondii",
+      "transmission": [
+        "ingestion of undercooked contaminated meat",
+        "contact with infected cat feces",
+        "mother-to-child"
+      ],
+      "incubation_period": "5-23 days",
+      "symptoms": [
+        {
+          "symptom_name": "swollen lymph nodes",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Toxoplasmosis",
+            "NHS - Toxoplasmosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Toxoplasmosis",
+            "NHS - Toxoplasmosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Toxoplasmosis",
+            "NHS - Toxoplasmosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Toxoplasmosis",
+            "NHS - Toxoplasmosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "headache",
+          "normalized_symptom": "headache",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - Toxoplasmosis",
+            "NHS - Toxoplasmosis"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Cytomegalovirus (CMV) Infection",
+      "icd10_code": "B25",
+      "description": "A common herpesvirus infection, usually asymptomatic in healthy individuals but can cause serious illness in immunocompromised patients and newborns.",
+      "pathogen": "Cytomegalovirus (CMV, HHV-5)",
+      "transmission": [
+        "body fluids (saliva, blood, urine, breast milk)",
+        "sexual contact",
+        "mother-to-child"
+      ],
+      "incubation_period": "variable (weeks to months)",
+      "symptoms": [
+        {
+          "symptom_name": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - CMV",
+            "NHS - CMV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "very_common",
+          "organ_system": "systemic",
+          "onset_stage": "early",
+          "severity": "moderate_to_severe",
+          "evidence_sources": [
+            "CDC - CMV",
+            "NHS - CMV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "sore throat",
+          "normalized_symptom": "sore throat",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - CMV",
+            "NHS - CMV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "muscle pain",
+          "normalized_symptom": "muscle pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - CMV",
+            "NHS - CMV"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "swollen glands",
+          "normalized_symptom": "lymphadenopathy",
+          "frequency": "common",
+          "organ_system": "lymphatic",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - CMV",
+            "NHS - CMV"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    },
+    {
+      "disease_name": "Candidiasis",
+      "icd10_code": "B37",
+      "description": "A fungal infection caused by Candida species, most commonly affecting the mouth (oral thrush), genitals, and skin.",
+      "pathogen": "Candida species (most commonly Candida albicans)",
+      "transmission": [
+        "endogenous overgrowth",
+        "person-to-person (oral/genital)"
+      ],
+      "incubation_period": "variable",
+      "symptoms": [
+        {
+          "symptom_name": "white patches in mouth (oral thrush)",
+          "normalized_symptom": "oral thrush",
+          "frequency": "hallmark",
+          "organ_system": "oral",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "soreness and redness in mouth",
+          "normalized_symptom": "oral pain",
+          "frequency": "common",
+          "organ_system": "oral",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "difficulty eating or swallowing",
+          "normalized_symptom": "dysphagia",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "mid",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "genital itching or soreness",
+          "normalized_symptom": "genital pruritus",
+          "frequency": "hallmark",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "thick white vaginal discharge",
+          "normalized_symptom": "genital discharge",
+          "frequency": "hallmark",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "mild_to_moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom_name": "painful urination (genital candidiasis)",
+          "normalized_symptom": "dysuria",
+          "frequency": "common",
+          "organ_system": "genitourinary",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Candidiasis",
+            "NHS - Thrush"
+          ],
+          "evidence_count": 2
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "created_date": "2026-06-22",
+    "methodology": "Symptoms extracted only when explicitly mentioned by at least 2 authoritative medical sources. Frequency classified based on language used by sources (e.g., 'common', 'may also have', 'in severe cases'). Synonyms normalized per specification.",
+    "authoritative_sources_consulted": [
+      "WHO (World Health Organization)",
+      "CDC (Centers for Disease Control and Prevention)",
+      "NHS (National Health Service, UK)",
+      "MedlinePlus (NIH)",
+      "MSD Manual (Professional Edition)"
+    ],
+    "total_diseases": 50,
+    "total_symptoms_extracted": 373,
+    "quality_rules_applied": [
+      "Each symptom confirmed by minimum 2 authoritative sources",
+      "No symptoms inferred - only explicitly mentioned symptoms included",
+      "False negatives preferred over false positives",
+      "Synonym normalization applied consistently"
+    ]
+  }
+}

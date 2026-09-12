@@ -1,0 +1,629 @@
+{
+  "nodes": [
+    {
+      "id": "leptospirosis"
+    },
+    {
+      "id": "influenza"
+    },
+    {
+      "id": "measles"
+    },
+    {
+      "id": "acute bronchitis"
+    },
+    {
+      "id": "pertussis (whooping cough)"
+    },
+    {
+      "id": "empyema"
+    },
+    {
+      "id": "aspiration pneumonia"
+    },
+    {
+      "id": "malaria"
+    },
+    {
+      "id": "japanese encephalitis"
+    },
+    {
+      "id": "scrub typhus"
+    },
+    {
+      "id": "hepatitis a"
+    },
+    {
+      "id": "hepatitis b"
+    },
+    {
+      "id": "hepatitis c"
+    },
+    {
+      "id": "mumps"
+    },
+    {
+      "id": "chickenpox (varicella)"
+    },
+    {
+      "id": "meningitis"
+    },
+    {
+      "id": "shigellosis"
+    },
+    {
+      "id": "amoebiasis"
+    },
+    {
+      "id": "syphilis"
+    },
+    {
+      "id": "gonorrhea"
+    },
+    {
+      "id": "chlamydia infection"
+    },
+    {
+      "id": "genital herpes (hsv)"
+    },
+    {
+      "id": "pelvic inflammatory disease (pid)"
+    },
+    {
+      "id": "tetanus"
+    },
+    {
+      "id": "non-typhoidal salmonellosis"
+    },
+    {
+      "id": "rotavirus infection"
+    },
+    {
+      "id": "bronchiolitis"
+    },
+    {
+      "id": "respiratory syncytial virus (rsv) infection"
+    },
+    {
+      "id": "poliomyelitis (polio)"
+    },
+    {
+      "id": "infectious mononucleosis (ebv)"
+    },
+    {
+      "id": "chikungunya"
+    },
+    {
+      "id": "zika virus disease"
+    },
+    {
+      "id": "yellow fever"
+    },
+    {
+      "id": "brucellosis"
+    },
+    {
+      "id": "toxoplasmosis"
+    },
+    {
+      "id": "cytomegalovirus (cmv) infection"
+    },
+    {
+      "id": "asthma"
+    },
+    {
+      "id": "chronic obstructive pulmonary disease (copd)"
+    },
+    {
+      "id": "common cold"
+    },
+    {
+      "id": "hypersensitivity pneumonitis"
+    },
+    {
+      "id": "pleural effusion"
+    },
+    {
+      "id": "interstitial lung disease"
+    },
+    {
+      "id": "typhoid fever"
+    },
+    {
+      "id": "occupational lung disease"
+    },
+    {
+      "id": "bradycardia"
+    },
+    {
+      "id": "pulmonary hypertension"
+    },
+    {
+      "id": "pleurisy"
+    },
+    {
+      "id": "silicosis"
+    },
+    {
+      "id": "sarcoidosis"
+    },
+    {
+      "id": "pulmonary fibrosis"
+    },
+    {
+      "id": "pericarditis"
+    },
+    {
+      "id": "pneumonia"
+    },
+    {
+      "id": "congenital heart disease"
+    },
+    {
+      "id": "acute respiratory distress syndrome (ards)"
+    },
+    {
+      "id": "infective endocarditis"
+    },
+    {
+      "id": "tuberculosis"
+    },
+    {
+      "id": "stable angina"
+    },
+    {
+      "id": "human papillomavirus (hpv) infection"
+    },
+    {
+      "id": "sinusitis"
+    },
+    {
+      "id": "hypertension"
+    },
+    {
+      "id": "peripheral artery disease"
+    },
+    {
+      "id": "acute myocardial infarction (heart attack)"
+    },
+    {
+      "id": "coronary artery disease"
+    },
+    {
+      "id": "pneumothorax"
+    },
+    {
+      "id": "aortic stenosis"
+    },
+    {
+      "id": "hypertrophic cardiomyopathy"
+    },
+    {
+      "id": "atrial fibrillation"
+    },
+    {
+      "id": "cardiomyopathy"
+    },
+    {
+      "id": "mitral regurgitation"
+    },
+    {
+      "id": "supraventricular tachycardia"
+    },
+    {
+      "id": "pulmonary embolism"
+    },
+    {
+      "id": "heart failure"
+    },
+    {
+      "id": "valvular heart disease"
+    },
+    {
+      "id": "mitral valve prolapse"
+    },
+    {
+      "id": "myocarditis"
+    },
+    {
+      "id": "ventricular septal defect (vsd)"
+    }
+  ],
+  "edges": [
+    {
+      "source": "influenza",
+      "target": "leptospirosis",
+      "weight": 2
+    },
+    {
+      "source": "acute bronchitis",
+      "target": "measles",
+      "weight": 2
+    },
+    {
+      "source": "acute bronchitis",
+      "target": "pertussis (whooping cough)",
+      "weight": 1
+    },
+    {
+      "source": "aspiration pneumonia",
+      "target": "empyema",
+      "weight": 29
+    },
+    {
+      "source": "leptospirosis",
+      "target": "malaria",
+      "weight": 2
+    },
+    {
+      "source": "japanese encephalitis",
+      "target": "scrub typhus",
+      "weight": 2
+    },
+    {
+      "source": "hepatitis a",
+      "target": "hepatitis b",
+      "weight": 4
+    },
+    {
+      "source": "hepatitis a",
+      "target": "hepatitis c",
+      "weight": 11
+    },
+    {
+      "source": "chickenpox (varicella)",
+      "target": "mumps",
+      "weight": 2
+    },
+    {
+      "source": "japanese encephalitis",
+      "target": "meningitis",
+      "weight": 2
+    },
+    {
+      "source": "amoebiasis",
+      "target": "shigellosis",
+      "weight": 18
+    },
+    {
+      "source": "chickenpox (varicella)",
+      "target": "syphilis",
+      "weight": 1
+    },
+    {
+      "source": "chlamydia infection",
+      "target": "gonorrhea",
+      "weight": 15
+    },
+    {
+      "source": "genital herpes (hsv)",
+      "target": "pelvic inflammatory disease (pid)",
+      "weight": 1
+    },
+    {
+      "source": "mumps",
+      "target": "tetanus",
+      "weight": 1
+    },
+    {
+      "source": "non",
+      "target": "typhoidal salmonellosis",
+      "weight": 5
+    },
+    {
+      "source": "amoebiasis",
+      "target": "non",
+      "weight": 2
+    },
+    {
+      "source": "bronchiolitis",
+      "target": "respiratory syncytial virus (rsv) infection",
+      "weight": 2
+    },
+    {
+      "source": "meningitis",
+      "target": "poliomyelitis (polio)",
+      "weight": 1
+    },
+    {
+      "source": "infectious mononucleosis (ebv)",
+      "target": "poliomyelitis (polio)",
+      "weight": 1
+    },
+    {
+      "source": "leptospirosis",
+      "target": "scrub typhus",
+      "weight": 2
+    },
+    {
+      "source": "chikungunya",
+      "target": "zika virus disease",
+      "weight": 3
+    },
+    {
+      "source": "leptospirosis",
+      "target": "yellow fever",
+      "weight": 2
+    },
+    {
+      "source": "brucellosis",
+      "target": "mumps",
+      "weight": 1
+    },
+    {
+      "source": "mumps",
+      "target": "toxoplasmosis",
+      "weight": 1
+    },
+    {
+      "source": "cytomegalovirus (cmv) infection",
+      "target": "infectious mononucleosis (ebv)",
+      "weight": 4
+    },
+    {
+      "source": "asthma",
+      "target": "chronic obstructive pulmonary disease (copd)",
+      "weight": 2
+    },
+    {
+      "source": "common cold",
+      "target": "influenza",
+      "weight": 1
+    },
+    {
+      "source": "hypersensitivity pneumonitis",
+      "target": "pleural effusion",
+      "weight": 6
+    },
+    {
+      "source": "aspiration pneumonia",
+      "target": "hypersensitivity pneumonitis",
+      "weight": 5
+    },
+    {
+      "source": "chronic obstructive pulmonary disease (copd)",
+      "target": "interstitial lung disease",
+      "weight": 1
+    },
+    {
+      "source": "acute bronchitis",
+      "target": "typhoid fever",
+      "weight": 1
+    },
+    {
+      "source": "asthma",
+      "target": "occupational lung disease",
+      "weight": 22
+    },
+    {
+      "source": "bradycardia",
+      "target": "pulmonary hypertension",
+      "weight": 8
+    },
+    {
+      "source": "pleural effusion",
+      "target": "pleurisy",
+      "weight": 7
+    },
+    {
+      "source": "interstitial lung disease",
+      "target": "silicosis",
+      "weight": 4
+    },
+    {
+      "source": "pleural effusion",
+      "target": "sarcoidosis",
+      "weight": 1
+    },
+    {
+      "source": "aspiration pneumonia",
+      "target": "interstitial lung disease",
+      "weight": 2
+    },
+    {
+      "source": "aspiration pneumonia",
+      "target": "silicosis",
+      "weight": 2
+    },
+    {
+      "source": "interstitial lung disease",
+      "target": "pulmonary fibrosis",
+      "weight": 35
+    },
+    {
+      "source": "empyema",
+      "target": "pericarditis",
+      "weight": 6
+    },
+    {
+      "source": "empyema",
+      "target": "pneumonia",
+      "weight": 1
+    },
+    {
+      "source": "acute respiratory distress syndrome (ards)",
+      "target": "congenital heart disease",
+      "weight": 2
+    },
+    {
+      "source": "brucellosis",
+      "target": "infective endocarditis",
+      "weight": 2
+    },
+    {
+      "source": "hypersensitivity pneumonitis",
+      "target": "interstitial lung disease",
+      "weight": 1
+    },
+    {
+      "source": "hypersensitivity pneumonitis",
+      "target": "tuberculosis",
+      "weight": 2
+    },
+    {
+      "source": "pericarditis",
+      "target": "stable angina",
+      "weight": 2
+    },
+    {
+      "source": "interstitial lung disease",
+      "target": "pertussis (whooping cough)",
+      "weight": 2
+    },
+    {
+      "source": "chlamydia infection",
+      "target": "human papillomavirus (hpv) infection",
+      "weight": 17
+    },
+    {
+      "source": "hypertension",
+      "target": "sinusitis",
+      "weight": 5
+    },
+    {
+      "source": "human papillomavirus (hpv) infection",
+      "target": "peripheral artery disease",
+      "weight": 1
+    },
+    {
+      "source": "acute respiratory distress syndrome (ards)",
+      "target": "pleural effusion",
+      "weight": 1
+    },
+    {
+      "source": "acute myocardial infarction (heart attack)",
+      "target": "coronary artery disease",
+      "weight": 2
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "pneumothorax",
+      "weight": 2
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "hypertrophic cardiomyopathy",
+      "weight": 9
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "atrial fibrillation",
+      "weight": 17
+    },
+    {
+      "source": "atrial fibrillation",
+      "target": "bradycardia",
+      "weight": 1
+    },
+    {
+      "source": "cardiomyopathy",
+      "target": "mitral regurgitation",
+      "weight": 2
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "supraventricular tachycardia",
+      "weight": 4
+    },
+    {
+      "source": "pulmonary embolism",
+      "target": "supraventricular tachycardia",
+      "weight": 2
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "bradycardia",
+      "weight": 1
+    },
+    {
+      "source": "cardiomyopathy",
+      "target": "heart failure",
+      "weight": 3
+    },
+    {
+      "source": "pulmonary hypertension",
+      "target": "valvular heart disease",
+      "weight": 15
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "valvular heart disease",
+      "weight": 2
+    },
+    {
+      "source": "acute myocardial infarction (heart attack)",
+      "target": "pulmonary hypertension",
+      "weight": 1
+    },
+    {
+      "source": "atrial fibrillation",
+      "target": "mitral valve prolapse",
+      "weight": 14
+    },
+    {
+      "source": "bradycardia",
+      "target": "mitral valve prolapse",
+      "weight": 1
+    },
+    {
+      "source": "atrial fibrillation",
+      "target": "supraventricular tachycardia",
+      "weight": 2
+    },
+    {
+      "source": "atrial fibrillation",
+      "target": "cardiomyopathy",
+      "weight": 1
+    },
+    {
+      "source": "cardiomyopathy",
+      "target": "myocarditis",
+      "weight": 16
+    },
+    {
+      "source": "atrial fibrillation",
+      "target": "myocarditis",
+      "weight": 3
+    },
+    {
+      "source": "cardiomyopathy",
+      "target": "stable angina",
+      "weight": 1
+    },
+    {
+      "source": "heart failure",
+      "target": "mitral regurgitation",
+      "weight": 2
+    },
+    {
+      "source": "empyema",
+      "target": "hypersensitivity pneumonitis",
+      "weight": 2
+    },
+    {
+      "source": "empyema",
+      "target": "myocarditis",
+      "weight": 1
+    },
+    {
+      "source": "congenital heart disease",
+      "target": "ventricular septal defect (vsd)",
+      "weight": 4
+    },
+    {
+      "source": "congenital heart disease",
+      "target": "mitral regurgitation",
+      "weight": 1
+    },
+    {
+      "source": "pneumothorax",
+      "target": "ventricular septal defect (vsd)",
+      "weight": 1
+    },
+    {
+      "source": "aortic stenosis",
+      "target": "coronary artery disease",
+      "weight": 2
+    }
+  ]
+}

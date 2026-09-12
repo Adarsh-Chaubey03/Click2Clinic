@@ -1,0 +1,6 @@
+{
+  "reliability": "HIGH",
+  "explainability": "HIGH",
+  "determinism": "100%",
+  "safety": "NEEDS REVIEW"
+}

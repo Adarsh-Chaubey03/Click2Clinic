@@ -1,0 +1,3167 @@
+{
+  "schema_version": "3.0.0",
+  "created_at": "2026-07-02T08:20:16.823Z",
+  "description": "Canonical medical symptom ontology for knowledge graph construction",
+  "canonical_symptoms": [
+    {
+      "canonical_symptom": "fever",
+      "aliases": [
+        "high temperature",
+        "high fever",
+        "sustained high fever",
+        "flu-like symptoms",
+        "sudden onset of fever",
+        "mild fever and chills",
+        "mild fever",
+        "fever and chills",
+        "pyrexia"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "chills",
+        "sweating",
+        "night sweats",
+        "malaise",
+        "fatigue",
+        "lymphadenopathy",
+        "skin rash"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [
+        "night sweats"
+      ],
+      "disease_count": 53
+    },
+    {
+      "canonical_symptom": "fatigue",
+      "aliases": [
+        "feeling unusually tired",
+        "fatigue and weakness",
+        "extreme tiredness",
+        "fatigue or lack of energy",
+        "fatigue or tiredness",
+        "fatigue and exhaustion",
+        "extreme tiredness or fatigue",
+        "feeling tired and unwell",
+        "tiredness",
+        "weakness",
+        "extreme fatigue",
+        "weakness or fatigue",
+        "exhaustion",
+        "excessive daytime sleepiness"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "fever",
+        "malaise",
+        "loss of appetite",
+        "muscle pain",
+        "dehydration",
+        "anemia",
+        "weight loss",
+        "difficulty sleeping"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 50
+    },
+    {
+      "canonical_symptom": "shortness of breath",
+      "aliases": [
+        "shortness of breath (especially with activity or when lying down)",
+        "shortness of breath (especially with exertion or when lying down)",
+        "extreme shortness of breath",
+        "rapid breathing or shortness of breath",
+        "shortness of breath or rapid breathing",
+        "shortness of breath (especially during exercise)",
+        "dyspnea",
+        "difficulty breathing",
+        "shortness of breath (pneumonic plague)",
+        "difficulty breathing or rapid breathing",
+        "sudden shortness of breath",
+        "progressive shortness of breath",
+        "severe shortness of breath",
+        "breathlessness"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "cough",
+        "wheezing",
+        "chest tightness",
+        "rapid breathing",
+        "palpitations",
+        "chest pain",
+        "peripheral edema",
+        "anemia",
+        "digital clubbing"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [
+        "nocturnal dyspnea",
+        "orthopnea",
+        "tachypnea",
+        "rapid breathing"
+      ],
+      "disease_count": 44
+    },
+    {
+      "canonical_symptom": "cough",
+      "aliases": [
+        "persistent cough or wheezing",
+        "dry cough",
+        "persistent cough",
+        "paroxysmal cough",
+        "cough (pneumonic plague)",
+        "chronic cough",
+        "cough (sometimes with bloody mucus)",
+        "dry, hacking cough",
+        "cough (often with foul-smelling phlegm)",
+        "cough (often chronic)"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "shortness of breath",
+        "chest tightness",
+        "sore throat",
+        "sputum production",
+        "wheezing",
+        "digital clubbing"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [
+        "hemoptysis",
+        "sputum production",
+        "post-tussive vomiting"
+      ],
+      "disease_count": 32
+    },
+    {
+      "canonical_symptom": "headache",
+      "aliases": [
+        "headache (usually early morning)",
+        "severe headache",
+        "morning headache",
+        "cephalalgia"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "dizziness",
+        "sensitivity to light",
+        "neck stiffness"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [
+        "migraine",
+        "retro-orbital pain"
+      ],
+      "disease_count": 30
+    },
+    {
+      "canonical_symptom": "chest pain",
+      "aliases": [
+        "chest pain or discomfort",
+        "chest pain or tightness",
+        "chest pain or discomfort (often described as pressure or squeezing)",
+        "chest pressure or pain",
+        "chest pain or tightness (angina)",
+        "chest pain (angina)",
+        "sharp chest pain (worsens with deep breathing or lying down, improves when sitting up and leaning forward)",
+        "chest pain (especially during exercise)",
+        "sharp chest pain",
+        "sudden sharp chest pain",
+        "chest discomfort"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "palpitations",
+        "shortness of breath"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 23
+    },
+    {
+      "canonical_symptom": "muscle pain",
+      "aliases": [
+        "body aches",
+        "aching muscles",
+        "muscle and joint pain",
+        "muscle aches",
+        "aching muscles and joints",
+        "myalgia"
+      ],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [
+        "fatigue",
+        "joint pain"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [
+        "muscle cramps",
+        "muscle spasms"
+      ],
+      "disease_count": 20
+    },
+    {
+      "canonical_symptom": "sore throat",
+      "aliases": [
+        "pharyngeal pain"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "cough",
+        "hoarse voice",
+        "dysphagia"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 13
+    },
+    {
+      "canonical_symptom": "diarrhea",
+      "aliases": [
+        "diarrhoea",
+        "profuse watery diarrhoea",
+        "loose feces",
+        "severe watery diarrhoea",
+        "loose stools"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "abdominal pain",
+        "dehydration",
+        "nausea"
+      ],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 13
+    },
+    {
+      "canonical_symptom": "lymphadenopathy",
+      "aliases": [
+        "swollen lymph nodes",
+        "swollen glands",
+        "swollen neck glands",
+        "painful swollen lymph nodes (buboes)",
+        "swollen lymph nodes in neck"
+      ],
+      "body_system": "hematological",
+      "related_symptoms": [
+        "fever"
+      ],
+      "parent_category": "hematological symptoms",
+      "child_symptoms": [
+        "tonsillar inflammation",
+        "parotitis"
+      ],
+      "disease_count": 13
+    },
+    {
+      "canonical_symptom": "palpitations",
+      "aliases": [
+        "irregular heart rhythms",
+        "rapid or irregular heartbeat",
+        "palpitations (rapid, fluttering, or pounding heartbeat)",
+        "rapid heartbeat or palpitations",
+        "rapid, pounding, or fluttering heartbeat",
+        "palpitations (racing or irregular heartbeat)",
+        "rapid, fluttering heartbeat",
+        "rapid, irregular heartbeat",
+        "palpitations (rapid or fluttering heartbeat)",
+        "heart palpitations",
+        "rapid heartbeat"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "dizziness",
+        "chest pain",
+        "shortness of breath"
+      ],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [
+        "absent pulse"
+      ],
+      "disease_count": 12
+    },
+    {
+      "canonical_symptom": "dizziness",
+      "aliases": [
+        "feeling faint",
+        "lightheadedness or dizziness",
+        "dizziness or lightheadedness",
+        "dizziness or fainting",
+        "feeling faint or dizzy",
+        "dizziness or fainting (syncope)",
+        "feeling faint or dizziness",
+        "dizziness or fainting spells",
+        "lightheadedness"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "headache",
+        "syncope",
+        "palpitations",
+        "dehydration"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [
+        "syncope"
+      ],
+      "disease_count": 12
+    },
+    {
+      "canonical_symptom": "skin rash",
+      "aliases": [
+        "rash",
+        "itchy blister-like rash",
+        "sandpaper rash",
+        "erythema migrans (rash)",
+        "tender red bumps on skin (erythema nodosum)",
+        "exanthem"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [
+        "pruritus",
+        "fever"
+      ],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [
+        "petechial rash"
+      ],
+      "disease_count": 12
+    },
+    {
+      "canonical_symptom": "abdominal pain",
+      "aliases": [
+        "severe abdominal pain",
+        "abdominal pain or cramping",
+        "abdominal cramps or pain",
+        "abdominal pain or cramps",
+        "abdominal cramps",
+        "stomach pain"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "nausea or vomiting",
+        "diarrhea",
+        "jaundice"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 12
+    },
+    {
+      "canonical_symptom": "loss of appetite",
+      "aliases": [
+        "decreased appetite",
+        "anorexia",
+        "reduced appetite"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "nausea",
+        "fatigue",
+        "jaundice",
+        "weight loss"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 11
+    },
+    {
+      "canonical_symptom": "nausea",
+      "aliases": [
+        "feeling sick"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "vomiting",
+        "loss of appetite",
+        "nausea or vomiting",
+        "diarrhea"
+      ],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 10
+    },
+    {
+      "canonical_symptom": "joint pain",
+      "aliases": [
+        "muscle and joint pain",
+        "severe joint pain",
+        "arthritis",
+        "arthralgia"
+      ],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [
+        "muscle pain"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [
+        "joint swelling"
+      ],
+      "disease_count": 10
+    },
+    {
+      "canonical_symptom": "weight loss",
+      "aliases": [
+        "unexplained weight loss",
+        "unintended weight loss",
+        "poor weight gain and growth"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "loss of appetite",
+        "fatigue"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 10
+    },
+    {
+      "canonical_symptom": "wheezing",
+      "aliases": [
+        "wheezing or gasping for breath",
+        "abnormal breathing patterns (e.g., wheezing)",
+        "wheeze"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "cough",
+        "shortness of breath"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 10
+    },
+    {
+      "canonical_symptom": "vomiting",
+      "aliases": [
+        "emesis"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "nausea",
+        "nausea or vomiting",
+        "dehydration"
+      ],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [
+        "persistent vomiting",
+        "post-tussive vomiting"
+      ],
+      "disease_count": 10
+    },
+    {
+      "canonical_symptom": "peripheral edema",
+      "aliases": [
+        "swelling in legs, ankles, or feet",
+        "swelling in legs, ankles, and feet",
+        "swollen ankles and feet",
+        "swelling in ankles and feet",
+        "swollen ankles or feet",
+        "swelling of the legs, ankles, and feet",
+        "swollen ankles",
+        "swelling in ankles, legs, or abdomen"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "shortness of breath",
+        "weight gain"
+      ],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [
+        "leg swelling",
+        "ascites"
+      ],
+      "disease_count": 8
+    },
+    {
+      "canonical_symptom": "chills",
+      "aliases": [
+        "chills and night sweats",
+        "rigors"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "fever"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 8
+    },
+    {
+      "canonical_symptom": "runny nose",
+      "aliases": [
+        "rhinorrhea",
+        "blocked or runny nose",
+        "runny or blocked nose",
+        "running nose"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "sneezing",
+        "nasal congestion"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 8
+    },
+    {
+      "canonical_symptom": "sweating",
+      "aliases": [
+        "cold sweat",
+        "sweats",
+        "excessive sweating",
+        "diaphoresis"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "fever"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 7
+    },
+    {
+      "canonical_symptom": "confusion",
+      "aliases": [
+        "disorientation or confusion",
+        "confusion (especially in older adults)",
+        "confusion or extreme tiredness",
+        "mental confusion",
+        "altered mental status"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "drowsiness",
+        "seizures"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [
+        "drowsiness",
+        "unconsciousness"
+      ],
+      "disease_count": 7
+    },
+    {
+      "canonical_symptom": "nausea or vomiting",
+      "aliases": [
+        "nausea and vomiting"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "nausea",
+        "vomiting",
+        "abdominal pain"
+      ],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 6
+    },
+    {
+      "canonical_symptom": "jaundice",
+      "aliases": [
+        "yellowing of skin and eyes",
+        "icterus"
+      ],
+      "body_system": "other",
+      "related_symptoms": [
+        "abdominal pain",
+        "loss of appetite"
+      ],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 6
+    },
+    {
+      "canonical_symptom": "sputum production",
+      "aliases": [
+        "cough that produces frothy sputum (may be blood-tinged)",
+        "mucus production",
+        "coughing up large amounts of mucus/sputum",
+        "persistent cough with thick mucus",
+        "phlegm"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "cough"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 5
+    },
+    {
+      "canonical_symptom": "dysuria",
+      "aliases": [
+        "painful or burning urination",
+        "painful urination",
+        "painful urination (genital candidiasis)"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 5
+    },
+    {
+      "canonical_symptom": "cyanosis",
+      "aliases": [
+        "blue-tinged skin, lips, or fingernails",
+        "pale or bluish skin",
+        "bluish color to lips or skin",
+        "blue-tinged skin or lips"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 4
+    },
+    {
+      "canonical_symptom": "tachycardia",
+      "aliases": [
+        "fast heart rate",
+        "rapid heartbeat"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 4
+    },
+    {
+      "canonical_symptom": "genital discharge",
+      "aliases": [
+        "abnormal genital discharge",
+        "abnormal vaginal discharge",
+        "thick white vaginal discharge"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 4
+    },
+    {
+      "canonical_symptom": "chest tightness",
+      "aliases": [
+        "chest discomfort",
+        "chest constriction"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "cough",
+        "shortness of breath"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 4
+    },
+    {
+      "canonical_symptom": "radiating pain",
+      "aliases": [
+        "pain radiating to arms, shoulders, or jaw",
+        "pain spreading to arms, neck, jaw, or back",
+        "pain radiating to arm, back, neck, or jaw"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "poor feeding",
+      "aliases": [
+        "poor weight gain or feeding difficulties",
+        "poor feeding and failure to thrive",
+        "feeding difficulties"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "hoarse voice",
+      "aliases": [
+        "hoarse or muffled voice",
+        "hoarseness or loss of voice",
+        "hoarseness"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "sore throat"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "hemoptysis",
+      "aliases": [
+        "coughing up blood"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "night sweats",
+      "aliases": [],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "fever"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "seizures",
+      "aliases": [
+        "convulsions",
+        "fits"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "confusion",
+        "unconsciousness"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [
+        "unconsciousness"
+      ],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "dark urine",
+      "aliases": [],
+      "body_system": "other",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "pale stool",
+      "aliases": [],
+      "body_system": "other",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "neck stiffness",
+      "aliases": [
+        "stiff neck",
+        "nuchal rigidity"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "headache"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "paralysis",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "dysphagia",
+      "aliases": [
+        "difficulty swallowing",
+        "difficulty eating or swallowing"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [
+        "sore throat"
+      ],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "intermenstrual bleeding",
+      "aliases": [
+        "bleeding between periods (in women)",
+        "bleeding between periods or after sex (in women)",
+        "bleeding between periods or after sex"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "pleuritic chest pain",
+      "aliases": [
+        "sharp chest pain that worsens with breathing",
+        "pain worsened by coughing or sneezing",
+        "pain worsened by deep breathing",
+        "sharp chest pain (worsens with breathing)"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "digital clubbing",
+      "aliases": [
+        "clubbing of fingers",
+        "clubbing of fingers and toes",
+        "clubbing of fingertips",
+        "finger clubbing"
+      ],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [
+        "shortness of breath",
+        "cough"
+      ],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 3
+    },
+    {
+      "canonical_symptom": "ascites",
+      "aliases": [
+        "swelling of abdomen",
+        "swelling of the abdomen",
+        "abdominal swelling"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "syncope",
+      "aliases": [
+        "fainting",
+        "fainting or near-fainting"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "dizziness"
+      ],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "cold extremities",
+      "aliases": [
+        "coldness in lower leg or foot",
+        "cold hands and feet"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "claudication"
+      ],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "skin discoloration",
+      "aliases": [
+        "changes in skin color of legs",
+        "red or discolored skin on the leg"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "leg swelling",
+      "aliases": [
+        "swelling in one leg (rarely both)",
+        "leg pain or swelling (from DVT)"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "choking",
+      "aliases": [
+        "feeling of suffocating or drowning",
+        "gasping or choking during sleep"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "anxiety",
+      "aliases": [
+        "anxiety, restlessness or a feeling of apprehension"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "apnea",
+      "aliases": [
+        "no breathing or abnormal breathing (gasping)",
+        "episodes of stopped breathing during sleep"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "malaise",
+      "aliases": [
+        "general malaise",
+        "feeling unwell"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "fever",
+        "fatigue"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "loss of taste or smell",
+      "aliases": [
+        "loss of taste and smell"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "sneezing",
+      "aliases": [],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "runny nose"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "rapid breathing",
+      "aliases": [],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "shortness of breath"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "hemorrhagic signs",
+      "aliases": [
+        "blood in vomit or stool",
+        "bleeding (from mouth, nose, eyes, or stomach)"
+      ],
+      "body_system": "hematological",
+      "related_symptoms": [
+        "mucosal bleeding",
+        "petechial rash"
+      ],
+      "parent_category": "hematological symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "conjunctivitis",
+      "aliases": [
+        "red watery eyes",
+        "red eyes",
+        "pink eye"
+      ],
+      "body_system": "ophthalmological",
+      "related_symptoms": [
+        "sensitivity to light"
+      ],
+      "parent_category": "ophthalmological symptoms",
+      "child_symptoms": [
+        "conjunctival suffusion"
+      ],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "dehydration",
+      "aliases": [
+        "severe dehydration"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "diarrhea",
+        "vomiting",
+        "fatigue",
+        "dizziness"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "bloody stools",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "genital ulcer",
+      "aliases": [
+        "painless sore (chancre)",
+        "painful blisters or sores on genitals",
+        "genital sores"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "pelvic pain",
+      "aliases": [
+        "pelvic or abdominal pain (in women)",
+        "lower abdominal or pelvic pain"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "dyspareunia",
+      "aliases": [
+        "pain during intercourse (in women)",
+        "pain during sex",
+        "pain during intercourse"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "genitourinary symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "recurrent respiratory infections",
+      "aliases": [
+        "frequent respiratory infections",
+        "frequent lung infections"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 2
+    },
+    {
+      "canonical_symptom": "epistaxis",
+      "aliases": [
+        "nosebleeds",
+        "nose bleeds"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "visual disturbance",
+      "aliases": [
+        "vision changes",
+        "blurred vision"
+      ],
+      "body_system": "ophthalmological",
+      "related_symptoms": [],
+      "parent_category": "ophthalmological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "tinnitus",
+      "aliases": [
+        "buzzing in the ears",
+        "ringing in ears"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "weight gain",
+      "aliases": [
+        "sudden weight gain from fluid retention"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [
+        "peripheral edema"
+      ],
+      "parent_category": "constitutional symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "claudication",
+      "aliases": [
+        "leg pain or cramping when walking",
+        "intermittent claudication"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "cold extremities",
+        "leg pain"
+      ],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "muscle weakness",
+      "aliases": [
+        "numbness or weakness in the legs",
+        "weakness in limbs"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "skin ulcer",
+      "aliases": [
+        "sores on toes or feet that won't heal"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "alopecia",
+      "aliases": [
+        "hair loss or slower hair growth on legs",
+        "patchy hair loss"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "leg pain",
+      "aliases": [
+        "pain or tenderness in the leg (often starting in the calf)"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [
+        "claudication"
+      ],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "warm skin",
+      "aliases": [
+        "warm skin in the affected area"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "asymptomatic",
+      "aliases": [
+        "usually no symptoms (asymptomatic)"
+      ],
+      "body_system": "multisystem",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "migraine",
+      "aliases": [
+        "migraines with aura"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "stroke",
+      "aliases": [
+        "unexplained stroke (due to blood clots)"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "unconsciousness",
+      "aliases": [
+        "sudden loss of consciousness (collapse)"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "seizures"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "absent pulse",
+      "aliases": [
+        "no pulse"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "difficulty sleeping",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "fatigue"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "pneumonia",
+      "aliases": [],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "sepsis",
+      "aliases": [],
+      "body_system": "multisystem",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "facial pressure",
+      "aliases": [
+        "pressure in ears and face"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "anemia",
+      "aliases": [
+        "anaemia"
+      ],
+      "body_system": "hematological",
+      "related_symptoms": [
+        "fatigue",
+        "shortness of breath"
+      ],
+      "parent_category": "hematological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "respiratory distress",
+      "aliases": [
+        "acute respiratory distress"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "retro-orbital pain",
+      "aliases": [
+        "pain behind the eyes"
+      ],
+      "body_system": "ophthalmological",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "persistent vomiting",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "mucosal bleeding",
+      "aliases": [
+        "bleeding gums or nose"
+      ],
+      "body_system": "hematological",
+      "related_symptoms": [
+        "hemorrhagic signs"
+      ],
+      "parent_category": "hematological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "restlessness",
+      "aliases": [
+        "restlessness or irritability"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "recurrent infections",
+      "aliases": [],
+      "body_system": "other",
+      "related_symptoms": [],
+      "parent_category": "hematological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "mouth ulcers",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "pruritus",
+      "aliases": [
+        "itchy skin",
+        "itching"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [
+        "skin rash"
+      ],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "sensitivity to light",
+      "aliases": [
+        "photophobia"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "headache",
+        "conjunctivitis"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "petechial rash",
+      "aliases": [
+        "rash (non-blanching)",
+        "petechiae"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [
+        "hemorrhagic signs"
+      ],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "drowsiness",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [
+        "confusion"
+      ],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "constipation",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "joint swelling",
+      "aliases": [],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [],
+      "parent_category": "musculoskeletal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "oral lesions",
+      "aliases": [
+        "Koplik spots"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "parotitis",
+      "aliases": [
+        "swollen salivary glands"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "lymphadenopathy",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "paraesthesia",
+      "aliases": [
+        "pain or tingling at bite site",
+        "tingling",
+        "numbness and tingling"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "agitation",
+      "aliases": [
+        "agitation or aggressive behavior"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "hallucinations",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "hydrophobia",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "conjunctival suffusion",
+      "aliases": [
+        "red eyes",
+        "conjunctival injection"
+      ],
+      "body_system": "ophthalmological",
+      "related_symptoms": [],
+      "parent_category": "ophthalmological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "renal failure",
+      "aliases": [
+        "kidney failure"
+      ],
+      "body_system": "other",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "muscle cramps",
+      "aliases": [
+        "leg cramps",
+        "cramping"
+      ],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [],
+      "parent_category": "musculoskeletal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "flatulence",
+      "aliases": [
+        "gas or flatulence"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "foul-smelling stool",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "lockjaw",
+      "aliases": [
+        "jaw cramping",
+        "trismus"
+      ],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [],
+      "parent_category": "musculoskeletal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "muscle spasms",
+      "aliases": [],
+      "body_system": "musculoskeletal",
+      "related_symptoms": [],
+      "parent_category": "musculoskeletal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "stridor",
+      "aliases": [
+        "whooping sound"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "post-tussive vomiting",
+      "aliases": [
+        "vomiting after coughing"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "strawberry tongue",
+      "aliases": [],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "facial palsy",
+      "aliases": [],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "hair loss",
+      "aliases": [
+        "patchy hair loss"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "condylomata lata",
+      "aliases": [
+        "warty growths (condylomata lata)"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "rectal pain",
+      "aliases": [
+        "rectal discharge or pain"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "testicular pain",
+      "aliases": [
+        "testicular pain (in men)"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "paresthesia",
+      "aliases": [
+        "tingling or burning around genitals"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "genital warts",
+      "aliases": [],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "skin warts",
+      "aliases": [
+        "common warts (hands/fingers)"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "heart murmur",
+      "aliases": [
+        "new or changing heart murmur"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "pharyngeal membrane",
+      "aliases": [
+        "thick grey-white membrane on throat"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "eschar",
+      "aliases": [
+        "eschar (dark scab at bite site)"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "oral thrush",
+      "aliases": [
+        "white patches in mouth (oral thrush)",
+        "oral candidiasis",
+        "white patches in mouth"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "oral pain",
+      "aliases": [
+        "soreness and redness in mouth"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "genital pruritus",
+      "aliases": [
+        "genital itching or soreness",
+        "genital itching"
+      ],
+      "body_system": "genitourinary",
+      "related_symptoms": [],
+      "parent_category": "genitourinary symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "nocturnal dyspnea",
+      "aliases": [
+        "difficulty sleeping due to breathing",
+        "paroxysmal nocturnal dyspnea"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "facial pain",
+      "aliases": [
+        "facial pain or pressure"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "nasal congestion",
+      "aliases": [
+        "blocked or stuffy nose",
+        "nasal obstruction"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [
+        "runny nose"
+      ],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [
+        "nasal discharge",
+        "runny nose"
+      ],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "nasal discharge",
+      "aliases": [
+        "nasal discharge (green or yellow)"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "loss of smell",
+      "aliases": [
+        "reduced sense of smell"
+      ],
+      "body_system": "neurological",
+      "related_symptoms": [],
+      "parent_category": "neurological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "postnasal drip",
+      "aliases": [],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "dental pain",
+      "aliases": [
+        "toothache (upper teeth)"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "halitosis",
+      "aliases": [
+        "bad breath"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "odynophagia",
+      "aliases": [
+        "pain on swallowing",
+        "painful swallowing"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "tonsillar inflammation",
+      "aliases": [
+        "red and swollen tonsils"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "lymphadenopathy",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "throat clearing",
+      "aliases": [
+        "constant need to clear throat"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "throat irritation",
+      "aliases": [
+        "tickling sensation or rawness in throat"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "snoring",
+      "aliases": [
+        "loud snoring"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "dry mouth",
+      "aliases": [
+        "dry mouth or sore throat upon awakening"
+      ],
+      "body_system": "gastrointestinal",
+      "related_symptoms": [],
+      "parent_category": "gastrointestinal symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "orthopnea",
+      "aliases": [
+        "difficulty breathing when lying flat"
+      ],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "eye pain",
+      "aliases": [
+        "eye pain or blurred vision"
+      ],
+      "body_system": "ophthalmological",
+      "related_symptoms": [],
+      "parent_category": "pain symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "salty sweat",
+      "aliases": [
+        "very salty-tasting skin"
+      ],
+      "body_system": "dermatological",
+      "related_symptoms": [],
+      "parent_category": "dermatological symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "tachypnea",
+      "aliases": [],
+      "body_system": "respiratory",
+      "related_symptoms": [],
+      "parent_category": "respiratory symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    },
+    {
+      "canonical_symptom": "hypotension",
+      "aliases": [
+        "low blood pressure"
+      ],
+      "body_system": "cardiovascular",
+      "related_symptoms": [],
+      "parent_category": "cardiovascular symptoms",
+      "child_symptoms": [],
+      "disease_count": 1
+    }
+  ],
+  "hierarchy_edges": [
+    {
+      "parent": "constitutional symptoms",
+      "child": "fever",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "chills",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "fatigue",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "malaise",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "sweating",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "weight loss",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "weight gain",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "loss of appetite",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "dehydration",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "night sweats",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "cough",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "shortness of breath",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "wheezing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "chest tightness",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sputum production",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "runny nose",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sneezing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sore throat",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "hoarse voice",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "stridor",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nasal congestion",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nasal discharge",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "postnasal drip",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "rapid breathing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "epistaxis",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "hemoptysis",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nocturnal dyspnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "orthopnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "throat clearing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "throat irritation",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "choking",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "apnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "snoring",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "respiratory distress",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "recurrent respiratory infections",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "pharyngeal membrane",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "tachypnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "odynophagia",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "headache",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "chest pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "abdominal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "muscle pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "joint pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "facial pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "retro-orbital pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "pelvic pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "leg pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "testicular pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "rectal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "dental pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "eye pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "oral pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "palpitations",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "peripheral edema",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "syncope",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "hypotension",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "claudication",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "cold extremities",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "leg swelling",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "absent pulse",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "heart murmur",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "nausea",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "diarrhea",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "nausea or vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "abdominal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "constipation",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "bloody stools",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "flatulence",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "foul-smelling stool",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "ascites",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "dysphagia",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "post-tussive vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "persistent vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "halitosis",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "dry mouth",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "strawberry tongue",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "mouth ulcers",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "oral thrush",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "oral lesions",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "headache",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "dizziness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "confusion",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "seizures",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "sensitivity to light",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "drowsiness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "restlessness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "agitation",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "hallucinations",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "hydrophobia",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "facial palsy",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "paraesthesia",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "tinnitus",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "neck stiffness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "difficulty sleeping",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "loss of taste or smell",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "loss of smell",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "muscle weakness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "migraine",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "stroke",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "unconsciousness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "anxiety",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin rash",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "pruritus",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "jaundice",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin discoloration",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin ulcer",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "alopecia",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "warm skin",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "petechial rash",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "genital ulcer",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "condylomata lata",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "genital warts",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin warts",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "eschar",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "salty sweat",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "digital clubbing",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "joint pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "joint swelling",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle cramps",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle spasms",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "lockjaw",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "digital clubbing",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "conjunctivitis",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "conjunctival suffusion",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "visual disturbance",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "eye pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "lymphadenopathy",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "anemia",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "hemorrhagic signs",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "mucosal bleeding",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "recurrent infections",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "pelvic pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "dyspareunia",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "testicular pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "genital pruritus",
+      "type": "category_member"
+    },
+    {
+      "parent": "fever",
+      "child": "night sweats",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "hemoptysis",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "sputum production",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "post-tussive vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "nocturnal dyspnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "orthopnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "tachypnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "rapid breathing",
+      "type": "specialization"
+    },
+    {
+      "parent": "skin rash",
+      "child": "petechial rash",
+      "type": "specialization"
+    },
+    {
+      "parent": "dizziness",
+      "child": "syncope",
+      "type": "specialization"
+    },
+    {
+      "parent": "palpitations",
+      "child": "absent pulse",
+      "type": "specialization"
+    },
+    {
+      "parent": "peripheral edema",
+      "child": "leg swelling",
+      "type": "specialization"
+    },
+    {
+      "parent": "peripheral edema",
+      "child": "ascites",
+      "type": "specialization"
+    },
+    {
+      "parent": "vomiting",
+      "child": "persistent vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "vomiting",
+      "child": "post-tussive vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "muscle pain",
+      "child": "muscle cramps",
+      "type": "specialization"
+    },
+    {
+      "parent": "muscle pain",
+      "child": "muscle spasms",
+      "type": "specialization"
+    },
+    {
+      "parent": "lymphadenopathy",
+      "child": "tonsillar inflammation",
+      "type": "specialization"
+    },
+    {
+      "parent": "lymphadenopathy",
+      "child": "parotitis",
+      "type": "specialization"
+    },
+    {
+      "parent": "seizures",
+      "child": "unconsciousness",
+      "type": "specialization"
+    },
+    {
+      "parent": "nasal congestion",
+      "child": "nasal discharge",
+      "type": "specialization"
+    },
+    {
+      "parent": "nasal congestion",
+      "child": "runny nose",
+      "type": "specialization"
+    },
+    {
+      "parent": "headache",
+      "child": "migraine",
+      "type": "specialization"
+    },
+    {
+      "parent": "headache",
+      "child": "retro-orbital pain",
+      "type": "specialization"
+    },
+    {
+      "parent": "confusion",
+      "child": "drowsiness",
+      "type": "specialization"
+    },
+    {
+      "parent": "confusion",
+      "child": "unconsciousness",
+      "type": "specialization"
+    },
+    {
+      "parent": "joint pain",
+      "child": "joint swelling",
+      "type": "specialization"
+    },
+    {
+      "parent": "conjunctivitis",
+      "child": "conjunctival suffusion",
+      "type": "specialization"
+    }
+  ],
+  "relationship_edges": [
+    {
+      "symptom_a": "fever",
+      "symptom_b": "chills",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fever",
+      "symptom_b": "sweating",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fever",
+      "symptom_b": "night sweats",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fever",
+      "symptom_b": "malaise",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fever",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "cough",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "cough",
+      "symptom_b": "chest tightness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "cough",
+      "symptom_b": "sore throat",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "cough",
+      "symptom_b": "sputum production",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "cough",
+      "symptom_b": "wheezing",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "shortness of breath",
+      "symptom_b": "wheezing",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "shortness of breath",
+      "symptom_b": "chest tightness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "shortness of breath",
+      "symptom_b": "rapid breathing",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "nausea",
+      "symptom_b": "vomiting",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "nausea",
+      "symptom_b": "loss of appetite",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "nausea or vomiting",
+      "symptom_b": "nausea",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "nausea or vomiting",
+      "symptom_b": "vomiting",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "nausea or vomiting",
+      "symptom_b": "abdominal pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "diarrhea",
+      "symptom_b": "abdominal pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "diarrhea",
+      "symptom_b": "dehydration",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "diarrhea",
+      "symptom_b": "nausea",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "vomiting",
+      "symptom_b": "dehydration",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "headache",
+      "symptom_b": "dizziness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "headache",
+      "symptom_b": "sensitivity to light",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "headache",
+      "symptom_b": "neck stiffness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "dizziness",
+      "symptom_b": "syncope",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "dizziness",
+      "symptom_b": "palpitations",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "palpitations",
+      "symptom_b": "chest pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "palpitations",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "chest pain",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "peripheral edema",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "peripheral edema",
+      "symptom_b": "weight gain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fatigue",
+      "symptom_b": "malaise",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fatigue",
+      "symptom_b": "loss of appetite",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "fatigue",
+      "symptom_b": "muscle pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "jaundice",
+      "symptom_b": "abdominal pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "jaundice",
+      "symptom_b": "loss of appetite",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "runny nose",
+      "symptom_b": "sneezing",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "runny nose",
+      "symptom_b": "nasal congestion",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "sore throat",
+      "symptom_b": "hoarse voice",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "sore throat",
+      "symptom_b": "dysphagia",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "muscle pain",
+      "symptom_b": "joint pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "muscle pain",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "confusion",
+      "symptom_b": "drowsiness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "confusion",
+      "symptom_b": "seizures",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "seizures",
+      "symptom_b": "unconsciousness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "lymphadenopathy",
+      "symptom_b": "fever",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "skin rash",
+      "symptom_b": "pruritus",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "skin rash",
+      "symptom_b": "fever",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "hemorrhagic signs",
+      "symptom_b": "mucosal bleeding",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "hemorrhagic signs",
+      "symptom_b": "petechial rash",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "dehydration",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "dehydration",
+      "symptom_b": "dizziness",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "anemia",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "anemia",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "weight loss",
+      "symptom_b": "loss of appetite",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "weight loss",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "claudication",
+      "symptom_b": "cold extremities",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "claudication",
+      "symptom_b": "leg pain",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "difficulty sleeping",
+      "symptom_b": "fatigue",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "conjunctivitis",
+      "symptom_b": "sensitivity to light",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "digital clubbing",
+      "symptom_b": "shortness of breath",
+      "relationship_type": "clinically_related"
+    },
+    {
+      "symptom_a": "digital clubbing",
+      "symptom_b": "cough",
+      "relationship_type": "clinically_related"
+    }
+  ],
+  "statistics": {
+    "total_canonical_symptoms": 149,
+    "total_aliases": 311,
+    "average_aliases_per_symptom": 2.09,
+    "total_hierarchy_edges": 165,
+    "total_related_symptom_edges": 63,
+    "duplicate_canonical_symptoms_removed": 5,
+    "total_disease_symptom_links": 645,
+    "validation_errors": 0,
+    "validation_status": "PASS"
+  },
+  "validation_errors": []
+}

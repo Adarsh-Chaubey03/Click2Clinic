@@ -1,0 +1,13 @@
+{
+  "schema_version": "3.0.0",
+  "generated_at": "2026-07-02T08:20:16.846Z",
+  "total_canonical_symptoms": 149,
+  "total_aliases": 311,
+  "average_aliases_per_symptom": 2.09,
+  "total_hierarchy_edges": 165,
+  "total_related_symptom_edges": 63,
+  "duplicate_canonical_symptoms_removed": 5,
+  "total_disease_symptom_links": 645,
+  "validation_errors": 0,
+  "validation_status": "PASS"
+}

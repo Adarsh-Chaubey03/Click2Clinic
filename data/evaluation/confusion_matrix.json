@@ -1,0 +1,384 @@
+{
+  "influenza": {
+    "influenza": 18,
+    "leptospirosis": 2
+  },
+  "covid-19": {
+    "covid-19": 18,
+    "measles": 2
+  },
+  "common cold": {
+    "common cold": 19,
+    "pertussis (whooping cough)": 1
+  },
+  "pneumonia": {
+    "pneumonia": 18,
+    "empyema": 2
+  },
+  "tuberculosis": {
+    "tuberculosis": 20
+  },
+  "malaria": {
+    "malaria": 18,
+    "leptospirosis": 2
+  },
+  "dengue fever": {
+    "dengue fever": 20
+  },
+  "hiv/aids": {
+    "hiv/aids": 18,
+    "japanese encephalitis": 2
+  },
+  "hepatitis b": {
+    "hepatitis b": 19,
+    "hepatitis a": 1
+  },
+  "meningitis": {
+    "meningitis": 20
+  },
+  "typhoid fever": {
+    "typhoid fever": 19,
+    "tetanus": 1
+  },
+  "hepatitis a": {
+    "hepatitis a": 20
+  },
+  "hepatitis c": {
+    "hepatitis a": 15,
+    "hepatitis c": 4,
+    "hepatitis b": 1
+  },
+  "chikungunya": {
+    "chikungunya": 20
+  },
+  "chickenpox (varicella)": {
+    "chickenpox (varicella)": 18,
+    "mumps": 2
+  },
+  "measles": {
+    "measles": 20
+  },
+  "mumps": {
+    "mumps": 20
+  },
+  "rabies": {
+    "rabies": 19,
+    "japanese encephalitis": 1
+  },
+  "leptospirosis": {
+    "leptospirosis": 20
+  },
+  "infectious mononucleosis (ebv)": {
+    "infectious mononucleosis (ebv)": 20
+  },
+  "cholera": {
+    "cholera": 20
+  },
+  "amoebiasis": {
+    "amoebiasis": 18,
+    "shigellosis": 2
+  },
+  "giardiasis": {
+    "giardiasis": 20
+  },
+  "shigellosis": {
+    "amoebiasis": 16,
+    "shigellosis": 4
+  },
+  "non-typhoidal salmonellosis": {
+    "non-typhoidal salmonellosis": 20
+  },
+  "brucellosis": {
+    "brucellosis": 20
+  },
+  "tetanus": {
+    "tetanus": 20
+  },
+  "pertussis (whooping cough)": {
+    "pertussis (whooping cough)": 20
+  },
+  "scarlet fever": {
+    "scarlet fever": 20
+  },
+  "lyme disease": {
+    "lyme disease": 20
+  },
+  "syphilis": {
+    "syphilis": 19,
+    "chickenpox (varicella)": 1
+  },
+  "gonorrhea": {
+    "gonorrhea": 20
+  },
+  "chlamydia infection": {
+    "gonorrhea": 15,
+    "chlamydia infection": 4,
+    "pelvic inflammatory disease (pid)": 1
+  },
+  "genital herpes (hsv)": {
+    "genital herpes (hsv)": 20
+  },
+  "human papillomavirus (hpv) infection": {
+    "human papillomavirus (hpv) infection": 20
+  },
+  "pelvic inflammatory disease (pid)": {
+    "pelvic inflammatory disease (pid)": 18,
+    "genital herpes (hsv)": 1,
+    "mumps": 1
+  },
+  "infective endocarditis": {
+    "infective endocarditis": 20
+  },
+  "viral gastroenteritis (norovirus)": {
+    "viral gastroenteritis (norovirus)": 20
+  },
+  "rotavirus infection": {
+    "rotavirus infection": 13,
+    "non-typhoidal salmonellosis": 7
+  },
+  "respiratory syncytial virus (rsv) infection": {
+    "respiratory syncytial virus (rsv) infection": 18,
+    "bronchiolitis": 2
+  },
+  "diphtheria": {
+    "diphtheria": 20
+  },
+  "poliomyelitis (polio)": {
+    "poliomyelitis (polio)": 18,
+    "meningitis": 1,
+    "infectious mononucleosis (ebv)": 1
+  },
+  "japanese encephalitis": {
+    "japanese encephalitis": 19,
+    "meningitis": 1
+  },
+  "scrub typhus": {
+    "scrub typhus": 18,
+    "leptospirosis": 2
+  },
+  "zika virus disease": {
+    "zika virus disease": 17,
+    "chikungunya": 3
+  },
+  "yellow fever": {
+    "yellow fever": 18,
+    "leptospirosis": 2
+  },
+  "plague": {
+    "plague": 20
+  },
+  "toxoplasmosis": {
+    "toxoplasmosis": 18,
+    "mumps": 2
+  },
+  "cytomegalovirus (cmv) infection": {
+    "cytomegalovirus (cmv) infection": 16,
+    "infectious mononucleosis (ebv)": 4
+  },
+  "candidiasis": {
+    "candidiasis": 20
+  },
+  "asthma": {
+    "asthma": 20
+  },
+  "chronic obstructive pulmonary disease (copd)": {
+    "chronic obstructive pulmonary disease (copd)": 18,
+    "asthma": 2
+  },
+  "acute bronchitis": {
+    "acute bronchitis": 19,
+    "common cold": 1
+  },
+  "bronchiolitis": {
+    "bronchiolitis": 19,
+    "asthma": 1
+  },
+  "sinusitis": {
+    "sinusitis": 20
+  },
+  "pharyngitis": {
+    "pharyngitis": 20
+  },
+  "laryngitis": {
+    "laryngitis": 20
+  },
+  "pleurisy": {
+    "pleurisy": 9,
+    "hypersensitivity pneumonitis": 6,
+    "pleural effusion": 5
+  },
+  "pulmonary embolism": {
+    "pulmonary embolism": 20
+  },
+  "interstitial lung disease": {
+    "interstitial lung disease": 19,
+    "chronic obstructive pulmonary disease (copd)": 1
+  },
+  "obstructive sleep apnea": {
+    "obstructive sleep apnea": 19,
+    "typhoid fever": 1
+  },
+  "bronchiectasis": {
+    "bronchiectasis": 18,
+    "asthma": 2
+  },
+  "pulmonary hypertension": {
+    "pulmonary hypertension": 17,
+    "bradycardia": 3
+  },
+  "pneumothorax": {
+    "pneumothorax": 18,
+    "pleural effusion": 2
+  },
+  "pleural effusion": {
+    "pleural effusion": 13,
+    "pleurisy": 5,
+    "interstitial lung disease": 1,
+    "sarcoidosis": 1
+  },
+  "empyema": {
+    "empyema": 16,
+    "aspiration pneumonia": 4
+  },
+  "pulmonary fibrosis": {
+    "interstitial lung disease": 20
+  },
+  "sarcoidosis": {
+    "sarcoidosis": 18,
+    "interstitial lung disease": 2
+  },
+  "cystic fibrosis": {
+    "cystic fibrosis": 20
+  },
+  "aspiration pneumonia": {
+    "empyema": 15,
+    "aspiration pneumonia": 4,
+    "pneumonia": 1
+  },
+  "acute respiratory distress syndrome (ards)": {
+    "acute respiratory distress syndrome (ards)": 18,
+    "congenital heart disease": 2
+  },
+  "occupational lung disease": {
+    "asthma": 20
+  },
+  "hypersensitivity pneumonitis": {
+    "hypersensitivity pneumonitis": 13,
+    "brucellosis": 2,
+    "interstitial lung disease": 3,
+    "tuberculosis": 2
+  },
+  "silicosis": {
+    "interstitial lung disease": 14,
+    "silicosis": 2,
+    "stable angina": 2,
+    "pertussis (whooping cough)": 2
+  },
+  "asbestosis": {
+    "asbestosis": 20
+  },
+  "hypertension": {
+    "chlamydia infection": 13,
+    "sinusitis": 5,
+    "peripheral artery disease": 1,
+    "pleural effusion": 1
+  },
+  "coronary artery disease": {
+    "coronary artery disease": 16,
+    "acute myocardial infarction (heart attack)": 2,
+    "pneumothorax": 1,
+    "aortic stenosis": 1
+  },
+  "stable angina": {
+    "stable angina": 20
+  },
+  "acute myocardial infarction (heart attack)": {
+    "acute myocardial infarction (heart attack)": 20
+  },
+  "heart failure": {
+    "heart failure": 20
+  },
+  "atrial fibrillation": {
+    "atrial fibrillation": 11,
+    "aortic stenosis": 2,
+    "bradycardia": 5,
+    "cardiomyopathy": 2
+  },
+  "supraventricular tachycardia": {
+    "supraventricular tachycardia": 14,
+    "aortic stenosis": 4,
+    "pulmonary embolism": 2
+  },
+  "bradycardia": {
+    "bradycardia": 18,
+    "aortic stenosis": 2
+  },
+  "peripheral artery disease": {
+    "peripheral artery disease": 20
+  },
+  "cardiomyopathy": {
+    "cardiomyopathy": 17,
+    "heart failure": 3
+  },
+  "valvular heart disease": {
+    "pulmonary hypertension": 15,
+    "aortic stenosis": 2,
+    "bradycardia": 1,
+    "valvular heart disease": 1,
+    "acute myocardial infarction (heart attack)": 1
+  },
+  "mitral valve prolapse": {
+    "atrial fibrillation": 18,
+    "bradycardia": 1,
+    "aortic stenosis": 1
+  },
+  "aortic stenosis": {
+    "aortic stenosis": 17,
+    "atrial fibrillation": 3
+  },
+  "aortic regurgitation": {
+    "myocarditis": 14,
+    "cardiomyopathy": 3,
+    "mitral regurgitation": 1,
+    "atrial fibrillation": 2
+  },
+  "mitral regurgitation": {
+    "mitral regurgitation": 17,
+    "heart failure": 2,
+    "myocarditis": 1
+  },
+  "pericarditis": {
+    "empyema": 18,
+    "hypersensitivity pneumonitis": 2
+  },
+  "myocarditis": {
+    "myocarditis": 19,
+    "empyema": 1
+  },
+  "deep vein thrombosis (dvt)": {
+    "deep vein thrombosis (dvt)": 19,
+    "pharyngitis": 1
+  },
+  "pulmonary edema": {
+    "pulmonary edema": 20
+  },
+  "congenital heart disease": {
+    "congenital heart disease": 20
+  },
+  "patent foramen ovale (pfo)": {
+    "patent foramen ovale (pfo)": 18,
+    "chlamydia infection": 2
+  },
+  "ventricular septal defect (vsd)": {
+    "ventricular septal defect (vsd)": 14,
+    "congenital heart disease": 5,
+    "pneumothorax": 1
+  },
+  "hypertrophic cardiomyopathy": {
+    "aortic stenosis": 20
+  },
+  "cardiac arrest": {
+    "cardiac arrest": 18,
+    "chlamydia infection": 2
+  }
+}

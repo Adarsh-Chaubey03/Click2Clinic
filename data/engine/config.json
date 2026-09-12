@@ -1,0 +1,41 @@
+{
+  "min_questions": 5,
+  "max_questions": 30,
+  "probability_gap_threshold": 0.20,
+  "confidence_threshold": 0.95,
+  "minimum_candidate_count": 1,
+  "minimum_information_gain": 0.01,
+  "minimum_useful_gain": 0.01,
+  "contradiction_threshold_score": -10.0,
+  "utility_weights": {
+    "information_gain": 0.50,
+    "positive_elimination": 0.15,
+    "negative_elimination": 0.15,
+    "pairwise_separation": 0.20,
+    "evidence_score": 0.00,
+    "frequency_score": 0.05,
+    "coverage_score": 0.05
+  },
+  "frequency_weights": {
+    "hallmark": 5.0,
+    "very_common": 3.0,
+    "common": 2.0,
+    "uncommon": 1.0,
+    "rare": 0.5,
+    "unknown": 0.5
+  },
+  "penalty_weights": {
+    "hallmark": -5.0,
+    "very_common": -3.0,
+    "common": -2.0,
+    "uncommon": -1.0,
+    "rare": -0.5,
+    "unknown": -0.5
+  },
+  "confidence_caps": {
+    "very_high": 0.95,
+    "high": 0.85,
+    "moderate": 0.60,
+    "low": 0.30
+  }
+}

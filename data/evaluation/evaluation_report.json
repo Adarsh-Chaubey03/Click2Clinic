@@ -1,0 +1,67 @@
+{
+  "overall_metrics": {
+    "total_cases": 1980,
+    "top1_accuracy": 0.8106,
+    "top3_accuracy": 0.9611,
+    "top5_accuracy": 0.9884,
+    "mrr": 0.8858,
+    "average_questions_asked": 16.37,
+    "average_confidence": 0.4628
+  },
+  "variant_breakdown": {
+    "typical": {
+      "count": 297,
+      "top1": 258,
+      "mrr": 0.9251,
+      "top1_accuracy": 0.8687
+    },
+    "early": {
+      "count": 198,
+      "top1": 132,
+      "mrr": 0.8084,
+      "top1_accuracy": 0.6667
+    },
+    "late": {
+      "count": 198,
+      "top1": 176,
+      "mrr": 0.9369,
+      "top1_accuracy": 0.8889
+    },
+    "mild": {
+      "count": 198,
+      "top1": 158,
+      "mrr": 0.8636,
+      "top1_accuracy": 0.798
+    },
+    "severe": {
+      "count": 198,
+      "top1": 171,
+      "mrr": 0.9179,
+      "top1_accuracy": 0.8636
+    },
+    "incomplete": {
+      "count": 297,
+      "top1": 229,
+      "mrr": 0.867,
+      "top1_accuracy": 0.771
+    },
+    "misleading": {
+      "count": 198,
+      "top1": 165,
+      "mrr": 0.9015,
+      "top1_accuracy": 0.8333
+    },
+    "overlapping": {
+      "count": 198,
+      "top1": 164,
+      "mrr": 0.896,
+      "top1_accuracy": 0.8283
+    },
+    "contradictory": {
+      "count": 198,
+      "top1": 152,
+      "mrr": 0.846,
+      "top1_accuracy": 0.7677
+    }
+  }
+}

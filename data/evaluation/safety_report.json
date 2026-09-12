@@ -1,0 +1,40 @@
+{
+  "misses": [
+    {
+      "case": "RCVF-1",
+      "disease": "meningitis",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-3",
+      "disease": "malaria",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-4",
+      "disease": "malaria",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-10",
+      "disease": "malaria",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-14",
+      "disease": "malaria",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-26",
+      "disease": "malaria",
+      "rank": -1
+    },
+    {
+      "case": "RCVF-28",
+      "disease": "malaria",
+      "rank": -1
+    }
+  ],
+  "emergency_top3_acc": 0.7666666666666667
+}

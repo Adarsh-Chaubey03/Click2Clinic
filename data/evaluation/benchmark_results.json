@@ -1,0 +1,9 @@
+{
+  "total_cases": 1980,
+  "top1_accuracy": 0.8106,
+  "top3_accuracy": 0.9611,
+  "top5_accuracy": 0.9884,
+  "mrr": 0.8858,
+  "average_questions_asked": 16.37,
+  "average_confidence": 0.4628
+}

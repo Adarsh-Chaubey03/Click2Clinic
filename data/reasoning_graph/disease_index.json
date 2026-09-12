@@ -1,0 +1,838 @@
+{
+  "influenza": [
+    "fever",
+    "cough",
+    "headache",
+    "muscle pain",
+    "sore throat",
+    "fatigue",
+    "runny nose",
+    "malaise",
+    "loss of appetite",
+    "difficulty sleeping",
+    "diarrhea",
+    "vomiting",
+    "chills",
+    "pneumonia",
+    "sepsis"
+  ],
+  "covid-19": [
+    "fever",
+    "cough",
+    "fatigue",
+    "loss of taste or smell",
+    "sore throat",
+    "headache",
+    "muscle pain",
+    "shortness of breath",
+    "runny nose",
+    "diarrhea",
+    "loss of appetite",
+    "nausea or vomiting",
+    "chest pain",
+    "skin rash"
+  ],
+  "common cold": [
+    "runny nose",
+    "sneezing",
+    "sore throat",
+    "cough",
+    "fatigue",
+    "hoarse voice",
+    "fever",
+    "muscle pain",
+    "loss of taste or smell",
+    "headache",
+    "facial pressure"
+  ],
+  "pneumonia": [
+    "cough",
+    "fever",
+    "shortness of breath",
+    "chest pain",
+    "rapid breathing",
+    "chills",
+    "fatigue",
+    "loss of appetite",
+    "sweating",
+    "nausea or vomiting",
+    "headache",
+    "hemoptysis",
+    "confusion",
+    "wheezing"
+  ],
+  "tuberculosis": [
+    "cough",
+    "hemoptysis",
+    "fever",
+    "night sweats",
+    "weight loss",
+    "fatigue",
+    "chest pain",
+    "loss of appetite",
+    "chills",
+    "lymphadenopathy"
+  ],
+  "malaria": [
+    "fever",
+    "chills",
+    "headache",
+    "muscle pain",
+    "fatigue",
+    "sweating",
+    "nausea",
+    "vomiting",
+    "diarrhea",
+    "abdominal pain",
+    "jaundice",
+    "anemia",
+    "seizures",
+    "confusion",
+    "respiratory distress"
+  ],
+  "dengue fever": [
+    "fever",
+    "headache",
+    "retro-orbital pain",
+    "muscle pain",
+    "nausea",
+    "vomiting",
+    "skin rash",
+    "lymphadenopathy",
+    "fatigue",
+    "abdominal pain",
+    "persistent vomiting",
+    "mucosal bleeding",
+    "hemorrhagic signs",
+    "restlessness"
+  ],
+  "hiv/aids": [
+    "fever",
+    "headache",
+    "skin rash",
+    "sore throat",
+    "lymphadenopathy",
+    "muscle pain",
+    "fatigue",
+    "diarrhea",
+    "weight loss",
+    "night sweats",
+    "cough",
+    "recurrent infections",
+    "mouth ulcers"
+  ],
+  "hepatitis b": [
+    "jaundice",
+    "dark urine",
+    "fatigue",
+    "nausea",
+    "vomiting",
+    "abdominal pain",
+    "fever",
+    "pale stool",
+    "joint pain",
+    "loss of appetite",
+    "malaise",
+    "pruritus"
+  ],
+  "meningitis": [
+    "headache",
+    "fever",
+    "neck stiffness",
+    "nausea or vomiting",
+    "sensitivity to light",
+    "confusion",
+    "petechial rash",
+    "drowsiness",
+    "seizures",
+    "cold extremities",
+    "joint pain",
+    "rapid breathing"
+  ],
+  "typhoid fever": [
+    "fever",
+    "headache",
+    "fatigue",
+    "abdominal pain",
+    "constipation",
+    "diarrhea",
+    "nausea",
+    "cough"
+  ],
+  "hepatitis a": [
+    "jaundice",
+    "dark urine",
+    "fever",
+    "fatigue",
+    "loss of appetite",
+    "nausea",
+    "abdominal pain",
+    "vomiting",
+    "pale stool",
+    "diarrhea",
+    "joint pain"
+  ],
+  "hepatitis c": [
+    "fatigue",
+    "fever",
+    "loss of appetite",
+    "nausea",
+    "vomiting",
+    "abdominal pain",
+    "joint pain",
+    "dark urine",
+    "pale stool",
+    "jaundice"
+  ],
+  "chikungunya": [
+    "fever",
+    "joint pain",
+    "muscle pain",
+    "joint swelling",
+    "headache",
+    "skin rash"
+  ],
+  "chickenpox (varicella)": [
+    "skin rash",
+    "fever",
+    "fatigue",
+    "loss of appetite",
+    "headache"
+  ],
+  "measles": [
+    "fever",
+    "cough",
+    "runny nose",
+    "conjunctivitis",
+    "oral lesions",
+    "skin rash"
+  ],
+  "mumps": [
+    "parotitis",
+    "fever",
+    "headache",
+    "fatigue",
+    "muscle pain",
+    "loss of appetite"
+  ],
+  "rabies": [
+    "fever",
+    "paraesthesia",
+    "headache",
+    "fatigue",
+    "anxiety",
+    "agitation",
+    "hallucinations",
+    "hydrophobia",
+    "confusion",
+    "paralysis"
+  ],
+  "leptospirosis": [
+    "fever",
+    "headache",
+    "muscle pain",
+    "conjunctival suffusion",
+    "chills",
+    "jaundice",
+    "renal failure"
+  ],
+  "infectious mononucleosis (ebv)": [
+    "fatigue",
+    "fever",
+    "sore throat",
+    "lymphadenopathy"
+  ],
+  "cholera": [
+    "diarrhea",
+    "vomiting",
+    "dehydration",
+    "muscle cramps"
+  ],
+  "amoebiasis": [
+    "diarrhea",
+    "abdominal pain",
+    "bloody stools",
+    "fever"
+  ],
+  "giardiasis": [
+    "diarrhea",
+    "abdominal pain",
+    "flatulence",
+    "foul-smelling stool",
+    "nausea"
+  ],
+  "shigellosis": [
+    "diarrhea",
+    "bloody stools",
+    "fever",
+    "abdominal pain"
+  ],
+  "non-typhoidal salmonellosis": [
+    "diarrhea",
+    "fever",
+    "abdominal pain",
+    "nausea",
+    "vomiting"
+  ],
+  "brucellosis": [
+    "fever",
+    "fatigue",
+    "sweating",
+    "weight loss",
+    "headache",
+    "muscle pain",
+    "joint pain"
+  ],
+  "tetanus": [
+    "lockjaw",
+    "muscle spasms",
+    "dysphagia",
+    "fever",
+    "sweating",
+    "tachycardia"
+  ],
+  "pertussis (whooping cough)": [
+    "cough",
+    "stridor",
+    "runny nose",
+    "post-tussive vomiting",
+    "fatigue"
+  ],
+  "scarlet fever": [
+    "sore throat",
+    "fever",
+    "skin rash",
+    "strawberry tongue",
+    "lymphadenopathy"
+  ],
+  "lyme disease": [
+    "skin rash",
+    "fever",
+    "chills",
+    "headache",
+    "fatigue",
+    "muscle pain",
+    "facial palsy",
+    "joint pain"
+  ],
+  "syphilis": [
+    "genital ulcer",
+    "skin rash",
+    "lymphadenopathy",
+    "fever",
+    "headache",
+    "fatigue",
+    "hair loss",
+    "condylomata lata"
+  ],
+  "gonorrhea": [
+    "genital discharge",
+    "dysuria",
+    "pelvic pain",
+    "intermenstrual bleeding",
+    "rectal pain",
+    "sore throat"
+  ],
+  "chlamydia infection": [
+    "genital discharge",
+    "dysuria",
+    "dyspareunia",
+    "intermenstrual bleeding",
+    "testicular pain"
+  ],
+  "genital herpes (hsv)": [
+    "genital ulcer",
+    "paresthesia",
+    "dysuria",
+    "fever"
+  ],
+  "human papillomavirus (hpv) infection": [
+    "genital warts",
+    "skin warts"
+  ],
+  "pelvic inflammatory disease (pid)": [
+    "pelvic pain",
+    "genital discharge",
+    "dyspareunia",
+    "dysuria",
+    "intermenstrual bleeding",
+    "fever"
+  ],
+  "infective endocarditis": [
+    "fever",
+    "chills",
+    "heart murmur",
+    "fatigue",
+    "night sweats",
+    "muscle pain",
+    "weight loss"
+  ],
+  "viral gastroenteritis (norovirus)": [
+    "vomiting",
+    "diarrhea",
+    "nausea",
+    "abdominal pain",
+    "fever",
+    "headache",
+    "muscle pain"
+  ],
+  "rotavirus infection": [
+    "diarrhea",
+    "vomiting",
+    "fever",
+    "abdominal pain",
+    "dehydration"
+  ],
+  "respiratory syncytial virus (rsv) infection": [
+    "runny nose",
+    "cough",
+    "sneezing",
+    "fever",
+    "wheezing",
+    "loss of appetite"
+  ],
+  "diphtheria": [
+    "pharyngeal membrane",
+    "sore throat",
+    "fever",
+    "lymphadenopathy",
+    "shortness of breath",
+    "dysphagia"
+  ],
+  "poliomyelitis (polio)": [
+    "fever",
+    "fatigue",
+    "headache",
+    "nausea or vomiting",
+    "sore throat",
+    "neck stiffness",
+    "paralysis"
+  ],
+  "japanese encephalitis": [
+    "fever",
+    "headache",
+    "seizures",
+    "neck stiffness",
+    "confusion",
+    "paralysis"
+  ],
+  "scrub typhus": [
+    "fever",
+    "eschar",
+    "headache",
+    "muscle pain",
+    "skin rash",
+    "lymphadenopathy"
+  ],
+  "zika virus disease": [
+    "fever",
+    "skin rash",
+    "joint pain",
+    "conjunctivitis",
+    "headache",
+    "muscle pain"
+  ],
+  "yellow fever": [
+    "fever",
+    "headache",
+    "muscle pain",
+    "nausea or vomiting",
+    "loss of appetite",
+    "jaundice",
+    "hemorrhagic signs"
+  ],
+  "plague": [
+    "fever",
+    "chills",
+    "headache",
+    "lymphadenopathy",
+    "fatigue",
+    "cough",
+    "shortness of breath"
+  ],
+  "toxoplasmosis": [
+    "lymphadenopathy",
+    "muscle pain",
+    "fever",
+    "fatigue",
+    "headache"
+  ],
+  "cytomegalovirus (cmv) infection": [
+    "fever",
+    "fatigue",
+    "sore throat",
+    "muscle pain",
+    "lymphadenopathy"
+  ],
+  "candidiasis": [
+    "oral thrush",
+    "oral pain",
+    "dysphagia",
+    "genital pruritus",
+    "genital discharge",
+    "dysuria"
+  ],
+  "asthma": [
+    "wheezing",
+    "shortness of breath",
+    "chest tightness",
+    "cough",
+    "nocturnal dyspnea"
+  ],
+  "chronic obstructive pulmonary disease (copd)": [
+    "cough",
+    "shortness of breath",
+    "sputum production",
+    "wheezing",
+    "chest tightness",
+    "fatigue",
+    "recurrent respiratory infections",
+    "weight loss",
+    "peripheral edema"
+  ],
+  "acute bronchitis": [
+    "cough",
+    "sputum production",
+    "sore throat",
+    "chest tightness",
+    "fatigue",
+    "fever",
+    "muscle pain",
+    "headache",
+    "runny nose"
+  ],
+  "bronchiolitis": [
+    "runny nose",
+    "cough",
+    "wheezing",
+    "fever",
+    "shortness of breath",
+    "poor feeding"
+  ],
+  "sinusitis": [
+    "facial pain",
+    "nasal congestion",
+    "nasal discharge",
+    "headache",
+    "loss of smell",
+    "postnasal drip",
+    "cough",
+    "dental pain",
+    "halitosis"
+  ],
+  "pharyngitis": [
+    "sore throat",
+    "odynophagia",
+    "tonsillar inflammation",
+    "fever",
+    "headache",
+    "lymphadenopathy",
+    "hoarse voice"
+  ],
+  "laryngitis": [
+    "hoarse voice",
+    "sore throat",
+    "cough",
+    "throat clearing",
+    "throat irritation",
+    "fever"
+  ],
+  "pleurisy": [
+    "pleuritic chest pain",
+    "shortness of breath",
+    "cough",
+    "fever"
+  ],
+  "pulmonary embolism": [
+    "shortness of breath",
+    "chest pain",
+    "cough",
+    "tachycardia",
+    "dizziness",
+    "leg swelling",
+    "sweating"
+  ],
+  "interstitial lung disease": [
+    "shortness of breath",
+    "cough",
+    "fatigue",
+    "weight loss",
+    "digital clubbing"
+  ],
+  "obstructive sleep apnea": [
+    "snoring",
+    "apnea",
+    "choking",
+    "fatigue",
+    "headache",
+    "dry mouth"
+  ],
+  "bronchiectasis": [
+    "cough",
+    "sputum production",
+    "shortness of breath",
+    "wheezing",
+    "chest pain",
+    "hemoptysis"
+  ],
+  "pulmonary hypertension": [
+    "shortness of breath",
+    "fatigue",
+    "dizziness",
+    "chest pain",
+    "peripheral edema",
+    "cyanosis"
+  ],
+  "pneumothorax": [
+    "chest pain",
+    "shortness of breath",
+    "pleuritic chest pain",
+    "tachycardia"
+  ],
+  "pleural effusion": [
+    "shortness of breath",
+    "pleuritic chest pain",
+    "cough",
+    "orthopnea"
+  ],
+  "empyema": [
+    "fever",
+    "chest pain",
+    "shortness of breath",
+    "cough",
+    "fatigue"
+  ],
+  "pulmonary fibrosis": [
+    "shortness of breath",
+    "cough",
+    "fatigue",
+    "weight loss",
+    "digital clubbing",
+    "muscle pain"
+  ],
+  "sarcoidosis": [
+    "cough",
+    "shortness of breath",
+    "fatigue",
+    "lymphadenopathy",
+    "skin rash",
+    "joint pain",
+    "eye pain"
+  ],
+  "cystic fibrosis": [
+    "sputum production",
+    "recurrent respiratory infections",
+    "wheezing",
+    "shortness of breath",
+    "weight loss",
+    "salty sweat"
+  ],
+  "aspiration pneumonia": [
+    "cough",
+    "shortness of breath",
+    "fever",
+    "chest pain",
+    "fatigue",
+    "confusion"
+  ],
+  "acute respiratory distress syndrome (ards)": [
+    "shortness of breath",
+    "tachypnea",
+    "cyanosis",
+    "hypotension",
+    "confusion"
+  ],
+  "occupational lung disease": [
+    "shortness of breath",
+    "cough",
+    "chest tightness",
+    "wheezing"
+  ],
+  "hypersensitivity pneumonitis": [
+    "shortness of breath",
+    "cough",
+    "fever",
+    "fatigue",
+    "weight loss"
+  ],
+  "silicosis": [
+    "shortness of breath",
+    "cough",
+    "fatigue",
+    "chest pain",
+    "weight loss"
+  ],
+  "asbestosis": [
+    "shortness of breath",
+    "cough",
+    "wheezing",
+    "fatigue",
+    "digital clubbing"
+  ],
+  "hypertension": [
+    "headache",
+    "epistaxis",
+    "palpitations",
+    "visual disturbance",
+    "tinnitus"
+  ],
+  "coronary artery disease": [
+    "chest pain",
+    "shortness of breath",
+    "radiating pain",
+    "dizziness"
+  ],
+  "stable angina": [
+    "chest pain",
+    "radiating pain",
+    "shortness of breath",
+    "nausea",
+    "fatigue"
+  ],
+  "acute myocardial infarction (heart attack)": [
+    "chest pain",
+    "radiating pain",
+    "shortness of breath",
+    "sweating",
+    "fatigue",
+    "nausea or vomiting",
+    "dizziness"
+  ],
+  "heart failure": [
+    "shortness of breath",
+    "fatigue",
+    "peripheral edema",
+    "palpitations",
+    "cough",
+    "ascites",
+    "weight gain"
+  ],
+  "atrial fibrillation": [
+    "palpitations",
+    "shortness of breath",
+    "dizziness",
+    "fatigue",
+    "chest pain"
+  ],
+  "supraventricular tachycardia": [
+    "palpitations",
+    "dizziness",
+    "shortness of breath",
+    "chest pain",
+    "sweating",
+    "syncope"
+  ],
+  "bradycardia": [
+    "fatigue",
+    "dizziness",
+    "syncope",
+    "shortness of breath",
+    "chest pain"
+  ],
+  "peripheral artery disease": [
+    "claudication",
+    "muscle weakness",
+    "cold extremities",
+    "skin ulcer",
+    "skin discoloration",
+    "alopecia"
+  ],
+  "cardiomyopathy": [
+    "shortness of breath",
+    "fatigue",
+    "peripheral edema",
+    "ascites",
+    "palpitations",
+    "chest pain",
+    "dizziness"
+  ],
+  "valvular heart disease": [
+    "shortness of breath",
+    "chest pain",
+    "dizziness",
+    "fatigue",
+    "peripheral edema"
+  ],
+  "mitral valve prolapse": [
+    "palpitations",
+    "dizziness",
+    "shortness of breath",
+    "fatigue"
+  ],
+  "aortic stenosis": [
+    "chest pain",
+    "dizziness",
+    "shortness of breath",
+    "palpitations"
+  ],
+  "aortic regurgitation": [
+    "shortness of breath",
+    "fatigue",
+    "chest pain",
+    "palpitations",
+    "peripheral edema"
+  ],
+  "mitral regurgitation": [
+    "shortness of breath",
+    "fatigue",
+    "palpitations",
+    "peripheral edema"
+  ],
+  "pericarditis": [
+    "chest pain",
+    "shortness of breath",
+    "fever",
+    "fatigue",
+    "cough"
+  ],
+  "myocarditis": [
+    "chest pain",
+    "shortness of breath",
+    "palpitations",
+    "fatigue",
+    "peripheral edema",
+    "fever"
+  ],
+  "deep vein thrombosis (dvt)": [
+    "leg swelling",
+    "leg pain",
+    "skin discoloration",
+    "warm skin"
+  ],
+  "pulmonary edema": [
+    "shortness of breath",
+    "choking",
+    "wheezing",
+    "sputum production",
+    "palpitations",
+    "anxiety"
+  ],
+  "congenital heart disease": [
+    "cyanosis",
+    "shortness of breath",
+    "poor feeding",
+    "fatigue"
+  ],
+  "patent foramen ovale (pfo)": [
+    "asymptomatic",
+    "migraine",
+    "stroke"
+  ],
+  "ventricular septal defect (vsd)": [
+    "shortness of breath",
+    "poor feeding",
+    "tachycardia",
+    "cyanosis"
+  ],
+  "hypertrophic cardiomyopathy": [
+    "shortness of breath",
+    "chest pain",
+    "dizziness",
+    "palpitations"
+  ],
+  "cardiac arrest": [
+    "unconsciousness",
+    "apnea",
+    "absent pulse"
+  ]
+}

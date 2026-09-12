@@ -1,0 +1,831 @@
+{
+  "schema_version": "3.0.0",
+  "total_edges": 165,
+  "edges": [
+    {
+      "parent": "constitutional symptoms",
+      "child": "fever",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "chills",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "fatigue",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "malaise",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "sweating",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "weight loss",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "weight gain",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "loss of appetite",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "dehydration",
+      "type": "category_member"
+    },
+    {
+      "parent": "constitutional symptoms",
+      "child": "night sweats",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "cough",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "shortness of breath",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "wheezing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "chest tightness",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sputum production",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "runny nose",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sneezing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "sore throat",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "hoarse voice",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "stridor",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nasal congestion",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nasal discharge",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "postnasal drip",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "rapid breathing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "epistaxis",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "hemoptysis",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "nocturnal dyspnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "orthopnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "throat clearing",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "throat irritation",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "choking",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "apnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "snoring",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "respiratory distress",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "recurrent respiratory infections",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "pharyngeal membrane",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "tachypnea",
+      "type": "category_member"
+    },
+    {
+      "parent": "respiratory symptoms",
+      "child": "odynophagia",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "headache",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "chest pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "abdominal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "muscle pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "joint pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "facial pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "retro-orbital pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "pelvic pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "leg pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "testicular pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "rectal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "dental pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "eye pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "pain symptoms",
+      "child": "oral pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "palpitations",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "peripheral edema",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "syncope",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "hypotension",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "claudication",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "cold extremities",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "leg swelling",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "absent pulse",
+      "type": "category_member"
+    },
+    {
+      "parent": "cardiovascular symptoms",
+      "child": "heart murmur",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "nausea",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "diarrhea",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "nausea or vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "abdominal pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "constipation",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "bloody stools",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "flatulence",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "foul-smelling stool",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "ascites",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "dysphagia",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "post-tussive vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "persistent vomiting",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "halitosis",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "dry mouth",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "strawberry tongue",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "mouth ulcers",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "oral thrush",
+      "type": "category_member"
+    },
+    {
+      "parent": "gastrointestinal symptoms",
+      "child": "oral lesions",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "headache",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "dizziness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "confusion",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "seizures",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "sensitivity to light",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "drowsiness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "restlessness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "agitation",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "hallucinations",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "hydrophobia",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "facial palsy",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "paraesthesia",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "tinnitus",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "neck stiffness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "difficulty sleeping",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "loss of taste or smell",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "loss of smell",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "muscle weakness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "migraine",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "stroke",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "unconsciousness",
+      "type": "category_member"
+    },
+    {
+      "parent": "neurological symptoms",
+      "child": "anxiety",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin rash",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "pruritus",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "jaundice",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin discoloration",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin ulcer",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "alopecia",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "warm skin",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "petechial rash",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "genital ulcer",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "condylomata lata",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "genital warts",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "skin warts",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "eschar",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "salty sweat",
+      "type": "category_member"
+    },
+    {
+      "parent": "dermatological symptoms",
+      "child": "digital clubbing",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "joint pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "joint swelling",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle cramps",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "muscle spasms",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "lockjaw",
+      "type": "category_member"
+    },
+    {
+      "parent": "musculoskeletal symptoms",
+      "child": "digital clubbing",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "conjunctivitis",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "conjunctival suffusion",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "visual disturbance",
+      "type": "category_member"
+    },
+    {
+      "parent": "ophthalmological symptoms",
+      "child": "eye pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "lymphadenopathy",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "anemia",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "hemorrhagic signs",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "mucosal bleeding",
+      "type": "category_member"
+    },
+    {
+      "parent": "hematological symptoms",
+      "child": "recurrent infections",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "pelvic pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "dyspareunia",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "testicular pain",
+      "type": "category_member"
+    },
+    {
+      "parent": "genitourinary symptoms",
+      "child": "genital pruritus",
+      "type": "category_member"
+    },
+    {
+      "parent": "fever",
+      "child": "night sweats",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "hemoptysis",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "sputum production",
+      "type": "specialization"
+    },
+    {
+      "parent": "cough",
+      "child": "post-tussive vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "nocturnal dyspnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "orthopnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "tachypnea",
+      "type": "specialization"
+    },
+    {
+      "parent": "shortness of breath",
+      "child": "rapid breathing",
+      "type": "specialization"
+    },
+    {
+      "parent": "skin rash",
+      "child": "petechial rash",
+      "type": "specialization"
+    },
+    {
+      "parent": "dizziness",
+      "child": "syncope",
+      "type": "specialization"
+    },
+    {
+      "parent": "palpitations",
+      "child": "absent pulse",
+      "type": "specialization"
+    },
+    {
+      "parent": "peripheral edema",
+      "child": "leg swelling",
+      "type": "specialization"
+    },
+    {
+      "parent": "peripheral edema",
+      "child": "ascites",
+      "type": "specialization"
+    },
+    {
+      "parent": "vomiting",
+      "child": "persistent vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "vomiting",
+      "child": "post-tussive vomiting",
+      "type": "specialization"
+    },
+    {
+      "parent": "muscle pain",
+      "child": "muscle cramps",
+      "type": "specialization"
+    },
+    {
+      "parent": "muscle pain",
+      "child": "muscle spasms",
+      "type": "specialization"
+    },
+    {
+      "parent": "lymphadenopathy",
+      "child": "tonsillar inflammation",
+      "type": "specialization"
+    },
+    {
+      "parent": "lymphadenopathy",
+      "child": "parotitis",
+      "type": "specialization"
+    },
+    {
+      "parent": "seizures",
+      "child": "unconsciousness",
+      "type": "specialization"
+    },
+    {
+      "parent": "nasal congestion",
+      "child": "nasal discharge",
+      "type": "specialization"
+    },
+    {
+      "parent": "nasal congestion",
+      "child": "runny nose",
+      "type": "specialization"
+    },
+    {
+      "parent": "headache",
+      "child": "migraine",
+      "type": "specialization"
+    },
+    {
+      "parent": "headache",
+      "child": "retro-orbital pain",
+      "type": "specialization"
+    },
+    {
+      "parent": "confusion",
+      "child": "drowsiness",
+      "type": "specialization"
+    },
+    {
+      "parent": "confusion",
+      "child": "unconsciousness",
+      "type": "specialization"
+    },
+    {
+      "parent": "joint pain",
+      "child": "joint swelling",
+      "type": "specialization"
+    },
+    {
+      "parent": "conjunctivitis",
+      "child": "conjunctival suffusion",
+      "type": "specialization"
+    }
+  ]
+}

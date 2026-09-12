@@ -1,0 +1,9 @@
+{
+  "top1_accuracy": 0.38,
+  "top3_accuracy": 0.63,
+  "top5_accuracy": 0.71,
+  "emergency_top3_accuracy": 0.7666666666666667,
+  "avg_questions": 10.55,
+  "avg_time_ms": 3.37,
+  "calibration_error": 0.4826299999999999
+}

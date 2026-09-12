@@ -1,0 +1,2032 @@
+{
+  "specialty": "Cardiology",
+  "schema_version": "2.0.0",
+  "metadata": {
+    "version": "1.0.0",
+    "created_date": "2026-06-23",
+    "methodology": "Symptoms extracted only when explicitly mentioned by at least 2 authoritative medical sources. Synonyms normalized. False negatives preferred over false positives.",
+    "authoritative_sources": [
+      "WHO",
+      "CDC",
+      "NHS",
+      "Mayo Clinic",
+      "MedlinePlus (NIH)",
+      "American Heart Association (AHA)"
+    ],
+    "total_diseases": 25,
+    "total_symptoms_extracted": 124
+  },
+  "diseases": [
+    {
+      "disease_name": "Hypertension",
+      "icd10_code": "I10",
+      "description": "A condition in which the blood vessels have persistently raised pressure. Often asymptomatic, but can lead to severe health complications like heart disease and stroke.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "headache (usually early morning)",
+          "normalized_symptom": "headache",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hypertension",
+            "NHS - Hypertension",
+            "MedlinePlus - Hypertension"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "nosebleeds",
+          "normalized_symptom": "epistaxis",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Hypertension",
+            "NHS - Hypertension"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "irregular heart rhythms",
+          "normalized_symptom": "palpitations",
+          "frequency": "uncommon",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hypertension",
+            "NHS - Hypertension"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "vision changes",
+          "normalized_symptom": "visual disturbance",
+          "frequency": "uncommon",
+          "organ_system": "ophthalmological",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "WHO - Hypertension",
+            "NHS - Hypertension",
+            "MedlinePlus - Hypertension"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "buzzing in the ears",
+          "normalized_symptom": "tinnitus",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "mild",
+          "evidence_sources": [
+            "WHO - Hypertension",
+            "MedlinePlus - Hypertension"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Primary (essential) is multifactorial; Secondary is caused by underlying conditions like kidney disease",
+      "risk_factors": [
+        "older age",
+        "obesity",
+        "family history",
+        "high sodium intake",
+        "physical inactivity",
+        "alcohol consumption"
+      ]
+    },
+    {
+      "disease_name": "Coronary Artery Disease",
+      "icd10_code": "I25.1",
+      "description": "A condition where the major blood vessels that supply the heart (coronary arteries) struggle to send enough blood, oxygen and nutrients to the heart muscle, usually due to plaque buildup.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "chest pain or discomfort",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Coronary heart disease",
+            "MedlinePlus - CAD"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Coronary heart disease",
+            "MedlinePlus - CAD"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "pain radiating to arms, shoulders, or jaw",
+          "normalized_symptom": "radiating pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Coronary heart disease",
+            "MedlinePlus - CAD"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "feeling faint",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Coronary heart disease",
+            "MedlinePlus - CAD"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Atherosclerosis (plaque buildup) in the coronary arteries",
+      "risk_factors": [
+        "smoking",
+        "high blood pressure",
+        "high cholesterol",
+        "diabetes",
+        "obesity",
+        "family history"
+      ]
+    },
+    {
+      "disease_name": "Stable Angina",
+      "icd10_code": "I20.8",
+      "description": "Chest pain or discomfort that typically occurs with activity or stress, resulting from poor blood flow through the blood vessels in the heart.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "chest pain or tightness",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Angina",
+            "MedlinePlus - Angina"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "pain spreading to arms, neck, jaw, or back",
+          "normalized_symptom": "radiating pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Angina",
+            "MedlinePlus - Angina"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Angina",
+            "MedlinePlus - Angina"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "feeling sick",
+          "normalized_symptom": "nausea",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "unknown",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Angina",
+            "MedlinePlus - Angina"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Angina",
+            "MedlinePlus - Angina"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Reduced blood flow to the heart muscle, usually due to coronary artery disease",
+      "risk_factors": [
+        "coronary artery disease",
+        "smoking",
+        "high blood pressure",
+        "diabetes"
+      ]
+    },
+    {
+      "disease_name": "Acute Myocardial Infarction (Heart Attack)",
+      "icd10_code": "I21",
+      "description": "A serious medical emergency in which the supply of blood to the heart is suddenly blocked, usually by a blood clot, leading to heart muscle damage.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "chest pain or discomfort (often described as pressure or squeezing)",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Heart Attack",
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "pain radiating to arm, back, neck, or jaw",
+          "normalized_symptom": "radiating pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Heart Attack",
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Heart Attack",
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "cold sweat",
+          "normalized_symptom": "sweating",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Heart Attack",
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "feeling unusually tired",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Heart Attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "nausea or vomiting",
+          "normalized_symptom": "nausea or vomiting",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "lightheadedness or dizziness",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart attack",
+            "MedlinePlus - Heart Attack"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Complete blockage of a coronary artery, often from a ruptured plaque",
+      "risk_factors": [
+        "coronary artery disease",
+        "smoking",
+        "high blood pressure",
+        "high cholesterol",
+        "diabetes"
+      ]
+    },
+    {
+      "disease_name": "Heart Failure",
+      "icd10_code": "I50",
+      "description": "A long-term condition where the heart is unable to pump blood around the body properly.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath (especially with activity or when lying down)",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue and weakness",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling in legs, ankles, or feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid or irregular heartbeat",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "persistent cough or wheezing",
+          "normalized_symptom": "cough",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling of abdomen",
+          "normalized_symptom": "ascites",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "sudden weight gain from fluid retention",
+          "normalized_symptom": "weight gain",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart failure",
+            "MedlinePlus - Heart Failure"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Coronary heart disease, high blood pressure, cardiomyopathy, or heart valve problems",
+      "risk_factors": [
+        "coronary artery disease",
+        "hypertension",
+        "diabetes",
+        "obesity",
+        "sleep apnea"
+      ]
+    },
+    {
+      "disease_name": "Atrial Fibrillation",
+      "icd10_code": "I48",
+      "description": "A heart condition that causes an irregular and often abnormally fast heart rate, increasing the risk of stroke and heart failure.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "palpitations (rapid, fluttering, or pounding heartbeat)",
+          "normalized_symptom": "palpitations",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Atrial fibrillation",
+            "MedlinePlus - Atrial Fibrillation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Atrial fibrillation",
+            "MedlinePlus - Atrial Fibrillation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or lightheadedness",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Atrial fibrillation",
+            "MedlinePlus - Atrial Fibrillation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "extreme tiredness",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Atrial fibrillation",
+            "MedlinePlus - Atrial Fibrillation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "uncommon",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Atrial fibrillation",
+            "MedlinePlus - Atrial Fibrillation"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Abnormal electrical impulses in the atria of the heart",
+      "risk_factors": [
+        "high blood pressure",
+        "older age",
+        "coronary artery disease",
+        "excessive alcohol use",
+        "hyperthyroidism"
+      ]
+    },
+    {
+      "disease_name": "Supraventricular Tachycardia",
+      "icd10_code": "I47.1",
+      "description": "An abnormally fast heartbeat that starts in the upper chambers of the heart (atria), causing the heart to beat faster than normal, often in sudden episodes.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "rapid heartbeat or palpitations",
+          "normalized_symptom": "palpitations",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or lightheadedness",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "sweating",
+          "normalized_symptom": "sweating",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fainting",
+          "normalized_symptom": "syncope",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - SVT",
+            "MedlinePlus - SVT"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Faulty electrical connections in the heart",
+      "risk_factors": [
+        "caffeine/alcohol use",
+        "smoking",
+        "stress",
+        "medications",
+        "heart disease"
+      ]
+    },
+    {
+      "disease_name": "Bradycardia",
+      "icd10_code": "R00.1",
+      "description": "A heart rate that is too slow, generally defined as less than 60 beats per minute, which can prevent the brain and other organs from getting enough oxygen.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "fatigue or lack of energy",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Arrhythmia",
+            "American Heart Association - Bradycardia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or lightheadedness",
+          "normalized_symptom": "dizziness",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Arrhythmia",
+            "American Heart Association - Bradycardia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fainting or near-fainting",
+          "normalized_symptom": "syncope",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Arrhythmia",
+            "American Heart Association - Bradycardia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Arrhythmia",
+            "American Heart Association - Bradycardia"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "uncommon",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Arrhythmia",
+            "American Heart Association - Bradycardia"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Damage to heart tissue, medications (e.g., beta blockers), hypothyroidism, or sick sinus syndrome",
+      "risk_factors": [
+        "older age",
+        "heart disease",
+        "certain medications",
+        "electrolyte imbalance"
+      ]
+    },
+    {
+      "disease_name": "Peripheral Artery Disease",
+      "icd10_code": "I73.9",
+      "description": "A common condition where a build-up of fatty deposits in the arteries restricts blood supply to leg muscles.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "leg pain or cramping when walking",
+          "normalized_symptom": "claudication",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - PAD",
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "numbness or weakness in the legs",
+          "normalized_symptom": "muscle weakness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - PAD",
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "coldness in lower leg or foot",
+          "normalized_symptom": "cold extremities",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "sores on toes or feet that won't heal",
+          "normalized_symptom": "skin ulcer",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - PAD",
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "changes in skin color of legs",
+          "normalized_symptom": "skin discoloration",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "late",
+          "severity": "mild",
+          "evidence_sources": [
+            "CDC - PAD",
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "hair loss or slower hair growth on legs",
+          "normalized_symptom": "alopecia",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "late",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - PAD",
+            "MedlinePlus - PAD"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Atherosclerosis in peripheral arteries",
+      "risk_factors": [
+        "smoking",
+        "diabetes",
+        "high blood pressure",
+        "high cholesterol",
+        "older age"
+      ]
+    },
+    {
+      "disease_name": "Cardiomyopathy",
+      "icd10_code": "I42",
+      "description": "A general term for diseases of the heart muscle, where the walls of the heart chambers have become stretched, thickened, or stiff, reducing its ability to pump blood.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue or tiredness",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling in legs, ankles, and feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling of the abdomen",
+          "normalized_symptom": "ascites",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid, pounding, or fluttering heartbeat",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pressure or pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or fainting",
+          "normalized_symptom": "dizziness",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Cardiomyopathy"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Genetic mutations, chronic high blood pressure, prior heart attacks, infections, or excessive alcohol use",
+      "risk_factors": [
+        "family history",
+        "hypertension",
+        "obesity",
+        "alcohol/drug abuse",
+        "diabetes"
+      ]
+    },
+    {
+      "disease_name": "Valvular Heart Disease",
+      "icd10_code": "I38",
+      "description": "Damage or defect in one or more of the four heart valves, preventing them from opening or closing properly.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart valve disease",
+            "MedlinePlus - Heart valve diseases"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart valve disease",
+            "MedlinePlus - Heart valve diseases"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or fainting",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Heart valve disease",
+            "MedlinePlus - Heart valve diseases"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart valve disease",
+            "MedlinePlus - Heart valve diseases"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swollen ankles and feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Heart valve disease",
+            "MedlinePlus - Heart valve diseases"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Congenital defects, aging, rheumatic fever, infections, or other heart conditions",
+      "risk_factors": [
+        "older age",
+        "history of infections (rheumatic fever, endocarditis)",
+        "high blood pressure",
+        "high cholesterol"
+      ]
+    },
+    {
+      "disease_name": "Mitral Valve Prolapse",
+      "icd10_code": "I34.1",
+      "description": "A condition in which the two valve flaps of the mitral valve do not close smoothly or evenly, but instead bulge (prolapse) upward into the left atrium.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "palpitations (racing or irregular heartbeat)",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral valve prolapse"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or lightheadedness",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral valve prolapse"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral valve prolapse"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "uncommon",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral valve prolapse"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Often genetic or related to connective tissue disorders",
+      "risk_factors": [
+        "family history",
+        "Marfan syndrome",
+        "Ehlers-Danlos syndrome",
+        "Graves' disease"
+      ]
+    },
+    {
+      "disease_name": "Aortic Stenosis",
+      "icd10_code": "I35.0",
+      "description": "Narrowing of the aortic valve opening, which restricts the blood flow from the left ventricle to the aorta and may also affect the pressure in the left atrium.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "chest pain or tightness (angina)",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Aortic valve replacement",
+            "MedlinePlus - Aortic stenosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "feeling faint or dizzy",
+          "normalized_symptom": "dizziness",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Aortic valve replacement",
+            "MedlinePlus - Aortic stenosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Aortic valve replacement",
+            "MedlinePlus - Aortic stenosis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "palpitations",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Aortic valve replacement",
+            "MedlinePlus - Aortic stenosis"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Age-related calcification, congenital bicuspid valve, or rheumatic fever",
+      "risk_factors": [
+        "older age",
+        "high blood pressure",
+        "high cholesterol",
+        "smoking",
+        "bicuspid aortic valve"
+      ]
+    },
+    {
+      "disease_name": "Aortic Regurgitation",
+      "icd10_code": "I35.1",
+      "description": "A condition in which the aortic valve does not close tightly, allowing blood to flow backward from the aorta into the left ventricle.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath (especially with exertion or when lying down)",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Aortic regurgitation",
+            "Mayo Clinic - Aortic valve regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue and weakness",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MedlinePlus - Aortic regurgitation",
+            "Mayo Clinic - Aortic valve regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain (angina)",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Aortic regurgitation",
+            "Mayo Clinic - Aortic valve regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid, fluttering heartbeat",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MedlinePlus - Aortic regurgitation",
+            "Mayo Clinic - Aortic valve regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling in ankles and feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "uncommon",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MedlinePlus - Aortic regurgitation",
+            "Mayo Clinic - Aortic valve regurgitation"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Congenital heart defects, infective endocarditis, rheumatic fever, or aortic dissection",
+      "risk_factors": [
+        "bicuspid aortic valve",
+        "history of endocarditis",
+        "Marfan syndrome",
+        "high blood pressure"
+      ]
+    },
+    {
+      "disease_name": "Mitral Regurgitation",
+      "icd10_code": "I34.0",
+      "description": "A condition in which the mitral valve does not close tightly, allowing blood to flow backward into the left atrium.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath (especially with exertion or when lying down)",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue and exhaustion",
+          "normalized_symptom": "fatigue",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "palpitations",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral regurgitation"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swollen ankles or feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Mitral valve problems",
+            "MedlinePlus - Mitral regurgitation"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Mitral valve prolapse, rheumatic heart disease, endocarditis, or heart attack",
+      "risk_factors": [
+        "history of mitral valve prolapse",
+        "coronary artery disease",
+        "endocarditis",
+        "rheumatic fever"
+      ]
+    },
+    {
+      "disease_name": "Pericarditis",
+      "icd10_code": "I31.9",
+      "description": "Inflammation of the pericardium, the thin, sac-like membrane surrounding the heart.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "sharp chest pain (worsens with deep breathing or lying down, improves when sitting up and leaning forward)",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Pericarditis",
+            "MedlinePlus - Pericarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pericarditis",
+            "MedlinePlus - Pericarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pericarditis",
+            "MedlinePlus - Pericarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Pericarditis",
+            "MedlinePlus - Pericarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dry cough",
+          "normalized_symptom": "cough",
+          "frequency": "uncommon",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - Pericarditis",
+            "MedlinePlus - Pericarditis"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Viral infections (most common), heart attack, systemic inflammatory disorders, or trauma",
+      "risk_factors": [
+        "recent viral infection",
+        "recent heart attack",
+        "autoimmune diseases (lupus, rheumatoid arthritis)"
+      ]
+    },
+    {
+      "disease_name": "Myocarditis",
+      "icd10_code": "I51.4",
+      "description": "Inflammation of the heart muscle (myocardium), which can reduce the heart's ability to pump and cause rapid or abnormal heart rhythms.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "chest pain",
+          "normalized_symptom": "chest pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid or irregular heartbeat",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "swelling of the legs, ankles, and feet",
+          "normalized_symptom": "peripheral edema",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Myocarditis",
+            "MedlinePlus - Myocarditis"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Viral infections (most common), bacterial/parasitic infections, or autoimmune reactions",
+      "risk_factors": [
+        "recent viral infection",
+        "autoimmune diseases",
+        "exposure to certain chemicals or medications"
+      ]
+    },
+    {
+      "disease_name": "Infective Endocarditis",
+      "icd10_code": "I33.0",
+      "description": "An infection of the endocardium, the inner lining of your heart chambers and heart valves.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "fever",
+          "normalized_symptom": "fever",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chills and night sweats",
+          "normalized_symptom": "chills",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "muscle and joint pain",
+          "normalized_symptom": "joint pain",
+          "frequency": "common",
+          "organ_system": "musculoskeletal",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "unexplained weight loss",
+          "normalized_symptom": "weight loss",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Endocarditis",
+            "MedlinePlus - Endocarditis"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Bacteria or fungi entering the bloodstream and attaching to abnormal areas of the heart",
+      "risk_factors": [
+        "artificial heart valves",
+        "congenital heart defects",
+        "history of endocarditis",
+        "intravenous drug use",
+        "poor dental health"
+      ],
+      "is_shared_disease": true,
+      "shared_specialties": [
+        "Cardiology",
+        "Infectious Diseases"
+      ]
+    },
+    {
+      "disease_name": "Deep Vein Thrombosis (DVT)",
+      "icd10_code": "I80.2",
+      "description": "A condition that occurs when a blood clot forms in a deep vein, usually in the legs, which can lead to a pulmonary embolism if it breaks loose.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "swelling in one leg (rarely both)",
+          "normalized_symptom": "leg swelling",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - DVT",
+            "MedlinePlus - DVT",
+            "CDC - DVT"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "pain or tenderness in the leg (often starting in the calf)",
+          "normalized_symptom": "leg pain",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - DVT",
+            "MedlinePlus - DVT",
+            "CDC - DVT"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "red or discolored skin on the leg",
+          "normalized_symptom": "skin discoloration",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - DVT",
+            "MedlinePlus - DVT",
+            "CDC - DVT"
+          ],
+          "evidence_count": 3
+        },
+        {
+          "symptom": "warm skin in the affected area",
+          "normalized_symptom": "warm skin",
+          "frequency": "common",
+          "organ_system": "dermatological",
+          "onset_stage": "early",
+          "severity": "mild",
+          "evidence_sources": [
+            "NHS - DVT",
+            "MedlinePlus - DVT",
+            "CDC - DVT"
+          ],
+          "evidence_count": 3
+        }
+      ],
+      "etiology": "Blood pooling in deep veins causing clot formation, often due to immobility or hypercoagulability",
+      "risk_factors": [
+        "prolonged immobility",
+        "surgery",
+        "cancer",
+        "pregnancy",
+        "oral contraceptives",
+        "older age"
+      ]
+    },
+    {
+      "disease_name": "Pulmonary Edema",
+      "icd10_code": "J81",
+      "description": "A condition caused by excess fluid in the lungs, making it difficult to breathe. Most commonly caused by heart problems (cardiogenic pulmonary edema).",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "extreme shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "feeling of suffocating or drowning",
+          "normalized_symptom": "choking",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "wheezing or gasping for breath",
+          "normalized_symptom": "wheezing",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "cough that produces frothy sputum (may be blood-tinged)",
+          "normalized_symptom": "sputum production",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid, irregular heartbeat",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "moderate",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "anxiety, restlessness or a feeling of apprehension",
+          "normalized_symptom": "anxiety",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "MedlinePlus - Pulmonary edema",
+            "Mayo Clinic - Pulmonary edema"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Heart failure (cardiogenic) or direct lung damage/ARDS (noncardiogenic)",
+      "risk_factors": [
+        "heart failure",
+        "coronary artery disease",
+        "high blood pressure",
+        "kidney disease"
+      ]
+    },
+    {
+      "disease_name": "Congenital Heart Disease",
+      "icd10_code": "Q24.9",
+      "description": "One or more abnormalities in the heart's structure that are present at birth, affecting how blood flows through the heart and out to the rest of the body.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "blue-tinged skin, lips, or fingernails",
+          "normalized_symptom": "cyanosis",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Congenital Heart Defects",
+            "NHS - Congenital heart disease"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "rapid breathing or shortness of breath",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Congenital Heart Defects",
+            "NHS - Congenital heart disease"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "poor weight gain or feeding difficulties",
+          "normalized_symptom": "poor feeding",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Congenital Heart Defects",
+            "NHS - Congenital heart disease"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "extreme tiredness or fatigue",
+          "normalized_symptom": "fatigue",
+          "frequency": "common",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "CDC - Congenital Heart Defects",
+            "NHS - Congenital heart disease"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Developmental defects during pregnancy, often genetic or chromosomal",
+      "risk_factors": [
+        "family history",
+        "chromosomal abnormalities (e.g., Down syndrome)",
+        "maternal diabetes or rubella during pregnancy",
+        "maternal smoking or alcohol use"
+      ]
+    },
+    {
+      "disease_name": "Patent Foramen Ovale (PFO)",
+      "icd10_code": "Q21.1",
+      "description": "A small hole between the two upper chambers of the heart (atria) that didn't close naturally after birth as it should.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "usually no symptoms (asymptomatic)",
+          "normalized_symptom": "asymptomatic",
+          "frequency": "hallmark",
+          "organ_system": "multisystem",
+          "onset_stage": "late",
+          "severity": "unknown",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Patent foramen ovale"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "migraines with aura",
+          "normalized_symptom": "migraine",
+          "frequency": "uncommon",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "Mayo Clinic - Patent foramen ovale"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "unexplained stroke (due to blood clots)",
+          "normalized_symptom": "stroke",
+          "frequency": "rare",
+          "organ_system": "neurological",
+          "onset_stage": "complication",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Patent foramen ovale"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Failure of the normal fetal opening between atria to close after birth",
+      "risk_factors": [
+        "genetics (often no clear risk factors)"
+      ]
+    },
+    {
+      "disease_name": "Ventricular Septal Defect (VSD)",
+      "icd10_code": "Q21.0",
+      "description": "A common heart defect present at birth consisting of a hole in the wall (septum) that separates the two lower chambers (ventricles) of the heart.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath or rapid breathing",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "common",
+          "organ_system": "respiratory",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Ventricular septal defect"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "poor feeding and failure to thrive",
+          "normalized_symptom": "poor feeding",
+          "frequency": "common",
+          "organ_system": "gastrointestinal",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Ventricular septal defect"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "fast heart rate",
+          "normalized_symptom": "tachycardia",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Ventricular septal defect"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "pale or bluish skin",
+          "normalized_symptom": "cyanosis",
+          "frequency": "uncommon",
+          "organ_system": "multisystem",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Congenital heart disease types",
+            "MedlinePlus - Ventricular septal defect"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Congenital defect",
+      "risk_factors": [
+        "family history",
+        "genetic disorders (e.g., Down syndrome)"
+      ]
+    },
+    {
+      "disease_name": "Hypertrophic Cardiomyopathy",
+      "icd10_code": "I42.1",
+      "description": "A disease in which the heart muscle becomes abnormally thick (hypertrophied), making it harder for the heart to pump blood.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "shortness of breath (especially during exercise)",
+          "normalized_symptom": "shortness of breath",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "late",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Hypertrophic cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "chest pain (especially during exercise)",
+          "normalized_symptom": "chest pain",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Hypertrophic cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "dizziness or fainting (syncope)",
+          "normalized_symptom": "dizziness",
+          "frequency": "common",
+          "organ_system": "neurological",
+          "onset_stage": "unknown",
+          "severity": "severe",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Hypertrophic cardiomyopathy"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "palpitations (rapid or fluttering heartbeat)",
+          "normalized_symptom": "palpitations",
+          "frequency": "common",
+          "organ_system": "cardiovascular",
+          "onset_stage": "unknown",
+          "severity": "moderate",
+          "evidence_sources": [
+            "NHS - Cardiomyopathy",
+            "MedlinePlus - Hypertrophic cardiomyopathy"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Often caused by abnormal genes (mutations) in the heart muscle",
+      "risk_factors": [
+        "family history (genetic)"
+      ]
+    },
+    {
+      "disease_name": "Cardiac Arrest",
+      "icd10_code": "I46",
+      "description": "A sudden, unexpected loss of heart function, breathing, and consciousness, usually resulting from an electrical disturbance in the heart.",
+      "specialty": "Cardiology",
+      "symptoms": [
+        {
+          "symptom": "sudden loss of consciousness (collapse)",
+          "normalized_symptom": "unconsciousness",
+          "frequency": "hallmark",
+          "organ_system": "neurological",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Cardiac Arrest",
+            "MedlinePlus - Cardiac Arrest"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "no breathing or abnormal breathing (gasping)",
+          "normalized_symptom": "apnea",
+          "frequency": "hallmark",
+          "organ_system": "respiratory",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Cardiac Arrest",
+            "MedlinePlus - Cardiac Arrest"
+          ],
+          "evidence_count": 2
+        },
+        {
+          "symptom": "no pulse",
+          "normalized_symptom": "absent pulse",
+          "frequency": "hallmark",
+          "organ_system": "cardiovascular",
+          "onset_stage": "early",
+          "severity": "severe",
+          "evidence_sources": [
+            "CDC - Cardiac Arrest",
+            "MedlinePlus - Cardiac Arrest"
+          ],
+          "evidence_count": 2
+        }
+      ],
+      "etiology": "Ventricular fibrillation, heart attack, severe trauma, or profound electrolyte imbalances",
+      "risk_factors": [
+        "coronary artery disease",
+        "history of arrhythmias",
+        "previous heart attack",
+        "family history of sudden cardiac arrest",
+        "drug abuse"
+      ]
+    }
+  ]
+}
