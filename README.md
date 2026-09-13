@@ -39,3 +39,21 @@ npm run dev:mobile
 ```
 
 Each command is independent and can run in its own terminal.
+
+## Available functionality
+
+The platform provides:
+
+- patient registration, profiles, doctor discovery, appointment booking, lab
+  bookings, medicine shopping, checkout, order history, diagnosis assistance,
+  chatbot, disease awareness, maps, consultations, and skin reviews;
+- doctor authentication, schedules, appointment handling, patient reports,
+  AI-assisted prescriptions, consultations, and skin-review evaluation;
+- administrator authentication, dashboard metrics, doctor verification,
+  medicine and laboratory management, appointment oversight, and order
+  operations; and
+- Expo navigation and client screens for patient, doctor, and administrator
+  workflows.
+
+Payment, file upload, AI, and consultation features require the integrations
+listed in [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md).
