@@ -1,0 +1,16 @@
+node_modules
+.git
+.expo
+.expo-shared
+build
+dist
+android
+ios
+*.log
+*.zip
+*.tar
+*.rar
+.cache
+coverage
+.vscode
+.env

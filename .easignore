@@ -1,0 +1,30 @@
+# Exclude other top-level project directories (use leading / to avoid matching nested dirs)
+/backend/
+/frontend/
+/admin/
+/.github/
+
+# Exclude node_modules (EAS installs fresh)
+node_modules/
+
+# Git
+.git/
+
+# Build artifacts
+dist/
+build/
+android/
+ios/
+
+# Expo
+.expo/
+.expo-shared/
+
+# Misc
+*.log
+*.zip
+*.tar
+*.rar
+.cache
+coverage
+.vscode
