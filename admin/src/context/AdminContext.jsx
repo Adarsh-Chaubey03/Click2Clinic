@@ -35,7 +35,7 @@ const AdminContextProvider = (props) => {
       } else {
         toast.error(data.message);
       }
-    } catch (error) {
+    } catch {
       toast.error(error.message);
     } finally {
       setIsLoading(false);
