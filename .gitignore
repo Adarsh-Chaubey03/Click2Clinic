@@ -1,3 +1,10 @@
-vaidyatek
 vaidyatek/
 MIGRATION_PLAN.md
+
+node_modules/
+.env
+.env.*
+!.env.example
+!.env.development.example
+dist/
+build/
