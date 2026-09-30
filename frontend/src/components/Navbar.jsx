@@ -1,5 +1,4 @@
 import { useContext, useState, Fragment } from "react";
-import { assets } from "../assets/assets.js";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppContext } from "../context/AppContext.jsx";
 import { useCart } from "../context/CartContext.jsx";
@@ -48,11 +47,9 @@ const Navbar = () => {
               onClick={() => navigate('/')}
               className="flex shrink-0 cursor-pointer items-center gap-2"
             >
-              <img
-                src={assets.main_logo}
-                alt="Click2Clinic"
-                className="h-9 w-auto sm:h-12"
-              />
+              <span className="text-xl font-extrabold tracking-tight text-[#10233f] sm:text-2xl">
+                Click<span className="text-[#009f9a]">2</span>Clinic
+              </span>
             </motion.div>
 
             {/* Desktop Navigation */}
@@ -98,7 +95,7 @@ const Navbar = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsCartOpen(true)}
-                className="relative p-2.5 bg-gray-100 hover:bg-teal-50 rounded-xl transition-colors"
+                className="relative rounded-xl border border-[#e2eeee] bg-white p-2.5 transition-colors hover:border-[#9edfd8] hover:bg-[#effcfb]"
                 aria-label="Open cart"
               >
                 <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">

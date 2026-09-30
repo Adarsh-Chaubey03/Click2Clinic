@@ -4,29 +4,26 @@ import { motion } from "framer-motion";
 
 const SpecialityMenu = () => {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-teal-50/30 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 sm:py-20">
+      <div className="section-wrap">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-10 text-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-100 text-teal-700 rounded-full text-sm font-medium mb-4">
-            <span className="w-2 h-2 bg-teal-500 rounded-full animate-pulse" />
-            Find Your Specialist
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Browse by <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-600">Speciality</span>
+          <span className="eyebrow mb-4">Find Your Specialist</span>
+          <h2 className="text-3xl font-extrabold text-[#10233f] sm:text-5xl">
+            Browse by <span className="gradient-text">Specialty</span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#687b90]">
             Connect with certified healthcare professionals across all medical specialties
           </p>
         </motion.div>
 
         {/* Speciality Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {specialityData.map((item, index) => (
             <motion.div
               key={index}
@@ -38,32 +35,27 @@ const SpecialityMenu = () => {
               <Link
                 to={`/doctors/${item.speciality}`}
                 onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-                className="group relative flex flex-col items-center rounded-2xl border border-gray-100 bg-white p-4 
-                         sm:p-6
-                         hover:border-teal-200 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300"
+                className="group relative flex flex-col items-center rounded-[22px] border border-[#e3eeee] bg-white p-4 shadow-[0_8px_30px_rgba(15,80,90,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9edfd8] hover:shadow-[0_18px_36px_rgba(15,150,140,0.13)] sm:p-6"
               >
                 {/* Gradient Background on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-teal-50/70 to-cyan-50/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 {/* Icon Container */}
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 mb-4 rounded-2xl bg-gradient-to-br from-teal-50 to-emerald-50 
-                             flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <div className="relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#e2f8f5] transition-transform duration-300 group-hover:scale-105 sm:h-24 sm:w-24">
                   <img
                     src={item.image}
                     alt={item.speciality}
-                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                    className="h-14 w-14 object-contain"
                   />
                 </div>
 
                 {/* Label */}
-                <span className="relative break-words text-center text-sm font-semibold text-gray-700 sm:text-base 
-                              group-hover:text-teal-700 transition-colors duration-300">
+                <span                 className="relative break-words text-center text-sm font-bold text-[#20334a] transition-colors duration-300 group-hover:text-[#008f88] sm:text-base">
                   {item.speciality}
                 </span>
 
                 {/* Arrow Indicator */}
-                <div className="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-teal-100 flex items-center justify-center 
-                             opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <div className="mt-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#dff8f2] text-[#008f88] transition-all duration-300 group-hover:bg-[#08ac9f] group-hover:text-white">
                   <svg className="w-3 h-3 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

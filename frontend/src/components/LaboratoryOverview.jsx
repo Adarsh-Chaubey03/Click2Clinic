@@ -39,41 +39,34 @@ const LaboratoryOverview = () => {
     }
   }, [token]);
 
-  // Fallback data if no real data available
-  const fallbackTests = [
-    { _id: "1", testname: "Complete Blood Count", category: "Blood Test", price: 499, resultAt: "24 hours" },
-    { _id: "2", testname: "Urine Routine Test", category: "Urine Test", price: 299, resultAt: "12 hours" },
-    { _id: "3", testname: "Thyroid Profile (T3, T4, TSH)", category: "Thyroid", price: 599, resultAt: "24 hours" },
-    { _id: "4", testname: "Lipid Profile", category: "Lipid", price: 449, resultAt: "24 hours" },
-    { _id: "5", testname: "Liver Function Test", category: "Liver", price: 549, resultAt: "24 hours" },
-    { _id: "6", testname: "Kidney Function Test", category: "Kidney", price: 499, resultAt: "24 hours" },
-  ];
-
-  const displayTests = labTests.length > 0 ? labTests.slice(0, 6) : fallbackTests;
+  const displayTests = labTests.slice(0, 6);
 
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 sm:py-20">
+      <div className="section-wrap">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="mb-10 text-center"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
-            🔬 Lab Tests
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Book <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Lab Tests</span> Online
+          <span className="eyebrow mb-4 !bg-[#e6f1ff] !text-[#2167cf]">Lab Tests</span>
+          <h2 className="text-3xl font-extrabold text-[#10233f] sm:text-5xl">
+            Book <span className="text-[#167fc5]">Lab Tests</span> Online
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#687b90]">
             Get accurate diagnostics with home sample collection and fast results
           </p>
         </motion.div>
 
         {/* Tests Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {displayTests.length === 0 ? (
+          <div className="rounded-3xl border border-dashed border-[#b9dedd] bg-white p-10 text-center text-[#687b90]">
+            Lab tests will appear here once they are available. Explore the lab section to view current services.
+          </div>
+        ) : (
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {displayTests.map((test, index) => (
             <motion.div
               key={test._id}
@@ -85,15 +78,14 @@ const LaboratoryOverview = () => {
                 navigate(`/lab`);
                 window.scrollTo(0, 0);
               }}
-              className="group cursor-pointer bg-white rounded-2xl overflow-hidden border border-gray-100 
-                       hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
+              className="group cursor-pointer overflow-hidden rounded-[22px] border border-[#dfeded] bg-white shadow-[0_8px_28px_rgba(15,80,90,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9adbd6] hover:shadow-xl"
             >
               {/* Test Image */}
-              <div className="relative h-44 bg-gradient-to-br from-blue-50 to-cyan-50 overflow-hidden">
+              <div className="relative h-44 overflow-hidden bg-[#eaf5fb]">
                 <img
                   src={getTestImage(test.category, test.testname)}
                   alt={test.testname}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     e.target.src = categoryImages.default;
                   }}
@@ -113,7 +105,7 @@ const LaboratoryOverview = () => {
 
               {/* Test Info */}
               <div className="p-5">
-                <h3 className="font-bold text-lg text-gray-900 group-hover:text-blue-700 transition-colors mb-1">
+                <h3 className="mb-1 text-lg font-bold text-[#10233f] transition-colors group-hover:text-[#167fc5]">
                   {test.testname || test.name}
                 </h3>
                 <p className="text-gray-500 text-sm mb-4">
@@ -122,14 +114,14 @@ const LaboratoryOverview = () => {
 
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-2xl font-bold text-blue-600">₹{test.price}</span>
+                    <span className="text-2xl font-bold text-[#176bd2]">₹{test.price}</span>
                     <span className="text-gray-400 text-sm ml-2 line-through">₹{test.price + 200}</span>
                   </div>
-                  <button className="px-4 py-2 bg-blue-50 text-blue-700 rounded-xl text-sm font-semibold 
-                                   group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                  <button className="rounded-xl bg-[#eaf2ff] px-4 py-2 text-sm font-semibold text-[#176bd2] transition-all duration-300 group-hover:bg-[#176bd2] group-hover:text-white">
                     Book Now
                   </button>
                 </div>
+                )}
               </div>
             </motion.div>
           ))}
@@ -147,9 +139,7 @@ const LaboratoryOverview = () => {
               navigate("/lab");
               window.scrollTo(0, 0);
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 
-                     text-white font-semibold rounded-2xl shadow-lg shadow-blue-500/30 
-                     hover:shadow-xl hover:shadow-blue-500/40 hover:scale-105 transition-all duration-300"
+            className="primary-button"
           >
             Explore All Lab Tests
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

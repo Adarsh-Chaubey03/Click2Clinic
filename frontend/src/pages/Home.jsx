@@ -9,14 +9,13 @@ import HireDoctorBanner from '../components/HireDoctorBanner'
 
 export default function Home() {
   return (
-    <>
+    <main className="page-shell">
     <Header/>
     <SpecialityMenu/>
     <TopDoctors/>
-    <Banner/>
     <LaboratoryOverview/>
     <DiseaseOverview/>
     <HireDoctorBanner/>
-    </>
+    </main>
   )
 }

@@ -1,11 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: Outfit, sans-serif;
+  font-family: "DM Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #10233f;
+  background: #f8fcfc;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+nav {
+  font-family: "Plus Jakarta Sans", "DM Sans", sans-serif;
 }
 
 html,
@@ -32,6 +48,83 @@ button {
 
 .leaflet-container {
   z-index: 1 !important;
+}
+
+.page-shell {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(209, 250, 245, 0.55), transparent 22rem),
+    radial-gradient(circle at 92% 38%, rgba(224, 242, 254, 0.55), transparent 24rem),
+    #f8fcfc;
+}
+
+.section-wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: #008f88;
+  background: #ddf8f2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #08b9a6;
+  content: "";
+}
+
+.gradient-text {
+  color: #009f9a;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 14px;
+  padding: 14px 22px;
+  color: white;
+  background: linear-gradient(135deg, #04a99d, #008eaa);
+  box-shadow: 0 12px 24px rgba(0, 158, 152, 0.2);
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 158, 152, 0.28);
+}
+
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #dcebed;
+  border-radius: 14px;
+  padding: 14px 22px;
+  color: #19334d;
+  background: white;
+  font-weight: 700;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.secondary-button:hover {
+  border-color: #8adbd2;
+  transform: translateY(-2px);
 }
 
 .active hr {

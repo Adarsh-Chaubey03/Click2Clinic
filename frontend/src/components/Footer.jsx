@@ -1,4 +1,3 @@
-import { assets } from '../assets/assets';
 import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
@@ -11,20 +10,20 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-100 text-gray-900 border-t-2 border-t-gray-200 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+    <footer className="mt-auto border-t border-[#dceeed] bg-[#effafa] text-[#20334a]">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 py-14 text-sm sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         {/* Left Section: Logo and Description */}
         <div>
-          <img className="mb-5 w-40" src={assets.main_logo} alt="VaidyTek Logo" />
-          <p className="text-gray-600 leading-6 md:w-2/3">
-            VaidyTek bridges healthcare and technology, connecting patients with trusted medical professionals. Our mission is to make healthcare accessible, efficient, and personalized for all.
+          <p className="mb-5 text-2xl font-extrabold tracking-tight text-[#10233f]">Click<span className="text-[#009f9a]">2</span>Clinic</p>
+          <p className="leading-6 text-[#687b90] md:w-2/3">
+            Click2Clinic connects patients with trusted healthcare professionals, diagnostics and medicines in one simple experience.
 </p>
         </div>
 
         {/* Quick Links Section */}
         <div>
-          <p className="text-xl font-medium mb-5 text-gray-800">Quick Links</p>
-          <ul className="flex flex-col gap-2 text-gray-600">
+          <p className="mb-5 text-lg font-bold text-[#10233f]">Quick Links</p>
+          <ul className="flex flex-col gap-3 text-[#687b90]">
             <li
               onClick={() => handleNavClick('/store')}
               className="cursor-pointer hover:text-cyan-700 hover:underline transition-all duration-200"
@@ -54,8 +53,8 @@ const Footer = () => {
 
         {/* Explore Section */}
         <div>
-          <p className="text-xl font-medium mb-5 text-gray-800">Explore</p>
-          <ul className="flex flex-col gap-2 text-gray-600">
+          <p className="mb-5 text-lg font-bold text-[#10233f]">Explore</p>
+          <ul className="flex flex-col gap-3 text-[#687b90]">
             <li
               onClick={() => handleNavClick('/')}
               className="cursor-pointer hover:text-cyan-700 hover:underline transition-all duration-200"
@@ -85,8 +84,8 @@ const Footer = () => {
 
         {/* Get In Touch Section */}
         <div>
-          <p className="text-xl font-medium mb-5 text-gray-800">Get In Touch</p>
-          <ul className="flex flex-col gap-2 text-gray-600">
+          <p className="mb-5 text-lg font-bold text-[#10233f]">Get In Touch</p>
+          <ul className="flex flex-col gap-3 text-[#687b90]">
             <li>
               <a
                 href="tel:+12124567890"
@@ -108,10 +107,10 @@ const Footer = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="bg-cyan-100/70">
+      <div className="border-t border-[#d4e9e8] bg-[#e2f7f5]">
         <hr className="border-gray-200" />
         <p className="py-5 text-sm text-center text-gray-600">
-          Copyright 2025@ prescripto - All Rights Reserved.
+          Copyright 2025 Click2Clinic. All Rights Reserved.
         </p>
       </div>
     </footer>
