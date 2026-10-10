@@ -10,7 +10,7 @@ import quickHealthBg from "../assets/quickhealth.png";
 const Awareness = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [selectedDisease, setSelectedDisease] = useState(null);
+  const [selectedDisease, setSelectedDisease] = useState(() => diseases[0] || null); // default: Diabetes
   const [activeSection, setActiveSection] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -84,124 +84,82 @@ const Awareness = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div
-        className="relative overflow-hidden text-white"
-        style={{
-          backgroundImage: `url(${quickHealthBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        {/* Teal overlay */}
-        <div className="absolute inset-0 bg-[#009f9a]/75" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center"
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-4">
-              📚 Health Library
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Health Tips & Disease Guide
-            </h1>
-            <p className="text-teal-100 text-lg max-w-2xl mx-auto mb-8">
-              Comprehensive information about diseases, symptoms, treatments, and prevention
-            </p>
+    <div className="min-h-screen" style={{ background:"linear-gradient(110deg,#effcfb 0%,#f2fbfa 50%,#e9f8f8 100%)" }}>
 
-            {/* Search Bar */}
-            <div className="max-w-xl mx-auto relative">
-              <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-              <input
-                type="text"
-                placeholder="Search conditions, symptoms..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30 shadow-xl"
-              />
-            </div>
-          </motion.div>
+      {/* ── HERO ── */}
+      <div className="relative overflow-hidden"
+        style={{ backgroundImage:`url(${quickHealthBg})`, backgroundSize:"cover", backgroundPosition:"center" }}>
+        <div className="absolute inset-0 bg-[#009f9a]/80" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+
+            {/* Left */}
+            <motion.div initial={{ opacity:0, x:-20 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.5 }} className="max-w-xl">
+              <span className="eyebrow mb-4 inline-flex !bg-white/20 !text-white border-0">
+                📚 Health Library
+              </span>
+              <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+                Knowledge for a <span className="text-[#c9ffef]">Healthier</span> You
+              </h1>
+              <p className="text-white/80 text-sm sm:text-base max-w-md mb-6 leading-relaxed">
+                Explore trusted information about diseases, symptoms, treatments, and healthy living to make better health decisions.
+              </p>
+              {/* Trust badges */}
+              <div className="flex flex-wrap gap-5">
+                {[
+                  { icon:"📄", label:"Expert-reviewed content" },
+                  { icon:"🛡️", label:"Reliable & easy to understand" },
+                  { icon:"❤️", label:"Tips for a healthier life" },
+                ].map(b => (
+                  <div key={b.label} className="flex items-center gap-2 text-sm font-medium text-white">
+                    <span>{b.icon}</span>
+                    {b.label}
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-        {/* Current Outbreak Alert */}
-        {latestDisease && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-8 bg-[#effcfb] border border-[#dceeed] rounded-2xl p-6"
-          >
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#ddf8f2] rounded-xl flex items-center justify-center flex-shrink-0">
-                <span className="text-2xl">⚠️</span>
-              </div>
-              <div className="flex-1">
-                <div className="flex justify-between items-start">
-                  <h3 className="font-bold text-[#10233f] text-lg mb-1">Current Health Alert: {latestDisease.disease}</h3>
-                  <button 
-                    onClick={() => fetchDiseaseData(true)} 
-                    disabled={isLoading}
-                    className="flex items-center gap-1 text-sm bg-[#ddf8f2] hover:bg-[#b2ebe0] text-[#009f9a] px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
-                  >
-                    <svg className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                    </svg>
-                    {isLoading ? 'Refreshing...' : 'Refresh'}
-                  </button>
-                </div>
-                <p className="text-[#5f7185] text-sm mb-2">{latestDisease.description}</p>
-                <div className="flex flex-wrap gap-4 text-sm">
-                  <span className="text-[#009f9a] font-semibold">{latestDisease.infected?.toLocaleString()} cases</span>
-                  <span className="text-[#718398]">•</span>
-                  <span className="text-[#009f9a] font-semibold">{latestDisease.deaths?.toLocaleString()} deaths</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Category Filters */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-5 py-2.5 rounded-xl font-medium transition-all duration-200 ${selectedCategory === cat
-                ? "bg-[#009f9a] text-white shadow-lg"
-                : "bg-white text-[#5f7185] hover:bg-[#effcfb] border border-[#dceeed]"
+      {/* ── CATEGORY FILTER BAR ── */}
+      <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-[#dceeed] shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center gap-2 py-3">
+            {categories.map((cat) => (
+              <button key={cat} onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
+                  selectedCategory === cat
+                    ? "text-white shadow"
+                    : "bg-white text-[#5f7185] hover:bg-[#effcfb] border border-[#dceeed]"
                 }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="flex gap-8">
-          {/* Sidebar - Disease List */}
-          <div className={`
-            fixed inset-y-0 left-0 z-50 w-80 bg-white shadow-2xl transform transition-transform duration-300 lg:relative lg:transform-none lg:shadow-none lg:z-0
-            ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
-          `}>
-            {/* Mobile Close Button */}
-            <button
-              onClick={() => setSidebarOpen(false)}
-              className="lg:hidden absolute top-4 right-4 p-2 text-gray-500 hover:text-gray-700"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                style={selectedCategory === cat ? { background:"linear-gradient(135deg,#04a99d,#008eaa)" } : {}}>
+                {cat}
+              </button>
+            ))}
+            {/* Search */}
+            <div className="relative ml-2 flex-1 max-w-xs">
+              <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#b0bec5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
-            </button>
+              <input type="text" placeholder="Search conditions, symptoms..."
+                value={searchTerm} onChange={e => setSearchTerm(e.target.value)}
+                className="w-full pl-9 pr-4 py-2 border border-[#dceeed] rounded-xl text-sm text-[#10233f] placeholder-[#b0bec5] focus:outline-none focus:border-[#009f9a] bg-white"/>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div className="h-full overflow-y-auto bg-white rounded-2xl border border-[#dceeed] lg:sticky lg:top-4">
-              <div className="p-4 border-b border-[#dceeed]">
-                <h3 className="font-bold text-[#10233f]">Health Conditions</h3>
-                <p className="text-sm text-[#718398]">{filteredDiseases.length} articles</p>
+      {/* ── MAIN CONTENT ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex gap-6" style={{ alignItems:"flex-start" }}>
+          {/* Sidebar - Disease List */}
+          <div className="hidden lg:block w-64 flex-shrink-0" style={{ position:"sticky", top:"108px", alignSelf:"flex-start" }}>
+            <div className="bg-white rounded-2xl border border-[#dceeed] shadow-sm overflow-hidden">
+              <div className="px-4 py-3 border-b border-[#dceeed]">
+                <h3 className="font-bold text-[#10233f] text-sm">Health Conditions</h3>
+                <p className="text-xs text-[#718398]">{filteredDiseases.length} articles</p>
               </div>
               <div className="p-2">
                 {filteredDiseases.map((disease) => (
@@ -210,28 +168,26 @@ const Awareness = () => {
                     onClick={() => {
                       setSelectedDisease(disease);
                       setActiveSection("overview");
-                      setSidebarOpen(false);
                     }}
-                    className={`w-full text-left p-3 rounded-xl mb-1 transition-all duration-200 ${selectedDisease?.name === disease.name
-                      ? "bg-[#effcfb] border-l-4 border-[#009f9a]"
-                      : "hover:bg-gray-50"
-                      }`}
+                    className={`w-full text-left p-2.5 rounded-xl mb-0.5 transition-all duration-200 ${
+                      selectedDisease?.name === disease.name
+                        ? "bg-[#effcfb] border-l-4 border-[#009f9a]"
+                        : "hover:bg-[#f5fdfc] border-l-4 border-transparent"
+                    }`}
                   >
                     <div className="flex items-center gap-3">
-                      <img
-                        src={disease.image}
-                        alt={disease.name}
-                        className="w-10 h-10 rounded-lg object-cover"
-                        onError={(e) => e.target.src = "https://via.placeholder.com/40"}
-                      />
-                      <div>
-                        <p className={`font-medium ${selectedDisease?.name === disease.name ? "text-[#009f9a]" : "text-gray-900"}`}>
+                      <img src={disease.image} alt={disease.name}
+                        className="w-10 h-10 rounded-xl object-cover flex-shrink-0"
+                        onError={e => e.target.src="https://via.placeholder.com/40"}/>
+                      <div className="min-w-0">
+                        <p className={`text-sm font-semibold leading-tight ${selectedDisease?.name === disease.name ? "text-[#009f9a]" : "text-[#10233f]"}`}>
                           {disease.name}
                         </p>
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${disease.category === "Viral" ? "bg-[#ddf8f2] text-[#009f9a]" :
+                        <span className={`text-[10px] px-2 py-0.5 rounded-full font-medium ${
+                          disease.category === "Viral" ? "bg-red-100 text-red-600" :
                           disease.category === "Chronic" ? "bg-[#ddf8f2] text-[#009f9a]" :
-                            "bg-[#ddf8f2] text-[#009f9a]"
-                          }`}>
+                          "bg-blue-100 text-blue-600"
+                        }`}>
                           {disease.category}
                         </span>
                       </div>
