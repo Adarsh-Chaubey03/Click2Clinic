@@ -10,7 +10,6 @@ import {
   cancelAppointment,
   paymentRazorpay,
   verifyRazorpay,
-  generateResponse,
   chatbotResponse,
   verifyLab,
   generateAndSavePrescription,
@@ -66,7 +65,6 @@ userRouter.get('/userOrder', authUser, getUserOrder);
 userRouter.post('/cancel-order', authUser, cancelOrder);
 userRouter.post('/payment-orderRazorpay', authUser, orderRazorpay);
 userRouter.post('/verify-medOrderRazorpay', authUser, verifyOrderRazorpay);
-userRouter.post('/gemini-response', generateResponse);
 userRouter.post('/chatbot-response', chatbotResponse);
 userRouter.post('/verify-lab', authUser, verifyLab);
 userRouter.post('/generate-prescription', authDoctor, generateAndSavePrescription);

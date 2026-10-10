@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import { FaSearch, FaVial, FaShieldAlt, FaHome, FaFileAlt, FaUsers, FaHeartbeat } from "react-icons/fa";
+import { FaSearch, FaVial, FaHome, FaFileAlt, FaUsers, FaHeartbeat } from "react-icons/fa";
 import axios from "axios";
 import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -100,12 +100,9 @@ const LabSection = () => {
     <div className="min-h-screen" style={{ background: "linear-gradient(110deg,#effcfb 0%,#f2fbfa 50%,#e9f8f8 100%)" }}>
 
       {/* ══ HERO ══ */}
-      <div className="relative overflow-hidden" style={{ backgroundImage:`url(${labImage})`, backgroundSize:"cover", backgroundPosition:"center" }}>
+      <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden" style={{ backgroundImage:`url(${labImage})`, backgroundSize:"cover", backgroundPosition:"center" }}>
         <div className="absolute inset-0 bg-[#009f9a]/70" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
-          {/* Breadcrumb */}
-          <p className="text-white/70 text-xs mb-4">Home &rsaquo; Lab Tests</p>
-
+        <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             {/* Left text */}
             <div className="max-w-xl">
@@ -113,22 +110,6 @@ const LabSection = () => {
                 Book <span className="text-white">Lab Tests</span> Online
               </h1>
               <p className="text-white/80 text-sm mb-6">Accurate diagnostics with home sample collection and fast results.</p>
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-5">
-                {[
-                  { icon: <FaShieldAlt/>, title:"Certified Labs", sub:"NABL accredited partners" },
-                  { icon: <FaHome/>, title:"Home Collection", sub:"Safe & hygienic sample collection" },
-                  { icon: <FaFileAlt/>, title:"Fast Reports", sub:"Digital reports in 24–48 hrs" },
-                ].map(b => (
-                  <div key={b.title} className="flex items-center gap-2">
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-white/20 text-white text-sm">{b.icon}</div>
-                    <div>
-                      <p className="text-white text-xs font-bold leading-none">{b.title}</p>
-                      <p className="text-white/70 text-[10px]">{b.sub}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
             {/* Trusted badge */}
             <div className="hidden lg:flex flex-col items-center justify-center bg-white rounded-2xl px-8 py-5 shadow-xl text-center">

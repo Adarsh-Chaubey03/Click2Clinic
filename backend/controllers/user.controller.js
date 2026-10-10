@@ -617,76 +617,6 @@ const verifyRazorpay = async (req, res) => {
     return res.json({ success: false, message: error.message });
   }
 };
-const generateResponse = async (req, res) => {
-  try {
-    const prompt = `You are a medical analyst.
-
-Based strictly on the most recent data from trusted Indian health authorities (including WHO India, ICMR, and MoHFW), identify the current most severe and actively spreading disease in India. Do NOT default to COVID-19 unless there is a current massive outbreak. Instead, focus on the current disease with the highest active impact based on spread and severity today (e.g., Dengue, Tuberculosis, Nipah, Influenza, etc., depending on current data).
-
-Choose the disease with the highest current impact, based on spread, severity, and mortality rate.
-
-Return ONLY a valid JSON object in the EXACT format below, with no extra text, markdown, or explanation:
-
-{
-  "disease": "Disease Name",
-  "infected": 1234567,
-  "deaths": 12345,
-  "precautions": ["Practical precaution 1", "Precaution 2", "Precaution 3"],
-  "cure": ["Officially recommended treatment 1", "Treatment 2", "Treatment 3"]
-}
-
-IMPORTANT RULES:
-- Return ONLY valid JSON. No code block formatting like \`\`\`json or any extra text.
-- Use the latest available data from **WHO India**, **MoHFW**, or **ICMR** sources. Mention the **most virulent disease at present**.
-- If data is not available, **estimate** numbers based on trusted official patterns and guidance.
-- Precautions must be **realistic public safety steps**.
-- Cures must be **officially recommended treatments**.
-- Never return "no data available". If unsure, **estimate based on official trends**.
-- Do not invent diseases or treatments — rely only on verified sources or their logical extrapolations.
-
-WARNING: If you include any commentary, code blocks, or markdown, the response will be rejected. Return JSON ONLY.`;
-
-    const jsonData = await generateHuggingFaceJson({ prompt });
-
-    if (!jsonData || typeof jsonData !== "object") {
-      return res.status(502).json({ success: false, message: "Invalid JSON response from Hugging Face." });
-    }
-
-    const normalized = {
-      disease: String(jsonData.disease || "").trim(),
-      infected: Number(jsonData.infected),
-      deaths: Number(jsonData.deaths),
-      precautions: normalizeToStringArray(jsonData.precautions),
-      cure: normalizeToStringArray(jsonData.cure),
-    };
-
-    if (!normalized.disease || Number.isNaN(normalized.infected) || Number.isNaN(normalized.deaths)) {
-      return res.status(502).json({ success: false, message: "Invalid JSON response from Hugging Face." });
-    }
-
-    if (!normalized.precautions.length || !normalized.cure.length) {
-      return res.status(502).json({ success: false, message: "Invalid JSON response from Hugging Face." });
-    }
-
-    return res.json({ success: true, data: normalized });
-  } catch (error) {
-    const statusCode = error?.statusCode || 500;
-    if (statusCode === 429 && error?.retryAfterSeconds) {
-      res.set("Retry-After", String(error.retryAfterSeconds));
-    }
-    console.error("generateResponse error:", error?.message || error, "url:", error?.requestUrl);
-    return res.status(statusCode).json({
-      success: false,
-      message: (statusCode === 429)
-        ? "Hugging Face rate limit reached. Please retry shortly."
-        : ("Server error occurred: " + (error?.message || "Unknown error")),
-      error: undefined,
-      retryAfterSeconds: error?.retryAfterSeconds || undefined,
-      requestUrl: error?.requestUrl || undefined,
-    });
-  }
-};
-
 const chatbotResponse = async (req, res) => {
   try {
     const { message } = req.body;
@@ -1439,7 +1369,6 @@ export {
   cancelAppointment,
   paymentRazorpay,
   verifyRazorpay,
-  generateResponse,
   chatbotResponse,
   verifyLab,
   generateAndSavePrescription,

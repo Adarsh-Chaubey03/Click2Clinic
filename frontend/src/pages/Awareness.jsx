@@ -1,9 +1,6 @@
-import { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { diseases } from "../assets/assets.js";
-import { AppContext } from "../context/AppContext.jsx";
-import { toast } from "react-toastify";
-import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import quickHealthBg from "../assets/quickhealth.png";
 
@@ -14,9 +11,6 @@ const Awareness = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState(null);
-  const { backendUrl } = useContext(AppContext);
-  const [latestDisease, setLatestDisease] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -44,34 +38,6 @@ const Awareness = () => {
       disease.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Fetch latest disease data
-  const fetchDiseaseData = async (forceRefresh = false) => {
-    if (isLoading) return;
-    if (!forceRefresh && localStorage.getItem("latestDisease")) {
-      setLatestDisease(JSON.parse(localStorage.getItem("latestDisease")));
-      return;
-    }
-    setIsLoading(true);
-    try {
-      const { data } = await axios.post(backendUrl + "/api/user/gemini-response");
-      if (data.success) {
-        setLatestDisease(data.data);
-        localStorage.setItem("latestDisease", JSON.stringify(data.data));
-      } else {
-        toast.error("Failed to fetch latest health alert");
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error("Failed to fetch latest health alert");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchDiseaseData();
-  }, []);
-
   // Sidebar sections for selected disease
   const sections = [
     { id: "overview", label: "Overview", icon: "📋" },
@@ -90,33 +56,18 @@ const Awareness = () => {
       <div className="relative overflow-hidden"
         style={{ backgroundImage:`url(${quickHealthBg})`, backgroundSize:"cover", backgroundPosition:"center" }}>
         <div className="absolute inset-0 bg-[#009f9a]/80" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div className="relative z-10 h-48 sm:h-56 lg:h-64 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
             {/* Left */}
             <motion.div initial={{ opacity:0, x:-20 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.5 }} className="max-w-xl">
-              <span className="eyebrow mb-4 inline-flex !bg-white/20 !text-white border-0">
-                📚 Health Library
-              </span>
-              <h1 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
                 Knowledge for a <span className="text-[#c9ffef]">Healthier</span> You
               </h1>
               <p className="text-white/80 text-sm sm:text-base max-w-md mb-6 leading-relaxed">
-                Explore trusted information about diseases, symptoms, treatments, and healthy living to make better health decisions.
+                Explore trusted information about diseases, symptoms,<br />
+                treatments, and healthy living to make better health decisions.
               </p>
-              {/* Trust badges */}
-              <div className="flex flex-wrap gap-5">
-                {[
-                  { icon:"📄", label:"Expert-reviewed content" },
-                  { icon:"🛡️", label:"Reliable & easy to understand" },
-                  { icon:"❤️", label:"Tips for a healthier life" },
-                ].map(b => (
-                  <div key={b.label} className="flex items-center gap-2 text-sm font-medium text-white">
-                    <span>{b.icon}</span>
-                    {b.label}
-                  </div>
-                ))}
-              </div>
             </motion.div>
 
           </div>
