@@ -49,7 +49,7 @@ const DiseaseOverview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.06 }}
-              onClick={() => { navigate(`/awareness/${item.slug}`); window.scrollTo(0, 0); }}
+              onClick={() => { navigate("/awareness", { state: { disease: item.slug } }); window.scrollTo(0, 0); }}
               className="group flex flex-col items-center justify-between rounded-2xl border border-[#e3eeee] bg-white px-4 pb-5 pt-7 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.12)]"
             >
               {/* Image circle — full bleed, zoomed */}

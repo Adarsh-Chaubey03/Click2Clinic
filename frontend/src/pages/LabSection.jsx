@@ -120,75 +120,64 @@ const LabSection = () => {
 
   return (
     <div
-      className="min-h-screen py-8 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen"
       style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}
     >
-      <div className="max-w-7xl mx-auto">
+      {/* ── Full-bleed Hero (outside max-w wrapper, no rounded corners) ── */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${labImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-[#009f9a]/70" />
 
-        {/* Hero Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative mb-8 flex min-h-72 items-center overflow-hidden rounded-2xl sm:mb-12 sm:h-60"
-          style={{
-            backgroundImage: `url(${labImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 flex flex-col items-start px-4 text-white sm:px-12">
-            <h1 className="mb-3 text-3xl font-extrabold tracking-tight sm:text-5xl">
-              Book Lab Tests Online
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+          <div className="text-center mb-8">
+            <h1 className="mb-2 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
+              Book Lab Tests Online 🧪
             </h1>
-            <p className="mb-4 max-w-md text-base sm:text-xl">
+            <p className="text-white/80 text-sm sm:text-base">
               Fast, certified, and affordable diagnostics at your fingertips.
             </p>
-            <button className="bg-white text-[#009f9a] px-6 py-3 rounded-xl font-semibold hover:bg-[#effcfb] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              Explore Tests
-            </button>
           </div>
-        </motion.div>
 
-        {/* Search & Filter Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-10 rounded-2xl border border-[#dceeed] bg-white p-4 shadow-lg sm:p-6"
-        >
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
-            <div className="relative w-full sm:w-3/5">
-              <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#718398] text-lg" />
+          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row gap-3 items-center">
+            <div className="relative w-full sm:flex-1">
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-lg" />
               <input
                 type="text"
                 placeholder="Search tests or health packages"
-                className="w-full pl-12 pr-4 py-4 rounded-xl border border-[#dceeed] focus:outline-none focus:ring-2 focus:ring-[#009f9a] focus:border-[#009f9a] text-[#10233f] text-base transition-all duration-300"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white shadow-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-white/30 text-base transition-all duration-200"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
-            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <button
-                className="flex w-full items-center justify-center gap-3 rounded-xl px-4 py-4 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg sm:w-auto sm:px-6"
-                style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
-                onClick={handleLocationSearch}
-              >
-                <FaMapMarkerAlt className="text-lg" />
-                Find Nearby Labs
-              </button>
-              <button
-                className="flex w-full items-center justify-center gap-3 rounded-xl border border-[#dceeed] bg-[#effcfb] px-4 py-4 text-sm font-semibold text-[#10233f] transition-all duration-300 hover:bg-[#ddf8f2] sm:w-auto sm:px-6"
-                onClick={() => setShowFilters(true)}
-              >
-                <FaFilter className="text-lg" />
-                Filter Tests
-              </button>
-            </div>
+            <button
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl bg-white px-6 py-4 text-sm font-semibold text-[#009f9a] shadow-lg hover:bg-[#effcfb] transition-all duration-300"
+              onClick={handleLocationSearch}
+            >
+              <FaMapMarkerAlt className="text-lg" />
+              Find Nearby Labs
+            </button>
+            <button
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-2xl border border-white/60 bg-white/20 backdrop-blur px-6 py-4 text-sm font-semibold text-white hover:bg-white/30 transition-all duration-300"
+              onClick={() => setShowFilters(true)}
+            >
+              <FaFilter className="text-lg" />
+              Filter Tests
+            </button>
           </div>
-        </motion.div>
+        </div>
+      </motion.div>
+
+      {/* ── Rest of page content inside padded wrapper ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* Loading State */}
         {loading && (
@@ -523,8 +512,8 @@ const LabSection = () => {
             </button>
           </motion.div>
         </div>
-      </div>
-    </div>
+      </div>{/* closes max-w-7xl inner padded wrapper */}
+    </div>{/* closes outer page div */}
   );
 };
 

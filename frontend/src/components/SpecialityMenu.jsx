@@ -38,19 +38,19 @@ const SpecialityMenu = () => {
               <Link
                 to={`/doctors/${item.speciality}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="group flex flex-col items-center justify-between rounded-2xl border border-[#e3eeee] bg-white px-4 pb-5 pt-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.12)]"
+                className="group flex flex-col items-center rounded-2xl border border-[#e8f0ef] bg-white px-3 pb-5 pt-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.12)]"
               >
-                {/* Icon circle */}
-                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f9f6] transition-transform duration-300 group-hover:scale-105">
+                {/* Image — large, no bg circle, fills most of card */}
+                <div className="mb-4 h-24 w-24 flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-105">
                   <img
                     src={item.image}
                     alt={item.speciality}
-                    className="h-9 w-9 object-contain"
+                    className="h-full w-full object-contain"
                   />
                 </div>
 
                 {/* Name */}
-                <span className="mb-4 text-center text-sm font-semibold leading-snug text-[#10233f] transition-colors duration-300 group-hover:text-[#009f9a]">
+                <span className="mb-4 text-center text-[13px] font-semibold leading-snug text-[#10233f] transition-colors duration-300 group-hover:text-[#009f9a]">
                   {item.speciality}
                 </span>
 
