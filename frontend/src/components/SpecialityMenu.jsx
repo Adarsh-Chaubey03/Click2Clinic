@@ -14,13 +14,13 @@ const SpecialityMenu = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-12"
         >
           <span className="eyebrow mb-4">Find Your Specialist</span>
           <h2 className="mt-4 text-4xl font-extrabold text-[#10233f] sm:text-5xl">
             Browse by <span className="gradient-text">Specialty</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-[#687b90]">
+          <p className="mt-4 max-w-2xl text-base text-[#687b90]">
             Connect with certified healthcare professionals across all medical specialties
           </p>
         </motion.div>
