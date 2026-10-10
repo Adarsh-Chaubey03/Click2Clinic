@@ -105,10 +105,10 @@ const HireDoctorBanner = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="mb-4 text-3xl font-extrabold leading-tight text-[#10233f] sm:text-4xl"
+                className="mb-4 text-2xl font-extrabold leading-tight text-[#10233f] sm:text-3xl"
               >
                 Are You a Doctor?<br />
-                <span className="text-[#009f9a]">Join Click2Clinic Today</span>
+                <span className="text-[#009f9a] whitespace-nowrap">Join Click2Clinic Today</span>
               </motion.h2>
 
               {/* Description */}
