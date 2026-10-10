@@ -135,19 +135,19 @@ const Awareness = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8 bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-2xl p-6"
+            className="mb-8 bg-[#effcfb] border border-[#dceeed] rounded-2xl p-6"
           >
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-[#ddf8f2] rounded-xl flex items-center justify-center flex-shrink-0">
                 <span className="text-2xl">⚠️</span>
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-start">
-                  <h3 className="font-bold text-red-800 text-lg mb-1">Current Health Alert: {latestDisease.disease}</h3>
+                  <h3 className="font-bold text-[#10233f] text-lg mb-1">Current Health Alert: {latestDisease.disease}</h3>
                   <button 
                     onClick={() => fetchDiseaseData(true)} 
                     disabled={isLoading}
-                    className="flex items-center gap-1 text-sm bg-red-100 hover:bg-red-200 text-red-700 px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
+                    className="flex items-center gap-1 text-sm bg-[#ddf8f2] hover:bg-[#b2ebe0] text-[#009f9a] px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50"
                   >
                     <svg className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -155,11 +155,11 @@ const Awareness = () => {
                     {isLoading ? 'Refreshing...' : 'Refresh'}
                   </button>
                 </div>
-                <p className="text-red-700 text-sm mb-2">{latestDisease.description}</p>
+                <p className="text-[#5f7185] text-sm mb-2">{latestDisease.description}</p>
                 <div className="flex flex-wrap gap-4 text-sm">
-                  <span className="text-red-600 font-semibold">{latestDisease.infected?.toLocaleString()} cases</span>
-                  <span className="text-gray-500">•</span>
-                  <span className="text-red-600 font-semibold">{latestDisease.deaths?.toLocaleString()} deaths</span>
+                  <span className="text-[#009f9a] font-semibold">{latestDisease.infected?.toLocaleString()} cases</span>
+                  <span className="text-[#718398]">•</span>
+                  <span className="text-[#009f9a] font-semibold">{latestDisease.deaths?.toLocaleString()} deaths</span>
                 </div>
               </div>
             </div>

@@ -512,8 +512,8 @@ const LabSection = () => {
             </button>
           </motion.div>
         </div>
-      </div>{/* closes max-w-7xl inner padded wrapper */}
-    </div>{/* closes outer page div */}
+      </div>
+    </div>
   );
 };
 
