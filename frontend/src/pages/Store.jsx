@@ -77,24 +77,50 @@ const Store = () => {
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(110deg,#effcfb 0%,#f2fbfa 50%,#e9f8f8 100%)" }}>
 
-      {/* ── HERO (untouched) ── */}
-      <div className="relative overflow-hidden"
-        style={{ backgroundImage: `url(${pharmacyBg})`, backgroundSize:"cover", backgroundPosition:"center" }}>
-        <div className="absolute inset-0 bg-[#009f9a]/70" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-          <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} className="text-center mb-6">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Your Health, Delivered 💊</h1>
-            <p className="text-white/80 text-sm sm:text-base">Order medicines from trusted pharmacies</p>
-          </motion.div>
-          <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.1 }} className="max-w-2xl mx-auto">
-            <div className="relative">
-              <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
-              <input type="text" placeholder="Search for medicines, health products..."
-                value={searchInput} onChange={e => setSearchInput(e.target.value)}
-                onKeyDown={e => e.key==="Enter" && setSearchTerm(searchInput)}
-                className="w-full pl-12 pr-4 py-4 bg-white rounded-2xl shadow-lg text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-white/30 text-base transition-all"/>
+      {/* ── HERO ── */}
+      <div className="relative overflow-hidden">
+        {/* Full-width background image */}
+        <img
+          src={pharmacyBg}
+          alt="Pharmacy hero"
+          className="w-full h-48 sm:h-56 lg:h-64 object-cover object-center"
+        />
+        {/* Overlay — left-side teal gradient so text is readable */}
+        <div className="absolute inset-0"
+          style={{ background: "linear-gradient(90deg, rgba(0,159,154,0.82) 0%, rgba(0,159,154,0.55) 45%, rgba(0,159,154,0.05) 100%)" }} />
+
+        {/* Text content */}
+        <div className="absolute inset-0 flex items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8"
+          >
+            <div className="max-w-lg">
+              <p className="mb-1.5 text-xs font-bold uppercase tracking-widest text-white/80">
+                Your Health, Made Simpler
+              </p>
+              <h1 className="mb-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-white">
+                Medicines, <span className="text-[#c9ffef]">Delivered</span> to Your Door.
+              </h1>
+              <p className="mb-4 text-xs sm:text-sm text-white/80 max-w-sm leading-relaxed">
+                Your everyday healthcare essentials, from trusted pharmacies to your doorstep.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { icon: <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>, label: "Trusted pharmacies" },
+                  { icon: <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>, label: "Convenient ordering" },
+                  { icon: <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>, label: "Healthcare essentials" },
+                ].map(b => (
+                  <div key={b.label} className="flex items-center gap-1.5 text-xs font-medium text-white">
+                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-white/20">
+                      {b.icon}
+                    </div>
+                    {b.label}
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
