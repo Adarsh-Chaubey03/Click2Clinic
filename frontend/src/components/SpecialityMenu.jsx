@@ -1,28 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { specialityData } from "../assets/assets";
 import { motion } from "framer-motion";
 
 const SpecialityMenu = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-16 sm:py-20">
       <div className="section-wrap">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 text-center"
+          className="mb-12 text-center"
         >
           <span className="eyebrow mb-4">Find Your Specialist</span>
-          <h2 className="text-3xl font-extrabold text-[#10233f] sm:text-5xl">
+          <h2 className="mt-4 text-4xl font-extrabold text-[#10233f] sm:text-5xl">
             Browse by <span className="gradient-text">Specialty</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#687b90]">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-[#687b90]">
             Connect with certified healthcare professionals across all medical specialties
           </p>
         </motion.div>
 
-        {/* Speciality Grid */}
+        {/* Speciality Cards */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {specialityData.map((item, index) => (
             <motion.div
@@ -30,52 +33,61 @@ const SpecialityMenu = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              transition={{ delay: index * 0.06 }}
             >
               <Link
                 to={`/doctors/${item.speciality}`}
-                onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-                className="group relative flex min-h-[292px] flex-col items-center rounded-[22px] border border-[#e3eeee] bg-white p-4 shadow-[0_8px_30px_rgba(15,80,90,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9edfd8] hover:shadow-[0_18px_36px_rgba(15,150,140,0.13)] sm:min-h-[292px] sm:p-6"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="group flex flex-col items-center justify-between rounded-2xl border border-[#e3eeee] bg-white px-4 pb-5 pt-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.12)]"
               >
-                {/* Gradient Background on Hover */}
-                <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-teal-50/70 to-cyan-50/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-
-                {/* Icon Container */}
-                <div className="relative mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#e2f8f5] transition-transform duration-300 group-hover:scale-105 sm:h-24 sm:w-24">
+                {/* Icon circle */}
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f9f6] transition-transform duration-300 group-hover:scale-105">
                   <img
                     src={item.image}
                     alt={item.speciality}
-                    className="h-14 w-14 object-contain"
+                    className="h-9 w-9 object-contain"
                   />
                 </div>
 
-                {/* Label */}
-                <span className="relative flex min-h-[48px] items-center justify-center break-words text-center text-sm font-bold leading-6 text-[#20334a] transition-colors duration-300 group-hover:text-[#008f88] sm:text-base">
+                {/* Name */}
+                <span className="mb-4 text-center text-sm font-semibold leading-snug text-[#10233f] transition-colors duration-300 group-hover:text-[#009f9a]">
                   {item.speciality}
                 </span>
 
-                {/* Arrow Indicator */}
-                <div className="mt-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#dff8f2] text-[#008f88] transition-all duration-300 group-hover:bg-[#08ac9f] group-hover:text-white">
-                  <svg className="w-3 h-3 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                {/* Arrow button */}
+                <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-all duration-300 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
               </Link>
             </motion.div>
           ))}
         </div>
-        <div className="mt-8 text-center">
+
+        {/* See All Doctors button */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="mt-10 text-center"
+        >
           <button
             type="button"
             onClick={() => {
               navigate("/doctors");
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="primary-button"
+            className="primary-button mx-auto"
           >
-            See All Doctors <span aria-hidden="true">→</span>
+            <span>See All Doctors</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </button>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
