@@ -121,11 +121,11 @@ const LaboratoryOverview = () => {
                     Book Now
                   </button>
                 </div>
-                )}
               </div>
             </motion.div>
           ))}
         </div>
+        )}
 
         {/* View All Button */}
         <motion.div

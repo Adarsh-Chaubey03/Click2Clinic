@@ -35,7 +35,7 @@ const SpecialityMenu = () => {
               <Link
                 to={`/doctors/${item.speciality}`}
                 onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-                className="group relative flex flex-col items-center rounded-[22px] border border-[#e3eeee] bg-white p-4 shadow-[0_8px_30px_rgba(15,80,90,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9edfd8] hover:shadow-[0_18px_36px_rgba(15,150,140,0.13)] sm:p-6"
+                className="group relative flex min-h-[292px] flex-col items-center rounded-[22px] border border-[#e3eeee] bg-white p-4 shadow-[0_8px_30px_rgba(15,80,90,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9edfd8] hover:shadow-[0_18px_36px_rgba(15,150,140,0.13)] sm:min-h-[292px] sm:p-6"
               >
                 {/* Gradient Background on Hover */}
                 <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-teal-50/70 to-cyan-50/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -50,7 +50,7 @@ const SpecialityMenu = () => {
                 </div>
 
                 {/* Label */}
-                <span                 className="relative break-words text-center text-sm font-bold text-[#20334a] transition-colors duration-300 group-hover:text-[#008f88] sm:text-base">
+                <span className="relative flex min-h-[48px] items-center justify-center break-words text-center text-sm font-bold leading-6 text-[#20334a] transition-colors duration-300 group-hover:text-[#008f88] sm:text-base">
                   {item.speciality}
                 </span>
 
@@ -63,6 +63,18 @@ const SpecialityMenu = () => {
               </Link>
             </motion.div>
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <button
+            type="button"
+            onClick={() => {
+              navigate("/doctors");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="primary-button"
+          >
+            See All Doctors <span aria-hidden="true">→</span>
+          </button>
         </div>
       </div>
     </section>
