@@ -1,49 +1,122 @@
-import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { AppContext } from "../context/AppContext";
 
-// Lab test category icons/images
-const categoryImages = {
-  "Blood": "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&fit=crop&q=80",
-  "Urine": "https://images.unsplash.com/photo-1606206873764-fd15e242df52?w=400&fit=crop&q=80",
-  "Thyroid": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=400&fit=crop&q=80",
-  "Lipid": "https://images.unsplash.com/photo-1551601651-bc60f254d532?w=400&fit=crop&q=80",
-  "Liver": "https://images.unsplash.com/photo-1576671081837-49000212a370?w=400&fit=crop&q=80",
-  "Kidney": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&fit=crop&q=80",
-  "Sugar": "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=400&fit=crop&q=80",
-  "Diabetes": "https://images.unsplash.com/photo-1550831107-1553da8c8464?w=400&fit=crop&q=80",
-  "Heart": "https://images.unsplash.com/photo-1628348070889-cb656235b4eb?w=400&fit=crop&q=80",
-  "Cardiac": "https://images.unsplash.com/photo-1628348070889-cb656235b4eb?w=400&fit=crop&q=80",
-  "default": "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=400&fit=crop&q=80"
-};
-
-const getTestImage = (category, testname) => {
-  // Check if category matches any key
-  for (const key of Object.keys(categoryImages)) {
-    if (category?.toLowerCase().includes(key.toLowerCase()) ||
-      testname?.toLowerCase().includes(key.toLowerCase())) {
-      return categoryImages[key];
-    }
-  }
-  return categoryImages.default;
-};
+/* ── Static fallback cards matching the image exactly ── */
+const STATIC_TESTS = [
+  {
+    id: "cbc",
+    name: "Complete Blood Count (CBC)",
+    desc: "Basic health checkup",
+    price: 500,
+    originalPrice: 700,
+    bg: "#fce8e8",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <ellipse cx="24" cy="40" rx="10" ry="14" fill="#f87171" opacity="0.85" />
+        <ellipse cx="40" cy="40" rx="10" ry="14" fill="#fb923c" opacity="0.75" />
+        <path d="M32 18 Q32 10 24 12 Q32 8 32 18Z" fill="#f87171" />
+      </svg>
+    ),
+  },
+  {
+    id: "tft",
+    name: "Thyroid Function Test (TFT)",
+    desc: "Check thyroid health",
+    price: 800,
+    originalPrice: 1000,
+    bg: "#e8f5f0",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <ellipse cx="32" cy="36" rx="14" ry="10" fill="#34d399" opacity="0.8" />
+        <ellipse cx="20" cy="28" rx="8" ry="11" fill="#6ee7b7" opacity="0.9" />
+        <ellipse cx="44" cy="28" rx="8" ry="11" fill="#6ee7b7" opacity="0.9" />
+        <circle cx="32" cy="26" r="5" fill="#059669" />
+      </svg>
+    ),
+  },
+  {
+    id: "lipid",
+    name: "Lipid Profile",
+    desc: "Assess heart health",
+    price: 600,
+    originalPrice: 800,
+    bg: "#fce8f0",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <path d="M32 52 C18 44 10 34 10 24 C10 16 18 10 32 16 C46 10 54 16 54 24 C54 34 46 44 32 52Z" fill="#f472b6" opacity="0.8" />
+        <path d="M20 28 Q32 20 44 28" stroke="white" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+        <circle cx="32" cy="32" r="5" fill="white" opacity="0.7" />
+      </svg>
+    ),
+  },
+  {
+    id: "lft",
+    name: "Liver Function Test (LFT)",
+    desc: "Check liver health",
+    price: 700,
+    originalPrice: 900,
+    bg: "#fef3e2",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <path d="M14 30 Q14 16 28 14 Q40 12 48 22 Q56 32 46 44 Q36 54 26 48 Q14 42 14 30Z" fill="#fb923c" opacity="0.85" />
+        <path d="M28 24 Q36 20 42 28" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none" />
+      </svg>
+    ),
+  },
+  {
+    id: "kft",
+    name: "Kidney Function Test (KFT)",
+    desc: "Check kidney health",
+    price: 650,
+    originalPrice: 850,
+    bg: "#ede9fe",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <ellipse cx="22" cy="32" rx="10" ry="16" fill="#a78bfa" opacity="0.85" />
+        <ellipse cx="42" cy="32" rx="10" ry="16" fill="#7c3aed" opacity="0.75" />
+        <ellipse cx="22" cy="32" rx="5" ry="9" fill="#ede9fe" opacity="0.6" />
+        <ellipse cx="42" cy="32" rx="5" ry="9" fill="#ede9fe" opacity="0.6" />
+      </svg>
+    ),
+  },
+  {
+    id: "covid",
+    name: "COVID-19 RT-PCR",
+    desc: "Accurate detection",
+    price: 500,
+    originalPrice: 700,
+    bg: "#e0e7ff",
+    icon: (
+      <svg viewBox="0 0 64 64" className="w-9 h-9" fill="none">
+        <circle cx="32" cy="32" r="14" fill="#6366f1" opacity="0.8" />
+        {[0,45,90,135,180,225,270,315].map((deg, i) => (
+          <line
+            key={i}
+            x1={32 + 14 * Math.cos((deg * Math.PI) / 180)}
+            y1={32 + 14 * Math.sin((deg * Math.PI) / 180)}
+            x2={32 + 22 * Math.cos((deg * Math.PI) / 180)}
+            y2={32 + 22 * Math.sin((deg * Math.PI) / 180)}
+            stroke="#818cf8"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+        ))}
+        <circle cx="32" cy="32" r="7" fill="#e0e7ff" opacity="0.9" />
+      </svg>
+    ),
+  },
+];
 
 const LaboratoryOverview = () => {
   const navigate = useNavigate();
-  const { labTests, fetchLabTests, token } = useContext(AppContext);
 
-  useEffect(() => {
-    if (token && labTests.length === 0) {
-      fetchLabTests();
-    }
-  }, [token]);
-
-  const displayTests = labTests.slice(0, 6);
+  /* Always show the curated static cards on the home page */
+  const displayTests = STATIC_TESTS;
 
   return (
     <section className="py-16 sm:py-20">
       <div className="section-wrap">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,102 +124,87 @@ const LaboratoryOverview = () => {
           viewport={{ once: true }}
           className="mb-10 text-center"
         >
-          <span className="eyebrow mb-4 !bg-[#e6f1ff] !text-[#2167cf]">Lab Tests</span>
-          <h2 className="text-3xl font-extrabold text-[#10233f] sm:text-5xl">
-            Book <span className="text-[#167fc5]">Lab Tests</span> Online
+          {/* Eyebrow badge — lab flask icon + text */}
+          <span className="eyebrow mb-4 inline-flex">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+            Lab Tests
+          </span>
+
+          <h2 className="mt-2 text-4xl font-extrabold text-[#10233f] sm:text-5xl">
+            Book <span className="gradient-text">Lab Tests</span> Online
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-[#687b90]">
-            Get accurate diagnostics with home sample collection and fast results
+          <p className="mx-auto mt-3 max-w-xl text-base text-[#687b90]">
+            Accurate diagnostics with home sample collection and fast results.
           </p>
         </motion.div>
 
-        {/* Tests Grid */}
-        {displayTests.length === 0 ? (
-          <div className="rounded-3xl border border-dashed border-[#b9dedd] bg-white p-10 text-center text-[#687b90]">
-            Lab tests will appear here once they are available. Explore the lab section to view current services.
-          </div>
-        ) : (
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Cards — 6 columns on lg, scrollable on mobile */}
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
           {displayTests.map((test, index) => (
             <motion.div
-              key={test._id}
+              key={test.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              onClick={() => {
-                navigate(`/lab`);
-                window.scrollTo(0, 0);
-              }}
-              className="group cursor-pointer overflow-hidden rounded-[22px] border border-[#dfeded] bg-white shadow-[0_8px_28px_rgba(15,80,90,0.05)] transition-all duration-300 hover:-translate-y-1 hover:border-[#9adbd6] hover:shadow-xl"
+              transition={{ delay: index * 0.06 }}
+              onClick={() => { navigate("/lab"); window.scrollTo(0, 0); }}
+              className="group cursor-pointer flex flex-col rounded-2xl border border-[#e3eeee] bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.11)]"
             >
-              {/* Test Image */}
-              <div className="relative h-44 overflow-hidden bg-[#eaf5fb]">
-                <img
-                  src={getTestImage(test.category, test.testname)}
-                  alt={test.testname}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.src = categoryImages.default;
-                  }}
-                />
-                {/* Home Collection Badge */}
-                <div className="absolute top-3 right-3 px-3 py-1 bg-green-500 text-white rounded-full text-xs font-semibold flex items-center gap-1">
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                  Home Collection
-                </div>
-                {/* Category Badge */}
-                <div className="absolute top-3 left-3 px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-semibold">
-                  {test.category}
-                </div>
+              {/* Icon circle */}
+              <div
+                className="mb-4 flex h-14 w-14 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-105"
+                style={{ backgroundColor: test.bg }}
+              >
+                {test.icon}
               </div>
 
-              {/* Test Info */}
-              <div className="p-5">
-                <h3 className="mb-1 text-lg font-bold text-[#10233f] transition-colors group-hover:text-[#167fc5]">
-                  {test.testname || test.name}
-                </h3>
-                <p className="text-gray-500 text-sm mb-4">
-                  Reports in {test.resultAt || "24 hours"}
-                </p>
+              {/* Name */}
+              <p className="text-sm font-bold leading-snug text-[#10233f] mb-1 group-hover:text-[#009f9a] transition-colors">
+                {test.name}
+              </p>
 
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-[#176bd2]">₹{test.price}</span>
-                    <span className="text-gray-400 text-sm ml-2 line-through">₹{test.price + 200}</span>
-                  </div>
-                  <button className="rounded-xl bg-[#eaf2ff] px-4 py-2 text-sm font-semibold text-[#176bd2] transition-all duration-300 group-hover:bg-[#176bd2] group-hover:text-white">
-                    Book Now
-                  </button>
+              {/* Description */}
+              <p className="text-xs text-[#718398] mb-3 flex-1">{test.desc}</p>
+
+              {/* Price row + arrow */}
+              <div className="flex items-center justify-between mt-auto">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-sm font-bold text-[#10233f]">₹{test.price}</span>
+                  <span className="text-xs text-[#b0bec5] line-through">₹{test.originalPrice}</span>
+                </div>
+                {/* Arrow button */}
+                <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-all duration-300 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-        )}
 
-        {/* View All Button */}
+        {/* Explore All button */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          transition={{ delay: 0.4 }}
+          className="mt-10 text-center"
         >
           <button
-            onClick={() => {
-              navigate("/lab");
-              window.scrollTo(0, 0);
-            }}
-            className="primary-button"
+            onClick={() => { navigate("/lab"); window.scrollTo(0, 0); }}
+            className="primary-button mx-auto"
           >
             Explore All Lab Tests
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </button>
         </motion.div>
+
       </div>
     </section>
   );

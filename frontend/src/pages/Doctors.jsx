@@ -151,14 +151,21 @@ const Doctors = () => {
 
       {/* ── MAIN CONTENT ── */}
       <div className="section-wrap py-8">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
+        {/* CRITICAL: flex-start on align-items so sticky works; no overflow:hidden anywhere in this tree */}
+        <div className="flex flex-col gap-6 lg:flex-row" style={{ alignItems: "flex-start" }}>
 
-          {/* ── SIDEBAR — sticky after hero scrolls away ── */}
+          {/* ── SIDEBAR ── sticky: locks in place once hero is scrolled past ── */}
           <div
             className="hidden lg:block flex-shrink-0 w-64"
-            style={{ position: "sticky", top: `${NAVBAR_H + 16}px`, alignSelf: "flex-start" }}
+            style={{
+              position: "sticky",
+              top: `${NAVBAR_H + 16}px`,
+              alignSelf: "flex-start",
+              /* Must not be inside any overflow:hidden ancestor */
+            }}
           >
-            <div className="bg-white rounded-2xl border border-[#dceeed] shadow-sm overflow-hidden">
+            {/* NOTE: overflow-hidden removed — it breaks position:sticky */}
+            <div className="bg-white rounded-2xl border border-[#dceeed] shadow-sm">
               <div className="px-5 py-4 border-b border-[#dceeed]">
                 <h3 className="font-bold text-[#10233f] text-base">Medical Specialties</h3>
                 <p className="text-xs text-[#718398] mt-0.5">Choose the area of expertise</p>
@@ -280,7 +287,7 @@ const Doctors = () => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filterDoc.map((item, index) => (
                   <motion.div
                     key={item._id || index}
@@ -292,8 +299,8 @@ const Doctors = () => {
                     onClick={() => { navigate(`/appointment/${item._id}`); window.scrollTo(0, 0); }}
                     className="group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] transition-all duration-300"
                   >
-                    {/* Doctor photo — fills top of card, bg tint */}
-                    <div className="relative h-52 w-full overflow-hidden bg-[#e8f9f6]">
+                    {/* Doctor photo */}
+                    <div className="relative h-40 w-full overflow-hidden bg-[#e8f9f6]">
                       <img
                         className="h-full w-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
                         src={item.image}
@@ -303,7 +310,7 @@ const Doctors = () => {
                     </div>
 
                     {/* Info */}
-                    <div className="p-4">
+                    <div className="p-3">
                       {/* Availability dot + label */}
                       <div className={`inline-flex items-center gap-1.5 text-xs font-semibold mb-2 ${
                         item.available ? "text-[#009f9a]" : "text-[#718398]"
