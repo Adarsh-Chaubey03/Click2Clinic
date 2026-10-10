@@ -58,10 +58,11 @@ const AppContextProvider = (props) => {
     }
   };
 
-  // ✅ Fetch doctors + medicines only once on app load
+  // ✅ Fetch doctors + medicines + lab tests on app load (all public endpoints)
   useEffect(() => {
     getDoctorsData();
     getMedicineData();
+    fetchLabTests();
   }, []);
 
   // ✅ Authenticated user profile
@@ -84,9 +85,7 @@ const AppContextProvider = (props) => {
   // ✅ Lab tests data
   const fetchLabTests = async () => {
     try {
-      const { data } = await axios.get(`${backendUrl}/api/user/lab-data`, {
-        headers: { token }
-      });
+      const { data } = await axios.get(`${backendUrl}/api/user/lab-data`);
       if (data.success) {
         setLabTests(data.labData);
       }
@@ -100,10 +99,8 @@ const AppContextProvider = (props) => {
   useEffect(() => {
     if (token) {
       loadUserProfileData();
-      fetchLabTests();
     } else {
       setUserData(false);
-      setLabTests([]);
     }
   }, [token]);
 
