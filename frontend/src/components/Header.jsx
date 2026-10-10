@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
 import { motion } from "framer-motion";
+import heroImg from "../assets/Hero.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -122,7 +123,7 @@ const Header = () => {
           </div>
           <div className="relative min-h-[360px] lg:min-h-[540px]">
             <div className="absolute inset-8 rounded-full bg-[#c9efeb] blur-3xl" />
-            <img src="/Hero.png" alt="Doctor ready to help patients" className="relative z-10 h-full w-full object-contain object-bottom drop-shadow-2xl" />
+            <img src={heroImg} alt="Doctor ready to help patients" className="relative z-10 h-full w-full object-contain object-bottom drop-shadow-2xl" />
             <div className="absolute right-0 top-20 z-20 rounded-2xl border border-white/80 bg-white/90 px-4 py-3 shadow-xl backdrop-blur">
               <strong className="block text-sm text-[#10233f]">Verified Doctors</strong>
               <span className="text-xs text-[#718398]">Trusted care, anywhere</span>
