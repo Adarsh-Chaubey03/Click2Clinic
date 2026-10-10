@@ -92,7 +92,7 @@ const Doctors = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20 pb-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-20 pb-10 px-4 sm:px-6 lg:px-8" style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}>
       <div className="mx-auto flex max-w-7xl min-w-0 flex-col gap-6 lg:flex-row">
         {/* Sticky Sidebar */}
         <div className="min-w-0 flex-shrink-0 lg:sticky lg:top-20 lg:w-80 lg:self-start">
@@ -106,7 +106,7 @@ const Doctors = () => {
             </button>
           </div>
           <div
-            className={`bg-white rounded-xl shadow-lg border border-gray-100 lg:block ${
+            className={`bg-white rounded-xl shadow-lg border border-[#dceeed] lg:block ${
               showFilter ? "block" : "hidden sm:block"
             }`}
           >
@@ -206,7 +206,7 @@ const Doctors = () => {
               />
             </div>
             <button
-              className="flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-6 py-2 font-medium text-white transition-all duration-200 hover:bg-blue-500 sm:w-auto"
+              className="flex w-full items-center justify-center gap-2 rounded-md bg-[#009f9a] px-6 py-2 font-medium text-white transition-all duration-200 hover:bg-[#008eaa] sm:w-auto"
               onClick={() => navigate("/map")}
             >
               <FaMapMarkerAlt />
@@ -217,7 +217,7 @@ const Doctors = () => {
           {/* Doctors List */}
           <div>
             {filterDoc.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 bg-white rounded-lg shadow-md">
+              <div className="flex flex-col items-center justify-center py-12 bg-white rounded-lg shadow-md border border-[#dceeed]">
                 <FaUserMd className="text-5xl text-gray-400 mb-4" />
                 <p className="text-lg text-gray-600">No doctors found.</p>
                 <button
@@ -238,11 +238,11 @@ const Doctors = () => {
                     whileHover="hover"
                     variants={cardVariants}
                     onClick={() => navigate(`/appointment/${item._id}`)}
-                    className="group mx-auto flex w-full max-w-[320px] cursor-pointer flex-col items-center rounded-3xl border border-gray-400 bg-white p-4 text-center backdrop-blur-md hover:shadow-2xl hover:shadow-cyan-900/10 sm:p-6"
+                    className="group mx-auto flex w-full max-w-[320px] cursor-pointer flex-col items-center rounded-3xl border border-[#dceeed] bg-white p-4 text-center backdrop-blur-md hover:shadow-2xl hover:shadow-cyan-900/10 sm:p-6"
                     aria-label={`Book an appointment with ${item.name}, ${item.speciality}`}
                   >
                     <img
-                      className="w-full h-48 sm:h-56 object-contain rounded-2xl bg-blue-50"
+                      className="w-full h-48 sm:h-56 object-contain rounded-2xl bg-[#effcfb]"
                       src={item.image}
                       alt={`${item.name}, ${item.speciality}`}
                       onError={(e) => {

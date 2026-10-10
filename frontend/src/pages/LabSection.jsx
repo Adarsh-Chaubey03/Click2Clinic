@@ -123,7 +123,7 @@ const LabSection = () => {
   const displayedTests = filteredTests.slice(0, visibleTests);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8" style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}>
       <div className="max-w-7xl mx-auto">
         {/* Updated Banner with Background Image */}
         <motion.div
@@ -158,7 +158,7 @@ const LabSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-10 rounded-2xl border border-gray-200 bg-white p-4 shadow-lg sm:p-6"
+          className="mb-10 rounded-2xl border border-[#dceeed] bg-white p-4 shadow-lg sm:p-6"
         >
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <div className="relative w-full sm:w-3/5">
