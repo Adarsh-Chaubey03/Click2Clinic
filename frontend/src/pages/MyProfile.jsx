@@ -87,8 +87,8 @@ const MyProfile = () => {
               onChange={(e) => handleFieldChange(field, e.target.value, nested)}
               onBlur={() => setEditingField(null)}
               autoFocus
-              className="w-full px-4 py-3 bg-white border-2 border-violet-400 rounded-xl text-gray-800 
-                         focus:outline-none focus:ring-4 focus:ring-violet-100 transition-all duration-200
+              className="w-full px-4 py-3 bg-white border-2 border-[#009f9a] rounded-xl text-gray-800 
+                         focus:outline-none focus:ring-4 focus:ring-[#ddf8f2] transition-all duration-200
                          shadow-sm"
             />
           ) : (
@@ -96,7 +96,7 @@ const MyProfile = () => {
               onClick={() => !disabled && setEditingField(fieldKey)}
               className={`w-full px-4 py-3 bg-gray-50/80 rounded-xl text-gray-800 
                          transition-all duration-200 flex items-center justify-between
-                         ${!disabled ? "cursor-pointer hover:bg-violet-50 hover:border-violet-200 border-2 border-transparent group-hover:shadow-md" : "border-2 border-transparent"}`}
+                         ${!disabled ? "cursor-pointer hover:bg-[#effcfb] hover:border-[#b2ebe0] border-2 border-transparent group-hover:shadow-md" : "border-2 border-transparent"}`}
             >
               <span className={value ? "" : "text-gray-400"}>{value || "Not set"}</span>
               {!disabled && (
@@ -129,8 +129,8 @@ const MyProfile = () => {
               }}
               onBlur={() => setEditingField(null)}
               autoFocus
-              className="w-full px-4 py-3 bg-white border-2 border-violet-400 rounded-xl text-gray-800 
-                         focus:outline-none focus:ring-4 focus:ring-violet-100 transition-all duration-200
+              className="w-full px-4 py-3 bg-white border-2 border-[#009f9a] rounded-xl text-gray-800 
+                         focus:outline-none focus:ring-4 focus:ring-[#ddf8f2] transition-all duration-200
                          shadow-sm appearance-none cursor-pointer"
             >
               {options.map((opt) => (
@@ -142,7 +142,7 @@ const MyProfile = () => {
               onClick={() => setEditingField(field)}
               className="w-full px-4 py-3 bg-gray-50/80 rounded-xl text-gray-800 cursor-pointer
                          transition-all duration-200 flex items-center justify-between
-                         hover:bg-violet-50 hover:border-violet-200 border-2 border-transparent group-hover:shadow-md"
+                         hover:bg-[#effcfb] hover:border-[#b2ebe0] border-2 border-transparent group-hover:shadow-md"
             >
               <span className={value ? "" : "text-gray-400"}>{value || "Not set"}</span>
               <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,11 +158,11 @@ const MyProfile = () => {
   if (!userData) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-violet-50/30 to-indigo-50">
+    <div className="min-h-screen" style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}>
       {/* Hero Section with Profile */}
       <div className="relative overflow-hidden">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }} />
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: 'radial-gradient(circle at 25% 25%, rgba(255,255,255,0.2) 1px, transparent 1px)',
           backgroundSize: '24px 24px'
@@ -178,7 +178,7 @@ const MyProfile = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
               My Profile
             </h1>
-            <p className="text-violet-200 text-sm sm:text-base max-w-md mx-auto">
+            <p className="text-[#ddf8f2] text-sm sm:text-base max-w-md mx-auto">
               Manage your personal information and keep your profile up to date
             </p>
           </motion.div>
@@ -194,11 +194,11 @@ const MyProfile = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Profile Avatar Card */}
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-6 sm:p-8 mb-6">
+          <div className="bg-white rounded-3xl shadow-xl border border-[#dceeed] p-6 sm:p-8 mb-6">
             <div className="flex flex-col sm:flex-row items-center gap-6">
               {/* Avatar */}
               <div className="relative group">
-                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-4 ring-violet-100 shadow-lg">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-4 ring-[#ddf8f2] shadow-lg">
                   <img
                     src={image ? URL.createObjectURL(image) : userData.image || fallbackAvatar}
                     alt="Profile"
@@ -247,13 +247,13 @@ const MyProfile = () => {
                       onChange={(e) => handleFieldChange("name", e.target.value)}
                       onBlur={() => setEditingField(null)}
                       autoFocus
-                      className="text-xl sm:text-2xl font-bold text-gray-800 bg-transparent border-b-2 border-violet-400 
+                      className="text-xl sm:text-2xl font-bold text-gray-800 bg-transparent border-b-2 border-[#009f9a] 
                                  focus:outline-none px-1"
                     />
                   ) : (
                     <h2
                       onClick={() => setEditingField("name")}
-                      className="text-xl sm:text-2xl font-bold text-gray-800 cursor-pointer hover:text-violet-600 transition-colors"
+                      className="text-xl sm:text-2xl font-bold text-gray-800 cursor-pointer hover:text-[#009f9a] transition-colors"
                     >
                       {userData.name}
                     </h2>
@@ -279,7 +279,7 @@ const MyProfile = () => {
                 onClick={updateUserProfileData}
                 disabled={isSaving}
                 className="px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold 
-                          rounded-xl shadow-lg shadow-violet-200 hover:shadow-xl hover:shadow-violet-300 
+                          rounded-xl shadow-lg shadow-[#b2ebe0] hover:shadow-xl hover:shadow-[#009f9a]/30 
                           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
                           flex items-center gap-2"
               >
@@ -304,7 +304,7 @@ const MyProfile = () => {
           </div>
 
           {/* Tab Navigation */}
-          <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-1.5 mb-6 flex gap-1 shadow-sm border border-white/50">
+          <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-1.5 mb-6 flex gap-1 shadow-sm border border-[#dceeed]">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -312,8 +312,8 @@ const MyProfile = () => {
                 className={`flex-1 py-3 px-4 rounded-xl font-medium text-sm transition-all duration-200
                            flex items-center justify-center gap-2
                            ${activeTab === tab.id
-                    ? "bg-white text-violet-700 shadow-md"
-                    : "text-gray-600 hover:text-violet-600 hover:bg-white/50"
+                    ? "bg-white text-[#009f9a] shadow-md"
+                    : "text-gray-600 hover:text-[#009f9a] hover:bg-white/50"
                   }`}
               >
                 <span className="text-base">{tab.icon}</span>
@@ -330,12 +330,12 @@ const MyProfile = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-6 sm:p-8"
+              className="bg-white rounded-3xl shadow-xl border border-[#dceeed] p-6 sm:p-8"
             >
               {activeTab === "contact" && (
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-violet-100 rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#ddf8f2] rounded-xl flex items-center justify-center">
                       <span className="text-xl">📞</span>
                     </div>
                     <div>
@@ -394,7 +394,7 @@ const MyProfile = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Lab Report Upload */}
-                    <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-6 border-2 border-dashed border-violet-200 hover:border-violet-400 transition-colors">
+                    <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-6 border-2 border-dashed border-violet-200 hover:border-[#009f9a] transition-colors">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-2xl">🧪</span>
                         <div>
@@ -405,7 +405,7 @@ const MyProfile = () => {
 
                       {labFile ? (
                         <div className="flex items-center gap-2 bg-white rounded-lg p-3">
-                          <svg className="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 text-[#009f9a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                           </svg>
                           <span className="text-sm text-gray-700 truncate flex-1">{labFile.name}</span>
@@ -420,7 +420,7 @@ const MyProfile = () => {
                           href={userData.labFile}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-violet-600 hover:text-violet-700 font-medium text-sm"
+                          className="inline-flex items-center gap-2 text-[#009f9a] hover:text-[#009f9a] font-medium text-sm"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -434,8 +434,8 @@ const MyProfile = () => {
 
                       <label
                         htmlFor="lab-upload"
-                        className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white text-violet-600 
-                                  rounded-lg cursor-pointer hover:bg-violet-100 transition-colors text-sm font-medium"
+                        className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white text-[#009f9a] 
+                                  rounded-lg cursor-pointer hover:bg-[#ddf8f2] transition-colors text-sm font-medium"
                       >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
@@ -518,10 +518,10 @@ const MyProfile = () => {
                   <div className="bg-white border border-gray-200 rounded-xl p-4 mt-6">
                     <h4 className="font-semibold mb-4 text-gray-700">Add New Family Member</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <input id="new-fam-name" type="text" placeholder="Name" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-violet-400" />
-                      <input id="new-fam-relation" type="text" placeholder="Relation (e.g. Father, Daughter)" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-violet-400" />
-                      <input id="new-fam-age" type="number" placeholder="Age" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-violet-400" />
-                      <select id="new-fam-gender" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-violet-400">
+                      <input id="new-fam-name" type="text" placeholder="Name" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#009f9a]" />
+                      <input id="new-fam-relation" type="text" placeholder="Relation (e.g. Father, Daughter)" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#009f9a]" />
+                      <input id="new-fam-age" type="number" placeholder="Age" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#009f9a]" />
+                      <select id="new-fam-gender" className="w-full px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-[#009f9a]">
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -545,7 +545,7 @@ const MyProfile = () => {
                         document.getElementById("new-fam-age").value = "";
                         document.getElementById("new-fam-gender").value = "";
                       }}
-                      className="mt-4 px-4 py-2 bg-violet-100 text-violet-700 font-medium rounded-lg hover:bg-violet-200 transition-colors"
+                      className="mt-4 px-4 py-2 bg-[#ddf8f2] text-[#009f9a] font-medium rounded-lg hover:bg-[#b2ebe0] transition-colors"
                     >
                       Add Member
                     </button>
