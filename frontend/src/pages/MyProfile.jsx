@@ -278,7 +278,7 @@ const MyProfile = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={updateUserProfileData}
                 disabled={isSaving}
-                className="px-6 py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold 
+                className="px-6 py-3 bg-[#009f9a] text-white font-semibold 
                           rounded-xl shadow-lg shadow-[#b2ebe0] hover:shadow-xl hover:shadow-[#009f9a]/30 
                           transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed
                           flex items-center gap-2"
@@ -364,7 +364,7 @@ const MyProfile = () => {
               {activeTab === "basic" && (
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#ddf8f2] rounded-xl flex items-center justify-center">
                       <span className="text-xl">👤</span>
                     </div>
                     <div>
@@ -383,7 +383,7 @@ const MyProfile = () => {
               {activeTab === "documents" && (
                 <div className="space-y-6">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+                    <div className="w-10 h-10 bg-[#ddf8f2] rounded-xl flex items-center justify-center">
                       <span className="text-xl">📄</span>
                     </div>
                     <div>
@@ -394,7 +394,7 @@ const MyProfile = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Lab Report Upload */}
-                    <div className="bg-gradient-to-br from-violet-50 to-indigo-50 rounded-2xl p-6 border-2 border-dashed border-violet-200 hover:border-[#009f9a] transition-colors">
+                    <div className="bg-[#effcfb] rounded-2xl p-6 border-2 border-dashed border-[#b2ebe0] hover:border-[#009f9a] transition-colors">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-2xl">🧪</span>
                         <div>
