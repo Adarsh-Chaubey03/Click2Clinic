@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { useCart } from "../context/CartContext";
-import { storeBanner } from '../assets/assets.js';
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
+import pharmacyBg from "../assets/pharmacy.png";
 
 const Store = () => {
   const { category } = useParams();
@@ -13,7 +13,6 @@ const Store = () => {
   const navigate = useNavigate();
   const [filteredMedicines, setFilteredMedicines] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [currentBanner, setCurrentBanner] = useState(0);
   const [priceFilter, setPriceFilter] = useState({ min: 0, max: Infinity });
   const [selectedCategory, setSelectedCategory] = useState(category || "all");
   const [isFilterOpen, setIsFilterOpen] = useState(false);
@@ -56,15 +55,6 @@ const Store = () => {
       setSelectedCategory(category);
     }
   }, [category]);
-
-  useEffect(() => {
-    if (storeBanner?.length > 0) {
-      const interval = setInterval(() => {
-        setCurrentBanner((prev) => (prev + 1) % storeBanner.length);
-      }, 5000);
-      return () => clearInterval(interval);
-    }
-  }, []);
 
   const handleCategoryClick = (catId) => {
     setSelectedCategory(catId);
@@ -110,13 +100,18 @@ const Store = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50/50 via-white to-white">
       {/* Hero Search Section */}
-      <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
-        </div>
+      <div
+        className="relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${pharmacyBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 bg-[#009f9a]/70" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -125,7 +120,7 @@ const Store = () => {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
               Your Health, Delivered 💊
             </h1>
-            <p className="text-emerald-100 text-sm sm:text-base">
+            <p className="text-white/80 text-sm sm:text-base">
               Order medicines from trusted pharmacies
             </p>
           </motion.div>
@@ -146,7 +141,7 @@ const Store = () => {
                 placeholder="Search for medicines, health products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-4 bg-white rounded-2xl shadow-lg text-gray-800 
+                className="w-full pl-12 pr-4 py-4 bg-white rounded-2xl shadow-lg text-gray-800
                          placeholder-gray-400 focus:outline-none focus:ring-4 focus:ring-white/30
                          text-base transition-all duration-200"
               />
@@ -203,37 +198,6 @@ const Store = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* Banner Carousel */}
-        {storeBanner?.length > 0 && (
-          <div className="relative mb-8 rounded-2xl overflow-hidden shadow-lg">
-            <div className="relative w-full h-40 sm:h-48 md:h-56">
-              {storeBanner.map((banner, index) => (
-                <img
-                  key={index}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 
-                             ${index === currentBanner ? "opacity-100" : "opacity-0"}`}
-                  src={banner}
-                  alt={`Offer ${index + 1}`}
-                />
-              ))}
-            </div>
-
-            {/* Banner Dots */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-              {storeBanner.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentBanner(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 
-                             ${index === currentBanner
-                      ? "bg-white w-6"
-                      : "bg-white/50 hover:bg-white/70"}`}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Results Count */}
         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-gray-600 text-sm">

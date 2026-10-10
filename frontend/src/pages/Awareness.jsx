@@ -5,6 +5,7 @@ import { AppContext } from "../context/AppContext.jsx";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import quickHealthBg from "../assets/quickhealth.png";
 
 const Awareness = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -69,8 +70,17 @@ const Awareness = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-teal-600 via-teal-700 to-emerald-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <div
+        className="relative overflow-hidden text-white"
+        style={{
+          backgroundImage: `url(${quickHealthBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Teal overlay */}
+        <div className="absolute inset-0 bg-[#009f9a]/75" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
