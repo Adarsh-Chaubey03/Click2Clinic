@@ -13,7 +13,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { token, setToken, userData } = useContext(AppContext);
-  const { getCartItemCount, setCartItems } = useCart();
+  const { getCartItemCount, clearCart } = useCart();
 
   const navLinks = [
     { path: "/", label: "Home", icon: "🏠" },
@@ -26,7 +26,7 @@ const Navbar = () => {
   const logout = () => {
     setToken(false);
     localStorage.removeItem("token");
-    setCartItems([]);
+    clearCart();
     navigate('/');
     toast.success("Logged out successfully");
   };
