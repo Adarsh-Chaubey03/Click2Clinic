@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -96,10 +97,33 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="mailto:laxkaraditya55@gmail.com"
-                className="hover:text-cyan-700 hover:underline transition-all duration-200"
+                href="mailto:adarsh03chaubey@gmail.com"
+                className="flex items-center gap-3 hover:text-cyan-700 hover:underline transition-all duration-200"
               >
-                laxkaraditya55@gmail.com
+                <FaEnvelope className="text-[#009f9a]" aria-hidden="true" />
+                adarsh03chaubey@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/Adarsh-Chaubey03"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-700 hover:underline transition-all duration-200"
+              >
+                <FaGithub className="text-[#10233f]" aria-hidden="true" />
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/adarsh-chaubey/"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 hover:text-cyan-700 hover:underline transition-all duration-200"
+              >
+                <FaLinkedin className="text-[#0a66c2]" aria-hidden="true" />
+                LinkedIn
               </a>
             </li>
           </ul>
