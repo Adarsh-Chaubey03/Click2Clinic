@@ -315,6 +315,115 @@ console.log('\n🧪 Testing concurrent booking edge case...');
   console.log('  ⚠️ Note: True concurrency requires DB-level locking (existing behavior)');
 }
 
+// ─── Test: Local hash-based embedding ─────────────────────────────
+console.log('\n🧪 Testing local hash-based embedding...');
+
+// Reproduce the local embedding logic for testing
+function hashCode(str) {
+  let h = 0;
+  for (let i = 0; i < str.length; i++) {
+    h = ((h << 5) - h + str.charCodeAt(i)) | 0;
+  }
+  return h;
+}
+
+function tokenize(text) {
+  const lower = text.toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+  const words = lower.split(/\s+/).filter(w => w.length > 1);
+  const tokens = [...words];
+  for (let i = 0; i < words.length - 1; i++) {
+    tokens.push(`${words[i]}_${words[i + 1]}`);
+  }
+  return tokens;
+}
+
+function generateLocalEmbedding(text) {
+  const tokens = tokenize(text);
+  const vec = new Float64Array(384);
+  for (const token of tokens) {
+    const dimHash = Math.abs(hashCode(token)) % 384;
+    const signHash = hashCode(token + '_sign');
+    const sign = signHash % 2 === 0 ? 1 : -1;
+    const weight = token.includes('_') ? 1.5 : 1.0;
+    vec[dimHash] += sign * weight;
+  }
+  let norm = 0;
+  for (let i = 0; i < 384; i++) norm += vec[i] * vec[i];
+  norm = Math.sqrt(norm) || 1;
+  const result = new Array(384);
+  for (let i = 0; i < 384; i++) result[i] = vec[i] / norm;
+  return result;
+}
+
+function cosineSimilarity(a, b) {
+  let dot = 0, normA = 0, normB = 0;
+  for (let i = 0; i < a.length; i++) {
+    dot += a[i] * b[i];
+    normA += a[i] * a[i];
+    normB += b[i] * b[i];
+  }
+  return dot / (Math.sqrt(normA) * Math.sqrt(normB) || 1);
+}
+
+// Correct dimensionality
+{
+  const emb = generateLocalEmbedding('headache and fever symptoms');
+  assert.equal(emb.length, 384, 'Embedding should be 384-dim');
+  console.log('  ✅ Output is 384-dimensional');
+}
+
+// Deterministic
+{
+  const emb1 = generateLocalEmbedding('headache and fever');
+  const emb2 = generateLocalEmbedding('headache and fever');
+  assert.deepEqual(emb1, emb2, 'Same text should produce same embedding');
+  console.log('  ✅ Embedding is deterministic');
+}
+
+// Normalized (L2 norm ≈ 1)
+{
+  const emb = generateLocalEmbedding('skin rash dermatologist');
+  let norm = 0;
+  for (const v of emb) norm += v * v;
+  norm = Math.sqrt(norm);
+  assert.ok(Math.abs(norm - 1.0) < 0.001, `L2 norm should be ~1.0, got ${norm}`);
+  console.log('  ✅ Embedding is L2-normalized');
+}
+
+// Similar texts should have higher cosine similarity than dissimilar texts
+{
+  const embHeadache = generateLocalEmbedding('severe headache pain migraine');
+  const embFever    = generateLocalEmbedding('headache with high fever');
+  const embSkin     = generateLocalEmbedding('skin rash dermatology allergic reaction');
+
+  const simRelated   = cosineSimilarity(embHeadache, embFever);
+  const simUnrelated = cosineSimilarity(embHeadache, embSkin);
+
+  assert.ok(simRelated > simUnrelated,
+    `Related texts (${simRelated.toFixed(3)}) should be more similar than unrelated (${simUnrelated.toFixed(3)})`);
+  console.log(`  ✅ Related texts more similar (${simRelated.toFixed(3)}) than unrelated (${simUnrelated.toFixed(3)})`);
+}
+
+// Doctor profile similarity
+{
+  const doctorCardio = generateLocalEmbedding('Dr. Smith. Speciality: Cardiologist. Degree: MBBS MD. About: Heart specialist treating cardiac conditions');
+  const doctorDerma  = generateLocalEmbedding('Dr. Jones. Speciality: Dermatologist. Degree: MBBS MD. About: Skin specialist treating skin conditions');
+  const queryHeart   = generateLocalEmbedding('chest discomfort heart palpitations cardiac');
+  const querySkin    = generateLocalEmbedding('skin rash itching redness dermatology');
+
+  const heartToCardio = cosineSimilarity(queryHeart, doctorCardio);
+  const heartToDerma  = cosineSimilarity(queryHeart, doctorDerma);
+  const skinToCardio  = cosineSimilarity(querySkin, doctorCardio);
+  const skinToDerma   = cosineSimilarity(querySkin, doctorDerma);
+
+  assert.ok(heartToCardio > heartToDerma,
+    `Heart query should match cardiologist (${heartToCardio.toFixed(3)}) > dermatologist (${heartToDerma.toFixed(3)})`);
+  assert.ok(skinToDerma > skinToCardio,
+    `Skin query should match dermatologist (${skinToDerma.toFixed(3)}) > cardiologist (${skinToCardio.toFixed(3)})`);
+  console.log(`  ✅ Heart query → Cardiologist (${heartToCardio.toFixed(3)} > ${heartToDerma.toFixed(3)})`);
+  console.log(`  ✅ Skin query → Dermatologist (${skinToDerma.toFixed(3)} > ${skinToCardio.toFixed(3)})`);
+}
+
 // ─── Summary ──────────────────────────────────────────────────────
 console.log('\n' + '='.repeat(50));
 console.log('✅ All tests passed!');

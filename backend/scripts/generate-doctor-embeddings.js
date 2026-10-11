@@ -8,11 +8,16 @@
  *
  * Usage:
  *   node scripts/generate-doctor-embeddings.js
+ *   (or: npm run generate-embeddings)
+ *
+ * Embedding strategy:
+ *   1. Tries HF Inference API (best semantic quality)
+ *   2. Falls back to local hash-based embeddings if API is unavailable
+ *   Both produce 384-dim vectors compatible with Atlas Vector Search.
  *
  * Requires:
  *   - MONGODB_URI in .env
- *   - HUGGING_API_KEY in .env
- *   - HF_EMBEDDING_MODEL in .env (defaults to sentence-transformers/all-MiniLM-L6-v2)
+ *   - HUGGING_API_KEY in .env (optional — local fallback works without it)
  */
 
 import 'dotenv/config';
@@ -24,8 +29,8 @@ import {
   buildDoctorProfileText,
 } from '../services/embedding.service.js';
 
-const BATCH_SIZE = 5; // Process in small batches to avoid rate limits
-const DELAY_MS = 1000; // Delay between batches
+const BATCH_SIZE = 5;
+const DELAY_MS = 500;
 
 async function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -40,15 +45,15 @@ async function main() {
   }
 
   if (!process.env.HUGGING_API_KEY) {
-    console.error('❌ HUGGING_API_KEY is not set in .env');
-    process.exit(1);
+    console.warn('⚠️  HUGGING_API_KEY not set — will use local hash-based embeddings');
+    console.warn('   (Re-run with a valid key for better semantic quality)\n');
   }
 
   await mongoose.connect(process.env.MONGODB_URI);
   console.log('✅ Connected to MongoDB');
 
   const doctors = await doctorModel.find({}).select('-password');
-  console.log(`📋 Found ${doctors.length} doctors`);
+  console.log(`📋 Found ${doctors.length} doctors\n`);
 
   if (doctors.length === 0) {
     console.log('⚠️ No doctors found in database. Nothing to embed.');
@@ -64,43 +69,34 @@ async function main() {
     const batch = doctors.slice(i, i + BATCH_SIZE);
 
     for (const doctor of batch) {
+      const idx = i + batch.indexOf(doctor) + 1;
       try {
         const profileText = buildDoctorProfileText(doctor);
-        console.log(`  📝 [${i + batch.indexOf(doctor) + 1}/${doctors.length}] ${doctor.name} — generating embedding...`);
+        console.log(`  📝 [${idx}/${doctors.length}] ${doctor.name} — generating embedding...`);
 
         const embedding = await generateEmbedding(profileText);
 
         const existingDoc = await doctorEmbeddingModel.findOne({ doctorId: doctor._id });
 
+        const embData = {
+          profileText,
+          embedding,
+          speciality: doctor.speciality,
+          available: doctor.available,
+          name: doctor.name,
+          degree: doctor.degree || '',
+          experience: doctor.experience || '',
+          fees: doctor.fees || 0,
+          address: doctor.address || {},
+          image: doctor.image || '',
+        };
+
         if (existingDoc) {
-          // Update existing embedding
-          existingDoc.profileText = profileText;
-          existingDoc.embedding = embedding;
-          existingDoc.speciality = doctor.speciality;
-          existingDoc.available = doctor.available;
-          existingDoc.name = doctor.name;
-          existingDoc.degree = doctor.degree;
-          existingDoc.experience = doctor.experience;
-          existingDoc.fees = doctor.fees;
-          existingDoc.address = doctor.address;
-          existingDoc.image = doctor.image;
+          Object.assign(existingDoc, embData);
           await existingDoc.save();
           updated++;
         } else {
-          // Create new embedding document
-          await doctorEmbeddingModel.create({
-            doctorId: doctor._id,
-            profileText,
-            embedding,
-            speciality: doctor.speciality,
-            available: doctor.available,
-            name: doctor.name,
-            degree: doctor.degree,
-            experience: doctor.experience,
-            fees: doctor.fees,
-            address: doctor.address,
-            image: doctor.image,
-          });
+          await doctorEmbeddingModel.create({ doctorId: doctor._id, ...embData });
           created++;
         }
 
@@ -111,9 +107,7 @@ async function main() {
       }
     }
 
-    // Rate-limit delay between batches
     if (i + BATCH_SIZE < doctors.length) {
-      console.log(`  ⏳ Waiting ${DELAY_MS}ms before next batch...`);
       await sleep(DELAY_MS);
     }
   }
@@ -124,11 +118,10 @@ async function main() {
   console.log(`  Failed:  ${failed}`);
   console.log(`  Total:   ${doctors.length}`);
 
-  // Verify count
   const embCount = await doctorEmbeddingModel.countDocuments();
   console.log(`\n📦 Total embeddings in database: ${embCount}`);
 
-  // Clean up orphaned embeddings (doctors that no longer exist)
+  // Clean up orphaned embeddings
   const doctorIds = doctors.map((d) => d._id);
   const orphaned = await doctorEmbeddingModel.deleteMany({
     doctorId: { $nin: doctorIds },
@@ -137,16 +130,9 @@ async function main() {
     console.log(`🗑️ Removed ${orphaned.deletedCount} orphaned embeddings`);
   }
 
-  console.log('\n✅ Done! Next steps:');
-  console.log('1. Create a MongoDB Atlas Vector Search index named "doctor_vector_index"');
-  console.log('   on the "doctor_embeddings" collection with this configuration:');
-  console.log('   {');
-  console.log('     "fields": [');
-  console.log('       { "type": "vector", "path": "embedding", "numDimensions": 384, "similarity": "cosine" },');
-  console.log('       { "type": "filter", "path": "speciality" },');
-  console.log('       { "type": "filter", "path": "available" }');
-  console.log('     ]');
-  console.log('   }');
+  console.log('\n✅ Done!');
+  console.log('\nNext step: Create a MongoDB Atlas Vector Search index named "doctor_vector_index"');
+  console.log('on the "doctor_embeddings" collection. See IMPLEMENTATION.md for the index JSON.\n');
 
   await mongoose.disconnect();
 }
@@ -155,4 +141,3 @@ main().catch((err) => {
   console.error('Fatal error:', err);
   process.exit(1);
 });
-
