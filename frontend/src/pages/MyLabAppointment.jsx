@@ -124,11 +124,16 @@ const MyLabAppointments = () => {
   };
 
   const StatusBadge = ({ status }) => {
+    const CalIcon = () => (
+      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.9 4 3 4.9 3 6v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 16H5V9h14v11ZM7 11h5v5H7Z"/>
+      </svg>
+    );
     const map = {
-      upcoming:  { label: "Upcoming",  icon: <MdCalendarToday />, cls: "bg-[#e8f9f6] text-[#009f9a] border border-[#b2ebe0]" },
+      upcoming:  { label: "Upcoming",  icon: <CalIcon />, cls: "bg-[#e8f9f6] text-[#009f9a] border border-[#b2ebe0]" },
       completed: { label: "Completed", icon: <FaCheckCircle />,   cls: "bg-[#e8f9f6] text-[#009f9a] border border-[#b2ebe0]" },
       cancelled: { label: "Cancelled", icon: <FaTimesCircle />,   cls: "bg-red-50 text-red-500 border border-red-200" },
-      pending:   { label: "Pay Now",   icon: <MdCalendarToday />, cls: "bg-amber-50 text-amber-600 border border-amber-200" },
+      pending:   { label: "Pay Now",   icon: <CalIcon />, cls: "bg-amber-50 text-amber-600 border border-amber-200" },
     };
     const { label, icon, cls } = map[status] || map.upcoming;
     return (
