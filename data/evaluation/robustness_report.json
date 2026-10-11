@@ -1,9 +1,0 @@
-{
-  "baseline_typical_top1": 0.8687,
-  "noised_typical_top1": 0.7912,
-  "degradation_top1": 0.0775,
-  "baseline_typical_mrr": 0.9251,
-  "noised_typical_mrr": 0.8796,
-  "degradation_mrr": 0.0455,
-  "noise_profile": "1 true flipped to false, 1 true flipped to unknown"
-}

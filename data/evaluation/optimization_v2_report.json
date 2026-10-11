@@ -1,7 +1,0 @@
-{
-  "success": false,
-  "explainability_maintained": true,
-  "determinism_maintained": true,
-  "avg_questions": 7.97979797979798,
-  "avg_runtime_ms": 9.69040404040404
-}

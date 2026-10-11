@@ -10,9 +10,6 @@ laboratories, pharmacies, and administrators.
 - `frontend/` is the Vite patient portal.
 - `admin/` is the Vite administrator and doctor portal.
 - `mobile/` is the Expo client for patient, doctor, and administrator flows.
-- `data/` contains the diagnostic engine datasets, reasoning graph, and
-  evaluation artifacts.
-
 The browser and mobile clients call the backend API. The backend connects to
 MongoDB for persistence, Cloudinary for uploaded media, Razorpay for payments,
 Socket.IO for consultation signaling, and the configured AI services.
