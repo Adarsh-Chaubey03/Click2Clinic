@@ -55,20 +55,85 @@ const LabAppointment = () => {
     setLabInfo(info);
   }, [labTests, labId]);
 
+  // ── Razorpay helpers ──────────────────────────────────────────
+  const loadRazorpay = () =>
+    new Promise((resolve) => {
+      if (window.Razorpay) { resolve(true); return; }
+      const s = document.createElement("script");
+      s.src = "https://checkout.razorpay.com/v1/checkout.js";
+      s.async = true;
+      s.onload = () => resolve(true);
+      s.onerror = () => resolve(false);
+      document.body.appendChild(s);
+    });
+
+  const initPay = async (order) => {
+    const loaded = await loadRazorpay();
+    if (!loaded) { toast.error("Razorpay SDK failed to load"); return; }
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: "Lab Test Payment",
+      description: "Lab Appointment",
+      order_id: order.id,
+      receipt: order.receipt,
+      handler: async (response) => {
+        try {
+          const { data } = await axios.post(
+            `${backendUrl}/api/user/verifylab-razorpay`,
+            response,
+            { headers: { token } }
+          );
+          if (data.success) {
+            toast.success("Payment successful! Lab test booked.");
+            navigate("/mylab-appointments");
+            window.scrollTo(0, 0);
+          } else {
+            toast.error(data.message);
+          }
+        } catch (err) {
+          toast.error(err.message);
+        }
+      },
+      modal: {
+        ondismiss: () => {
+          toast.info("Payment cancelled. Complete payment from My Lab Appointments.");
+          navigate("/mylab-appointments");
+          window.scrollTo(0, 0);
+        },
+      },
+    };
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
+  // ── Book + immediately pay ─────────────────────────────────────
   const bookLabAppointment = async () => {
     if (!token) { toast.warn("Login to book test"); return navigate("/login"); }
     if (!selectedTime) { toast.warn("Please select a time slot"); return; }
     try {
+      // Step 1: book the appointment
       const { data } = await axios.post(
         `${backendUrl}/api/user/bookLab-appointment`,
         { labId },
         { headers: { token } }
       );
-      if (data.success) {
-        toast.success(data.message);
+      if (!data.success) { toast.error(data.message); return; }
+
+      // Step 2: immediately open Razorpay for payment
+      const { data: payData } = await axios.post(
+        `${backendUrl}/api/user/paymentlab-razorpay`,
+        { labId: data.appointmentId },
+        { headers: { token } }
+      );
+      if (payData.success) {
+        await initPay(payData.order);
+      } else {
+        toast.warn("Lab test booked. Complete payment from My Lab Appointments.");
         navigate("/mylab-appointments");
         window.scrollTo(0, 0);
-      } else { toast.error(data.message); }
+      }
     } catch (e) { toast.error(e.message); }
   };
 

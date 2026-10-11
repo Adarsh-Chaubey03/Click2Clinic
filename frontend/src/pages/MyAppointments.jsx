@@ -3,16 +3,21 @@ import { AppContext } from "../context/AppContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FaVideo, FaCalendarAlt, FaUserMd, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+import {
+  FaVideo, FaCalendarAlt, FaMapMarkerAlt, FaClock,
+  FaArrowLeft, FaEye, FaRedo, FaCheckCircle, FaTimesCircle,
+} from "react-icons/fa";
+import { MdCalendarToday } from "react-icons/md";
 
 const MyAppointments = () => {
   const { backendUrl, token, getDoctorsData } = useContext(AppContext);
   const navigate = useNavigate();
-  const months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  const months = ["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
   const slotDateFormat = (slotData) => {
-    const dateArray = slotData.split("_");
-    return `${dateArray[0]} ${months[Number(dateArray[1])]}, ${dateArray[2]}`;
+    const [d, m, y] = slotData.split("_");
+    return `${d} ${months[Number(m)]}, ${y}`;
   };
 
   const [appointments, setAppointment] = useState([]);
@@ -54,28 +59,26 @@ const MyAppointments = () => {
     }
   };
 
-  const loadRazorpay = () => {
-    return new Promise((resolve) => {
+  const loadRazorpay = () =>
+    new Promise((resolve) => {
       if (window.Razorpay) { resolve(true); return; }
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/checkout.js";
-      script.async = true;
-      script.onload = () => resolve(true);
-      script.onerror = () => resolve(false);
-      document.body.appendChild(script);
+      const s = document.createElement("script");
+      s.src = "https://checkout.razorpay.com/v1/checkout.js";
+      s.async = true;
+      s.onload = () => resolve(true);
+      s.onerror = () => resolve(false);
+      document.body.appendChild(s);
     });
-  };
 
   const initPay = async (order) => {
     const loaded = await loadRazorpay();
     if (!loaded) { toast.error("Razorpay SDK failed to load"); return; }
-    if (!window.Razorpay) { console.error("Razorpay not available"); return; }
     const options = {
       key: import.meta.env.VITE_RAZORPAY_ID,
       amount: order.amount,
       currency: order.currency,
       name: "Appointment Payment",
-      description: "Appointment Payment",
+      description: "Doctor Appointment",
       order_id: order.id,
       receipt: order.receipt,
       handler: async (response) => {
@@ -86,13 +89,13 @@ const MyAppointments = () => {
             { headers: { token } }
           );
           if (data.success) {
+            toast.success("Payment successful!");
             getUserAppointment();
-            navigate("/my-appointment");
-            toast.success(data.message);
+          } else {
+            toast.error(data.message);
           }
-        } catch (error) {
-          console.log(error);
-          toast.error(error.message);
+        } catch (err) {
+          toast.error(err.message);
         }
       },
     };
@@ -110,6 +113,7 @@ const MyAppointments = () => {
       if (data.success) { initPay(data.order); }
     } catch (error) {
       console.log(error);
+      toast.error(error.message);
     }
   };
 
@@ -117,127 +121,206 @@ const MyAppointments = () => {
     if (token) { getUserAppointment(); }
   }, [token]);
 
+  /* ── derive per-card status ─────────────────────────────── */
+  const getStatus = (item) => {
+    if (item.cancelled)    return "cancelled";
+    if (item.isCompleted)  return "completed";
+    if (!item.payment)     return "pending";   // booked but unpaid
+    return "upcoming";
+  };
+
+  const StatusBadge = ({ status }) => {
+    const map = {
+      upcoming:  { label: "Upcoming",  icon: <MdCalendarToday />, cls: "bg-[#e8f9f6] text-[#009f9a] border border-[#b2ebe0]" },
+      completed: { label: "Completed", icon: <FaCheckCircle />,   cls: "bg-[#e8f9f6] text-[#009f9a] border border-[#b2ebe0]" },
+      cancelled: { label: "Cancelled", icon: <FaTimesCircle />,   cls: "bg-red-50 text-red-500 border border-red-200" },
+      pending:   { label: "Pay Now",   icon: <MdCalendarToday />, cls: "bg-amber-50 text-amber-600 border border-amber-200" },
+    };
+    const { label, icon, cls } = map[status] || map.upcoming;
+    return (
+      <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full ${cls}`}>
+        {icon} {label}
+      </span>
+    );
+  };
+
   return (
     <div
-      className="min-h-screen pt-20 pb-10 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen pt-20 pb-14 px-4 sm:px-6 lg:px-8"
       style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}
     >
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl font-bold text-[#10233f] mb-6 border-b-2 border-[#dceeed] pb-2">
-          My Appointments
-        </h1>
+      <div className="max-w-4xl mx-auto">
+
+        {/* ── Page header ── */}
+        <button
+          onClick={() => navigate("/my-profile")}
+          className="flex items-center gap-1.5 text-sm text-[#009f9a] font-medium mb-5 hover:underline"
+        >
+          <FaArrowLeft className="text-xs" /> My Account
+        </button>
+
+        <h1 className="text-3xl font-extrabold text-[#10233f] mb-1">My Appointments</h1>
+        <p className="text-sm text-[#718398] mb-8">View and manage your upcoming and past appointments.</p>
+
+        {/* ── Empty state ── */}
         {appointments.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-12 bg-white rounded-2xl shadow-md border border-[#dceeed]">
+          <div className="flex flex-col items-center justify-center py-16 bg-white rounded-2xl shadow-sm border border-[#dceeed]">
             <FaCalendarAlt className="text-5xl text-[#b2ebe0] mb-4" />
-            <p className="text-lg text-[#5f7185]">No appointments found.</p>
+            <p className="text-base text-[#5f7185] mb-4">No appointments found.</p>
             <button
               onClick={() => navigate("/doctors")}
-              className="mt-4 text-white px-6 py-2 rounded-full font-medium transition-all duration-300"
+              className="text-white px-7 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-90"
               style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
             >
               Book an Appointment
             </button>
           </div>
         ) : (
-          <div className="grid gap-6">
-            {appointments.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 hover:shadow-lg transition-shadow duration-300 border border-[#dceeed]"
-              >
-                {/* Doctor Image */}
-                <div className="w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
-                  <img
-                    className="w-full h-full object-cover rounded-xl border border-[#dceeed]"
-                    src={item.docData.image}
-                    alt={item.docData.name}
-                  />
-                </div>
+          <div className="flex flex-col gap-4">
+            {appointments.map((item, index) => {
+              const status = getStatus(item);
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl shadow-sm border border-[#dceeed] p-5 flex flex-col sm:flex-row gap-5 hover:shadow-md transition-shadow duration-200"
+                >
+                  {/* Doctor image */}
+                  <div className="flex-shrink-0">
+                    <img
+                      className="w-24 h-24 sm:w-28 sm:h-28 object-cover rounded-xl border border-[#dceeed] bg-[#e8f9f6]"
+                      src={item.docData.image}
+                      alt={item.docData.name}
+                    />
+                  </div>
 
-                {/* Appointment Details */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <FaUserMd className="text-[#009f9a] text-lg" />
-                    <h2 className="text-lg sm:text-xl font-semibold text-[#10233f]">
-                      {item.docData.name}
-                    </h2>
-                  </div>
-                  <p className="text-sm text-[#5f7185] mb-1">{item.docData.speciality}</p>
-                  <div className="flex items-center gap-2 text-sm text-[#5f7185] mb-1">
-                    <FaMapMarkerAlt className="text-[#009f9a]" />
-                    <p>{item.docData.address.line1}, {item.docData.address.line2}</p>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-[#5f7185]">
-                    <FaClock className="text-[#009f9a]" />
-                    <p>{slotDateFormat(item.slotData)} | {item.slotTime}</p>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-[#dceeed] flex flex-wrap items-center gap-2 text-sm text-[#10233f] font-medium">
-                    <span className="text-[#718398]">Patient:</span>
-                    <span>{item.patientData?.name || item.userData?.name}</span>
-                    {item.patientData?.relation && (
-                      <span className="text-xs text-[#718398] bg-[#effcfb] px-2 py-0.5 rounded-full">
-                        {item.patientData.relation} • {item.patientData.age} yrs
+                  {/* Details */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between gap-3">
+                    <div>
+                      <h2 className="text-lg font-bold text-[#10233f] leading-tight">
+                        {item.docData.name}
+                      </h2>
+                      <p className="text-sm text-[#5f7185] mt-0.5">{item.docData.speciality}</p>
+
+                      <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-3">
+                        <span className="flex items-center gap-1.5 text-sm text-[#5f7185]">
+                          <FaMapMarkerAlt className="text-[#009f9a] flex-shrink-0" />
+                          {item.docData.address.line1}, {item.docData.address.line2}
+                        </span>
+                        <span className="flex items-center gap-1.5 text-sm text-[#5f7185]">
+                          <FaClock className="text-[#009f9a] flex-shrink-0" />
+                          {slotDateFormat(item.slotData)} | {item.slotTime}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Patient row */}
+                    <div className="flex items-center gap-2 text-sm">
+                      <span className="text-[#718398]">Patient:</span>
+                      <span className="font-semibold text-[#10233f] uppercase tracking-wide">
+                        {item.patientData?.name || item.userData?.name}
                       </span>
-                    )}
+                      {item.patientData?.relation && (
+                        <span className="text-xs text-[#718398] bg-[#effcfb] px-2 py-0.5 rounded-full border border-[#dceeed]">
+                          {item.patientData.relation} · {item.patientData.age} yrs
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Actions */}
-                <div className="flex flex-col gap-2 w-full sm:w-auto">
-                  {!item.cancelled && item.payment && !item.isCompleted && (
-                    <button className="w-full sm:w-48 py-2 bg-[#ddf8f2] text-[#009f9a] font-medium rounded-md border border-[#b2ebe0]">
-                      Paid
-                    </button>
-                  )}
-                  {!item.cancelled && !item.payment && !item.isCompleted && (
-                    <button
-                      onClick={() => appointmentRazorpay(item._id)}
-                      className="w-full sm:w-48 py-2 text-white font-medium rounded-md transition-colors duration-200"
-                      style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
-                    >
-                      Pay Online
-                    </button>
-                  )}
-                  <div className="flex gap-2">
-                    {!item.cancelled && !item.isCompleted && (
-                      <button
-                        onClick={() => navigate("/consult")}
-                        className="flex-1 sm:w-12 py-2 bg-[#009f9a] text-white rounded-md hover:bg-[#008eaa] transition-colors duration-200 flex items-center justify-center"
-                        title="Join Video Consultation"
-                      >
-                        <FaVideo className="text-lg" />
-                      </button>
-                    )}
-                    {!item.cancelled && !item.isCompleted && (
-                      <button
-                        onClick={() => cancelAppointment(item._id)}
-                        className="flex-1 sm:w-48 py-2 bg-red-50 text-red-600 font-medium rounded-md border border-red-200 hover:bg-red-100 transition-colors duration-200"
-                      >
-                        Cancel
-                      </button>
-                    )}
+                  {/* Actions column */}
+                  <div className="flex flex-col items-end justify-between gap-3 flex-shrink-0 min-w-[11rem]">
+                    {/* Status badge — top right */}
+                    <StatusBadge status={status} />
+
+                    {/* Action buttons */}
+                    <div className="flex flex-col gap-2 w-full">
+
+                      {/* PENDING — unpaid */}
+                      {status === "pending" && (
+                        <>
+                          <button
+                            onClick={() => appointmentRazorpay(item._id)}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                            style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
+                          >
+                            💳 Pay Now
+                          </button>
+                          <button
+                            onClick={() => cancelAppointment(item._id)}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-[#5f7185] border border-[#dceeed] hover:bg-[#f5fdfc] transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </>
+                      )}
+
+                      {/* UPCOMING — paid, not completed */}
+                      {status === "upcoming" && (
+                        <>
+                          <button
+                            onClick={() => navigate("/consult")}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                            style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
+                          >
+                            <FaVideo /> Join Consultation
+                          </button>
+                          <button
+                            onClick={() => cancelAppointment(item._id)}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-[#009f9a] border border-[#009f9a] hover:bg-[#e8f9f6] transition-colors"
+                          >
+                            Cancel
+                          </button>
+                        </>
+                      )}
+
+                      {/* COMPLETED */}
+                      {status === "completed" && (
+                        <>
+                          <button
+                            onClick={() =>
+                              item.userData?.prescription
+                                ? window.open(item.userData.prescription, "_blank")
+                                : toast.info("No prescription available yet.")
+                            }
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-white flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                            style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
+                          >
+                            <FaEye /> View Details
+                          </button>
+                          <button
+                            onClick={() => navigate(`/appointment/${item.docId}`)}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-[#009f9a] border border-[#009f9a] hover:bg-[#e8f9f6] transition-colors"
+                          >
+                            <span className="flex items-center justify-center gap-1.5">
+                              <FaRedo className="text-xs" /> Book Again
+                            </span>
+                          </button>
+                        </>
+                      )}
+
+                      {/* CANCELLED */}
+                      {status === "cancelled" && (
+                        <>
+                          <button
+                            disabled
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-red-400 bg-red-50 border border-red-200 cursor-default"
+                          >
+                            Appointment Cancelled
+                          </button>
+                          <button
+                            onClick={() => navigate(`/appointment/${item.docId}`)}
+                            className="w-full py-2 rounded-lg text-sm font-semibold text-[#009f9a] border border-[#009f9a] hover:bg-[#e8f9f6] transition-colors flex items-center justify-center gap-1.5"
+                          >
+                            <FaRedo className="text-xs" /> Book Again
+                          </button>
+                        </>
+                      )}
+
+                    </div>
                   </div>
-                  {item.cancelled && !item.isCompleted && (
-                    <button className="w-full sm:w-48 py-2 bg-red-50 text-red-600 font-medium rounded-md border border-red-200">
-                      Cancelled
-                    </button>
-                  )}
-                  {item.isCompleted && (
-                    <button className="w-full sm:w-48 py-2 bg-[#ddf8f2] text-[#009f9a] font-medium rounded-md border border-[#b2ebe0]">
-                      Completed
-                    </button>
-                  )}
-                  {item.userData.prescription && item.isCompleted && (
-                    <a
-                      href={item.userData.prescription}
-                      className="w-full sm:w-48 py-2 bg-[#effcfb] text-[#009f9a] font-medium rounded-md border border-[#b2ebe0] hover:bg-[#ddf8f2] transition-colors duration-200 text-center"
-                    >
-                      View Prescription
-                    </a>
-                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </div>

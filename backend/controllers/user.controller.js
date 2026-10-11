@@ -456,7 +456,7 @@ const bookAppointment = async (req, res) => {
     // Save updated slot data in doctor model
     await doctorModel.findByIdAndUpdate(docId, { slot_booked });
 
-    res.json({ success: true, message: "Appointment booked successfully" });
+    res.json({ success: true, message: "Appointment booked successfully", appointmentId: newAppointment._id });
   } catch (error) {
     console.log(error);
     return res.json({ success: false, message: error.message });
@@ -977,7 +977,7 @@ const bookLabAppointment = async (req, res) => {
     const labAppointment = new labAppointmentModel(appointmentData)
     await labAppointment.save()
 
-    res.json({ success: true, message: "Appointment Booked" })
+    res.json({ success: true, message: "Appointment Booked", appointmentId: labAppointment._id })
 
   } catch (error) {
     res.status(500).json({ error: error.message });

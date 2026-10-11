@@ -63,6 +63,61 @@ const Appointments = () => {
     }
   };
 
+  // ── Razorpay helpers ──────────────────────────────────────────
+  const loadRazorpay = () =>
+    new Promise((resolve) => {
+      if (window.Razorpay) { resolve(true); return; }
+      const s = document.createElement("script");
+      s.src = "https://checkout.razorpay.com/v1/checkout.js";
+      s.async = true;
+      s.onload = () => resolve(true);
+      s.onerror = () => resolve(false);
+      document.body.appendChild(s);
+    });
+
+  const initPay = async (order) => {
+    const loaded = await loadRazorpay();
+    if (!loaded) { toast.error("Razorpay SDK failed to load"); return; }
+    const options = {
+      key: import.meta.env.VITE_RAZORPAY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: "Appointment Payment",
+      description: "Doctor Appointment",
+      order_id: order.id,
+      receipt: order.receipt,
+      handler: async (response) => {
+        try {
+          const { data } = await axios.post(
+            `${backendUrl}/api/user/verify-razorpay`,
+            response,
+            { headers: { token } }
+          );
+          if (data.success) {
+            toast.success("Payment successful! Appointment confirmed.");
+            getDoctorsData();
+            navigate("/my-appointment");
+            window.scrollTo(0, 0);
+          } else {
+            toast.error(data.message);
+          }
+        } catch (err) {
+          toast.error(err.message);
+        }
+      },
+      modal: {
+        ondismiss: () => {
+          toast.info("Payment cancelled. Your appointment slot is reserved — complete payment from My Appointments.");
+          navigate("/my-appointment");
+          window.scrollTo(0, 0);
+        },
+      },
+    };
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
+
+  // ── Book + immediately pay ─────────────────────────────────────
   const bookAppointment = async () => {
     if (!token) { toast.warn("Login to book appointment"); return navigate("/login"); }
     if (!slotTime) { toast.warn("Please select a time slot"); return; }
@@ -73,17 +128,30 @@ const Appointments = () => {
       if (selectedPatientIndex !== -1 && userData?.familyMembers) {
         patientData = userData.familyMembers[selectedPatientIndex];
       }
+
+      // Step 1: book the appointment
       const { data } = await axios.post(
         `${backendUrl}/api/user/book-appointment`,
         { docId, slotData, slotTime, patientData },
         { headers: { token } }
       );
-      if (data.success) {
-        toast.success(data.message);
+      if (!data.success) { toast.error(data.message); return; }
+
+      // Step 2: immediately open Razorpay for payment
+      const { data: payData } = await axios.post(
+        `${backendUrl}/api/user/payment-razorpay`,
+        { appointmentId: data.appointmentId },
+        { headers: { token } }
+      );
+      if (payData.success) {
+        await initPay(payData.order);
+      } else {
+        // Payment initiation failed — still navigate so user can pay later
+        toast.warn("Appointment booked. Complete payment from My Appointments.");
         getDoctorsData();
         navigate("/my-appointment");
         window.scrollTo(0, 0);
-      } else { toast.error(data.message); }
+      }
     } catch (e) { toast.error(e.message); }
   };
 
