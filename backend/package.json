@@ -4,9 +4,10 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node tests/chatbot.test.js",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "generate-embeddings": "node scripts/generate-doctor-embeddings.js"
   },
   "author": "",
   "license": "ISC",

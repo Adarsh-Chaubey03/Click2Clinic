@@ -8,6 +8,7 @@ import doctorRouter from './routes/doctor.routes.js';
 import userRouter from './routes/user.routes.js';
 import orderRouter from './routes/order.routes.js';
 import consultationRouter from './routes/consultation.routes.js';
+import chatbotRouter from './routes/chatbot.routes.js';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 
@@ -69,6 +70,7 @@ app.use('/api/doctor', doctorRouter);
 app.use('/api/user', userRouter);
 app.use('/api/order', orderRouter);
 app.use('/api/consultation', consultationRouter);
+app.use('/api/user/chatbot', chatbotRouter);
 
 // ✅ Create HTTP + WebSocket server
 const server = createServer(app);
