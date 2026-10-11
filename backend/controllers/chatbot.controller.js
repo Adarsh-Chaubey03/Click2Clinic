@@ -24,7 +24,7 @@ import doctorModel from '../models/doctor.models.js';
  */
 export const sendMessage = async (req, res) => {
   try {
-    const userId = req.body.userId; // Set by authUser middleware from JWT
+    const userId = req.userId;
     const { message, sessionId } = req.body;
 
     if (!message || typeof message !== 'string' || !message.trim()) {
@@ -56,6 +56,9 @@ export const sendMessage = async (req, res) => {
         message: 'AI service rate limit reached. Please try again shortly.',
       });
     }
+    if (error.statusCode === 403) {
+      return res.status(403).json({ success: false, message: 'You cannot access this chatbot session.' });
+    }
 
     return res.status(500).json({
       success: false,
@@ -70,7 +73,7 @@ export const sendMessage = async (req, res) => {
  */
 export const getSession = async (req, res) => {
   try {
-    const userId = req.body.userId;
+    const userId = req.userId;
     const session = await chatbotSessionModel
       .findOne({ userId, active: true })
       .sort({ updatedAt: -1 });
@@ -91,7 +94,7 @@ export const getSession = async (req, res) => {
  */
 export const newSession = async (req, res) => {
   try {
-    const userId = req.body.userId;
+    const userId = req.userId;
 
     // End any existing active sessions
     await chatbotSessionModel.updateMany(
@@ -121,7 +124,7 @@ export const newSession = async (req, res) => {
  */
 export const endCurrentSession = async (req, res) => {
   try {
-    const userId = req.body.userId;
+    const userId = req.userId;
     const { sessionId } = req.body;
 
     if (!sessionId) {
@@ -145,7 +148,7 @@ export const endCurrentSession = async (req, res) => {
  */
 export const deleteSessionHandler = async (req, res) => {
   try {
-    const userId = req.body.userId;
+    const userId = req.userId;
     const { sessionId } = req.params;
 
     if (!sessionId) {
@@ -178,13 +181,17 @@ export const searchDoctorsHandler = async (req, res) => {
       });
     }
 
-    const doctors = await searchDoctors(query.trim(), {
+    const result = await searchDoctors(query.trim(), {
       speciality,
       requestedDate: date,
       limit: 10,
     });
 
-    return res.json({ success: true, doctors });
+    return res.json({
+      success: true,
+      doctors: result.doctors || result,
+      degradedMode: result.degradedMode || false,
+    });
   } catch (error) {
     console.error('Doctor search error:', error.message);
     return res.status(500).json({ success: false, message: 'Doctor search failed' });

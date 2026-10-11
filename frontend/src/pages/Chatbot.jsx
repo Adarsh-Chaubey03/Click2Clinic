@@ -23,13 +23,13 @@ export default function Chatbot() {
   const [messages, setMessages] = useState(() => {
     if (!token) return [];
     try {
-      return JSON.parse(localStorage.getItem("ragChatHistory")) || [];
+      return JSON.parse(sessionStorage.getItem("ragChatHistory")) || [];
     } catch { return []; }
   });
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [sessionId, setSessionId] = useState(() => localStorage.getItem("ragChatSessionId") || null);
+  const [sessionId, setSessionId] = useState(() => sessionStorage.getItem("ragChatSessionId") || null);
   const [recommendedDoctors, setRecommendedDoctors] = useState([]);
 
   const chatEndRef = useRef(null);
@@ -37,14 +37,14 @@ export default function Chatbot() {
   // Persist chat history to localStorage
   useEffect(() => {
     if (token && messages.length > 0) {
-      localStorage.setItem("ragChatHistory", JSON.stringify(messages));
+      sessionStorage.setItem("ragChatHistory", JSON.stringify(messages));
     }
   }, [messages, token]);
 
   // Persist sessionId
   useEffect(() => {
     if (sessionId) {
-      localStorage.setItem("ragChatSessionId", sessionId);
+      sessionStorage.setItem("ragChatSessionId", sessionId);
     }
   }, [sessionId]);
 
@@ -66,8 +66,8 @@ export default function Chatbot() {
       setMessages([]);
       setSessionId(null);
       setRecommendedDoctors([]);
-      localStorage.removeItem("ragChatHistory");
-      localStorage.removeItem("ragChatSessionId");
+      sessionStorage.removeItem("ragChatHistory");
+      sessionStorage.removeItem("ragChatSessionId");
     }
   }, [token]);
 
@@ -82,7 +82,7 @@ export default function Chatbot() {
         setSessionId(data.session._id);
         setMessages([{ role: "bot", content: data.message, type: "greeting" }]);
         setRecommendedDoctors([]);
-        localStorage.removeItem("ragChatHistory");
+        sessionStorage.removeItem("ragChatHistory");
       }
     } catch (err) {
       console.error("Failed to start session:", err);
@@ -97,19 +97,21 @@ export default function Chatbot() {
   const clearChat = useCallback(() => {
     setMessages([]);
     setRecommendedDoctors([]);
-    localStorage.removeItem("ragChatHistory");
-    localStorage.removeItem("ragChatSessionId");
+    sessionStorage.removeItem("ragChatHistory");
+    sessionStorage.removeItem("ragChatSessionId");
     setSessionId(null);
     startNewSession();
   }, [startNewSession]);
 
-  const sendMessage = useCallback(async () => {
-    if (!input.trim() || loading) return;
+  const sendMessage = useCallback(async (messageOverride = null) => {
+    const messageToSend = typeof messageOverride === "string" ? messageOverride : input;
+    const trimmedMessage = messageToSend.trim();
+    if (!trimmedMessage || loading) return;
     if (!token) return;
 
-    const userMessage = { role: "user", content: input };
+    const userMessage = { role: "user", content: trimmedMessage };
     setMessages(prev => [...prev, userMessage]);
-    const currentInput = input;
+    const currentInput = trimmedMessage;
     setInput("");
     setLoading(true);
 
@@ -132,6 +134,8 @@ export default function Chatbot() {
           analysis: data.analysis || null,
           doctors: data.doctors || null,
           emergencyDetected: data.emergencyDetected || false,
+          recommendationAction: data.recommendationAction || null,
+          degradedMode: data.degradedMode || false,
         };
 
         setMessages(prev => [...prev, botMessage]);
@@ -283,6 +287,23 @@ export default function Chatbot() {
           </div>
 
           {/* Doctor recommendations inline */}
+          {msg.recommendationAction && (
+            <button
+              type="button"
+              onClick={() => sendMessage(`Which ${msg.recommendationAction.speciality} is available today?`)}
+              disabled={loading}
+              className="mt-3 w-full rounded-lg bg-teal-50 px-3 py-2 text-left text-xs font-semibold text-teal-700 hover:bg-teal-100 disabled:opacity-50"
+            >
+              {msg.recommendationAction.label}
+            </button>
+          )}
+
+          {msg.degradedMode && (
+            <p className="mt-2 px-1 text-[11px] text-amber-700">
+              Semantic search is temporarily unavailable; showing keyword-matched doctors.
+            </p>
+          )}
+
           {msg.doctors?.length > 0 && (
             <div className="mt-3 space-y-2">
               <p className="text-xs font-semibold text-gray-600 px-1">👨‍⚕️ Recommended Doctors:</p>

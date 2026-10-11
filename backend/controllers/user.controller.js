@@ -13,6 +13,7 @@ import labModel from "../models/labModel.js";
 import labAppointmentModel from "../models/LabAppointmen.models.js";
 import mongoose from "mongoose";
 import axios from "axios";
+import { getBookableSlotTimes } from "../services/chatbot.service.js";
 //API to register user
 
 // Hugging Face Router:
@@ -404,6 +405,11 @@ const bookAppointment = async (req, res) => {
 
     if (!docData.available) {
       return res.json({ success: false, message: "Doctor not available" });
+    }
+
+    const generatedSlots = getBookableSlotTimes(docData, slotData);
+    if (!generatedSlots.includes(slotTime)) {
+      return res.json({ success: false, message: "Invalid or expired appointment slot." });
     }
 
     const existingSlot = await appointmentModel.findOne({

@@ -18,7 +18,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // ✅ Allowed frontend origins
-const allowedOrigins = [
+const defaultAllowedOrigins = [
   'https://click2clinic-frontend.onrender.com',
   'https://click2clinic-backend.onrender.com',
   'http://localhost:5173',
@@ -31,6 +31,10 @@ const allowedOrigins = [
   'https://www.click2clinic.shop',
   'https://admin.click2clinic.shop',
 ];
+const allowedOrigins = (process.env.CORS_ALLOWED_ORIGINS || defaultAllowedOrigins.join(','))
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 // ✅ Apply CORS middleware
 app.use(cors({

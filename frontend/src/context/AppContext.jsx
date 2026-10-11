@@ -14,6 +14,24 @@ const AppContextProvider = (props) => {
   const [medicines, setMedicines] = useState([]);
   const [labTests, setLabTests] = useState([]);
 
+  // A JWT becomes invalid when the backend secret changes or the session expires.
+  // Clear it centrally so every authenticated page returns to the login flow.
+  useEffect(() => {
+    const interceptorId = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response?.status === 401) {
+          localStorage.removeItem("token");
+          setToken(false);
+          setUserData(false);
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => axios.interceptors.response.eject(interceptorId);
+  }, []);
+
   // ✅ Fetch doctors only if not in localStorage
   const getDoctorsData = async () => {
     const cachedDoctors = localStorage.getItem("doctors");

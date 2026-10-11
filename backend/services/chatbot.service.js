@@ -40,6 +40,12 @@ export function getTodaySlotDate(timeZone = getApplicationTimeZone()) {
   return `${day}_${month}_${year}`;
 }
 
+function slotDateToComparableValue(slotDate) {
+  const match = /^(\d{1,2})_(\d{1,2})_(\d{4})$/.exec(slotDate || '');
+  if (!match) return null;
+  return Number(`${match[3]}${match[2].padStart(2, '0')}${match[1].padStart(2, '0')}`);
+}
+
 export function isDoctorAvailabilityRequest(message) {
   const normalized = message.toLowerCase();
   const asksAboutDoctor = /\b(?:doctor|doctors|specialist|specialists|physician|physicians|cardiologist|dermatologist|neurologist|gastroenterologist|gynecologist|pediatrician|orthopedic|dentist)\b/.test(normalized);
@@ -82,6 +88,9 @@ function specialityMatches(value, requestedSpeciality) {
 export function getBookableSlotTimes(doctor, slotDate, now = new Date(), timeZone = getApplicationTimeZone()) {
   const { day, month, year, hour, minute } = getDatePartsInTimeZone(now, timeZone);
   const todayKey = `${day}_${month}_${year}`;
+  const requestedDateValue = slotDateToComparableValue(slotDate);
+  const todayValue = slotDateToComparableValue(todayKey);
+  if (requestedDateValue === null || requestedDateValue < todayValue) return [];
   const bookedSlots = new Set(doctor.slot_booked?.[slotDate] || []);
   const slots = [];
   const isToday = slotDate === todayKey;
@@ -418,7 +427,7 @@ function pickFollowUps(session) {
     if (!asked.has('additional')) needed.push('additional');
   }
 
-  return needed.slice(0, 2); // Ask at most 2 follow-ups at a time
+  return needed.slice(0, 1); // One concise follow-up round only
 }
 
 /**
@@ -614,14 +623,32 @@ export async function searchDoctors(query, options = {}) {
         doctors = doctors.filter((d) => d.hasAvailability);
       }
 
-      return doctors.slice(0, limit);
+      return { doctors: doctors.slice(0, limit), degradedMode: false };
     }
   } catch (err) {
-    console.warn('Vector search failed, falling back to text search:', err.message);
+    console.warn('Vector search failed, using MongoDB text search:', err.message);
   }
 
-  // Fallback: basic text search on doctor model
-  const filter = { available: true };
+  // Degraded mode: keyword text matching. No incompatible vector is created.
+  const terms = query
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .filter((term) => term.length >= 3)
+    .slice(0, 12);
+  const filter = terms.length
+    ? {
+        $or: terms.map((term) => ({
+          $or: [
+            { name: { $regex: term, $options: 'i' } },
+            { speciality: { $regex: term, $options: 'i' } },
+            { degree: { $regex: term, $options: 'i' } },
+            { experience: { $regex: term, $options: 'i' } },
+            { about: { $regex: term, $options: 'i' } },
+          ],
+        })),
+      }
+    : {};
   if (speciality) {
     filter.speciality = { $regex: new RegExp(speciality, 'i') };
   }
@@ -639,21 +666,24 @@ export async function searchDoctors(query, options = {}) {
     fallbackDoctors = fallbackDoctors.filter((doctor) => availableMap.has(doctor._id.toString()));
   }
 
-  return fallbackDoctors.map((d) => ({
-    doctorId: d._id,
-    name: d.name,
-    speciality: d.speciality,
-    degree: d.degree,
-    experience: d.experience,
-    fees: d.fees,
-    address: d.address,
-    image: d.image,
-    available: d.available,
-    hasAvailability: requestedDate ? true : d.available,
-    availableSlots: requestedDate
-      ? (availableMap.get(d._id.toString())?.availableSlots || [])
-      : undefined,
-  }));
+  return {
+    degradedMode: true,
+    doctors: fallbackDoctors.map((d) => ({
+      doctorId: d._id,
+      name: d.name,
+      speciality: d.speciality,
+      degree: d.degree,
+      experience: d.experience,
+      fees: d.fees,
+      address: d.address,
+      image: d.image,
+      available: d.available,
+      hasAvailability: requestedDate ? true : d.available,
+      availableSlots: requestedDate
+        ? (availableMap.get(d._id.toString())?.availableSlots || [])
+        : undefined,
+    })),
+  };
 }
 
 /**
@@ -717,6 +747,12 @@ export async function processMessage(userId, message, sessionId = null) {
   if (sessionId) {
     session = await chatbotSessionModel.findOne({ _id: sessionId, userId, active: true });
     if (!session) {
+      const requestedSession = await chatbotSessionModel.findById(sessionId).select('userId');
+      if (requestedSession && requestedSession.userId.toString() !== userId.toString()) {
+        const error = new Error('Unauthorized: session does not belong to user');
+        error.statusCode = 403;
+        throw error;
+      }
       session = await chatbotSessionModel.create({ userId, phase: 'greeting' });
     }
   } else {
@@ -765,7 +801,11 @@ export async function processMessage(userId, message, sessionId = null) {
 
   // 5. Determine if we need more info or can analyze
   const followUps = pickFollowUps(session);
-  const shouldAnalyze = extracted.isAskingForDoctor || session.symptoms.length >= 3 || followUps.length === 0;
+  const isAnswerToFollowUp = session.phase === 'follow_up';
+  const shouldAnalyze = isAnswerToFollowUp ||
+    extracted.isAskingForDoctor ||
+    session.symptoms.length >= 3 ||
+    followUps.length === 0;
 
   if (!shouldAnalyze && followUps.length > 0) {
     // Ask follow-up questions
@@ -808,11 +848,12 @@ export async function processMessage(userId, message, sessionId = null) {
   // 7. Search for doctors using RAG
   session.phase = 'recommending';
   const searchQuery = `${session.symptoms.join(' ')} ${analysis.recommendedSpeciality || ''}`;
-  const doctors = await searchDoctors(searchQuery, {
+  const searchResult = await searchDoctors(searchQuery, {
     speciality: analysis.recommendedSpeciality,
     requestedDate: session.metadata.requestedDate,
     limit: 5,
   });
+  const doctors = searchResult.doctors || searchResult;
 
   session.recommendedDoctors = doctors.map((d) => d.doctorId || d._id);
   session.phase = 'completed';
@@ -847,7 +888,8 @@ export async function processMessage(userId, message, sessionId = null) {
   }
 
   // Doctor recommendation
-  responseMessage += `**Recommended specialist:** ${analysis.recommendedSpeciality || 'General Physician'}\n\n`;
+  const recommendedSpeciality = analysis.recommendedSpeciality || 'General Physician';
+  responseMessage += `**Recommended specialist:** ${recommendedSpeciality}\n\n`;
 
   // Urgency
   if (analysis.urgency === 'high') {
@@ -879,6 +921,12 @@ export async function processMessage(userId, message, sessionId = null) {
       available: d.available,
       hasAvailability: d.hasAvailability,
     })),
+    recommendationAction: {
+      label: `Find a ${recommendedSpeciality} available today`,
+      speciality: recommendedSpeciality,
+      date: getTodaySlotDate(),
+    },
+    degradedMode: searchResult.degradedMode || false,
     symptoms: session.symptoms,
   };
 }

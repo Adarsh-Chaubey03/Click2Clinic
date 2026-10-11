@@ -11,13 +11,12 @@
  *   (or: npm run generate-embeddings)
  *
  * Embedding strategy:
- *   1. Tries HF Inference API (best semantic quality)
- *   2. Falls back to local hash-based embeddings if API is unavailable
- *   Both produce 384-dim vectors compatible with Atlas Vector Search.
+ *   Uses the configured Hugging Face model exclusively. A failed embedding
+ *   must not write an incompatible vector into the Atlas index.
  *
  * Requires:
  *   - MONGODB_URI in .env
- *   - HUGGING_API_KEY in .env (optional — local fallback works without it)
+ *   - HUGGING_API_KEY in .env
  */
 
 import 'dotenv/config';
@@ -45,8 +44,8 @@ async function main() {
   }
 
   if (!process.env.HUGGING_API_KEY) {
-    console.warn('⚠️  HUGGING_API_KEY not set — will use local hash-based embeddings');
-    console.warn('   (Re-run with a valid key for better semantic quality)\n');
+    console.error('❌ HUGGING_API_KEY is required to generate Atlas-compatible embeddings');
+    process.exit(1);
   }
 
   await mongoose.connect(process.env.MONGODB_URI);
