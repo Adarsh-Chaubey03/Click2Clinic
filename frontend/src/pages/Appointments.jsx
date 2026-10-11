@@ -28,9 +28,21 @@ const Appointments = () => {
     return `${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")} ${ampm}`;
   };
 
-  const fetchDocInfo = () => {
+  const fetchDocInfo = async () => {
+    // Try context array first (fast path)
     const doc = doctors.find((d) => d._id === docId);
-    setDocInfo(doc);
+    if (doc) { setDocInfo(doc); return; }
+
+    // Fallback: fetch directly from backend so stale navigation links still work
+    try {
+      const { data } = await axios.get(`${backendUrl}/api/doctor/list`);
+      if (data.success) {
+        const found = data.doctors.find((d) => d._id === docId);
+        if (found) setDocInfo(found);
+      }
+    } catch (e) {
+      console.error("Failed to fetch doctor info:", e.message);
+    }
   };
 
   const getAvailSlots = () => {

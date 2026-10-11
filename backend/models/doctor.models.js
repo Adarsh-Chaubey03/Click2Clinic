@@ -1,6 +1,9 @@
 import mongoose , {Schema} from "mongoose";
 
 const doctorSchema = new Schema({
+    _id:{
+        type:String,
+    },
     name:{
         type:String,
         required:true,

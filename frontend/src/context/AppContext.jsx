@@ -32,14 +32,8 @@ const AppContextProvider = (props) => {
     return () => axios.interceptors.response.eject(interceptorId);
   }, []);
 
-  // ✅ Fetch doctors only if not in localStorage
+  // Always fetch fresh from API — never trust a cached doctor _id for booking
   const getDoctorsData = async () => {
-    const cachedDoctors = localStorage.getItem("doctors");
-    if (cachedDoctors) {
-      setDoctors(JSON.parse(cachedDoctors));
-      return;
-    }
-
     try {
       const { data } = await axios.get(`${backendUrl}/api/doctor/list`);
       if (data.success) {
@@ -49,8 +43,14 @@ const AppContextProvider = (props) => {
         toast.error(data.message);
       }
     } catch (error) {
-      console.error(error.message);
-      toast.error("Failed to fetch doctor data");
+      // Fall back to cache only when network fails
+      const cachedDoctors = localStorage.getItem("doctors");
+      if (cachedDoctors) {
+        setDoctors(JSON.parse(cachedDoctors));
+      } else {
+        console.error(error.message);
+        toast.error("Failed to fetch doctor data");
+      }
     }
   };
 
@@ -78,7 +78,8 @@ const AppContextProvider = (props) => {
 
   // Fetch doctors + medicines + lab tests on app load (all public endpoints)
   useEffect(() => {
-    localStorage.removeItem("labTests"); // evict stale cache once on mount
+    localStorage.removeItem("labTests");  // evict stale cache once on mount
+    localStorage.removeItem("doctors");   // always fetch fresh — stale _ids break booking
     getDoctorsData();
     getMedicineData();
     fetchLabTests();
