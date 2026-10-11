@@ -7,20 +7,16 @@ import { useNavigate } from "react-router-dom";
 import labImage from "../assets/lab_image.jpg";
 import { toast } from "react-toastify";
 
-/* ── Static test categories matching the image sidebar ── */
+/* ── Static test categories matching the 8 available tests ── */
 const CATEGORIES = [
   "All",
-  "Complete Blood Count (CBC)",
-  "Thyroid Function Test (TFT)",
-  "Lipid Profile",
-  "Liver Function Test (LFT)",
-  "Kidney Function Test (KFT)",
+  "Hematology",
+  "Endocrinology",
+  "Cardiology",
+  "Biochemistry",
+  "Nephrology",
   "Diabetes Tests",
-  "Vitamin & Mineral Tests",
-  "Hormone Tests",
-  "Infection & Immunity Tests",
-  "Cancer Screening",
-  "Others",
+  "Urinalysis",
 ];
 
 const SORT_OPTIONS = ["Most Popular", "Price: Low to High", "Price: High to Low", "Name: A-Z"];
