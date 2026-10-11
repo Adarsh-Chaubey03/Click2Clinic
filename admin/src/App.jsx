@@ -21,7 +21,6 @@ import AiPrescription from "./pages/Doctor/AiPrescription.jsx"
 import VerifyDoctor from './pages/Admin/VerifyDoctor.jsx'
 import Consultation from "./pages/Doctor/Consultation.jsx"
 import AddLab from "./pages/Admin/AddLab.jsx"
-import SkinReviewDashboard from "./pages/Doctor/SkinReviewDashboard.jsx"
 const App = () => {
 
   const {aToken} = useContext(AdminContext)
@@ -52,7 +51,6 @@ const App = () => {
         <Route path='/lab-report' element={<LabReport/>}/>
         <Route path='/ai-prescription' element={<AiPrescription/>}/>
         <Route path="/consult" element={<Consultation/>}/>
-        <Route path="/skin-reviews" element={<SkinReviewDashboard/>}/>
         </Routes>
       </main>
 

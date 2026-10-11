@@ -17,9 +17,6 @@ const DoctorContextProvider = (props) => {
   const [profileData, setProfileData] = useState(
     JSON.parse(localStorage.getItem("doctorProfileData")) || false
   );
-  const [skinReviews, setSkinReviews] = useState(
-    JSON.parse(localStorage.getItem("doctorSkinReviews")) || []
-  );
   const [isLoading, setIsLoading] = useState(false); // Loading state
 
   // 🔁 Get Appointments
@@ -144,57 +141,6 @@ const DoctorContextProvider = (props) => {
     }
   };
 
-  // 🔁 Get Skin Reviews
-  const getSkinReviews = async () => {
-    if (localStorage.getItem("doctorSkinReviews") || isLoading) return; 
-    setIsLoading(true);
-    try {
-      const { data } = await axios.get(backendUrl + "/api/doctor/skin-reviews", {
-        headers: { dToken },
-      });
-      if (data.success) {
-        setSkinReviews(data.reviews);
-        localStorage.setItem(
-          "doctorSkinReviews",
-          JSON.stringify(data.reviews)
-        );
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error(error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  // 🔁 Submit Skin Evaluation
-  const submitSkinEvaluation = async (evaluationData) => {
-    try {
-      const { data } = await axios.post(
-        backendUrl + "/api/doctor/submit-skin-evaluation",
-        evaluationData,
-        { headers: { dToken } }
-      );
-      if (data.success) {
-        toast.success(data.message);
-        localStorage.removeItem("doctorSkinReviews");
-        localStorage.removeItem("doctorDashData");
-        await getSkinReviews();
-        await getDashData();
-        return true;
-      } else {
-        toast.error(data.message);
-        return false;
-      }
-    } catch (error) {
-      console.error(error);
-      toast.error(error.message);
-      return false;
-    }
-  };
-
   // 🔁 Clear Doctor Cache
   const clearDoctorCache = async () => {
     if (isLoading) return; // Prevent concurrent calls
@@ -203,13 +149,11 @@ const DoctorContextProvider = (props) => {
       localStorage.removeItem("doctorAppointments");
       localStorage.removeItem("doctorDashData");
       localStorage.removeItem("doctorProfileData");
-      localStorage.removeItem("doctorSkinReviews");
       setAppointments([]);
       setDashData(false);
       setProfileData(false);
-      setSkinReviews([]);
       // Fetch all data in parallel
-      await Promise.all([getAppointments(), getDashData(), getProfileData(), getSkinReviews()]);
+      await Promise.all([getAppointments(), getDashData(), getProfileData()]);
       toast.success("Cache cleared and data refreshed");
     } catch (error) {
       console.error(error);
@@ -225,7 +169,6 @@ const DoctorContextProvider = (props) => {
       getAppointments();
       getDashData();
       getProfileData();
-      getSkinReviews();
     }
   }, [dToken]);
 
@@ -244,10 +187,6 @@ const DoctorContextProvider = (props) => {
     profileData,
     setProfileData,
     getProfileData,
-    skinReviews,
-    setSkinReviews,
-    getSkinReviews,
-    submitSkinEvaluation,
     clearDoctorCache, // Added refresh method
   };
 

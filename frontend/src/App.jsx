@@ -1,7 +1,4 @@
 import { Route, Routes } from "react-router-dom"
-import { useEffect, useContext } from 'react';
-import axios from 'axios';
-import { AppContext } from './context/AppContext.jsx';
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
@@ -23,22 +20,13 @@ import Awareness from "./pages/Awareness.jsx"
 import HireDoctor from "./pages/HireDoctor.jsx"
 import Map from "./pages/Map.jsx"
 import LabSection from "./pages/LabSection.jsx"
-import AiDetection from "./pages/AiDetection.jsx"
 import Consultation from "./pages/Consultation.jsx"
 import LabAppointment from "./pages/LabAppointment.jsx"
 import MyLabAppointments from "./pages/MyLabAppointment.jsx"
 import Checkout from "./pages/Checkout.jsx"
 import Disease from "./pages/Disease.jsx"
-import MySkinReviews from "./pages/MySkinReviews.jsx"
 // import 'react-toastify/dist/ReactTostify.css'
 const App = () => {
-  const { backendUrl } = useContext(AppContext);
-
-  useEffect(() => {
-    if (backendUrl) {
-      axios.get(backendUrl + '/api/user/wake-ai').catch(() => {});
-    }
-  }, [backendUrl]);
   return (
     <div className="min-h-screen overflow-x-hidden bg-white text-gray-900">
       <ToastContainer/>
@@ -64,12 +52,10 @@ const App = () => {
         <Route path="/my-profile" element={<MyProfile/>} />
         <Route path="/appointment/:docId" element={<Appointments/>} />
         <Route path="/map" element={<Map/>} />
-        <Route path='/ai-skin' element={<AiDetection/>} />
         <Route path="/lab" element={<LabSection/>} />
         <Route path='/consult' element={<Consultation/>}/>
         <Route path="/lab/:labId" element={<LabAppointment/>}/> 
         <Route path="/mylab-appointments" element={<MyLabAppointments/>}/>
-        <Route path="/my-skin-reviews" element={<MySkinReviews/>}/>
         <Route path="/checkout" element={<Checkout/>} />
       </Routes>
       <Chatbot/>

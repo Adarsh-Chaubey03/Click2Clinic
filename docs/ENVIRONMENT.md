@@ -13,7 +13,7 @@ The backend expects:
 - `ADMIN_EMAIL`, `ADMIN_PASSWORD`, and `JWT_SECRET` for administrative access
   and token signing.
 - `CURRENCY` for order and payment formatting.
-- `HUGGING_API_KEY` and `AI_SKIN_DISEASE_MICROSERVICE_URL` for AI features.
+- `HUGGING_API_KEY` for the chatbot AI integration.
 - `RAZORPAY_ID` and `RAZORPAY_SECRET` for payment creation and verification.
 
 ## Web clients
@@ -32,6 +32,6 @@ development computer.
 ## Runtime integrations
 
 MongoDB stores application data, Cloudinary stores uploaded files, Razorpay
-handles payment requests, Socket.IO supports consultation signaling, and the
-skin-disease service provides image analysis. The backend remains the boundary
-for private credentials and authenticated API calls.
+handles payment requests, and Socket.IO supports consultation signaling. The
+backend remains the boundary for private credentials and authenticated API
+calls.

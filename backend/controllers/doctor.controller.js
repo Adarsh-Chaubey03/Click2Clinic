@@ -2,8 +2,6 @@ import doctorModel from '../models/doctor.models.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import appointmentModel from '../models/appointment.models.js'
-import skinReviewModel from '../models/skinReview.model.js'
-import { v2 as cloudinary } from 'cloudinary'
 const changeAvailability = async (req,res) => {
     try {
         
@@ -147,14 +145,6 @@ const doctorDashboard = async (req,res) => {
             latestAppointments:appointments.reverse().slice(0,5),
         }
 
-        // Count pending skin reviews for this doctor
-        const pendingSkinReviews = await skinReviewModel.countDocuments({
-            docId: docId,
-            status: { $in: ['pending', 'in_review'] },
-            payment: true,
-        })
-        dashData.pendingSkinReviews = pendingSkinReviews
-
         res.json({success:true,dashData})
 
     } catch (error) {
@@ -218,65 +208,6 @@ const getDocData = async (req, res) => {
     }
   };
 
-// API to get skin reviews assigned to a doctor
-const getSkinReviews = async (req, res) => {
-    try {
-        const { docId } = req.body
-        const reviews = await skinReviewModel.find({ docId, payment: true }).sort({ createdAt: -1 })
-        res.json({ success: true, reviews })
-    } catch (error) {
-        console.log(error)
-        res.json({ success: false, message: error.message })
-    }
-}
-
-// API for doctor to submit skin evaluation
-const submitSkinEvaluation = async (req, res) => {
-    try {
-        const { docId, reviewId, diagnosis, notes, severity, recommendation, flagType } = req.body
-
-        const review = await skinReviewModel.findById(reviewId)
-        if (!review) {
-            return res.json({ success: false, message: 'Review not found' })
-        }
-        if (review.docId !== docId) {
-            return res.json({ success: false, message: 'Unauthorized: This review is not assigned to you' })
-        }
-
-        const newStatus = flagType ? 'flagged' : 'completed'
-
-        await skinReviewModel.findByIdAndUpdate(reviewId, {
-            status: newStatus,
-            doctorEvaluation: {
-                diagnosis: diagnosis || '',
-                notes: notes || '',
-                severity: severity || '',
-                recommendation: recommendation || '',
-                flagType: flagType || '',
-                reviewedAt: new Date(),
-            },
-        })
-
-        // Cleanup: delete the skin image from Cloudinary after doctor reviews
-        if (review.imageUrl) {
-            try {
-                // Extract public_id from Cloudinary URL
-                const urlParts = review.imageUrl.split('/')
-                const fileWithExt = urlParts[urlParts.length - 1]
-                const publicId = 'skin_reviews/' + fileWithExt.split('.')[0]
-                await cloudinary.uploader.destroy(publicId)
-            } catch (cleanupErr) {
-                console.error('Cloudinary cleanup error:', cleanupErr.message)
-            }
-        }
-
-        res.json({ success: true, message: 'Evaluation submitted successfully' })
-    } catch (error) {
-        console.log(error)
-        res.json({ success: false, message: error.message })
-    }
-}
-
 export {
     changeAvailability,
     doctorList,
@@ -288,6 +219,4 @@ export {
     doctorProfile,
     updataDoctorProfile,
     getDocData,
-    getSkinReviews,
-    submitSkinEvaluation,
 }

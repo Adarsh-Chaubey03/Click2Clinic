@@ -6,19 +6,13 @@ import { v2 as cloudinary } from "cloudinary";
 import doctorModel from "../models/doctor.models.js";
 import appointmentModel from "../models/appointment.models.js";
 import { createCanvas } from "canvas";
-import path from "path";
 import cartModel from "../models/cart.model.js";
 import medicineModel from '../models/medicine.models.js'
-import { exec, spawn } from "child_process";
 import razorpay from 'razorpay'
-import { fileURLToPath } from 'url';
-import fs from 'fs';
 import labModel from "../models/labModel.js";
 import labAppointmentModel from "../models/LabAppointmen.models.js";
 import mongoose from "mongoose";
 import axios from "axios";
-import FormData from "form-data";
-import skinReviewModel from "../models/skinReview.model.js";
 //API to register user
 
 // Hugging Face Router:
@@ -890,62 +884,6 @@ const getUserId = async (req, res) => {
 
 
 
-// Required to resolve __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const wakeAiServer = async (req, res) => {
-  try {
-    const microserviceUrl = process.env.AI_SKIN_DISEASE_MICROSERVICE_URL || 'http://localhost:5001/predict';
-    const healthUrl = microserviceUrl.replace('/predict', '/health');
-    const response = await axios.get(healthUrl, { timeout: 15000 });
-    res.json({ success: true, status: response.data.status });
-  } catch(error) {
-    // Server is not responding yet (still cold starting)
-    res.json({ success: true, status: 'waking' });
-  }
-};
-
-const analyzeSkinImage = async (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({ error: 'No file uploaded or file type not allowed.' });
-    }
-
-    const fullImagePath = path.resolve(req.file.path);
-    console.log("Resolved image path:", fullImagePath);
-
-    if (!fs.existsSync(fullImagePath)) {
-      return res.status(500).json({ error: `Image not found at ${fullImagePath}` });
-    }
-
-    const formData = new FormData();
-    formData.append('image', fs.createReadStream(fullImagePath));
-
-    try {
-      const microserviceUrl = process.env.AI_SKIN_DISEASE_MICROSERVICE_URL || 'http://localhost:5001/predict';
-      const response = await axios.post(microserviceUrl, formData, {
-        headers: {
-          ...formData.getHeaders(),
-        },
-      });
-
-      // Cleanup: delete the temp file after AI analysis
-      try { fs.unlinkSync(fullImagePath); } catch (_) {}
-
-      return res.status(200).json(response.data);
-    } catch (apiError) {
-      console.error("Microservice API error:", apiError.message);
-      return res.status(500).json({ 
-        error: apiError.response?.data?.error || "Failed to communicate with AI microservice" 
-      });
-    }
-
-  } catch (err) {
-    console.error('Catch error:', err);
-    return res.status(500).json({ error: err.message });
-  }
-};
 const getLabData = async (req, res) => {
   try {
     const labData = await labModel.find()
@@ -1191,174 +1129,6 @@ const cancelCart = async (req, res) => {
   }
 };
 
-// ===== SKIN REVIEW FEATURE =====
-
-const submitSkinReview = async (req, res) => {
-  try {
-    const { userId } = req.body;
-    const { aiPrediction, aiConfidence, aiProbabilities, docId } = req.body;
-
-    if (!req.file) {
-      return res.json({ success: false, message: "No image uploaded" });
-    }
-    if (!aiPrediction) {
-      return res.json({ success: false, message: "AI prediction data is required" });
-    }
-
-    // Upload image to Cloudinary
-    const fullImagePath = path.resolve(req.file.path);
-    if (!fs.existsSync(fullImagePath)) {
-      return res.json({ success: false, message: "Image file not found" });
-    }
-
-    const cloudUpload = await cloudinary.uploader.upload(fullImagePath, {
-      resource_type: "image",
-      folder: "skin_reviews",
-    });
-
-    // Cleanup temp file
-    try { fs.unlinkSync(fullImagePath); } catch (_) {}
-
-    const imageUrl = cloudUpload.secure_url;
-
-    // Get user data
-    const userData = await userModel.findById(userId).select("-password");
-    if (!userData) {
-      return res.json({ success: false, message: "User not found" });
-    }
-
-    // Doctor assignment
-    let assignedDocId = docId || null;
-    let docData = {};
-
-    if (assignedDocId) {
-      // Validate provided doctor is a Dermatologist
-      const doc = await doctorModel.findById(assignedDocId);
-      if (!doc || doc.speciality !== "Dermatologist") {
-        return res.json({ success: false, message: "Selected doctor is not a Dermatologist" });
-      }
-      docData = { _id: doc._id, name: doc.name, speciality: doc.speciality, image: doc.image };
-    } else {
-      // Auto-assign: find Dermatologist with fewest pending reviews
-      const dermatologists = await doctorModel.find({ speciality: "Dermatologist" }).select("-password");
-      if (dermatologists.length === 0) {
-        return res.json({ success: false, message: "No Dermatologists available at this time" });
-      }
-
-      // Count pending reviews per doctor
-      const pendingCounts = await skinReviewModel.aggregate([
-        { $match: { status: { $in: ["pending", "in_review"] }, docId: { $ne: null } } },
-        { $group: { _id: "$docId", count: { $sum: 1 } } },
-      ]);
-
-      const countMap = {};
-      pendingCounts.forEach((item) => {
-        countMap[item._id] = item.count;
-      });
-
-      // Pick doctor with minimum pending reviews
-      let minDoc = dermatologists[0];
-      let minCount = countMap[minDoc._id.toString()] || 0;
-      for (const doc of dermatologists) {
-        const c = countMap[doc._id.toString()] || 0;
-        if (c < minCount) {
-          minCount = c;
-          minDoc = doc;
-        }
-      }
-
-      assignedDocId = minDoc._id.toString();
-      docData = { _id: minDoc._id, name: minDoc.name, speciality: minDoc.speciality, image: minDoc.image };
-    }
-
-    // Parse probabilities
-    let parsedProbabilities = {};
-    if (aiProbabilities) {
-      try {
-        parsedProbabilities = typeof aiProbabilities === "string" ? JSON.parse(aiProbabilities) : aiProbabilities;
-      } catch (_) {
-        parsedProbabilities = {};
-      }
-    }
-
-    const reviewData = {
-      userId,
-      docId: assignedDocId,
-      imageUrl,
-      aiPrediction,
-      aiConfidence: parseFloat(aiConfidence) || 0,
-      aiProbabilities: parsedProbabilities,
-      status: "pending",
-      amount: 30,
-      payment: false,
-      userData: { _id: userData._id, name: userData.name, email: userData.email, image: userData.image },
-      docData,
-    };
-
-    const newReview = new skinReviewModel(reviewData);
-    await newReview.save();
-
-    res.json({ success: true, message: "Skin review submitted successfully", reviewId: newReview._id });
-  } catch (error) {
-    console.error("submitSkinReview error:", error);
-    res.json({ success: false, message: error.message });
-  }
-};
-
-const paymentSkinReviewRazorpay = async (req, res) => {
-  try {
-    const { reviewId } = req.body;
-
-    const reviewData = await skinReviewModel.findById(reviewId);
-    if (!reviewData) {
-      return res.json({ success: false, message: "Skin review not found" });
-    }
-    if (reviewData.payment) {
-      return res.json({ success: false, message: "Already paid" });
-    }
-
-    const options = {
-      amount: reviewData.amount * 100, // 30 * 100 = 3000 paise
-      currency: process.env.CURRENCY,
-      receipt: reviewId,
-    };
-
-    const order = await razorpayInstance.orders.create(options);
-    res.json({ success: true, order });
-  } catch (error) {
-    console.error("paymentSkinReviewRazorpay error:", error);
-    res.json({ success: false, message: error.message });
-  }
-};
-
-const verifySkinReviewRazorpay = async (req, res) => {
-  try {
-    const { razorpay_order_id } = req.body;
-    const orderInfo = await razorpayInstance.orders.fetch(razorpay_order_id);
-
-    if (orderInfo.status === "paid") {
-      await skinReviewModel.findByIdAndUpdate(orderInfo.receipt, { payment: true });
-      res.json({ success: true, message: "Payment Successful" });
-    } else {
-      res.json({ success: false, message: "Payment failed!" });
-    }
-  } catch (error) {
-    console.error("verifySkinReviewRazorpay error:", error);
-    res.json({ success: false, message: error.message });
-  }
-};
-
-const getUserSkinReviews = async (req, res) => {
-  try {
-    const { userId } = req.body;
-    const reviews = await skinReviewModel.find({ userId }).sort({ createdAt: -1 });
-    res.json({ success: true, reviews });
-  } catch (error) {
-    console.error("getUserSkinReviews error:", error);
-    res.json({ success: false, message: error.message });
-  }
-};
-
 export {
   registerUser,
   loginUser,
@@ -1373,8 +1143,6 @@ export {
   verifyLab,
   generateAndSavePrescription,
   getUserId,
-  analyzeSkinImage,
-  wakeAiServer,
   getLabData,
   bookLabAppointment,
   getUserAppointment,
@@ -1384,8 +1152,4 @@ export {
   addToCart,
   getCartData,
   cancelCart,
-  submitSkinReview,
-  paymentSkinReviewRazorpay,
-  verifySkinReviewRazorpay,
-  getUserSkinReviews,
 };

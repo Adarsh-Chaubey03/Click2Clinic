@@ -110,7 +110,6 @@ const ProfileScreen = ({ navigation }) => {
         { icon: 'calendar', title: 'My Appointments', screen: 'MyAppointments', color: colors.primary },
         { icon: 'receipt', title: 'My Orders', screen: 'MyOrders', color: colors.secondary },
         { icon: 'flask', title: 'Lab Appointments', screen: 'MyLabAppointments', color: colors.pink },
-        { icon: 'scan', title: 'AI Skin Detection', screen: 'AiDetection', color: colors.accent },
         { icon: 'chatbubbles', title: 'Health Chatbot', screen: 'Chatbot', color: colors.success },
     ];
 

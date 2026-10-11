@@ -46,9 +46,9 @@ The platform provides:
 
 - patient registration, profiles, doctor discovery, appointment booking, lab
   bookings, medicine shopping, checkout, order history, diagnosis assistance,
-  chatbot, disease awareness, maps, consultations, and skin reviews;
+  chatbot, disease awareness, maps, and consultations;
 - doctor authentication, schedules, appointment handling, patient reports,
-  AI-assisted prescriptions, consultations, and skin-review evaluation;
+  AI-assisted prescriptions and consultations;
 - administrator authentication, dashboard metrics, doctor verification,
   medicine and laboratory management, appointment oversight, and order
   operations; and

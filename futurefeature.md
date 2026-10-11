@@ -10,14 +10,6 @@
 **What it is**: Integrate with Apple Health, Google Fit, or Fitbit APIs.
 **Why it's unique**: Doctors can see a patient's real-time or historical vitals (Heart Rate, SpO2, Sleep data, Step count) on their dashboard right as the video consultation starts, allowing for highly data-driven diagnoses.
 
-## 4. Paid AI Skin Disease Dermatologist Review
-**What it is**: An extension to the AI Skin Disease detection feature. Since AI isn't 100% accurate, users can opt to send their uploaded photo along with the AI prediction to a registered Dermatologist for manual evaluation.
-**Flow & Logic**:
-- **Pricing**: Fixed fee of ₹30 for the review.
-- **Doctor Selection**: The user can either manually pick a Dermatologist from a list, or the system can auto-assign the case to the Dermatologist with the least amount of pending reviews.
-- **Doctor Workflow**: The doctor reviews the image and the AI prediction on their dashboard. They then provide their medical evaluation. If the case is complex or unclear, the doctor can flag it to recommend a physical checkup or book a lab appointment.
-- **User Workflow**: The evaluation is processed asynchronously. The user will receive their result in their portal once the doctor has completed the review.
-
 
 2. Respiratory Medicine
 3. Cardiology

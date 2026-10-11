@@ -10,7 +10,6 @@ const HomeScreen = ({ navigation }) => {
         { id: 1, title: 'Find Doctors', icon: 'medical', color: '#0d9488', onPress: () => navigation.getParent()?.navigate('Doctors') },
         { id: 2, title: 'Order Medicines', icon: 'cart', color: '#6366f1', onPress: () => navigation.getParent()?.navigate('Store') },
         { id: 3, title: 'Book Lab Test', icon: 'flask', color: '#ec4899', onPress: () => navigation.getParent()?.navigate('Lab') },
-        { id: 4, title: 'AI Detection', icon: 'scan', color: '#f59e0b', onPress: () => navigation.navigate('AiDetection') },
     ];
 
     return (

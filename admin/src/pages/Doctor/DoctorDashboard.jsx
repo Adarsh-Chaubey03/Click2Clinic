@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react"
 import {DoctorContext} from '../../context/DoctorContext.jsx'
 import {assets} from '../../assets/assets.js'
 import {AppContext} from '../../context/AppContext.jsx'
-import { FaNotesMedical } from "react-icons/fa"
 
 const DoctorDashboard = () => {
  
@@ -47,17 +46,6 @@ const DoctorDashboard = () => {
             </div>
           </div>
 
-          <div className="flex min-w-0 items-center gap-4 rounded border-2 border-gray-100 bg-white p-4 cursor-pointer transition-all hover:scale-[1.02]">
-            <div className="w-14 h-14 bg-indigo-50 rounded-full flex items-center justify-center">
-              <FaNotesMedical className="text-3xl text-indigo-500" />
-            </div>
-            <div>
-              <p className="text-xl font-semibold text-gray-600">
-                {dashData.pendingSkinReviews || 0}
-              </p>
-              <p className="text-gray-400">Skin Reviews</p>
-            </div>
-          </div>
         </div>
       {/* latest booking*/}
         <div className="min-w-0 bg-white">

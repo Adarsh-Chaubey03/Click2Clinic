@@ -18,7 +18,6 @@ import LabSectionScreen from '../screens/lab/LabSectionScreen';
 import MyLabAppointmentsScreen from '../screens/lab/MyLabAppointmentsScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import MyAppointmentsScreen from '../screens/user/MyAppointmentsScreen';
-import AiDetectionScreen from '../screens/ai/AiDetectionScreen';
 import ChatbotScreen from '../screens/ai/ChatbotScreen';
 import PaymentWebViewScreen from '../screens/payments/PaymentWebViewScreen';
 
@@ -30,7 +29,6 @@ const HomeStack = () => (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="HomeMain" component={HomeScreen} />
         <Stack.Screen name="Chatbot" component={ChatbotScreen} />
-        <Stack.Screen name="AiDetection" component={AiDetectionScreen} />
         <Stack.Screen name="PaymentWebView" component={PaymentWebViewScreen} />
     </Stack.Navigator>
 );
@@ -73,7 +71,6 @@ const ProfileStack = () => (
         <Stack.Screen name="MyAppointments" component={MyAppointmentsScreen} />
         <Stack.Screen name="MyOrders" component={MyOrdersScreen} />
         <Stack.Screen name="MyLabAppointments" component={MyLabAppointmentsScreen} />
-        <Stack.Screen name="AiDetection" component={AiDetectionScreen} />
         <Stack.Screen name="Chatbot" component={ChatbotScreen} />
         <Stack.Screen name="PaymentWebView" component={PaymentWebViewScreen} />
     </Stack.Navigator>

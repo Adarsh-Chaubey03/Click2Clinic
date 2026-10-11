@@ -115,12 +115,6 @@ const SideBar = () => {
           </NavLink>
           <NavLink 
           className={({isActive})=>`flex items-center justify-center gap-3 py-3.5 px-3 md:justify-start md:px-9 cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary':''}`}
-          to='/skin-reviews'>
-            <FaFileMedical/>
-            <p className='hidden md:block'>Skin Reviews</p>
-          </NavLink>
-          <NavLink 
-          className={({isActive})=>`flex items-center justify-center gap-3 py-3.5 px-3 md:justify-start md:px-9 cursor-pointer ${isActive ? 'bg-[#F2F3FF] border-r-4 border-primary':''}`}
           to='/doctor-profile'>
             <img src={assets.people_icon} alt="" />
             <p className='hidden md:block'>Profile</p>
