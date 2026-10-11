@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "baseline-browser-mapping": "^2.11.28",
+    "caniuse-lite": "^1.0.30001815",
     "click-to-clinic": "file:..",
     "events": "^3.3.0",
     "framer-motion": "^12.18.1",

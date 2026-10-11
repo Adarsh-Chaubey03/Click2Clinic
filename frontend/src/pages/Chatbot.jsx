@@ -260,18 +260,20 @@ export default function Chatbot() {
             }`}
           >
             {msg.content.split("\n").map((line, index) => {
-              // Handle markdown-like formatting
+              // Strip markdown syntax before any checks
+              let content = line
+                .replace(/^## /, "")          // ## headers
+                .replace(/\*\*(.*?)\*\*/g, "$1") // **bold** → plain
+                .replace(/\*(.*?)\*/g, "$1")     // *italic* → plain
+                .replace(/^> /, "")             // > blockquote
+                .replace(/^\* /, "• ");          // * bullet → •
+
               const isHeader = line.startsWith("## ") || line.startsWith("**");
-              const isBullet = line.startsWith("• ") || line.startsWith("- ");
+              const isBullet = line.startsWith("• ") || line.startsWith("- ") || line.startsWith("* ");
               const isQuote = line.startsWith("> ");
               const isEmoji = /^[🔬⚠️💊👨🚨🔴🟡📋]/.test(line);
 
-              let content = line.replace(/\*\*/g, "").replace(/^## /, "").replace(/^> /, "").replace(/^\* /, "• ");
-              // Handle italic markers
-              if (content.startsWith("*") && content.endsWith("*")) {
-                content = content.slice(1, -1);
-                return <p key={index} className="italic text-gray-500 mt-1">{content}</p>;
-              }
+              if (!content.trim()) return <br key={index} />;
 
               return (
                 <p

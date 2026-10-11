@@ -4,8 +4,9 @@ import mongoose, { Schema } from 'mongoose';
  * DoctorEmbedding — stores vector embeddings of doctor profiles
  * for MongoDB Atlas Vector Search.
  *
- * Each document mirrors a doctor record with a 384-dim embedding
- * built from verified fields (name, speciality, degree, experience, about).
+ * Each document mirrors a doctor record with a 3072-dim embedding
+ * built from Gemini gemini-embedding-001 using verified fields
+ * (name, speciality, degree, experience, about).
  */
 const doctorEmbeddingSchema = new Schema(
   {
@@ -21,13 +22,13 @@ const doctorEmbeddingSchema = new Schema(
       type: String,
       required: true,
     },
-    /** 384-dimensional vector from sentence-transformers/all-MiniLM-L6-v2 */
+    /** 3072-dimensional vector from Gemini gemini-embedding-001 */
     embedding: {
       type: [Number],
       required: true,
       validate: {
-        validator: (v) => v.length === 384,
-        message: 'Embedding must be 384-dimensional',
+        validator: (v) => v.length === 3072,
+        message: 'Embedding must be 3072-dimensional',
       },
     },
     /** Denormalized fields for filtering in vector search */
