@@ -49,14 +49,12 @@ const LabSection = () => {
   const [error, setError]               = useState(null);
   const navigate = useNavigate();
 
-  /* ── Fetch ── */
+  /* ── Fetch (no localStorage cache — always fetch fresh from API) ── */
   const fetchLabTests = async () => {
-    const cached = localStorage.getItem("labTests");
-    if (cached) { setLabTests(JSON.parse(cached)); setLoading(false); return; }
     try {
       setLoading(true);
       const { data } = await axios.get(`${backendUrl}/api/user/lab-data`);
-      if (data.success) { setLabTests(data.labData); localStorage.setItem("labTests", JSON.stringify(data.labData)); }
+      if (data.success) { setLabTests(data.labData); }
       else setError(data.message || "Failed to load.");
     } catch { setError("Failed to fetch lab tests."); }
     finally { setLoading(false); }

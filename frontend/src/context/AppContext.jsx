@@ -8,6 +8,9 @@ const AppContextProvider = (props) => {
   const currencySymbol = "$";
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
+  // Clear any stale labTests cache from localStorage (old data no longer valid)
+  localStorage.removeItem("labTests");
+
   const [token, setToken] = useState(localStorage.getItem("token") || false);
   const [userData, setUserData] = useState(false);
   const [doctors, setDoctors] = useState([]);
