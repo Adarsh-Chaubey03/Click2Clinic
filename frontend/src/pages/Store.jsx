@@ -308,9 +308,9 @@ const Store = () => {
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {filteredMedicines.map((med, i) => (
                   <motion.div key={med._id}
-                    initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay: i*0.02 }}
+                    initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
                     onClick={() => { navigate(`/medicine/${med._id}`); window.scrollTo(0,0); }}
-                    className="group bg-white rounded-2xl border border-[#dceeed] overflow-hidden cursor-pointer hover:border-[#009f9a] hover:shadow-md transition-all duration-300"
+                    className="group bg-white rounded-2xl border border-[#dceeed] overflow-hidden cursor-pointer hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out"
                   >
                     {/* Image */}
                     <div className="relative bg-white p-3 h-36">
@@ -364,9 +364,9 @@ const Store = () => {
               <div className="space-y-3">
                 {filteredMedicines.map((med, i) => (
                   <motion.div key={med._id}
-                    initial={{ opacity:0, x:-10 }} animate={{ opacity:1, x:0 }} transition={{ delay: i*0.02 }}
+                    initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
                     onClick={() => { navigate(`/medicine/${med._id}`); window.scrollTo(0,0); }}
-                    className="group flex items-center gap-4 bg-white rounded-2xl border border-[#dceeed] p-4 cursor-pointer hover:border-[#009f9a] hover:shadow-md transition-all duration-300"
+                    className="group flex items-center gap-4 bg-white rounded-2xl border border-[#dceeed] p-4 cursor-pointer hover:-translate-y-0.5 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out"
                   >
                     <div className="w-20 h-20 flex-shrink-0 bg-white border border-[#dceeed] rounded-xl overflow-hidden">
                       <img className="w-full h-full object-contain group-hover:scale-105 transition-transform"

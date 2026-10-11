@@ -156,8 +156,9 @@ const Awareness = () => {
             {selectedDisease ? (
               <motion.div
                 key={selectedDisease.name}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
                 className="bg-white rounded-2xl border border-[#dceeed] overflow-hidden"
               >
                 {/* Disease Header */}
@@ -527,13 +528,16 @@ const Awareness = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Featured Conditions</h3>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {diseases.slice(0, 6).map((disease) => (
-                    <button
+                    <motion.button
                       key={disease.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.35, delay: Math.min(diseases.indexOf(disease) * 0.03, 0.3), ease: "easeOut" }}
                       onClick={() => {
                         setSelectedDisease(disease);
                         setActiveSection("overview");
                       }}
-                      className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:border-teal-300 hover:shadow-md transition-all text-left"
+                      className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl hover:-translate-y-0.5 hover:border-teal-300 hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out text-left"
                     >
                       <img
                         src={disease.image}
@@ -544,7 +548,7 @@ const Awareness = () => {
                         <p className="font-medium text-gray-900">{disease.name}</p>
                         <p className="text-sm text-[#718398]">{disease.category}</p>
                       </div>
-                    </button>
+                    </motion.button>
                   ))}
                 </div>
               </motion.div>

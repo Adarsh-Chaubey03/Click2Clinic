@@ -290,8 +290,8 @@ const LabSection = () => {
                   const origPrice = test.price + Math.round(test.price * 0.3);
                   return (
                     <motion.div key={test._id || i}
-                      initial={{ opacity:0, y:16 }} animate={{ opacity:1, y:0 }} transition={{ delay:i*0.02 }}
-                      className="group bg-white rounded-2xl border border-[#dceeed] overflow-hidden cursor-pointer hover:border-[#009f9a] hover:shadow-md transition-all duration-300 flex flex-col"
+                      initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
+                      className="group bg-white rounded-2xl border border-[#dceeed] overflow-hidden cursor-pointer hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out flex flex-col"
                     >
                       {/* Top: icon + heart */}
                       <div className="relative p-5 flex items-start justify-between">
@@ -345,8 +345,8 @@ const LabSection = () => {
                   const origPrice = test.price + Math.round(test.price * 0.3);
                   return (
                     <motion.div key={test._id || i}
-                      initial={{ opacity:0, x:-10 }} animate={{ opacity:1, x:0 }} transition={{ delay:i*0.02 }}
-                      className="group flex items-center gap-4 bg-white rounded-2xl border border-[#dceeed] p-4 hover:border-[#009f9a] hover:shadow-md transition-all duration-300"
+                      initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
+                      className="group flex items-center gap-4 bg-white rounded-2xl border border-[#dceeed] p-4 hover:-translate-y-0.5 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out"
                     >
                       <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl" style={{ backgroundColor: style.bg }}>{style.icon}</div>
                       <div className="flex-1 min-w-0">

@@ -2,7 +2,6 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { FaSearch, FaMapMarkerAlt, FaFilter, FaUserMd, FaShieldAlt, FaCalendarAlt, FaUsers } from "react-icons/fa";
-import { motion } from "framer-motion";
 import findDoctorImg from "../assets/finddoctor.png";
 
 const specialties = [
@@ -67,6 +66,7 @@ const Doctors = () => {
   const { doctors } = useContext(AppContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterDoc, setFilterDoc] = useState([]);
+  const [cardAnimationKey, setCardAnimationKey] = useState(0);
   const navigate = useNavigate();
   const [showFilter, setShowFilter] = useState(false);
   const heroRef = useRef(null);
@@ -86,6 +86,7 @@ const Doctors = () => {
       doc.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilterDoc(filtered);
+    setCardAnimationKey((key) => key + 1);
   };
 
   useEffect(() => {
@@ -270,15 +271,16 @@ const Doctors = () => {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <div
+                key={cardAnimationKey}
+                className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+              >
                 {filterDoc.map((item, index) => (
-                  <motion.div
+                  <div
                     key={item._id || index}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
                     onClick={() => { navigate(`/appointment/${item._id}`); window.scrollTo(0, 0); }}
-                    className="group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] motion-safe:hover:-translate-y-1 motion-safe:will-change-transform transition-[transform,box-shadow,border-color] duration-300 ease-out"
+                    style={{ animationDelay: `${index * 40}ms` }}
+                    className="doctor-card-enter group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] motion-safe:hover:-translate-y-1 motion-safe:will-change-transform transition-[transform,box-shadow,border-color] duration-300 ease-out"
                   >
                     {/* Doctor photo */}
                     <div className="relative h-40 w-full overflow-hidden bg-[#e8f9f6]">
@@ -312,7 +314,7 @@ const Doctors = () => {
                         </span>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             )}
