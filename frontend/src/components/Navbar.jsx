@@ -7,6 +7,7 @@ import Cart from "./Cart.jsx";
 import { Menu, Transition } from "@headlessui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "react-toastify";
+import mainLogo from "../assets/MainLogo.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -50,6 +51,11 @@ const Navbar = () => {
               <span className="text-xl font-extrabold tracking-tight text-[#10233f] sm:text-2xl">
                 Click<span className="text-[#009f9a]">2</span>Clinic
               </span>
+              <img
+                src={mainLogo}
+                alt="VaidyTek"
+                className="h-7 w-auto max-w-[92px] object-contain sm:h-8 sm:max-w-[108px]"
+              />
             </motion.div>
 
             {/* Desktop Navigation */}

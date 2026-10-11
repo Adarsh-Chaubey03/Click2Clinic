@@ -53,7 +53,7 @@ import storeBanner2 from './storeBanner2.jpg';
 import storeBanner3 from './storeBanner3.jpg';
 import storeBanner4 from './storeBanner4.jpg';
 import banner2 from './banner2.png';
-import main_logo from './main_logo.png';
+import main_logo from './MainLogo.png';
 import background_video from './background_video.mp4';
 import login_bg from './login_bg.jpg';
 import storeVideo from './store.mp4';
