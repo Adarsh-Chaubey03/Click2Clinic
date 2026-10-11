@@ -7,7 +7,6 @@ import {
   FaVideo, FaCalendarAlt, FaMapMarkerAlt, FaClock,
   FaArrowLeft, FaEye, FaRedo, FaCheckCircle, FaTimesCircle,
 } from "react-icons/fa";
-import { MdCalendarToday } from "react-icons/md";
 
 const MyAppointments = () => {
   const { backendUrl, token, getDoctorsData } = useContext(AppContext);

@@ -7,7 +7,6 @@ import {
   FaCalendarAlt, FaVial, FaMapMarkerAlt, FaClock,
   FaArrowLeft, FaCheckCircle, FaTimesCircle, FaRedo,
 } from "react-icons/fa";
-import { MdCalendarToday } from "react-icons/md";
 
 const MyLabAppointments = () => {
   const { backendUrl, token } = useContext(AppContext);
