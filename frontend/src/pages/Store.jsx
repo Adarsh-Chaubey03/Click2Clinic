@@ -91,12 +91,7 @@ const Store = () => {
 
         {/* Text content */}
         <div className="absolute inset-0 flex items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8"
-          >
+          <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-lg">
               <h1 className="mb-2 text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-tight text-white">
                 Medicines, <span className="text-[#c9ffef]">Delivered</span> to Your Door.
@@ -105,7 +100,7 @@ const Store = () => {
                 Your everyday healthcare essentials, from trusted pharmacies to your doorstep.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

@@ -60,7 +60,7 @@ const Awareness = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
 
             {/* Left */}
-            <motion.div initial={{ opacity:0, x:-20 }} animate={{ opacity:1, x:0 }} transition={{ duration:0.5 }} className="max-w-xl">
+            <div className="max-w-xl">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
                 Knowledge for a <span className="text-[#c9ffef]">Healthier</span> You
               </h1>
@@ -68,7 +68,7 @@ const Awareness = () => {
                 Explore trusted information about diseases, symptoms,<br />
                 treatments, and healthy living to make better health decisions.
               </p>
-            </motion.div>
+            </div>
 
           </div>
         </div>
