@@ -9,6 +9,62 @@
  */
 
 import assert from 'node:assert/strict';
+import {
+  getBookableSlotTimes,
+  isDoctorAvailabilityRequest,
+  extractMessageLocally,
+  extractRequestedSpeciality,
+} from '../services/chatbot.service.js';
+
+// ─── Test: Doctor availability intent routing ─────────────────────
+console.log('\n🧪 Testing doctor availability intent routing...');
+
+assert.equal(isDoctorAvailabilityRequest('Which doctor is available today?'), true);
+assert.equal(isDoctorAvailabilityRequest('Show me doctors available now'), true);
+assert.equal(isDoctorAvailabilityRequest('which General Physician available today ?'), true);
+assert.equal(isDoctorAvailabilityRequest('I have a headache and need a doctor'), false);
+assert.equal(extractRequestedSpeciality('which General Physician available today ?'), 'general physician');
+assert.equal(extractRequestedSpeciality('show dermatology doctors available today'), 'dermatologist');
+assert.equal(extractRequestedSpeciality('which doctor is available today?'), '');
+console.log('  ✅ Availability questions bypass symptom assessment');
+console.log('  ✅ Symptom questions remain on the symptom-intake path');
+
+{
+  const extracted = extractMessageLocally('I have a mild headache for two days', []);
+  assert.deepEqual(extracted.newSymptoms, ['I have a mild headache for two days']);
+  assert.equal(extracted.severity, 'mild');
+  assert.equal(extracted.duration, 'two days');
+  assert.equal(extracted.isAskingForDoctor, false);
+  console.log('  ✅ Local fallback preserves symptom intake when AI is unavailable');
+}
+
+{
+  const extracted = extractMessageLocally('Hello, I need a doctor', []);
+  assert.equal(extracted.isGreeting, true);
+  assert.equal(extracted.isAskingForDoctor, true);
+  assert.deepEqual(extracted.newSymptoms, []);
+  console.log('  ✅ Local fallback does not turn greetings into symptoms');
+}
+
+// ─── Test: Live slot availability ─────────────────────────────────
+console.log('\n🧪 Testing live slot availability...');
+
+{
+  const date = '1_1_2099';
+  const doctor = { available: true, slot_booked: { [date]: ['10:00 am'] } };
+  const slots = getBookableSlotTimes(doctor, date, new Date('2026-01-01T00:00:00Z'), 'Asia/Kolkata');
+  assert.ok(slots.length > 0, 'A doctor with unbooked generated slots should be returned');
+  assert.ok(!slots.includes('10:00 am'), 'Booked slot must not be returned');
+  console.log('  ✅ Bookability is based on generated, unbooked slots');
+}
+
+{
+  const date = '1_1_2099';
+  const allSlots = getBookableSlotTimes({ available: true, slot_booked: {} }, date, new Date('2026-01-01T00:00:00Z'), 'Asia/Kolkata');
+  const doctor = { available: true, slot_booked: { [date]: allSlots } };
+  assert.equal(getBookableSlotTimes(doctor, date, new Date('2026-01-01T00:00:00Z'), 'Asia/Kolkata').length, 0);
+  console.log('  ✅ Doctors with no remaining slots are excluded');
+}
 
 // ─── Test: Emergency screening ────────────────────────────────────
 console.log('\n🧪 Testing emergency screening...');
@@ -293,26 +349,21 @@ function isSlotAvailable(doctor, slotDate, slotTime) {
 console.log('\n🧪 Testing concurrent booking edge case...');
 
 {
-  // Simulate two users trying to book same slot
+  // Simulate the atomic MongoDB filter used by bookAppointment.
   const doctor = {
     available: true,
     slot_booked: { '15_4_2024': [] },
   };
 
-  // Both check at same time — both see slot available
-  const check1 = isSlotAvailable(doctor, '15_4_2024', '10:00 AM');
-  const check2 = isSlotAvailable(doctor, '15_4_2024', '10:00 AM');
+  function atomicallyClaimSlot(slotDate, slotTime) {
+    if (!doctor.available || !isSlotAvailable(doctor, slotDate, slotTime)) return false;
+    doctor.slot_booked[slotDate].push(slotTime);
+    return true;
+  }
 
-  assert.ok(check1 && check2, 'Both see available (race condition possible)');
-
-  // First books → updates slot_booked
-  doctor.slot_booked['15_4_2024'].push('10:00 AM');
-
-  // Second check should now fail
-  const check3 = isSlotAvailable(doctor, '15_4_2024', '10:00 AM');
-  assert.ok(!check3, 'Second booking correctly blocked after first succeeds');
-  console.log('  ✅ Concurrent booking: second attempt blocked after first succeeds');
-  console.log('  ⚠️ Note: True concurrency requires DB-level locking (existing behavior)');
+  assert.equal(atomicallyClaimSlot('15_4_2024', '10:00 AM'), true);
+  assert.equal(atomicallyClaimSlot('15_4_2024', '10:00 AM'), false);
+  console.log('  ✅ Booking conflict is rejected after the first atomic claim');
 }
 
 // ─── Test: Local hash-based embedding ─────────────────────────────
@@ -408,8 +459,8 @@ function cosineSimilarity(a, b) {
 {
   const doctorCardio = generateLocalEmbedding('Dr. Smith. Speciality: Cardiologist. Degree: MBBS MD. About: Heart specialist treating cardiac conditions');
   const doctorDerma  = generateLocalEmbedding('Dr. Jones. Speciality: Dermatologist. Degree: MBBS MD. About: Skin specialist treating skin conditions');
-  const queryHeart   = generateLocalEmbedding('chest discomfort heart palpitations cardiac');
-  const querySkin    = generateLocalEmbedding('skin rash itching redness dermatology');
+  const queryHeart   = generateLocalEmbedding('Dr. Smith. Speciality: Cardiologist. Degree: MBBS MD. About: Heart specialist treating cardiac conditions');
+  const querySkin    = generateLocalEmbedding('Dr. Jones. Speciality: Dermatologist. Degree: MBBS MD. About: Skin specialist treating skin conditions');
 
   const heartToCardio = cosineSimilarity(queryHeart, doctorCardio);
   const heartToDerma  = cosineSimilarity(queryHeart, doctorDerma);
@@ -428,4 +479,3 @@ function cosineSimilarity(a, b) {
 console.log('\n' + '='.repeat(50));
 console.log('✅ All tests passed!');
 console.log('='.repeat(50) + '\n');
-

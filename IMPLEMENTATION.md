@@ -1,5 +1,36 @@
 # RAG-Powered Healthcare Chatbot — Implementation Plan
 
+## Doctor Availability Correction (2026-10-11)
+
+- Added deterministic routing for questions such as “Which doctor is available today?” so they bypass symptom extraction and AI symptom assessment.
+- Specialty-qualified availability requests now normalize common category names (for example, General Physician and Dermatology) and filter live results before cards are returned; broad doctor requests remain unfiltered.
+- Doctor cards avoid duplicating the `Dr.` title when the stored doctor name already contains it.
+- Added timezone-aware live slot generation using `CHATBOT_TIMEZONE`, then `TZ`, with `Asia/Kolkata` as the application default. Availability now excludes past/taken slots from the doctor’s `slot_booked` data and active, non-cancelled appointment records.
+- Chatbot availability results query live doctor records and return verified specialty data, genuinely bookable slots, and the existing `/appointment/:doctorId` booking link. Vector-search results and cached frontend doctor data are not used to decide bookability.
+- Updated the doctor availability endpoint and chatbot doctor cards to use `hasAvailability`/live slots rather than the general doctor flag alone.
+- Made appointment slot claiming atomic in MongoDB and roll back the claim if appointment creation fails, preserving existing payment and cancellation workflows.
+- Added a Hugging Face outage/credit circuit breaker and local symptom-message extraction fallback. Unsupported models, provider outages, and exhausted credits no longer cause repeated failed inference calls or turn greetings into symptoms.
+- Preserved emergency screening, adaptive symptom follow-up, authentication, and medical-safety messaging. No mobile files were modified.
+
+### Validation Results
+
+```text
+backend: npm test
+✅ All tests passed
+✅ Covers availability-intent routing, symptom-intake routing, generated live slots,
+   no remaining slots, booking conflicts, and local AI-unavailable symptom extraction
+
+backend: node --check services/chatbot.service.js controllers/chatbot.controller.js controllers/user.controller.js
+✅ Syntax checks passed
+
+frontend: npm run build
+✅ Vite production build succeeded
+⚠️ Existing Browserslist freshness and bundle-size warnings only
+
+git diff --check
+✅ No whitespace errors
+```
+
 ## Architecture Overview
 
 ```
@@ -91,6 +122,7 @@
 ### New (add to `backend/.env`)
 ```env
 HF_EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+CHATBOT_TIMEZONE=Asia/Kolkata
 ```
 
 ### Existing (already required)

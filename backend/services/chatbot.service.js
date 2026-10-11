@@ -9,7 +9,155 @@
 import doctorModel from '../models/doctor.models.js';
 import doctorEmbeddingModel from '../models/doctorEmbedding.model.js';
 import chatbotSessionModel from '../models/chatbotSession.model.js';
+import appointmentModel from '../models/appointment.models.js';
 import { generateEmbedding, buildDoctorProfileText } from './embedding.service.js';
+
+const DEFAULT_TIME_ZONE = 'Asia/Kolkata';
+const SLOT_START_HOUR = 10;
+const SLOT_END_HOUR = 21;
+const SLOT_INTERVAL_MINUTES = 30;
+
+function getApplicationTimeZone() {
+  return process.env.CHATBOT_TIMEZONE || process.env.TZ || DEFAULT_TIME_ZONE;
+}
+
+function getDatePartsInTimeZone(date = new Date(), timeZone = getApplicationTimeZone()) {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone,
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: false,
+  }).formatToParts(date);
+  const values = Object.fromEntries(parts.map(({ type, value }) => [type, Number(value)]));
+  return values.hour === 24 ? { ...values, hour: 0 } : values;
+}
+
+export function getTodaySlotDate(timeZone = getApplicationTimeZone()) {
+  const { day, month, year } = getDatePartsInTimeZone(new Date(), timeZone);
+  return `${day}_${month}_${year}`;
+}
+
+export function isDoctorAvailabilityRequest(message) {
+  const normalized = message.toLowerCase();
+  const asksAboutDoctor = /\b(?:doctor|doctors|specialist|specialists|physician|physicians|cardiologist|dermatologist|neurologist|gastroenterologist|gynecologist|pediatrician|orthopedic|dentist)\b/.test(normalized);
+  const asksAboutAvailability = /\b(?:available|availability|free|open|booking|book)\b/.test(normalized);
+  const asksForToday = /\b(?:today|now|currently|right now)\b/.test(normalized);
+  const asksWhichDoctor = /\b(?:which|what|any|show|find|list)\b/.test(normalized);
+
+  return asksAboutDoctor && asksAboutAvailability && (asksForToday || asksWhichDoctor);
+}
+
+const SPECIALITY_ALIASES = [
+  ['general physician', ['general physician', 'general medicine', 'physician']],
+  ['dermatologist', ['dermatologist', 'dermatology', 'skin specialist']],
+  ['cardiologist', ['cardiologist', 'cardiology', 'heart specialist']],
+  ['neurologist', ['neurologist', 'neurology']],
+  ['gastroenterologist', ['gastroenterologist', 'gastroenterology']],
+  ['gynecologist', ['gynecologist', 'gynecology', 'gynaecologist', 'gynaecology']],
+  ['pediatrician', ['pediatrician', 'pediatrics', 'paediatrician', 'paediatrics', 'child specialist']],
+  ['orthopedic', ['orthopedic', 'orthopaedic', 'orthopedics', 'bone specialist']],
+  ['dentist', ['dentist', 'dental']],
+];
+
+export function extractRequestedSpeciality(message) {
+  const normalized = message.toLowerCase().replace(/[^\w\s]/g, ' ');
+  const match = SPECIALITY_ALIASES.find(([, aliases]) =>
+    aliases.some((alias) => normalized.includes(alias))
+  );
+  return match?.[0] || '';
+}
+
+function specialityMatches(value, requestedSpeciality) {
+  if (!requestedSpeciality) return true;
+  const normalized = String(value || '').toLowerCase();
+  const aliases = SPECIALITY_ALIASES.find(([canonical]) => canonical === requestedSpeciality)?.[1] || [
+    requestedSpeciality,
+  ];
+  return aliases.some((alias) => normalized.includes(alias));
+}
+
+export function getBookableSlotTimes(doctor, slotDate, now = new Date(), timeZone = getApplicationTimeZone()) {
+  const { day, month, year, hour, minute } = getDatePartsInTimeZone(now, timeZone);
+  const todayKey = `${day}_${month}_${year}`;
+  const bookedSlots = new Set(doctor.slot_booked?.[slotDate] || []);
+  const slots = [];
+  const isToday = slotDate === todayKey;
+  let startMinutes = SLOT_START_HOUR * 60;
+
+  if (isToday) {
+    const currentMinutes = hour * 60 + minute;
+    startMinutes = Math.max(startMinutes, currentMinutes + 60);
+    startMinutes = Math.ceil(startMinutes / SLOT_INTERVAL_MINUTES) * SLOT_INTERVAL_MINUTES;
+  }
+
+  for (let minutes = startMinutes; minutes < SLOT_END_HOUR * 60; minutes += SLOT_INTERVAL_MINUTES) {
+    const slotHour = Math.floor(minutes / 60);
+    const slotMinute = minutes % 60;
+    const suffix = slotHour >= 12 ? 'pm' : 'am';
+    const displayHour = slotHour % 12 || 12;
+    const slotTime = `${String(displayHour).padStart(2, '0')}:${String(slotMinute).padStart(2, '0')} ${suffix}`;
+    if (!bookedSlots.has(slotTime)) slots.push(slotTime);
+  }
+
+  return slots;
+}
+
+export async function findDoctorsWithAvailableSlots(
+  slotDate = getTodaySlotDate(),
+  requestedSpeciality = ''
+) {
+  const doctors = await doctorModel.find({}).select(
+    'name speciality degree experience fees address image available slot_booked'
+  );
+  const doctorIds = doctors.map((doctor) => doctor._id.toString());
+  const appointments = doctorIds.length
+    ? await appointmentModel
+        .find({
+          docId: { $in: doctorIds },
+          slotData: slotDate,
+          cancelled: { $ne: true },
+        })
+        .select('docId slotTime')
+    : [];
+  const appointmentSlots = new Map();
+
+  for (const appointment of appointments) {
+    const id = appointment.docId.toString();
+    if (!appointmentSlots.has(id)) appointmentSlots.set(id, new Set());
+    appointmentSlots.get(id).add(appointment.slotTime);
+  }
+
+  return doctors
+    .map((doctor) => {
+      if (!specialityMatches(doctor.speciality, requestedSpeciality)) return null;
+      if (!doctor.available) return null;
+      const activeAppointmentSlots = appointmentSlots.get(doctor._id.toString()) || new Set();
+      const slotTimes = getBookableSlotTimes(doctor, slotDate).filter(
+        (slotTime) => !activeAppointmentSlots.has(slotTime)
+      );
+      if (slotTimes.length === 0) return null;
+
+      return {
+        _id: doctor._id,
+        doctorId: doctor._id,
+        name: doctor.name,
+        speciality: doctor.speciality,
+        degree: doctor.degree,
+        experience: doctor.experience,
+        fees: doctor.fees,
+        address: doctor.address,
+        image: doctor.image,
+        available: true,
+        hasAvailability: true,
+        availableSlots: slotTimes,
+        date: slotDate,
+      };
+    })
+    .filter(Boolean);
+}
 
 // ─── Emergency keywords ───────────────────────────────────────────
 const EMERGENCY_PATTERNS = [
@@ -67,6 +215,7 @@ const HF_INFERENCE_BASE =
 
 const HUGGINGFACE_MODEL = process.env.HUGGINGFACE_MODEL || '';
 const HUGGINGFACE_FALLBACK_MODELS = process.env.HUGGINGFACE_FALLBACK_MODELS || '';
+let huggingFaceUnavailable = false;
 
 const DEFAULT_HF_MODELS = [
   'meta-llama/Meta-Llama-3-8B-Instruct',
@@ -102,6 +251,9 @@ function extractFirstJsonObject(text) {
 }
 
 async function callHuggingFace(prompt) {
+  if (huggingFaceUnavailable) {
+    throw new Error('Hugging Face inference is unavailable; using the local chatbot fallback');
+  }
   if (!process.env.HUGGING_API_KEY) {
     throw new Error('HUGGING_API_KEY is required');
   }
@@ -153,7 +305,13 @@ async function callHuggingFace(prompt) {
     }
   }
 
-  // Fallback: HF Inference endpoint
+  // The legacy text-generation endpoint is opt-in because many models are
+  // unavailable through the hf-inference provider even when router chat works.
+  if (process.env.HF_ENABLE_LEGACY_INFERENCE !== 'true') {
+    throw lastError || new Error('Hugging Face chat completion failed');
+  }
+
+  // Optional fallback: HF Inference endpoint
   for (const model of modelCandidates) {
     const url = `${HF_INFERENCE_BASE.replace(/\/$/, '')}/models/${encodeURIComponent(model)}`;
     try {
@@ -181,6 +339,13 @@ async function callHuggingFace(prompt) {
     }
   }
 
+  if (
+    lastError?.statusCode === 402 ||
+    /model not supported|not supported by any provider|no remaining credits/i.test(lastError?.message || '')
+  ) {
+    huggingFaceUnavailable = true;
+    console.warn('Hugging Face inference unavailable; using local chatbot fallbacks until the process restarts.');
+  }
   throw lastError || new Error('All HF model candidates failed');
 }
 
@@ -283,9 +448,36 @@ Respond ONLY with JSON:
     const parsed = extractFirstJsonObject(raw);
     return parsed || { newSymptoms: [], severity: 'unknown', duration: '', bodyArea: '', requestedDate: '', requestedSlot: '', isAskingForDoctor: false, isGreeting: false, isNonMedical: false };
   } catch (err) {
-    console.error('Extract from message failed:', err.message);
-    return { newSymptoms: [message], severity: 'unknown', duration: '', bodyArea: '', requestedDate: '', requestedSlot: '', isAskingForDoctor: false, isGreeting: false, isNonMedical: false };
+    console.warn('Extract from message unavailable; using local extraction:', err.message);
+    return extractMessageLocally(message, existingSymptoms);
   }
+}
+
+export function extractMessageLocally(message, existingSymptoms = []) {
+  const normalized = message.trim().toLowerCase();
+  const isGreeting = /^(?:hi|hello|hey|good morning|good afternoon|good evening)\b/.test(normalized);
+  const isAskingForDoctor = /\b(?:doctor|specialist|appointment|book)\b/.test(normalized);
+  const isNonMedical = /^(?:thanks|thank you|ok|okay|bye|goodbye)\b/.test(normalized);
+  const severity = /\b(?:severe|very bad|unbearable|excruciating)\b/.test(normalized)
+    ? 'severe'
+    : /\b(?:mild|slight|little)\b/.test(normalized)
+      ? 'mild'
+      : 'unknown';
+  const durationMatch = normalized.match(/\b(?:for|since)\s+([\w\s]+?)(?=\s+(?:and|with|but)\b|[,.!?]|$)/i);
+  const bodyAreaMatch = normalized.match(/\b(?:in|on|around|near)\s+(?:my\s+)?([a-z\s]+?)(?=\s+(?:and|with|but)\b|[,.!?]|$)/i);
+  const symptomText = message.trim();
+
+  return {
+    newSymptoms: isGreeting || isNonMedical || existingSymptoms.length > 0 ? [] : [symptomText],
+    severity,
+    duration: durationMatch?.[1]?.trim() || '',
+    bodyArea: bodyAreaMatch?.[1]?.trim() || '',
+    requestedDate: /\btoday\b/.test(normalized) ? getTodaySlotDate() : '',
+    requestedSlot: '',
+    isAskingForDoctor,
+    isGreeting,
+    isNonMedical,
+  };
 }
 
 /**
@@ -393,19 +585,26 @@ export async function searchDoctors(query, options = {}) {
         .select('available slot_booked fees');
 
       const liveMap = new Map(liveDoctors.map((d) => [d._id.toString(), d]));
+      const availabilityMap = requestedDate
+        ? new Map(
+            (await findDoctorsWithAvailableSlots(requestedDate)).map((d) => [
+              d.doctorId.toString(),
+              d,
+            ])
+          )
+        : new Map();
 
       doctors = doctors
         .map((d) => {
           const live = liveMap.get(d.doctorId?.toString());
           if (!live) return null;
+          const availability = availabilityMap.get(d.doctorId?.toString());
           return {
             ...d,
             available: live.available,
             fees: live.fees,
-            slot_booked: requestedDate ? (live.slot_booked?.[requestedDate] || []) : undefined,
-            hasAvailability: requestedDate
-              ? live.available && (!live.slot_booked?.[requestedDate] || live.slot_booked[requestedDate].length < 20)
-              : live.available,
+            availableSlots: availability?.availableSlots || [],
+            hasAvailability: requestedDate ? Boolean(availability) : live.available,
           };
         })
         .filter(Boolean);
@@ -427,10 +626,18 @@ export async function searchDoctors(query, options = {}) {
     filter.speciality = { $regex: new RegExp(speciality, 'i') };
   }
 
-  const fallbackDoctors = await doctorModel
+  let fallbackDoctors = await doctorModel
     .find(filter)
     .select('-password -email')
     .limit(limit);
+  let availableMap = new Map();
+
+  if (requestedDate) {
+    availableMap = new Map(
+      (await findDoctorsWithAvailableSlots(requestedDate)).map((d) => [d.doctorId.toString(), d])
+    );
+    fallbackDoctors = fallbackDoctors.filter((doctor) => availableMap.has(doctor._id.toString()));
+  }
 
   return fallbackDoctors.map((d) => ({
     doctorId: d._id,
@@ -442,7 +649,10 @@ export async function searchDoctors(query, options = {}) {
     address: d.address,
     image: d.image,
     available: d.available,
-    hasAvailability: true,
+    hasAvailability: requestedDate ? true : d.available,
+    availableSlots: requestedDate
+      ? (availableMap.get(d._id.toString())?.availableSlots || [])
+      : undefined,
   }));
 }
 
@@ -471,6 +681,34 @@ export async function processMessage(userId, message, sessionId = null) {
       type: 'emergency',
       message: emergency.guidance,
       emergencyDetected: true,
+    };
+  }
+
+  if (isDoctorAvailabilityRequest(trimmedMessage)) {
+    const requestedDate = getTodaySlotDate();
+    const requestedSpeciality = extractRequestedSpeciality(trimmedMessage);
+    const doctors = await findDoctorsWithAvailableSlots(requestedDate, requestedSpeciality);
+    const messageText = doctors.length
+      ? `${requestedSpeciality ? `${requestedSpeciality} doctors` : 'Doctors'} with genuinely bookable slots today (${requestedDate.replace(/_/g, '/')}):`
+      : `There are no ${requestedSpeciality ? `${requestedSpeciality} ` : ''}doctors with bookable slots remaining today. Please try another date.`;
+
+    return {
+      type: 'doctor_availability',
+      message: messageText,
+      date: requestedDate,
+      doctors: doctors.map((doctor) => ({
+        _id: doctor.doctorId,
+        name: doctor.name,
+        speciality: doctor.speciality,
+        degree: doctor.degree,
+        experience: doctor.experience,
+        fees: doctor.fees,
+        address: doctor.address,
+        image: doctor.image,
+        available: true,
+        hasAvailability: true,
+        availableSlots: doctor.availableSlots,
+      })),
     };
   }
 
@@ -644,4 +882,3 @@ export async function processMessage(userId, message, sessionId = null) {
     symptoms: session.symptoms,
   };
 }
-

@@ -13,6 +13,8 @@ import {
   deleteSession,
   searchDoctors,
   screenForEmergency,
+  findDoctorsWithAvailableSlots,
+  getTodaySlotDate,
 } from '../services/chatbot.service.js';
 import doctorModel from '../models/doctor.models.js';
 
@@ -199,24 +201,26 @@ export const getDoctorAvailability = async (req, res) => {
     const { docId } = req.params;
     const { date } = req.query;
 
-    const doctor = await doctorModel.findById(docId).select('name available slot_booked fees');
+    const doctor = await doctorModel.findById(docId).select(
+      'name speciality degree experience address image available slot_booked fees'
+    );
     if (!doctor) {
       return res.status(404).json({ success: false, message: 'Doctor not found' });
     }
 
+    const requestedDate = date || getTodaySlotDate();
+    const availableDoctor = (await findDoctorsWithAvailableSlots(requestedDate))
+      .find((item) => item.doctorId.toString() === docId);
     const result = {
       doctorId: docId,
       name: doctor.name,
-      available: doctor.available,
+      speciality: doctor.speciality,
+      available: Boolean(availableDoctor),
       fees: doctor.fees,
+      date: requestedDate,
+      availableSlots: availableDoctor?.availableSlots || [],
+      hasSlots: Boolean(availableDoctor),
     };
-
-    if (date) {
-      const bookedSlots = doctor.slot_booked?.[date] || [];
-      result.date = date;
-      result.bookedSlots = bookedSlots;
-      result.hasSlots = doctor.available && bookedSlots.length < 20;
-    }
 
     return res.json({ success: true, ...result });
   } catch (error) {
@@ -224,4 +228,3 @@ export const getDoctorAvailability = async (req, res) => {
     return res.status(500).json({ success: false, message: 'Failed to fetch availability' });
   }
 };
-

@@ -160,9 +160,7 @@ export default function Chatbot() {
 
   const quickPrompts = [
     "I have a headache and fever",
-    "Stomach pain after eating",
-    "Skin rash that won't go away",
-    "Find me a doctor",
+    "Which doctor is available today?",
   ];
 
   // ─── Login gate ───────────────────────────────────────────────────
@@ -195,17 +193,25 @@ export default function Chatbot() {
         )}
       </div>
       <div className="flex-1 min-w-0">
-        <h4 className="font-semibold text-sm text-gray-800 truncate">Dr. {doctor.name}</h4>
+        <h4 className="font-semibold text-sm text-gray-800 truncate">
+          {/^dr\.?\s/i.test(doctor.name || "") ? doctor.name : `Dr. ${doctor.name}`}
+        </h4>
         <p className="text-xs text-teal-600 font-medium">{doctor.speciality}</p>
         {doctor.degree && <p className="text-xs text-gray-500">{doctor.degree}</p>}
         {doctor.experience && <p className="text-xs text-gray-500">{doctor.experience} experience</p>}
         <div className="flex items-center justify-between mt-1.5">
           <span className="text-xs font-medium text-gray-700">${doctor.fees}</span>
-          <span className={`text-xs px-2 py-0.5 rounded-full ${doctor.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-            {doctor.available ? '● Available' : '○ Unavailable'}
+          <span className={`text-xs px-2 py-0.5 rounded-full ${doctor.hasAvailability ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
+            {doctor.hasAvailability ? '● Slots available' : '○ No slots'}
           </span>
         </div>
-        {doctor.available && (
+        {doctor.availableSlots?.length > 0 && (
+          <p className="mt-1 text-xs text-gray-500">
+            Today: {doctor.availableSlots.slice(0, 3).join(", ")}
+            {doctor.availableSlots.length > 3 ? " ..." : ""}
+          </p>
+        )}
+        {doctor.hasAvailability && (
           <button
             onClick={() => { setIsOpen(false); navigate(`/appointment/${doctor._id}`); }}
             className="mt-2 w-full px-3 py-1.5 bg-teal-50 text-teal-700 rounded-lg text-xs font-medium hover:bg-teal-100 transition-colors"

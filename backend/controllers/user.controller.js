@@ -389,42 +389,46 @@ const bookAppointment = async (req, res) => {
   try {
     const { userId, docId, slotData, slotTime, patientData } = req.body;
 
-    // Check if the slot is already booked by any user
-    const existingSlot = await appointmentModel.findOne({
-      docId,
-      slotData,
-      slotTime,
-      [`docData.slot_booked.${slotData}`]: slotTime,
-    });
-
-    if (existingSlot) {
+    if (!/^\d{1,2}_\d{1,2}_\d{4}$/.test(slotData) || typeof slotTime !== "string" || !slotTime.trim()) {
       return res.json({
         success: false,
-        message: "Slot already booked by another user.",
+        message: "Invalid appointment slot.",
       });
     }
 
     // Fetch doctor data
     const docData = await doctorModel.findById(docId).select("-password");
+    if (!docData) {
+      return res.json({ success: false, message: "Doctor not found" });
+    }
 
     if (!docData.available) {
       return res.json({ success: false, message: "Doctor not available" });
     }
 
-    let slot_booked = docData.slot_booked;
+    const existingSlot = await appointmentModel.findOne({
+      docId,
+      slotData,
+      slotTime,
+      cancelled: { $ne: true },
+    });
+    if (existingSlot) {
+      return res.json({ success: false, message: "Slot already booked by another user." });
+    }
 
-    // Check for slot availability
-    if (slot_booked[slotData]) {
-      if (slot_booked[slotData].includes(slotTime)) {
-        return res.json({
-          success: false,
-          message: "Slot already booked by another user.",
-        });
-      } else {
-        slot_booked[slotData].push(slotTime);
-      }
-    } else {
-      slot_booked[slotData] = [slotTime];
+    // Atomically claim the slot so two users cannot book it concurrently.
+    const claimedDoctor = await doctorModel.findOneAndUpdate(
+      {
+        _id: docId,
+        available: true,
+        [`slot_booked.${slotData}`]: { $ne: slotTime },
+      },
+      { $addToSet: { [`slot_booked.${slotData}`]: slotTime } },
+      { new: true }
+    ).select("-password");
+
+    if (!claimedDoctor) {
+      return res.json({ success: false, message: "Slot already booked by another user." });
     }
 
     const userData = await userModel.findById(userId).select("-password");
@@ -444,13 +448,20 @@ const bookAppointment = async (req, res) => {
       date: Date.now(),
     };
 
-    const newAppointment = new appointmentModel(appointmentData);
-    await newAppointment.save();
-
-    // Save updated slot data in doctor model
-    await doctorModel.findByIdAndUpdate(docId, { slot_booked });
-
-    res.json({ success: true, message: "Appointment booked successfully", appointmentId: newAppointment._id });
+    try {
+      const newAppointment = new appointmentModel(appointmentData);
+      await newAppointment.save();
+      return res.json({
+        success: true,
+        message: "Appointment booked successfully",
+        appointmentId: newAppointment._id,
+      });
+    } catch (error) {
+      await doctorModel.findByIdAndUpdate(docId, {
+        $pull: { [`slot_booked.${slotData}`]: slotTime },
+      });
+      throw error;
+    }
   } catch (error) {
     console.log(error);
     return res.json({ success: false, message: error.message });
