@@ -331,9 +331,9 @@ export default function Chatbot() {
       <AnimatePresence>
         {!isOpen && (
           <motion.button
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0 }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1, transition: { delay: 0.25, type: "spring", damping: 20, stiffness: 300 } }}
+            exit={{ scale: 0, opacity: 0, transition: { duration: 0.15 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => setIsOpen(true)}
@@ -358,7 +358,7 @@ export default function Chatbot() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20, transition: { duration: 0.2 } }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
             className="flex h-[min(600px,calc(100vh-2rem))] w-[calc(100vw-2rem)] max-w-[420px] flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-2xl sm:w-[420px]"
           >
