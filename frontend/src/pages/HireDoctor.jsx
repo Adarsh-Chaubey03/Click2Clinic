@@ -86,19 +86,19 @@ const HireDoctor = () => {
   const inputVariants = {
     hover: {
       scale: 1.02,
-      borderColor: "#06b6d4", // cyan-500
+      borderColor: "#009f9a",
       transition: { duration: 0.3, type: "spring", stiffness: 200 },
     },
     focus: {
-      borderColor: "#06b6d4",
-      boxShadow: "0 0 0 3px rgba(6, 182, 212, 0.2)",
+      borderColor: "#009f9a",
+      boxShadow: "0 0 0 3px rgba(0, 159, 154, 0.14)",
     },
   };
 
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      background: "linear-gradient(to right, #0e7490, #2563eb)", // cyan-700 to blue-600
+      background: "linear-gradient(135deg, #04a99d, #008eaa)",
       transition: { duration: 0.3, type: "spring", stiffness: 200 },
     },
   };
@@ -108,13 +108,13 @@ const HireDoctor = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="mx-4 my-8 max-w-6xl rounded-3xl border border-cyan-100/50 bg-gradient-to-r from-cyan-50 to-blue-50 px-4 shadow-xl sm:mx-6 sm:px-6 md:mx-8 md:px-8 lg:mx-auto lg:my-12"
+      className="mx-4 my-8 max-w-6xl rounded-3xl border border-[#cfeae8] bg-gradient-to-br from-[#effcfb] via-white to-[#eaf8fb] px-4 shadow-[0_18px_45px_rgba(16,35,63,0.10)] sm:mx-6 sm:px-6 md:mx-8 md:px-8 lg:mx-auto lg:my-12"
     >
       <div className="text-center py-8">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#10233f] mb-2">
           Join Our Team of Expert Doctors
         </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-[#5f7185] max-w-2xl mx-auto">
           Apply to become a verified doctor and provide top-tier healthcare services with us.
         </p>
       </div>
@@ -135,8 +135,8 @@ const HireDoctor = () => {
               <label htmlFor={field.name} className="sr-only">
                 {field.placeholder}
               </label>
-              <div className="flex min-w-0 items-center rounded-lg border border-gray-300 bg-gray-50 p-3 focus-within:border-cyan-500 focus-within:ring-2 focus-within:ring-cyan-200">
-                <field.icon className="mr-2 shrink-0 text-gray-500" />
+              <div className="flex min-w-0 items-center rounded-xl border border-[#d6e7e8] bg-[#f8fcfc] p-3 transition-colors focus-within:border-[#009f9a] focus-within:ring-2 focus-within:ring-[#bcebe5]">
+                <field.icon className="mr-2 shrink-0 text-[#718398]" />
                 <input
                   id={field.name}
                   type={field.type}
@@ -144,7 +144,7 @@ const HireDoctor = () => {
                   placeholder={field.placeholder}
                   value={formData[field.name]}
                   onChange={handleChange}
-                  className="w-full bg-transparent focus:outline-none text-gray-700 placeholder-gray-500"
+                  className="w-full bg-transparent text-[#19334d] placeholder-[#8a9aaa] focus:outline-none"
                   required
                 />
               </div>
@@ -162,7 +162,7 @@ const HireDoctor = () => {
             placeholder="Tell us about yourself"
             value={formData.about}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-3 bg-gray-50 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 text-gray-700 placeholder-gray-500 h-32 resize-none"
+            className="h-32 w-full resize-none rounded-xl border border-[#d6e7e8] bg-[#f8fcfc] p-3 text-[#19334d] placeholder-[#8a9aaa] focus:border-[#009f9a] focus:ring-2 focus:ring-[#bcebe5]"
             required
           ></textarea>
         </motion.div>
@@ -171,15 +171,15 @@ const HireDoctor = () => {
           <label htmlFor="photo" className="sr-only">
             Doctors Photo
           </label>
-          <div className="flex min-w-0 items-center rounded-lg border border-gray-300 bg-gray-50 p-3">
-            <FaCamera className="mr-2 shrink-0 text-gray-500" />
+          <div className="flex min-w-0 items-center rounded-xl border border-[#d6e7e8] bg-[#f8fcfc] p-3">
+            <FaCamera className="mr-2 shrink-0 text-[#718398]" />
             <input
               id="photo"
               type="file"
               name="photo"
               accept="image/*"
               onChange={handlePhotoChange}
-              className="w-full min-w-0 text-gray-700 file:mr-4 file:rounded-md file:border-0 file:bg-cyan-100 file:px-4 file:py-2 file:text-cyan-700 file:cursor-pointer hover:file:bg-cyan-200"
+              className="w-full min-w-0 text-[#5f7185] file:mr-4 file:cursor-pointer file:rounded-lg file:border-0 file:bg-[#ddf8f2] file:px-4 file:py-2 file:font-semibold file:text-[#008f88] hover:file:bg-[#c9f1eb]"
               required
             />
           </div>
@@ -189,7 +189,7 @@ const HireDoctor = () => {
           whileHover="hover"
           variants={buttonVariants}
           type="submit"
-          className="w-full bg-gradient-to-r from-cyan-700 to-blue-600 text-white font-bold py-4 rounded-lg shadow-md hover:shadow-lg text-xl"
+          className="w-full rounded-xl bg-gradient-to-r from-[#04a99d] to-[#008eaa] py-4 text-xl font-bold text-white shadow-[0_10px_22px_rgba(0,159,154,0.20)] hover:shadow-[0_14px_28px_rgba(0,159,154,0.28)]"
         >
           Submit for Verification
         </motion.button>
@@ -199,7 +199,7 @@ const HireDoctor = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="mt-4 text-center text-green-600 font-semibold bg-green-50 p-3 rounded-lg"
+            className="mt-4 rounded-xl border border-[#bcebe5] bg-[#effcfb] p-3 text-center font-semibold text-[#008f88]"
           >
             ✅ Proposal submitted successfully! The selected doctor can be reached directly by the authority.
           </motion.p>

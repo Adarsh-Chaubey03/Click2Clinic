@@ -6,6 +6,14 @@ import { AppContext } from "../context/AppContext";
 import { useNavigate } from "react-router-dom";
 import labImage from "../assets/lab_image.jpg";
 import { toast } from "react-toastify";
+import labIcon1 from "../assets/l1.png";
+import labIcon2 from "../assets/l2.png";
+import labIcon3 from "../assets/l3.png";
+import labIcon4 from "../assets/l4.png";
+import labIcon5 from "../assets/l5.png";
+import labIcon6 from "../assets/l6.png";
+import labIcon7 from "../assets/l7.png";
+import labIcon8 from "../assets/l8.png";
 
 /* ── Static test categories matching the 8 available tests ── */
 const CATEGORIES = [
@@ -21,17 +29,7 @@ const CATEGORIES = [
 
 const SORT_OPTIONS = ["Most Popular", "Price: Low to High", "Price: High to Low", "Name: A-Z"];
 
-/* ── Icon + bg color per test type ── */
-const TEST_STYLE = [
-  { bg: "#fce8e8", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><ellipse cx="18" cy="30" rx="8" ry="11" fill="#f87171" opacity="0.85"/><ellipse cx="30" cy="30" rx="8" ry="11" fill="#fb923c" opacity="0.7"/><path d="M24 14 Q24 8 18 10 Q24 6 24 14Z" fill="#f87171"/></svg> },
-  { bg: "#f0eaf8", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><ellipse cx="24" cy="28" rx="11" ry="8" fill="#a78bfa" opacity="0.8"/><ellipse cx="15" cy="21" rx="6" ry="9" fill="#c4b5fd" opacity="0.9"/><ellipse cx="33" cy="21" rx="6" ry="9" fill="#c4b5fd" opacity="0.9"/><circle cx="24" cy="20" r="4" fill="#7c3aed" opacity="0.7"/></svg> },
-  { bg: "#fce8f0", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><path d="M24 40 C13 33 7 25 7 17 C7 11 13 7 24 12 C35 7 41 11 41 17 C41 25 35 33 24 40Z" fill="#f472b6" opacity="0.8"/><path d="M15 21 Q24 15 33 21" stroke="white" strokeWidth="2" strokeLinecap="round"/><circle cx="24" cy="24" r="4" fill="white" opacity="0.65"/></svg> },
-  { bg: "#fef3e2", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><path d="M10 22 Q10 12 20 10 Q30 8 36 16 Q42 24 34 32 Q26 40 18 36 Q10 30 10 22Z" fill="#fb923c" opacity="0.85"/><path d="M20 18 Q27 15 32 21" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg> },
-  { bg: "#ede9fe", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><ellipse cx="16" cy="24" rx="8" ry="13" fill="#a78bfa" opacity="0.85"/><ellipse cx="32" cy="24" rx="8" ry="13" fill="#7c3aed" opacity="0.75"/><ellipse cx="16" cy="24" rx="4" ry="7" fill="#ede9fe" opacity="0.6"/><ellipse cx="32" cy="24" rx="4" ry="7" fill="#ede9fe" opacity="0.6"/></svg> },
-  { bg: "#e0e7ff", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><circle cx="24" cy="24" r="11" fill="#6366f1" opacity="0.8"/>{[0,45,90,135,180,225,270,315].map((d,i)=><line key={i} x1={24+11*Math.cos(d*Math.PI/180)} y1={24+11*Math.sin(d*Math.PI/180)} x2={24+17*Math.cos(d*Math.PI/180)} y2={24+17*Math.sin(d*Math.PI/180)} stroke="#818cf8" strokeWidth="2" strokeLinecap="round"/>)}<circle cx="24" cy="24" r="5" fill="#e0e7ff" opacity="0.9"/></svg> },
-  { bg: "#fef9c3", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><circle cx="24" cy="20" r="10" fill="#fbbf24" opacity="0.8"/><path d="M18 32 Q24 28 30 32 L28 40 H20 Z" fill="#f59e0b" opacity="0.7"/></svg> },
-  { bg: "#ecfdf5", icon: <svg viewBox="0 0 48 48" className="w-8 h-8" fill="none"><rect x="16" y="8" width="16" height="32" rx="6" fill="#34d399" opacity="0.8"/><rect x="8" y="16" width="32" height="16" rx="6" fill="#10b981" opacity="0.6"/></svg> },
-];
+const LAB_ICONS = [labIcon1, labIcon2, labIcon3, labIcon4, labIcon5, labIcon6, labIcon7, labIcon8];
 
 const LabSection = () => {
   const { backendUrl, token } = useContext(AppContext);
@@ -124,7 +122,7 @@ const LabSection = () => {
 
           {/* ── LEFT SIDEBAR ── */}
           <div className="hidden lg:block w-56 flex-shrink-0" style={{ position:"sticky", top:"80px", alignSelf:"flex-start" }}>
-            <div className="bg-white rounded-2xl border border-[#dceeed] shadow-sm p-5">
+            <div className="bg-white rounded-2xl border border-[#cfeae8] shadow-sm p-5">
               <div className="flex items-center justify-between mb-5">
                 <h3 className="font-bold text-[#10233f]">Filters</h3>
                 <button onClick={clearFilters} className="text-xs font-semibold text-[#009f9a] hover:underline">Clear All</button>
@@ -279,18 +277,18 @@ const LabSection = () => {
             {!loading && !error && filtered.length > 0 && viewMode === "grid" && (
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {filtered.map((test, i) => {
-                  const style = TEST_STYLE[i % TEST_STYLE.length];
+                  const icon = LAB_ICONS[i % LAB_ICONS.length];
                   const name = test.testname || test.name || "Lab Test";
                   const origPrice = test.price + Math.round(test.price * 0.3);
                   return (
                     <motion.div key={test._id || i}
                       initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
-                      className="group bg-white rounded-2xl border border-[#dceeed] overflow-hidden cursor-pointer hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out flex flex-col"
+                      className="group bg-white rounded-2xl border border-[#cfeae8] overflow-hidden cursor-pointer hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_10px_24px_rgba(0,159,154,0.12)] transition-[transform,box-shadow,border-color] duration-300 ease-out flex flex-col"
                     >
                       {/* Top: icon + heart */}
                       <div className="relative p-5 flex items-start justify-between">
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl" style={{ backgroundColor: style.bg }}>
-                          {style.icon}
+                        <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#bfe7e3] bg-[#effcfb] p-0.5">
+                          <img src={icon} alt="" className="h-full w-full object-cover" />
                         </div>
                         <button className="text-[#b0bec5] hover:text-red-400 transition-colors">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
@@ -334,15 +332,17 @@ const LabSection = () => {
             {!loading && !error && filtered.length > 0 && viewMode === "list" && (
               <div className="space-y-3">
                 {filtered.map((test, i) => {
-                  const style = TEST_STYLE[i % TEST_STYLE.length];
+                  const icon = LAB_ICONS[i % LAB_ICONS.length];
                   const name = test.testname || test.name || "Lab Test";
                   const origPrice = test.price + Math.round(test.price * 0.3);
                   return (
                     <motion.div key={test._id || i}
                       initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.35, delay:Math.min(i * 0.03, 0.3), ease:"easeOut" }}
-                      className="group flex items-center gap-4 bg-white rounded-2xl border border-[#dceeed] p-4 hover:-translate-y-0.5 hover:border-[#009f9a] hover:shadow-md transition-[transform,box-shadow,border-color] duration-300 ease-out"
+                      className="group flex items-center gap-4 bg-white rounded-2xl border border-[#cfeae8] p-4 hover:-translate-y-0.5 hover:border-[#009f9a] hover:shadow-[0_10px_24px_rgba(0,159,154,0.12)] transition-[transform,box-shadow,border-color] duration-300 ease-out"
                     >
-                      <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl" style={{ backgroundColor: style.bg }}>{style.icon}</div>
+                      <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#bfe7e3] bg-[#effcfb] p-0.5">
+                        <img src={icon} alt="" className="h-full w-full object-cover" />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-bold text-[#10233f] group-hover:text-[#009f9a] transition-colors">{name}</p>
                         <p className="text-xs text-[#718398]">{test.category || "Diagnostic test"}</p>

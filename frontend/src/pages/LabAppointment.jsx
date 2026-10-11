@@ -5,6 +5,14 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { FaArrowLeft, FaChevronLeft, FaChevronRight, FaHome, FaFileAlt, FaShieldAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
+import labIcon1 from "../assets/l1.png";
+import labIcon2 from "../assets/l2.png";
+import labIcon3 from "../assets/l3.png";
+import labIcon4 from "../assets/l4.png";
+import labIcon5 from "../assets/l5.png";
+import labIcon6 from "../assets/l6.png";
+import labIcon7 from "../assets/l7.png";
+import labIcon8 from "../assets/l8.png";
 
 const DAY_SHORT   = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 const MONTH_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -26,19 +34,7 @@ const buildDays = () => {
   return days;
 };
 
-/* Icon per category */
-const getCatStyle = (cat = "") => {
-  const c = cat.toLowerCase();
-  if (c.includes("thyroid") || c.includes("endocrin"))
-    return { bg:"#f0eaf8", icon:<svg viewBox="0 0 48 48" className="w-9 h-9" fill="none"><ellipse cx="24" cy="28" rx="11" ry="8" fill="#a78bfa" opacity="0.8"/><ellipse cx="15" cy="21" rx="6" ry="9" fill="#c4b5fd" opacity="0.9"/><ellipse cx="33" cy="21" rx="6" ry="9" fill="#c4b5fd" opacity="0.9"/><circle cx="24" cy="20" r="4" fill="#7c3aed" opacity="0.7"/></svg> };
-  if (c.includes("blood") || c.includes("hematol"))
-    return { bg:"#fce8e8", icon:<svg viewBox="0 0 48 48" className="w-9 h-9" fill="none"><ellipse cx="18" cy="30" rx="8" ry="11" fill="#f87171" opacity="0.85"/><ellipse cx="30" cy="30" rx="8" ry="11" fill="#fb923c" opacity="0.7"/><path d="M24 14 Q24 8 18 10 Q24 6 24 14Z" fill="#f87171"/></svg> };
-  if (c.includes("lipid") || c.includes("cardio"))
-    return { bg:"#fce8f0", icon:<svg viewBox="0 0 48 48" className="w-9 h-9" fill="none"><path d="M24 40 C13 33 7 25 7 17 C7 11 13 7 24 12 C35 7 41 11 41 17 C41 25 35 33 24 40Z" fill="#f472b6" opacity="0.8"/><circle cx="24" cy="24" r="4" fill="white" opacity="0.65"/></svg> };
-  if (c.includes("kidney") || c.includes("nephro"))
-    return { bg:"#ede9fe", icon:<svg viewBox="0 0 48 48" className="w-9 h-9" fill="none"><ellipse cx="16" cy="24" rx="8" ry="13" fill="#a78bfa" opacity="0.85"/><ellipse cx="32" cy="24" rx="8" ry="13" fill="#7c3aed" opacity="0.75"/></svg> };
-  return { bg:"#e8f9f6", icon:<svg viewBox="0 0 48 48" className="w-9 h-9" fill="none"><rect x="16" y="8" width="16" height="32" rx="6" fill="#34d399" opacity="0.8"/><rect x="8" y="16" width="32" height="16" rx="6" fill="#10b981" opacity="0.6"/></svg> };
-};
+const LAB_ICONS = [labIcon1, labIcon2, labIcon3, labIcon4, labIcon5, labIcon6, labIcon7, labIcon8];
 
 const LabAppointment = () => {
   const { labId } = useParams();
@@ -183,7 +179,8 @@ const LabAppointment = () => {
   }
   // ── End guard ─────────────────────────────────────────────────────────────
 
-  const catStyle  = getCatStyle(labInfo.category);
+  const labIndex = Math.max(0, labTests.findIndex((test) => test._id === labInfo._id));
+  const labIcon = LAB_ICONS[labIndex % LAB_ICONS.length];
   const origPrice = Math.round(labInfo.price * 1.25);
   const discount  = Math.round((1 - labInfo.price / origPrice) * 100);
 
@@ -218,9 +215,8 @@ const LabAppointment = () => {
               {/* Test header */}
               <div className="flex items-start justify-between gap-4 mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl"
-                    style={{ backgroundColor: catStyle.bg }}>
-                    {catStyle.icon}
+                  <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-[#bfe7e3] bg-[#effcfb] p-0.5">
+                    <img src={labIcon} alt="" className="h-full w-full object-cover" />
                   </div>
                   <div>
                     <h2 className="text-2xl font-extrabold text-[#10233f] mb-1.5">{labInfo.testname}</h2>
