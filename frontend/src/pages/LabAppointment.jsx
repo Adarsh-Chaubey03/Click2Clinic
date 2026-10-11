@@ -137,7 +137,51 @@ const LabAppointment = () => {
     } catch (e) { toast.error(e.message); }
   };
 
-  if (!labInfo) return null;
+  // ── Guard: lab not found or missing required booking fields ──────────────
+  const isValidLab =
+    labInfo &&
+    labInfo.testname &&
+    labInfo.price > 0 &&
+    labInfo.isAvailable !== false;
+
+  if (!isValidLab) {
+    return (
+      <div
+        className="min-h-screen flex items-center justify-center px-4"
+        style={{ background: "linear-gradient(110deg,#effcfb 0%,#f2fbfa 50%,#e9f8f8 100%)" }}
+      >
+        <div className="w-full max-w-md rounded-2xl border border-[#dceeed] bg-white p-8 text-center shadow-sm">
+          {/* Icon */}
+          <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-[#e8f9f6]">
+            <svg className="w-8 h-8 text-[#009f9a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6}
+                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+
+          {/* Heading */}
+          <h2 className="mb-2 text-xl font-extrabold text-[#10233f]">Lab Not Registered Yet</h2>
+
+          {/* Explanation */}
+          <p className="mb-6 text-sm leading-6 text-[#718398]">
+            This lab test is not available for online booking at the moment. It may not be registered
+            in our system or is temporarily unavailable. Please check back later or browse other tests.
+          </p>
+
+          {/* Back button */}
+          <button
+            onClick={() => { navigate("/lab"); window.scrollTo(0, 0); }}
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
+            style={{ background: "linear-gradient(135deg,#04a99d,#008eaa)" }}
+          >
+            <FaArrowLeft className="text-xs" />
+            Back to Lab Tests
+          </button>
+        </div>
+      </div>
+    );
+  }
+  // ── End guard ─────────────────────────────────────────────────────────────
 
   const catStyle  = getCatStyle(labInfo.category);
   const origPrice = Math.round(labInfo.price * 1.25);

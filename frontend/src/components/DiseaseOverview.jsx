@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import qh1 from "../assets/qh1.png";
 import qh2 from "../assets/qh2.png";
 import qh3 from "../assets/qh3.png";
@@ -42,42 +41,34 @@ const DiseaseOverview = () => {
 
         {/* Cards grid */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {tips.map((item, index) => (
-            <motion.button
+          {tips.map((item) => (
+            <button
               key={item.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.06 }}
               onClick={() => { navigate("/awareness", { state: { disease: item.slug } }); window.scrollTo(0, 0); }}
-              className="group flex flex-col items-center justify-between rounded-2xl border border-[#e3eeee] bg-white px-4 pb-5 pt-7 text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_12px_32px_rgba(0,159,154,0.12)]"
+              className="group flex flex-col items-center justify-between rounded-2xl border border-[#e3eeee] bg-white px-4 pb-5 pt-7 text-left shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_8px_24px_rgba(0,159,154,0.10)]"
             >
-              {/* Image circle — full bleed, zoomed */}
-              <div className={`mb-4 h-20 w-20 flex-shrink-0 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-105 ${index === 1 ? "border-4 border-white shadow-md" : "border-2 border-[#e8f9f6]"}`}>
+              <div className="mb-4 h-20 w-20 flex-shrink-0 overflow-hidden rounded-full border-2 border-[#e8f9f6]">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className={`h-full w-full object-cover ${index === 1 ? "scale-125" : ""}`}
+                  className="h-full w-full object-cover"
                 />
               </div>
 
-              {/* Name */}
-              <p className="mb-2 text-center text-sm font-bold text-[#10233f] transition-colors duration-300 group-hover:text-[#009f9a]">
+              <p className="mb-2 text-center text-sm font-bold text-[#10233f] transition-colors duration-200 group-hover:text-[#009f9a]">
                 {item.name}
               </p>
 
-              {/* Tip text */}
               <p className="mb-4 text-center text-xs leading-relaxed text-[#718398]">
                 {item.tip}
               </p>
 
-              {/* Arrow button */}
-              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-all duration-300 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-colors duration-200 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
-            </motion.button>
+            </button>
           ))}
         </div>
 

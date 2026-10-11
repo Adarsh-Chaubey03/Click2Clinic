@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const benefits = [
   {
@@ -48,14 +47,11 @@ const HireDoctorBanner = () => {
   return (
     <section className="py-8 sm:py-12 px-4 sm:px-6 mb-8">
       <div className="section-wrap">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+        <div
           className="relative overflow-hidden rounded-3xl border border-[#d4f0ec] px-8 py-10 sm:px-14 sm:py-12"
           style={{ background: "linear-gradient(110deg,#effcfb 0%,#f7fcfc 48%,#e9f8f8 100%)" }}
         >
-          {/* ── Decorative dots (top-right area) ── */}
+          {/* Decorative dots */}
           <div
             className="pointer-events-none absolute right-[38%] top-4 h-32 w-32 opacity-30"
             style={{
@@ -71,7 +67,7 @@ const HireDoctorBanner = () => {
             }}
           />
 
-          {/* ── Watermark medical cross ── */}
+          {/* Watermark medical cross */}
           <div className="pointer-events-none absolute right-[30%] top-1/2 -translate-y-1/2 opacity-[0.07]">
             <svg width="220" height="220" viewBox="0 0 100 100" fill="none">
               <rect x="35" y="5" width="30" height="90" rx="8" fill="#009f9a" />
@@ -81,97 +77,56 @@ const HireDoctorBanner = () => {
 
           <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
 
-            {/* ── Left content ── */}
+            {/* Left content */}
             <div className="flex-1 md:max-w-sm">
-              {/* Badge */}
-              <motion.span
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="eyebrow mb-5 inline-flex"
-              >
-                {/* person + plus icon */}
+              <span className="eyebrow mb-5 inline-flex">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
                     d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
                 Join Our Network
-              </motion.span>
+              </span>
 
-              {/* Heading */}
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="mb-4 text-2xl font-extrabold leading-tight text-[#10233f] sm:text-3xl"
-              >
+              <h2 className="mb-4 text-2xl font-extrabold leading-tight text-[#10233f] sm:text-3xl">
                 Are You a Doctor?<br />
                 <span className="text-[#009f9a] whitespace-nowrap">Join Click2Clinic Today</span>
-              </motion.h2>
+              </h2>
 
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                className="mb-8 text-sm leading-6 text-[#5f7185] sm:text-base"
-              >
+              <p className="mb-8 text-sm leading-6 text-[#5f7185] sm:text-base">
                 Expand your practice, reach more patients, and become part
                 of our trusted healthcare network. Get verified and start
                 consulting online.
-              </motion.p>
+              </p>
 
-              {/* CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
+              <Link
+                to="/hire-doctor"
+                onClick={() => window.scrollTo(0, 0)}
+                className="primary-button inline-flex"
               >
-                <Link
-                  to="/hire-doctor"
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="primary-button inline-flex"
-                >
-                  Apply Now
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </motion.div>
+                Apply Now
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
 
-            {/* ── Right — benefit cards ── */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex w-full flex-col gap-3 md:w-72 lg:w-80"
-            >
+            {/* Right — benefit cards */}
+            <div className="flex w-full flex-col gap-3 md:w-72 lg:w-80">
               {benefits.map((b, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, x: 16 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.25 + i * 0.08 }}
                   className="flex items-center gap-4 rounded-2xl border border-[#dceeed] bg-white px-5 py-4 shadow-sm"
                 >
-                  {/* Icon circle */}
                   <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#e8f9f6]">
                     {b.icon}
                   </div>
                   <span className="text-sm font-semibold text-[#10233f]">{b.text}</span>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

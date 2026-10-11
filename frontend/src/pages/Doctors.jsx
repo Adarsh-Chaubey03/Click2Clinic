@@ -2,7 +2,6 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { FaSearch, FaMapMarkerAlt, FaFilter, FaUserMd, FaShieldAlt, FaCalendarAlt, FaUsers } from "react-icons/fa";
-import { motion } from "framer-motion";
 import findDoctorImg from "../assets/finddoctor.png";
 
 const specialties = [
@@ -92,13 +91,6 @@ const Doctors = () => {
     applyFilter();
   }, [doctors, speciality, searchTerm]);
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.06, duration: 0.35 } }),
-    hover: { y: -3, transition: { duration: 0.2, type: "spring", stiffness: 260 } },
-  };
-
-  // Navbar is ~64px tall
   const NAVBAR_H = 64;
 
   return (
@@ -112,12 +104,7 @@ const Doctors = () => {
       >
         <div className="section-wrap grid min-h-[260px] items-center gap-6 py-10 lg:grid-cols-2 lg:py-12">
           {/* Left */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.45 }}
-            className="max-w-lg"
-          >
+          <div className="max-w-lg">
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#009f9a]">
               Your Health, Our Priority
             </p>
@@ -134,18 +121,13 @@ const Doctors = () => {
               <span className="text-[#c9efeb]">|</span>
               <span className="flex items-center gap-1.5"><FaUsers className="text-[#009f9a]" /> Trusted by Thousands</span>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right — illustration with bottom fade */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.45, delay: 0.1 }}
-            className="relative hidden lg:flex justify-end"
-          >
+          {/* Right — illustration */}
+          <div className="relative hidden lg:flex justify-end">
             <img src={findDoctorImg} alt="Find a Doctor" className="h-60 w-auto object-contain drop-shadow-md" />
             <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[22%] bg-gradient-to-b from-transparent to-[#effcfb]" />
-          </motion.div>
+          </div>
         </div>
       </div>
 
@@ -289,15 +271,10 @@ const Doctors = () => {
             ) : (
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filterDoc.map((item, index) => (
-                  <motion.div
+                  <div
                     key={item._id || index}
-                    custom={index}
-                    initial="hidden"
-                    animate="visible"
-                    whileHover="hover"
-                    variants={cardVariants}
                     onClick={() => { navigate(`/appointment/${item._id}`); window.scrollTo(0, 0); }}
-                    className="group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] transition-all duration-300"
+                    className="group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] motion-safe:hover:-translate-y-1 motion-safe:will-change-transform transition-[transform,box-shadow,border-color] duration-300 ease-out"
                   >
                     {/* Doctor photo */}
                     <div className="relative h-40 w-full overflow-hidden bg-[#e8f9f6]">
@@ -331,7 +308,7 @@ const Doctors = () => {
                         </span>
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             )}

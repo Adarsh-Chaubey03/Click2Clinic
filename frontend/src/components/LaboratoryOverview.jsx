@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import labHomeImg from "../assets/lab-home.png";
 
 /* ── 3 featured tests shown on left (matching image) ── */
@@ -89,13 +88,7 @@ const LaboratoryOverview = () => {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
 
           {/* ── LEFT CONTENT ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex-1 min-w-0"
-          >
+          <div className="flex-1 min-w-0">
             {/* Eyebrow */}
             <span className="eyebrow mb-5 inline-flex">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,46 +104,39 @@ const LaboratoryOverview = () => {
               from the <span className="gradient-text">Comfort of Home</span>
             </h2>
 
-            {/* Subtext */}
             <p className="mb-8 text-sm text-[#687b90]">
               Trusted diagnostics with home sample collection and fast results.
             </p>
 
-            {/* 3 test cards — horizontal row */}
+            {/* 3 test cards */}
             <div className="mb-8 grid grid-cols-3 gap-4">
               {FEATURED_TESTS.map((test) => (
-                <motion.div
+                <div
                   key={test.id}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 16 }}
-                  viewport={{ once: true }}
                   onClick={() => { navigate("/lab"); window.scrollTo(0, 0); }}
-                  className="group cursor-pointer rounded-2xl border border-[#e3eeee] bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_10px_28px_rgba(0,159,154,0.12)]"
+                  className="group cursor-pointer rounded-2xl border border-[#e3eeee] bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#009f9a] hover:shadow-[0_8px_24px_rgba(0,159,154,0.10)]"
                 >
-                  {/* Icon circle */}
                   <div
-                    className="mb-3 flex h-12 w-12 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-105"
+                    className="mb-3 flex h-12 w-12 items-center justify-center rounded-full"
                     style={{ backgroundColor: test.bg }}
                   >
                     {test.icon}
                   </div>
 
-                  {/* Name */}
-                  <p className="mb-2 text-xs font-bold leading-snug text-[#10233f] group-hover:text-[#009f9a] transition-colors">
+                  <p className="mb-2 text-xs font-bold leading-snug text-[#10233f] group-hover:text-[#009f9a] transition-colors duration-200">
                     {test.name}
                   </p>
 
-                  {/* Price row + arrow */}
                   <div className="flex items-center gap-1.5">
                     <span className="text-sm font-bold text-[#10233f]">₹{test.price}</span>
                     <span className="text-xs text-[#b0bec5] line-through">₹{test.originalPrice}</span>
-                    <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-all duration-300 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
+                    <div className="ml-auto flex h-6 w-6 items-center justify-center rounded-full border border-[#dceeed] bg-[#f5fdfc] text-[#009f9a] transition-colors duration-200 group-hover:bg-[#009f9a] group-hover:text-white group-hover:border-[#009f9a]">
                       <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                       </svg>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -176,25 +162,20 @@ const LaboratoryOverview = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </button>
-          </motion.div>
+          </div>
 
           {/* ── RIGHT — illustration ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+          <div
             className="relative hidden lg:flex flex-shrink-0 items-center justify-center"
             style={{ width: "46%" }}
           >
-            {/* Soft teal blob behind image */}
-            <div className="absolute inset-0 rounded-full bg-[#d4f5f0] blur-3xl opacity-50" />
+            <div className="absolute inset-0 rounded-full bg-[#d4f5f0] blur-3xl opacity-40" />
             <img
               src={labHomeImg}
               alt="Lab test at home"
-              className="relative z-10 w-full max-w-lg object-contain drop-shadow-xl"
+              className="relative z-10 w-full max-w-lg object-contain drop-shadow-lg"
             />
-          </motion.div>
+          </div>
 
         </div>
       </div>
