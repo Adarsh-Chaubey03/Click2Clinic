@@ -2,6 +2,7 @@ import { useContext, useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { FaSearch, FaMapMarkerAlt, FaFilter, FaUserMd, FaShieldAlt, FaCalendarAlt, FaUsers } from "react-icons/fa";
+import { motion } from "framer-motion";
 import findDoctorImg from "../assets/finddoctor.png";
 
 const specialties = [
@@ -271,8 +272,11 @@ const Doctors = () => {
             ) : (
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filterDoc.map((item, index) => (
-                  <div
+                  <motion.div
                     key={item._id || index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
                     onClick={() => { navigate(`/appointment/${item._id}`); window.scrollTo(0, 0); }}
                     className="group cursor-pointer rounded-2xl border border-[#dceeed] bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-[#009f9a] motion-safe:hover:-translate-y-1 motion-safe:will-change-transform transition-[transform,box-shadow,border-color] duration-300 ease-out"
                   >
@@ -308,7 +312,7 @@ const Doctors = () => {
                         </span>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             )}
