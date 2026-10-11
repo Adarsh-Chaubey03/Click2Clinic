@@ -53,19 +53,19 @@ const Awareness = () => {
     <div className="min-h-screen" style={{ background:"linear-gradient(110deg,#effcfb 0%,#f2fbfa 50%,#e9f8f8 100%)" }}>
 
       {/* ── HERO ── */}
-      <div className="relative overflow-hidden"
+      <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden"
         style={{ backgroundImage:`url(${quickHealthBg})`, backgroundSize:"cover", backgroundPosition:"center" }}>
         <div className="absolute inset-0 bg-[#009f9a]/80" />
         <div className="relative z-10 h-48 sm:h-56 lg:h-64 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 w-full">
 
             {/* Left */}
             <div className="max-w-xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-3">
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-2">
                 Knowledge for a <span className="text-[#c9ffef]">Healthier</span> You
               </h1>
               <p className="text-white/80 text-sm sm:text-base max-w-md mb-6 leading-relaxed">
-                Explore trusted information about diseases, symptoms,<br />
+                Explore trusted information about diseases, symptoms,
                 treatments, and healthy living to make better health decisions.
               </p>
             </div>
