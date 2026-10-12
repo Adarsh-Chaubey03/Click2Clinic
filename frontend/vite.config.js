@@ -12,12 +12,11 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // Use browser-compatible versions of dependencies
-      'readable-stream': 'readable-stream/readable-browser.js',
+  
       events: 'events', // Use the events polyfill
       util: 'util/', // Use util polyfill (ensure node-util or util is installed)
       process: 'process/browser', // Polyfill process for browser
-      buffer: 'buffer/', // Polyfill Buffer for browser
+      
     },
   },
   optimizeDeps: {
